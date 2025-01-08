@@ -1,0 +1,2 @@
+Alter Table RawData
+Add UploadDate DATETIME NOT NULL DEFAULT GETDATE()

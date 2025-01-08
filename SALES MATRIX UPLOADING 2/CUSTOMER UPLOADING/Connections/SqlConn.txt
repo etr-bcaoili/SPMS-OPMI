@@ -1,0 +1,1 @@
+data source=192.168.0.2; initial catalog=SPMS; user id=sa; password=;

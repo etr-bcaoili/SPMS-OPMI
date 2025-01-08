@@ -1,0 +1,1 @@
+Provider=SQLOLEDB.1;Persist Security Info=False;User ID=sa;Initial Catalog=AltheaGPI;Data Source=ETRSERVER

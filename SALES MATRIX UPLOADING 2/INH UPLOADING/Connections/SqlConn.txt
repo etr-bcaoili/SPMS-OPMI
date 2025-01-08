@@ -1,0 +1,1 @@
+data source=ETRWS15\SQLExpress; initial catalog=SPMSOTPI; user id=sa; password=p@ssw0rd;

@@ -1,0 +1,4 @@
+CREATE TABLE Unmmaped
+(
+MercuryCode NVARCHAR(10) NOT NULL DEFAULT ''
+)

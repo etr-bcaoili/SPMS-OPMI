@@ -1,0 +1,1 @@
+data source=192.168.0.198; initial catalog=spmsopc; user id=sa; password=oneosa;

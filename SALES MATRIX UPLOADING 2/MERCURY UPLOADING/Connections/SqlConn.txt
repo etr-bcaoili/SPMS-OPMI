@@ -1,0 +1,1 @@
+data source=etrws20-PC; initial catalog=SPMSOPCI3; user id=sa; password=p2ssw0rd[];

@@ -1,0 +1,14 @@
+
+ALTER TABLE Rawdata
+ALTER COLUMN SODate VARCHAR(30) NOT NULL 
+
+Alter Table RawData
+Drop Constraint
+DF__Rawdata__SODate__49C3F6B7
+
+ALTER TABLE Rawdata
+ALTER COLUMN ExpiryDate VARCHAR(30) NOT NULL
+
+ALTER TABLE Rawdata
+DROP Constraint
+DF__Rawdata__ExpiryD__4BAC3F29

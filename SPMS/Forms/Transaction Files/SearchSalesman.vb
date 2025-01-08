@@ -1,0 +1,7 @@
+﻿Imports SPMSOPCI.ConnectionModule
+Imports SPMSOPCI.ErrorMessagesModule
+Imports SPMSOPCI.InformationMessagesModule
+
+Public Class SearchSalesman
+
+End Class

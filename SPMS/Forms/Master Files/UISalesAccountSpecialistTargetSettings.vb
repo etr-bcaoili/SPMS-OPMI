@@ -1,0 +1,3 @@
+﻿Public Class UISalesAccountSpecialistTargetSettings
+
+End Class

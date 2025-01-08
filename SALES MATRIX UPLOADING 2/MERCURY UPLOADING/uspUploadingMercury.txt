@@ -1,0 +1,53 @@
+SET QUOTED_IDENTIFIER ON 
+GO
+SET ANSI_NULLS ON 
+GO
+
+
+CREATE  PROCEDURE uspUploadingMercury
+	@CustomerKey INT = -1,
+	
+	@CustomerID INT OUTPUT,
+	@DistributorCode VARCHAR(15) OUTPUT,
+	@CustomerAccountNumber VARCHAR(255) OUTPUT,
+	@Address VARCHAR(255) OUTPUT,
+	@CustomerStoreName VARCHAR(255) OUTPUT,
+	@RegionKey INT OUTPUT,
+	@CityKey INT OUTPUT,
+	@ProvinceKey INT OUTPUT
+AS
+
+SELECT 		       @CustomerID = b.CustKey ,
+		       @CustomerAccountNumber = b.cust_accntno,
+		       @DistributorCode = c.DistributorCode, 
+		       @CustomerStoreName = b.Cust_StoreName , 
+		       @Address = A.addressstring ,
+		       @RegionKey = A.RegionKey, 
+		       @CityKey = A.CityKey, 
+		       @ProvinceKey = A.ProvinceKey
+
+FROM 			addresses  a ,
+			customers b,
+			customershiptodetails c
+
+WHERE  			a.addressid = b.customeraddressid
+			and	b.custkey = @CustomerKey 
+			and	A.addressid in(SELECT customeraddressid 
+				FROM   customers 
+				WHERE  custkey 
+				IN((SELECT shiptocustomerid 
+				FROM   customershiptodetails 
+				WHERE  CustomerID 
+				IN (Select CustKey 
+				FROM   Customers 
+				WHERE  RawDataCustomerCode <> '')) ))
+
+
+
+RETURN
+
+GO
+SET QUOTED_IDENTIFIER OFF 
+GO
+SET ANSI_NULLS ON 
+GO

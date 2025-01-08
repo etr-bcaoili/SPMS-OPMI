@@ -1,0 +1,30 @@
+
+ALTER PROCEDURE uspDeleteRawData
+	@CompanyCode VARCHAR(100) = '',
+	@UploadDateDetails DATETIME = '1/1/1900',
+	@UploadDateHeader DATETIME = '1/1/1900'
+
+AS
+
+	
+	SET @UploadDateDetails = (SELECT TOP 1 convert(varchar(20),uploaddate, 101)   FROM althearawdata.dbo.rawdata WHERE CompanyCode = @CompanyCode ORDER BY UploadDate DESC)
+	SET @UploadDateHeader = (SELECT TOP 1 convert(varchar(20),uploaddate, 101)   FROM althearawdata.dbo.Uploadedrawdata WHERE CompanyCode = @CompanyCode ORDER BY UploadDate DESC)
+
+	
+	SELECT DISTINCT rawdataid  AS RawDataID
+	INTO #tmpRawDataID
+	FROM althearawdataTemp.dbo.rawdata
+	WHERE CompanyCode = @CompanyCode
+	And convert(varchar(20),uploaddate, 101)  = @UploadDateDetails
+	
+	SELECT DISTINCT Checkrawdataid  AS Checkrawdataid
+	INTO #tmpUploadedRawDataID
+	FROM althearawdataTemp.dbo.Uploadedrawdata
+	WHERE CompanyCode = @CompanyCode
+	And convert(varchar(20),uploaddate, 101)  = @UploadDateHeader
+	
+	DELETE FROM RawData
+		WHERE RawDataID IN(SELECT * FROM #tmpRawDataID) 		
+	DELETE FROM UploadedRawData
+		WHERE CheckRawDataID IN(SELECT * FROM #tmpUploadedRawDataID) 		
+GO

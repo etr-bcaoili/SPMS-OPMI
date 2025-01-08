@@ -1,0 +1,1 @@
+data source=ETRWS88\SQLEXPRESS; initial catalog=SPMSGPI4; user id=sa; password=p2ssw0rd[];

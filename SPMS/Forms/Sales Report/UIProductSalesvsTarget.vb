@@ -1,0 +1,90 @@
+﻿Imports System.ComponentModel
+Imports System.Text
+Imports Telerik.WinControls.UI
+Imports Telerik.WinControls
+Imports Microsoft.VisualBasic
+Imports System.Drawing
+Imports System.Data.Sql
+Imports System.Data.SqlClient
+Imports System.Text.RegularExpressions
+Imports Telerik.WinControls.Data
+Imports Telerik.WinControls.UI.Export
+Imports Microsoft.Office.Interop
+Imports Excel = Microsoft.Office.Interop.Excel
+Imports System.Runtime.InteropServices
+Imports System.IO
+Imports SPMSOPCI.ConnectionModule
+Public Class UIProductSalesvsTarget
+    Dim table As New DataTable
+    Dim dt As SqlDataReader
+    Private m_TerritoryCode As String
+    Private m_ProductCode As String
+    Private m_ProductName As String
+    Public Property TerritoryCode As String
+        Get
+            Return m_TerritoryCode
+        End Get
+        Set(value As String)
+            m_TerritoryCode = value
+        End Set
+    End Property
+    Public Property ProductCode As String
+        Get
+            Return m_ProductCode
+        End Get
+        Set(value As String)
+            m_ProductCode = value
+        End Set
+    End Property
+    Public Property Producstname As String
+        Get
+            Return m_ProductName
+        End Get
+        Set(value As String)
+            m_ProductName = value
+        End Set
+    End Property
+    Private Sub LoadActualProductPerMonth(ByVal TerritoryCode As String, ByVal ProductCode As String, ByVal ProductName As String)
+        Try
+            SPMSOPCI.ConnectionModule.Connect()
+            Dim cmd As SqlCommand = New SqlCommand("uspuspPerformancePerTerritory_OverViewWithChart", SPMSOPCI.ConnectionModule.SPMSConn2)
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.Parameters.AddWithValue("@Action", "SalesActualPerMonthWithChart")
+            cmd.Parameters.AddWithValue("@TerritoryCode", TerritoryCode)
+            cmd.Parameters.AddWithValue("@ProductCode", ProductCode)
+            Dim da As New SqlDataAdapter(cmd)
+            Dim dt As New DataTable
+            dt.Clear()
+            da.Fill(dt)
+            If dt.Rows.Count <> 0 Then
+                For i As Integer = 1 To dt.Columns.Count - 1
+                    Me.RadChartLines.Series.Clear()
+                    Me.RadChartLines.Title = "Product Sales Per Month" & " " & "(" & ProductCode & "-" & ProductName & ")"
+                    Dim lineSeries2 As New LineSeries()
+                    Me.RadChartLines.Area.View.Palette = KnownPalette.Metro
+                    lineSeries2.Name = dt.Columns(3).ColumnName
+                    lineSeries2.PointSize = New SizeF(5, 5)
+                    lineSeries2.BorderWidth = 2
+                    lineSeries2.ValueMember = dt.Columns(2).ColumnName
+                    lineSeries2.CategoryMember = dt.Columns(1).ColumnName
+                    lineSeries2.DataSource = dt
+                    Me.RadChartLines.Series.Add(lineSeries2)
+                Next
+            Else
+                RadChartLines.Series.Clear()
+            End If
+        Catch ex As Exception
+            Disconnect()
+            MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
+
+    Private Sub UIProductSalesvsTarget_Load(sender As Object, e As EventArgs) Handles Me.Load
+        '  Me.AutoScroll = True
+        LoadActualProductPerMonth(m_TerritoryCode, m_ProductCode, m_ProductName)
+    End Sub
+
+    Private Sub RadChartLines_Click(sender As Object, e As EventArgs) Handles RadChartLines.Click
+
+    End Sub
+End Class

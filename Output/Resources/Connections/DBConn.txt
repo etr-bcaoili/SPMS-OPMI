@@ -1,0 +1,1 @@
+Provider=SQLOLEDB.1;Persist Security Info=False;User ID=sa; Password = p@ssw0rd;Initial Catalog=SPSMSALDRTZ;Data Source=ETRWS01\SQLR2

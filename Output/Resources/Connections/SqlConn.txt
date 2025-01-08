@@ -1,0 +1,1 @@
+data source=ETRWS01\SQLR2; initial catalog=SPSMSALDRTZ; user id=sa; password=p@ssw0rd;

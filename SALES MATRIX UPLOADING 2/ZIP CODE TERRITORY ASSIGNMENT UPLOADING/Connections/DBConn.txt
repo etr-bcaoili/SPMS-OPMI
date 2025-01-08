@@ -1,0 +1,1 @@
+Provider=SQLOLEDB.1;Persist Security Info=False;User ID=sa; Password = gl3nm@rk;Initial Catalog=spms;Data Source=gpi-dc1\etr

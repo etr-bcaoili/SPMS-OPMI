@@ -1,0 +1,2 @@
+alter table rawdata
+alter column CustomerDeliveryCode VARCHAR(4) NOT NULL

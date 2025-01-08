@@ -1,0 +1,1799 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CC61DB34-6370-4DF6-BC89-165093A140A4}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>SPMS.MainWindow</StartupObject>
+    <RootNamespace>SPMS</RootNamespace>
+    <AssemblyName>SPMS</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsFormsWithCustomSubMain</MyType>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionStrict>Off</OptionStrict>
+    <OptionInfer>On</OptionInfer>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+    <ManifestCertificateThumbprint>988CB3951E9A53529B961DE04C0ADD7A683A2A26</ManifestCertificateThumbprint>
+    <ManifestKeyFile>SPMS_TemporaryKey.pfx</ManifestKeyFile>
+    <GenerateManifests>true</GenerateManifests>
+    <SignManifests>true</SignManifests>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ProductName>SPMS</ProductName>
+    <PublisherName>ETR Philippines</PublisherName>
+    <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
+    <AutorunEnabled>true</AutorunEnabled>
+    <ApplicationRevision>2</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>SPMS.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>SPMS.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Accessibility" />
+    <Reference Include="Althea.Base.UI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Enterprise.Framework, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Enterprise.InfoStore, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Shared, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="ETRSKL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics2.Excel.v8.2, Version=8.2.20082.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Release\Infragistics2.Excel.v8.2.dll</HintPath>
+    </Reference>
+    <Reference Include="Infragistics2.Shared.v8.2, Version=8.2.20082.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Release\Infragistics2.Shared.v8.2.dll</HintPath>
+    </Reference>
+    <Reference Include="Infragistics2.Win.UltraWinGrid.ExcelExport.v8.2, Version=8.2.20082.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Release\Infragistics2.Win.UltraWinGrid.ExcelExport.v8.2.dll</HintPath>
+    </Reference>
+    <Reference Include="Infragistics2.Win.UltraWinGrid.v8.2, Version=8.2.20082.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Release\Infragistics2.Win.UltraWinGrid.v8.2.dll</HintPath>
+    </Reference>
+    <Reference Include="Infragistics2.Win.v8.2, Version=8.2.20082.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Release\Infragistics2.Win.v8.2.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.Microsoft.Office.Core, Version=2.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Interop.Microsoft.Office.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.Microsoft.Office.Interop.Excel, Version=1.6.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Interop.Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.VBIDE, Version=5.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Interop.VBIDE.dll</HintPath>
+    </Reference>
+    <Reference Include="JLCLibrary, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Services, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\WINDOWS\assembly\GAC_MSIL\System.Web.Services\2.0.0.0__b03f5f7f11d50a3a\System.Web.Services.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Althea.Base.UI" />
+    <Import Include="Infragistics.Shared" />
+    <Import Include="Infragistics.Win" />
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Cache Classes\CustomerMappingClassCache.vb" />
+    <Compile Include="Cache Classes\CustomerMappingOverlappingCache.vb" />
+    <Compile Include="Cache Classes\ExpenseTypeCache.vb" />
+    <Compile Include="Cache Classes\SalesMatrixCache.vb" />
+    <Compile Include="Cache Classes\SingleCustomerMappingCache.vb" />
+    <Compile Include="Data Layer\CustMap\Sharing.vb" />
+    <Compile Include="Data Layer\CustMap\SharingCompany.vb" />
+    <Compile Include="Data Layer\Expense\SystemSequences.vb" />
+    <Compile Include="Data Layer\Expense\Expense.vb" />
+    <Compile Include="Data Layer\Expense\ExpenseDetails.vb" />
+    <Compile Include="Data Layer\Expense\ExpenseRawData.vb" />
+    <Compile Include="Data Layer\InfraReporting\InfraReporting.vb" />
+    <Compile Include="Data Layer\Interfaces\IStandardPage.vb" />
+    <Compile Include="Data Layer\Item Cost\ItemCosting.vb" />
+    <Compile Include="Data Layer\Item Cost\ItemCostingDetails.vb" />
+    <Compile Include="Data Layer\Medical Rep\MedicalRep.vb" />
+    <Compile Include="Data Layer\Particulars\Particulars.vb" />
+    <Compile Include="Form1.designer.vb">
+      <DependentUpon>Form1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin Utility\AdminReferenceTable.Designer.vb">
+      <DependentUpon>AdminReferenceTable.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin Utility\AdminReferenceTable.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin Utility\CustMapping.designer.vb">
+      <DependentUpon>CustMapping.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin Utility\CustMapping.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin Utility\CustomerMappingCopyFrom.Designer.vb">
+      <DependentUpon>CustomerMappingCopyFrom.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin Utility\CustomerMappingCopyFrom.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin Utility\DatabaseConnection.Designer.vb">
+      <DependentUpon>DatabaseConnection.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin Utility\DatabaseConnection.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin Utility\ItemCostUploader.Designer.vb">
+      <DependentUpon>ItemCostUploader.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin Utility\ItemCostUploader.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin Utility\MRTerritoryAssignmentCopyFrom.Designer.vb">
+      <DependentUpon>MRTerritoryAssignmentCopyFrom.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin Utility\MRTerritoryAssignmentCopyFrom.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin Utility\SalesSharingCopyFrom.Designer.vb">
+      <DependentUpon>SalesSharingCopyFrom.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin Utility\SalesSharingCopyFrom.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin Utility\ucDatabaseConnection.Designer.vb">
+      <DependentUpon>ucDatabaseConnection.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin Utility\ucDatabaseConnection.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin Utility\UCMonthEndClosing.designer.vb">
+      <DependentUpon>UCMonthEndClosing.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin Utility\UCMonthEndClosing.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin Utility\UCResetPassword.Designer.vb">
+      <DependentUpon>UCResetPassword.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin Utility\UCResetPassword.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin Utility\UCScriptUpdater.Designer.vb">
+      <DependentUpon>UCScriptUpdater.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin Utility\UCScriptUpdater.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin Utility\UCUserCreator.Designer.vb">
+      <DependentUpon>UCUserCreator.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin Utility\UCUserCreator.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin Utility\UserAdminLogIn.Designer.vb">
+      <DependentUpon>UserAdminLogIn.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin Utility\UserAdminLogIn.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin Utility\UserLogin.Designer.vb">
+      <DependentUpon>UserLogin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin Utility\UserLogin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin Utility\UserStatusReset.Designer.vb">
+      <DependentUpon>UserStatusReset.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin Utility\UserStatusReset.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin Utility\ZipCodeTerritoryMappingCopyFrom.Designer.vb">
+      <DependentUpon>ZipCodeTerritoryMappingCopyFrom.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin Utility\ZipCodeTerritoryMappingCopyFrom.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Administration\AdministrationCustomerMappingSearchTerritory.designer.vb">
+      <DependentUpon>AdministrationCustomerMappingSearchTerritory.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Administration\AdministrationCustomerMappingSearchTerritory.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Administration\SharingMapping.designer.vb">
+      <DependentUpon>SharingMapping.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Administration\SharingMapping.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Administration\ucAdministrationCalendar.Designer.vb">
+      <DependentUpon>ucAdministrationCalendar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Administration\ucAdministrationCalendar.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Administration\ucAdministrationCustomerMapping.designer.vb">
+      <DependentUpon>ucAdministrationCustomerMapping.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Administration\ucAdministrationCustomerMapping.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Administration\ucAdministrationSalesMatrix.Designer.vb">
+      <DependentUpon>ucAdministrationSalesMatrix.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Administration\ucAdministrationSalesMatrix.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Administration\ucCompany.Designer.vb">
+      <DependentUpon>ucCompany.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Administration\ucCompany.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Administration\UCSalesCreditExclusion.Designer.vb">
+      <DependentUpon>UCSalesCreditExclusion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Administration\UCSalesCreditExclusion.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Administration\UCTerritoryItemTargetPerDistributor.designer.vb">
+      <DependentUpon>UCTerritoryItemTargetPerDistributor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Administration\UCTerritoryItemTargetPerDistributor.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Administration\ucUploadedRawdata.Designer.vb">
+      <DependentUpon>ucUploadedRawdata.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Administration\ucUploadedRawdata.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Administration\UCUserSchema.Designer.vb">
+      <DependentUpon>UCUserSchema.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Administration\UCUserSchema.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Administration\UCUtilityForCustDivItemSales.designer.vb">
+      <DependentUpon>UCUtilityForCustDivItemSales.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Administration\UCUtilityForCustDivItemSales.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Administration\UCVatMaintenance.Designer.vb">
+      <DependentUpon>UCVatMaintenance.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Administration\UCVatMaintenance.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Expense\ExpenseUploader.Designer.vb">
+      <DependentUpon>ExpenseUploader.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Expense\ExpenseUploader.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Expense\UCExpense.Designer.vb">
+      <DependentUpon>UCExpense.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Expense\UCExpense.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Inquiry\ucCustomerMappingInquiry.Designer.vb">
+      <DependentUpon>ucCustomerMappingInquiry.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Inquiry\ucCustomerMappingInquiry.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Inquiry\UCCustomerMappingListing.Designer.vb">
+      <DependentUpon>UCCustomerMappingListing.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Inquiry\UCCustomerMappingListing.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Inquiry\UCUploadingFormat.Designer.vb">
+      <DependentUpon>UCUploadingFormat.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Inquiry\UCUploadingFormat.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Master Files\ItemMapping.designer.vb">
+      <DependentUpon>ItemMapping.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Master Files\ItemMapping.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Master Files\Reports\Profit And Loss\UCReportProfitAndLoss.Designer.vb">
+      <DependentUpon>UCReportProfitAndLoss.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Master Files\Reports\Profit And Loss\UCReportProfitAndLoss.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Master Files\Reports\Sales Performance\UCReportPerformanceMonthWise_DistrictProductWise.Designer.vb">
+      <DependentUpon>UCReportPerformanceMonthWise_DistrictProductWise.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Master Files\Reports\Sales Performance\UCReportPerformanceMonthWise_DistrictProductWise.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Master Files\Reports\Sales Performance\UCReportPerformanceMonthWise_DistrictWise.Designer.vb">
+      <DependentUpon>UCReportPerformanceMonthWise_DistrictWise.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Master Files\Reports\Sales Performance\UCReportPerformanceMonthWise_DistrictWise.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Master Files\Reports\Sales Performance\UCReportPerformanceMonthWise_MRWise.Designer.vb">
+      <DependentUpon>UCReportPerformanceMonthWise_MRWise.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Master Files\Reports\Sales Performance\UCReportPerformanceMonthWise_MRWise.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Master Files\Reports\Sales Performance\UCReportPerformanceMonthWise_TerritoryProductWise.Designer.vb">
+      <DependentUpon>UCReportPerformanceMonthWise_TerritoryProductWise.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Master Files\Reports\Sales Performance\UCReportPerformanceMonthWise_TerritoryProductWise.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Master Files\Reports\Sales Performance\UCReportPerformanceTerritoryWise.Designer.vb">
+      <DependentUpon>UCReportPerformanceTerritoryWise.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Master Files\Reports\Sales Performance\UCReportPerformanceTerritoryWise.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Master Files\Reports\torrent reports\ucMonthlyReport.Designer.vb">
+      <DependentUpon>ucMonthlyReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Master Files\Reports\torrent reports\ucMonthlyReport.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Master Files\Reports\UCGrossProfitAnalysis.Designer.vb">
+      <DependentUpon>UCGrossProfitAnalysis.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Master Files\Reports\UCGrossProfitAnalysis.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Master Files\Reports\ucMercuryPerRepPerBranch.Designer.vb">
+      <DependentUpon>ucMercuryPerRepPerBranch.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Master Files\Reports\ucMercuryPerRepPerBranch.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Master Files\Reports\UCReportGeographicalMap.Designer.vb">
+      <DependentUpon>UCReportGeographicalMap.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Master Files\Reports\UCReportGeographicalMap.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Master Files\Reports\ucReportItemDetailmanComparative.Designer.vb">
+      <DependentUpon>ucReportItemDetailmanComparative.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Master Files\Reports\ucReportItemDetailmanComparative.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Master Files\Reports\UCReportItemSalesWithTarget.Designer.vb">
+      <DependentUpon>UCReportItemSalesWithTarget.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Master Files\Reports\UCReportItemSalesWithTarget.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Master Files\Reports\UCReportMasterFileDownload.designer.vb">
+      <DependentUpon>UCReportMasterFileDownload.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Master Files\Reports\UCReportMasterFileDownload.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Master Files\Reports\UCReportMasterSalesMatrix.Designer.vb">
+      <DependentUpon>UCReportMasterSalesMatrix.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Master Files\Reports\UCReportMasterSalesMatrix.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Master Files\Reports\ucReportMercury.Designer.vb">
+      <DependentUpon>ucReportMercury.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Master Files\Reports\ucReportMercury.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Master Files\Reports\UCReportSalesAchievementTransactionTypeWise.Designer.vb">
+      <DependentUpon>UCReportSalesAchievementTransactionTypeWise.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Master Files\Reports\UCReportSalesAchievementTransactionTypeWise.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Master Files\Reports\UCReportSalesComparison.Designer.vb">
+      <DependentUpon>UCReportSalesComparison.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Master Files\Reports\UCReportSalesComparison.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Master Files\Reports\UCReportSalesSharing.Designer.vb">
+      <DependentUpon>UCReportSalesSharing.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Master Files\Reports\UCReportSalesSharing.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Master Files\Reports\UCReportSalesSummaryAllTerritory.Designer.vb">
+      <DependentUpon>UCReportSalesSummaryAllTerritory.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Master Files\Reports\UCReportSalesSummaryAllTerritory.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Master Files\Reports\UCReportSalesSummaryByChannel.designer.vb">
+      <DependentUpon>UCReportSalesSummaryByChannel.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Master Files\Reports\UCReportSalesSummaryByChannel.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Master Files\Reports\UCReportSalesSummaryByCompany.Designer.vb">
+      <DependentUpon>UCReportSalesSummaryByCompany.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Master Files\Reports\UCReportSalesSummaryByCompany.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Master Files\Reports\UCReportSalesSummaryByCompanyPerMedrep.Designer.vb">
+      <DependentUpon>UCReportSalesSummaryByCompanyPerMedrep.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Master Files\Reports\UCReportSalesSummaryByCompanyPerMedrep.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Master Files\Reports\UCReportSalesSummarybyDistrict.Designer.vb">
+      <DependentUpon>UCReportSalesSummarybyDistrict.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Master Files\Reports\UCReportSalesSummarybyDistrict.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Master Files\Reports\UCReportSalesSummaryByRegion.Designer.vb">
+      <DependentUpon>UCReportSalesSummaryByRegion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Master Files\Reports\UCReportSalesSummaryByRegion.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Master Files\Reports\UCReportSalesSummarybySalesCategory.Designer.vb">
+      <DependentUpon>UCReportSalesSummarybySalesCategory.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Master Files\Reports\UCReportSalesSummarybySalesCategory.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Master Files\Reports\ucReportSalesSummaryDistrict.Designer.vb">
+      <DependentUpon>ucReportSalesSummaryDistrict.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Master Files\Reports\ucReportSalesSummaryDistrict.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Master Files\Reports\UCReportSalesSummaryPerProduct.Designer.vb">
+      <DependentUpon>UCReportSalesSummaryPerProduct.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Master Files\Reports\UCReportSalesSummaryPerProduct.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Master Files\Reports\UCReportSalesSummaryperProductperDistrict.Designer.vb">
+      <DependentUpon>UCReportSalesSummaryperProductperDistrict.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Master Files\Reports\UCReportSalesSummaryperProductperDistrict.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Master Files\Reports\UCReportSalesSummaryPerProductTerritory.Designer.vb">
+      <DependentUpon>UCReportSalesSummaryPerProductTerritory.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Master Files\Reports\UCReportSalesSummaryPerProductTerritory.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Master Files\Reports\UCReportSalesSummaryperTerritoryDistrict.Designer.vb">
+      <DependentUpon>UCReportSalesSummaryperTerritoryDistrict.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Master Files\Reports\UCReportSalesSummaryperTerritoryDistrict.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Master Files\Reports\UCReportSalesSummaryPerTerritoryProduct.Designer.vb">
+      <DependentUpon>UCReportSalesSummaryPerTerritoryProduct.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Master Files\Reports\UCReportSalesSummaryPerTerritoryProduct.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Master Files\Reports\UCReportSalesSummaryProductRegion.Designer.vb">
+      <DependentUpon>UCReportSalesSummaryProductRegion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Master Files\Reports\UCReportSalesSummaryProductRegion.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Master Files\Reports\UCreportSalesSummaryTerritoryRegion.Designer.vb">
+      <DependentUpon>UCreportSalesSummaryTerritoryRegion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Master Files\Reports\UCreportSalesSummaryTerritoryRegion.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Master Files\Reports\UCReportSalesTransactionforThePeriodofAll.Designer.vb">
+      <DependentUpon>UCReportSalesTransactionforThePeriodofAll.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Master Files\Reports\UCReportSalesTransactionforThePeriodofAll.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Master Files\Reports\UCReportSalesAchievementTerritoryWise.Designer.vb">
+      <DependentUpon>UCReportSalesAchievementTerritoryWise.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Master Files\Reports\UCReportSalesAchievementTerritoryWise.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Master Files\Reports\ucSalesSummaryPerChannelPerCustomer.Designer.vb">
+      <DependentUpon>ucSalesSummaryPerChannelPerCustomer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Master Files\Reports\ucSalesSummaryPerChannelPerCustomer.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Master Files\Reports\ucSalesTransactionByChannel.Designer.vb">
+      <DependentUpon>ucSalesTransactionByChannel.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Master Files\Reports\ucSalesTransactionByChannel.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Master Files\Reports\ucSalestransactionByDistrict.Designer.vb">
+      <DependentUpon>ucSalestransactionByDistrict.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Master Files\Reports\ucSalestransactionByDistrict.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Master Files\Reports\UCSTD Sales Per Product MTD_QTD_YTD.Designer.vb">
+      <DependentUpon>UCSTD Sales Per Product MTD_QTD_YTD.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Master Files\Reports\UCSTD Sales Per Product MTD_QTD_YTD.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Master Files\ucSalesTransactionByRegion.Designer.vb">
+      <DependentUpon>ucSalesTransactionByRegion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Master Files\ucSalesTransactionByRegion.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Master Files\Reports\ucSalesTransactionByTerritoryCode.Designer.vb">
+      <DependentUpon>ucSalesTransactionByTerritoryCode.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Master Files\Reports\ucSalesTransactionByTerritoryCode.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Master Files\Reports\ucSalesTransactionTransactionType.Designer.vb">
+      <DependentUpon>ucSalesTransactionTransactionType.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Master Files\Reports\ucSalesTransactionTransactionType.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Master Files\UCDistributorItems.Designer.vb">
+      <DependentUpon>UCDistributorItems.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Master Files\UCDistributorItems.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Master Files\UCDSMDistrictAssigment.Designer.vb">
+      <DependentUpon>UCDSMDistrictAssigment.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Master Files\UCDSMDistrictAssigment.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Master Files\ucMasterCustomer.Designer.vb">
+      <DependentUpon>ucMasterCustomer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Master Files\ucMasterCustomer.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Master Files\ucMasterItem.designer.vb">
+      <DependentUpon>ucMasterItem.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Master Files\ucMasterItem.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Master Files\ucMasterItemDivision.Designer.vb">
+      <DependentUpon>ucMasterItemDivision.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Master Files\ucMasterItemDivision.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Master Files\ucMasterCustomerGroup.Designer.vb">
+      <DependentUpon>ucMasterCustomerGroup.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Master Files\ucMasterCustomerGroup.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Master Files\ucMasterItemClass.Designer.vb">
+      <DependentUpon>ucMasterItemClass.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Master Files\ucMasterItemClass.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Master Files\ucMasterItemGroup.Designer.vb">
+      <DependentUpon>ucMasterItemGroup.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Master Files\ucMasterItemGroup.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Master Files\ucMasterCustomerShipTo.Designer.vb">
+      <DependentUpon>ucMasterCustomerShipTo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Master Files\ucMasterCustomerShipTo.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Master Files\UCMasterZipCodeAssignmentToTerritory.Designer.vb">
+      <DependentUpon>UCMasterZipCodeAssignmentToTerritory.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Master Files\UCMasterZipCodeAssignmentToTerritory.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Master Files\Reports\ucSalesFlash.Designer.vb">
+      <DependentUpon>ucSalesFlash.vb</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Forms\Master Files\Reports\ucSalesFlash.vb">
+      <SubType>UserControl</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Forms\Particulars\UCParticulars.designer.vb">
+      <DependentUpon>UCParticulars.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Particulars\UCParticulars.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Search form\SearchDialog1.designer.vb">
+      <DependentUpon>SearchDialog1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Search form\SearchDialog1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Search form\SearchLinkedCustomer.Designer.vb">
+      <DependentUpon>SearchLinkedCustomer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Search form\SearchLinkedCustomer.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Torrent Utility\TorrentUtility.Designer.vb">
+      <DependentUpon>TorrentUtility.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Torrent Utility\TorrentUtility.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Transaction Files\AutoCreateSharing.Designer.vb">
+      <DependentUpon>AutoCreateSharing.vb</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Forms\Transaction Files\AutoCreateSharing.vb">
+      <SubType>Form</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Forms\Transaction Files\SalesTerritoryMappingAnalysis.Designer.vb">
+      <DependentUpon>SalesTerritoryMappingAnalysis.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Transaction Files\SalesTerritoryMappingAnalysis.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Transaction Files\UCRawDataAnalyzer.designer.vb">
+      <DependentUpon>UCRawDataAnalyzer.vb</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Forms\Transaction Files\UCRawDataAnalyzer.vb">
+      <SubType>UserControl</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Forms\Transaction Files\ucTransactionSalesSharing.Designer.vb">
+      <DependentUpon>ucTransactionSalesSharing.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Transaction Files\ucTransactionSalesSharing.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Transaction Files\ucUploader.Designer.vb">
+      <DependentUpon>ucUploader.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Transaction Files\ucUploader.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Search form\FindSalesManager.Designer.vb">
+      <DependentUpon>FindSalesManager.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Search form\FindSalesManager.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Master Files\ucMasterCityProvince.Designer.vb">
+      <DependentUpon>ucMasterCityProvince.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Master Files\ucMasterCityProvince.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Master Files\ucMasterCustomerClass.Designer.vb">
+      <DependentUpon>ucMasterCustomerClass.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Master Files\ucMasterCustomerClass.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Master Files\ucMasterRegion.Designer.vb">
+      <DependentUpon>ucMasterRegion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Master Files\ucMasterRegion.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Master Files\ucMasterMunicipalityLocation.Designer.vb">
+      <DependentUpon>ucMasterMunicipalityLocation.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Master Files\ucMasterMunicipalityLocation.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Master Files\ucMasterSTAreaCoverage.Designer.vb">
+      <DependentUpon>ucMasterSTAreaCoverage.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Master Files\ucMasterSTAreaCoverage.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Master Files\ucMasterSTDistrict.Designer.vb">
+      <DependentUpon>ucMasterSTDistrict.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Master Files\ucMasterSTDistrict.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Master Files\ucMasterSTMedicalRep.Designer.vb">
+      <DependentUpon>ucMasterSTMedicalRep.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Master Files\ucMasterSTMedicalRep.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Master Files\ucMasterSTRegion.Designer.vb">
+      <DependentUpon>ucMasterSTRegion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Master Files\ucMasterSTRegion.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Master Files\ucMasterSTTeam.Designer.vb">
+      <DependentUpon>ucMasterSTTeam.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Master Files\ucMasterSTTeam.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Master Files\ucMasterZipCode.Designer.vb">
+      <DependentUpon>ucMasterZipCode.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Master Files\ucMasterZipCode.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Master Files\ucMasterSTSalesManager.Designer.vb">
+      <DependentUpon>ucMasterSTSalesManager.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Master Files\ucMasterSTSalesManager.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Search form\TransactionSalesSharingSearchTerritory.Designer.vb">
+      <DependentUpon>TransactionSalesSharingSearchTerritory.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Search form\TransactionSalesSharingSearchTerritory.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InfraReporting\Calendar.Designer.vb">
+      <DependentUpon>Calendar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="InfraReporting\Calendar.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InfraReporting\fromMainInfraReporting.Designer.vb">
+      <DependentUpon>fromMainInfraReporting.vb</DependentUpon>
+    </Compile>
+    <Compile Include="InfraReporting\fromMainInfraReporting.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="InfraReporting\ReportMaintenance.designer.vb">
+      <DependentUpon>ReportMaintenance.vb</DependentUpon>
+    </Compile>
+    <Compile Include="InfraReporting\ReportMaintenance.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InfraReporting\SelectColumns.Designer.vb">
+      <DependentUpon>SelectColumns.vb</DependentUpon>
+    </Compile>
+    <Compile Include="InfraReporting\SelectColumns.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InfraReporting\UCInfraReport.Designer.vb">
+      <DependentUpon>UCInfraReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="InfraReporting\UCInfraReport.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="InfraReporting\UCInfraReportResult.Designer.vb">
+      <DependentUpon>UCInfraReportResult.vb</DependentUpon>
+    </Compile>
+    <Compile Include="InfraReporting\UCInfraReportResult.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MainWindow.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainWindow.Designer.vb">
+      <DependentUpon>MainWindow.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\ConnectionModule.vb" />
+    <Compile Include="Modules\ErrorMessagesModule.vb" />
+    <Compile Include="Modules\ForDeletes.vb" />
+    <Compile Include="Modules\GlobalFunctionsModule.vb" />
+    <Compile Include="Modules\InformationMessagesModule.vb" />
+    <Compile Include="Modules\ReportClass\CExcelHeader.vb" />
+    <Compile Include="Modules\SelectionTag.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Modules\ReportClass\CEnumeration.vb" />
+    <Compile Include="Modules\ReportClass\CReportPrint.vb" />
+    <Compile Include="Modules\ReportClass\FormLoading.Designer.vb">
+      <DependentUpon>FormLoading.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\ReportClass\FormLoading.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SPMSDataSet.Designer.vb" />
+    <Compile Include="UCFromToSMEMSYEY.Designer.vb">
+      <DependentUpon>UCFromToSMEMSYEY.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UCFromToSMEMSYEY.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin Utility\CustMapping.resx">
+      <DependentUpon>CustMapping.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin Utility\CustomerMappingCopyFrom.resx">
+      <DependentUpon>CustomerMappingCopyFrom.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin Utility\DatabaseConnection.resx">
+      <DependentUpon>DatabaseConnection.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin Utility\ItemCostUploader.resx">
+      <DependentUpon>ItemCostUploader.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin Utility\MRTerritoryAssignmentCopyFrom.resx">
+      <DependentUpon>MRTerritoryAssignmentCopyFrom.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin Utility\SalesSharingCopyFrom.resx">
+      <DependentUpon>SalesSharingCopyFrom.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin Utility\ucDatabaseConnection.resx">
+      <DependentUpon>ucDatabaseConnection.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin Utility\UCMonthEndClosing.resx">
+      <DependentUpon>UCMonthEndClosing.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin Utility\UCResetPassword.resx">
+      <DependentUpon>UCResetPassword.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin Utility\UCScriptUpdater.resx">
+      <DependentUpon>UCScriptUpdater.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin Utility\UCUserCreator.resx">
+      <DependentUpon>UCUserCreator.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin Utility\UserAdminLogIn.resx">
+      <DependentUpon>UserAdminLogIn.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin Utility\UserLogin.resx">
+      <DependentUpon>UserLogin.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin Utility\UserStatusReset.resx">
+      <DependentUpon>UserStatusReset.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin Utility\ZipCodeTerritoryMappingCopyFrom.resx">
+      <DependentUpon>ZipCodeTerritoryMappingCopyFrom.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Administration\AdministrationCustomerMappingSearchTerritory.resx">
+      <DependentUpon>AdministrationCustomerMappingSearchTerritory.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Administration\SharingMapping.resx">
+      <DependentUpon>SharingMapping.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Administration\ucAdministrationCalendar.resx">
+      <DependentUpon>ucAdministrationCalendar.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Administration\ucAdministrationCustomerMapping.resx">
+      <DependentUpon>ucAdministrationCustomerMapping.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Administration\ucAdministrationSalesMatrix.resx">
+      <DependentUpon>ucAdministrationSalesMatrix.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Administration\ucCompany.resx">
+      <DependentUpon>ucCompany.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Administration\UCSalesCreditExclusion.resx">
+      <DependentUpon>UCSalesCreditExclusion.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Administration\UCTerritoryItemTargetPerDistributor.resx">
+      <DependentUpon>UCTerritoryItemTargetPerDistributor.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Administration\ucUploadedRawdata.resx">
+      <DependentUpon>ucUploadedRawdata.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Administration\UCUserSchema.resx">
+      <DependentUpon>UCUserSchema.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Administration\UCUtilityForCustDivItemSales.resx">
+      <DependentUpon>UCUtilityForCustDivItemSales.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Administration\UCVatMaintenance.resx">
+      <DependentUpon>UCVatMaintenance.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Expense\ExpenseUploader.resx">
+      <DependentUpon>ExpenseUploader.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Expense\UCExpense.resx">
+      <DependentUpon>UCExpense.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Inquiry\ucCustomerMappingInquiry.resx">
+      <DependentUpon>ucCustomerMappingInquiry.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Inquiry\UCCustomerMappingListing.resx">
+      <DependentUpon>UCCustomerMappingListing.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Inquiry\UCUploadingFormat.resx">
+      <DependentUpon>UCUploadingFormat.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Master Files\ItemMapping.resx">
+      <DependentUpon>ItemMapping.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Master Files\Reports\Profit And Loss\UCReportProfitAndLoss.resx">
+      <DependentUpon>UCReportProfitAndLoss.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Master Files\Reports\Sales Performance\UCReportPerformanceMonthWise_DistrictProductWise.resx">
+      <DependentUpon>UCReportPerformanceMonthWise_DistrictProductWise.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Master Files\Reports\Sales Performance\UCReportPerformanceMonthWise_DistrictWise.resx">
+      <DependentUpon>UCReportPerformanceMonthWise_DistrictWise.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Master Files\Reports\Sales Performance\UCReportPerformanceMonthWise_MRWise.resx">
+      <DependentUpon>UCReportPerformanceMonthWise_MRWise.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Master Files\Reports\Sales Performance\UCReportPerformanceMonthWise_TerritoryProductWise.resx">
+      <DependentUpon>UCReportPerformanceMonthWise_TerritoryProductWise.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Master Files\Reports\Sales Performance\UCReportPerformanceTerritoryWise.resx">
+      <DependentUpon>UCReportPerformanceTerritoryWise.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Master Files\Reports\torrent reports\ucMonthlyReport.resx">
+      <DependentUpon>ucMonthlyReport.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Master Files\Reports\UCGrossProfitAnalysis.resx">
+      <DependentUpon>UCGrossProfitAnalysis.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Master Files\Reports\ucMercuryPerRepPerBranch.resx">
+      <DependentUpon>ucMercuryPerRepPerBranch.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Master Files\Reports\UCReportGeographicalMap.resx">
+      <DependentUpon>UCReportGeographicalMap.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Master Files\Reports\ucReportItemDetailmanComparative.resx">
+      <DependentUpon>ucReportItemDetailmanComparative.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Master Files\Reports\UCReportItemSalesWithTarget.resx">
+      <DependentUpon>UCReportItemSalesWithTarget.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Master Files\Reports\UCReportMasterFileDownload.resx">
+      <DependentUpon>UCReportMasterFileDownload.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Master Files\Reports\UCReportMasterSalesMatrix.resx">
+      <DependentUpon>UCReportMasterSalesMatrix.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Master Files\Reports\ucReportMercury.resx">
+      <DependentUpon>ucReportMercury.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Master Files\Reports\UCReportSalesAchievementTransactionTypeWise.resx">
+      <DependentUpon>UCReportSalesAchievementTransactionTypeWise.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Master Files\Reports\UCReportSalesComparison.resx">
+      <DependentUpon>UCReportSalesComparison.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Master Files\Reports\UCReportSalesSharing.resx">
+      <DependentUpon>UCReportSalesSharing.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Master Files\Reports\UCReportSalesSummaryAllTerritory.resx">
+      <DependentUpon>UCReportSalesSummaryAllTerritory.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Master Files\Reports\UCReportSalesSummaryByChannel.resx">
+      <DependentUpon>UCReportSalesSummaryByChannel.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Master Files\Reports\UCReportSalesSummaryByCompany.resx">
+      <DependentUpon>UCReportSalesSummaryByCompany.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Master Files\Reports\UCReportSalesSummaryByCompanyPerMedrep.resx">
+      <DependentUpon>UCReportSalesSummaryByCompanyPerMedrep.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Master Files\Reports\UCReportSalesSummarybyDistrict.resx">
+      <DependentUpon>UCReportSalesSummarybyDistrict.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Master Files\Reports\UCReportSalesSummaryByRegion.resx">
+      <DependentUpon>UCReportSalesSummaryByRegion.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Master Files\Reports\UCReportSalesSummarybySalesCategory.resx">
+      <DependentUpon>UCReportSalesSummarybySalesCategory.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Master Files\Reports\ucReportSalesSummaryDistrict.resx">
+      <DependentUpon>ucReportSalesSummaryDistrict.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Master Files\Reports\UCReportSalesSummaryPerProduct.resx">
+      <DependentUpon>UCReportSalesSummaryPerProduct.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Master Files\Reports\UCReportSalesSummaryperProductperDistrict.resx">
+      <DependentUpon>UCReportSalesSummaryperProductperDistrict.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Master Files\Reports\UCReportSalesSummaryPerProductTerritory.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>UCReportSalesSummaryPerProductTerritory.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Master Files\Reports\UCReportSalesSummaryperTerritoryDistrict.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>UCReportSalesSummaryperTerritoryDistrict.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Master Files\Reports\UCReportSalesSummaryPerTerritoryProduct.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>UCReportSalesSummaryPerTerritoryProduct.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Master Files\Reports\UCReportSalesSummaryProductRegion.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>UCReportSalesSummaryProductRegion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Master Files\Reports\UCreportSalesSummaryTerritoryRegion.resx">
+      <DependentUpon>UCreportSalesSummaryTerritoryRegion.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Master Files\Reports\UCReportSalesTransactionforThePeriodofAll.resx">
+      <DependentUpon>UCReportSalesTransactionforThePeriodofAll.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Master Files\Reports\UCReportSalesAchievementTerritoryWise.resx">
+      <DependentUpon>UCReportSalesAchievementTerritoryWise.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Master Files\Reports\ucSalesSummaryPerChannelPerCustomer.resx">
+      <DependentUpon>ucSalesSummaryPerChannelPerCustomer.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Master Files\Reports\ucSalesTransactionByChannel.resx">
+      <DependentUpon>ucSalesTransactionByChannel.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Master Files\Reports\ucSalestransactionByDistrict.resx">
+      <DependentUpon>ucSalestransactionByDistrict.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Master Files\Reports\UCSTD Sales Per Product MTD_QTD_YTD.resx">
+      <DependentUpon>UCSTD Sales Per Product MTD_QTD_YTD.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Master Files\ucSalesTransactionByRegion.resx">
+      <DependentUpon>ucSalesTransactionByRegion.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Master Files\Reports\ucSalesTransactionByTerritoryCode.resx">
+      <DependentUpon>ucSalesTransactionByTerritoryCode.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Master Files\Reports\ucSalesTransactionTransactionType.resx">
+      <DependentUpon>ucSalesTransactionTransactionType.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Master Files\UCDistributorItems.resx">
+      <DependentUpon>UCDistributorItems.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Master Files\UCDSMDistrictAssigment.resx">
+      <DependentUpon>UCDSMDistrictAssigment.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Master Files\ucMasterCustomer.resx">
+      <DependentUpon>ucMasterCustomer.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Master Files\ucMasterItem.resx">
+      <DependentUpon>ucMasterItem.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Master Files\ucMasterItemDivision.resx">
+      <DependentUpon>ucMasterItemDivision.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Master Files\ucMasterCustomerGroup.resx">
+      <DependentUpon>ucMasterCustomerGroup.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Master Files\ucMasterItemClass.resx">
+      <DependentUpon>ucMasterItemClass.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Master Files\ucMasterItemGroup.resx">
+      <DependentUpon>ucMasterItemGroup.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Master Files\ucMasterCustomerShipTo.resx">
+      <DependentUpon>ucMasterCustomerShipTo.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Master Files\UCMasterZipCodeAssignmentToTerritory.resx">
+      <DependentUpon>UCMasterZipCodeAssignmentToTerritory.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Master Files\Reports\ucSalesFlash.resx">
+      <DependentUpon>ucSalesFlash.vb</DependentUpon>
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Particulars\UCParticulars.resx">
+      <DependentUpon>UCParticulars.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Search form\SearchDialog1.resx">
+      <DependentUpon>SearchDialog1.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Search form\SearchLinkedCustomer.resx">
+      <DependentUpon>SearchLinkedCustomer.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Torrent Utility\TorrentUtility.resx">
+      <DependentUpon>TorrentUtility.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Transaction Files\AutoCreateSharing.resx">
+      <DependentUpon>AutoCreateSharing.vb</DependentUpon>
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Transaction Files\SalesTerritoryMappingAnalysis.resx">
+      <DependentUpon>SalesTerritoryMappingAnalysis.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Transaction Files\UCRawDataAnalyzer.resx">
+      <DependentUpon>UCRawDataAnalyzer.vb</DependentUpon>
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Transaction Files\ucTransactionSalesSharing.resx">
+      <DependentUpon>ucTransactionSalesSharing.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Transaction Files\ucUploader.resx">
+      <DependentUpon>ucUploader.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Search form\FindSalesManager.resx">
+      <DependentUpon>FindSalesManager.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Master Files\ucMasterCityProvince.resx">
+      <DependentUpon>ucMasterCityProvince.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Master Files\ucMasterCustomerClass.resx">
+      <DependentUpon>ucMasterCustomerClass.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Master Files\ucMasterRegion.resx">
+      <DependentUpon>ucMasterRegion.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Master Files\ucMasterMunicipalityLocation.resx">
+      <DependentUpon>ucMasterMunicipalityLocation.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Master Files\ucMasterSTAreaCoverage.resx">
+      <DependentUpon>ucMasterSTAreaCoverage.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Master Files\ucMasterSTDistrict.resx">
+      <DependentUpon>ucMasterSTDistrict.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Master Files\ucMasterSTMedicalRep.resx">
+      <DependentUpon>ucMasterSTMedicalRep.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Master Files\ucMasterSTRegion.resx">
+      <DependentUpon>ucMasterSTRegion.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Master Files\ucMasterSTTeam.resx">
+      <DependentUpon>ucMasterSTTeam.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Master Files\ucMasterZipCode.resx">
+      <DependentUpon>ucMasterZipCode.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Master Files\ucMasterSTSalesManager.resx">
+      <DependentUpon>ucMasterSTSalesManager.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Search form\TransactionSalesSharingSearchTerritory.resx">
+      <DependentUpon>TransactionSalesSharingSearchTerritory.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InfraReporting\Calendar.resx">
+      <DependentUpon>Calendar.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InfraReporting\fromMainInfraReporting.resx">
+      <DependentUpon>fromMainInfraReporting.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InfraReporting\ReportMaintenance.resx">
+      <DependentUpon>ReportMaintenance.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InfraReporting\SelectColumns.resx">
+      <DependentUpon>SelectColumns.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InfraReporting\UCInfraReport.resx">
+      <DependentUpon>UCInfraReport.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InfraReporting\UCInfraReportResult.resx">
+      <DependentUpon>UCInfraReportResult.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainWindow.resx">
+      <DependentUpon>MainWindow.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\licenses.licx" />
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\ReportClass\FormLoading.resx">
+      <DependentUpon>FormLoading.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCFromToSMEMSYEY.resx">
+      <DependentUpon>UCFromToSMEMSYEY.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="ADODB">
+      <Guid>{00000200-0000-0010-8000-00AA006D2EA4}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <Private>True</Private>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\app.manifest" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="ClassDiagram2.cd" />
+    <None Include="Resources\1.bmp" />
+    <None Include="Resources\11.bmp" />
+    <None Include="Resources\12.bmp" />
+    <None Include="Resources\Customer.xls" />
+    <None Include="Resources\GPI Default Format.xls" />
+    <None Include="Resources\Template\Customer.xls">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Template\CustomerMapping.xls">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\File.ico" />
+    <None Include="Resources\com.apple.Calendars.small.ico" />
+    <None Include="Resources\add.ico" />
+    <None Include="Resources\delete.ico" />
+    <None Include="Resources\add1.ico" />
+    <None Include="Resources\delete1.ico" />
+    <None Include="Resources\cancel.ico" />
+    <Content Include="Resources\Bitmap1.bmp" />
+    <Content Include="Resources\close copy.ico" />
+    <Content Include="Resources\close copy.jpg" />
+    <Content Include="Resources\COVER GLENMARK DA copy3.jpg" />
+    <Content Include="Resources\CustomerDownloading.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\CustomerMappingDownloading.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\CustomerMappingUploading.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\CustomerUploading.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\ETRPMS.jpg" />
+    <None Include="Resources\etr.jpg" />
+    <Content Include="Resources\ETRSKL.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\excel.jpg" />
+    <Content Include="Resources\GB.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\Header.bmp" />
+    <Content Include="Resources\INH.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\MDI.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Mercury.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\page_edit.ico" />
+    <None Include="Resources\page_edit1.ico" />
+    <None Include="Resources\Template\GPI Default Format.xls">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Template\PriceList.xls">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Printer.ico" />
+    <Content Include="Resources\PriceListDownloading.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PriceListUploading.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\refresh.jpg" />
+    <Content Include="Resources\SalesTargetDownloading.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\SalesTargetUploading.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\save.ico" />
+    <Content Include="Resources\SSD.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\UploaderSetup.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\Template\SalesTarget.xls">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\waltermart121.jpg" />
+    <Content Include="Resources\Watsons.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\ZipCodeTerritoryAssignmentDownloading.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\ZipCodeTerritoryAssignmentUploading.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\WSS_DocLib1.ico" />
+    <None Include="Resources\WSS_DocLib.ico" />
+    <None Include="Resources\Template\Zip Code Territory Assignment.xls">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="SPMSDataSet.xsc">
+      <DependentUpon>SPMSDataSet.xsd</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="SPMSDataSet.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="SPMSDataSet.xss">
+      <DependentUpon>SPMSDataSet.xsd</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="SPMS_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3924545A-F8E2-475A-B1A4-05175BC41E50}" />
+    <Service Include="{967B4E0D-AD0C-4609-AB67-0FA40C0206D8}" />
+  </ItemGroup>
+  <ItemGroup>
+    <PublishFile Include="ADODB">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="ETRSKL">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Interop.Microsoft.Office.Core">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Interop.Microsoft.Office.Interop.Excel">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Interop.VBIDE">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Resources\Connections\DBConn.txt">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Resources\Connections\SqlConn.txt">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Resources\COVER GLENMARK DA copy3.jpg">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Resources\CustomerDownloading.exe">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Resources\CustomerMappingDownloading.exe">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Resources\CustomerMappingUploading.exe">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Resources\CustomerUploading.exe">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Resources\ETRSKL.dll">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Resources\GB.exe">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Resources\INH.exe">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Resources\MDI.exe">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Resources\Mercury.exe">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Resources\PriceListDownloading.exe">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Resources\PriceListUploading.exe">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Resources\SalesTargetDownloading.exe">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Resources\SalesTargetUploading.exe">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Resources\save.ico">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Resources\SSD.exe">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Resources\UploaderSetup.txt">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Resources\Watsons.exe">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Resources\ZipCodeTerritoryAssignmentDownloading.exe">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Resources\ZipCodeTerritoryAssignmentUploading.exe">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>File</FileType>
+    </PublishFile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Data Layer\Bases\" />
+    <Folder Include="Resources\Connections\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
