@@ -22,9 +22,9 @@ Partial Class UCRawDataAnalyzer
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.MainTab = New System.Windows.Forms.TabControl()
         Me.tbEntry = New System.Windows.Forms.TabPage()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -101,6 +101,7 @@ Partial Class UCRawDataAnalyzer
         Me.colCustomerAddress2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.colShipTo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.colShipToName = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CustomerGroup = New System.Windows.Forms.DataGridViewLinkColumn()
         Me.colRegion = New System.Windows.Forms.DataGridViewLinkColumn()
         Me.colProvince = New System.Windows.Forms.DataGridViewLinkColumn()
         Me.colArea = New System.Windows.Forms.DataGridViewLinkColumn()
@@ -120,7 +121,7 @@ Partial Class UCRawDataAnalyzer
         Me.col8ShipToName = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.col8ShipToCustomerAddress1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.col8ShipToAddress2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.col8CustomerGrp = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CustomerGroupShipTo = New System.Windows.Forms.DataGridViewLinkColumn()
         Me.col8Region = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.col8Province = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.col8Municipality = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -280,7 +281,7 @@ Partial Class UCRawDataAnalyzer
         'BasePageHeader1
         '
         Me.BasePageHeader1.HeaderText = "RawData Analyzer"
-        Me.BasePageHeader1.Size = New System.Drawing.Size(1236, 41)
+        Me.BasePageHeader1.Size = New System.Drawing.Size(1388, 41)
         '
         'MainTab
         '
@@ -293,7 +294,7 @@ Partial Class UCRawDataAnalyzer
         Me.MainTab.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.MainTab.Name = "MainTab"
         Me.MainTab.SelectedIndex = 0
-        Me.MainTab.Size = New System.Drawing.Size(1236, 768)
+        Me.MainTab.Size = New System.Drawing.Size(1388, 768)
         Me.MainTab.TabIndex = 16
         '
         'tbEntry
@@ -321,7 +322,7 @@ Partial Class UCRawDataAnalyzer
         Me.tbEntry.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.tbEntry.Name = "tbEntry"
         Me.tbEntry.Padding = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.tbEntry.Size = New System.Drawing.Size(1228, 742)
+        Me.tbEntry.Size = New System.Drawing.Size(1380, 742)
         Me.tbEntry.TabIndex = 0
         Me.tbEntry.Text = "Options"
         '
@@ -358,7 +359,7 @@ Partial Class UCRawDataAnalyzer
         Me.Label1.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(3, 44)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(73, 15)
+        Me.Label1.Size = New System.Drawing.Size(74, 15)
         Me.Label1.TabIndex = 59
         Me.Label1.Text = "ConfigType :"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -388,23 +389,23 @@ Partial Class UCRawDataAnalyzer
         '
         'colSalesQty
         '
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        Me.colSalesQty.DefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        Me.colSalesQty.DefaultCellStyle = DataGridViewCellStyle7
         Me.colSalesQty.HeaderText = "Sales Qty"
         Me.colSalesQty.Name = "colSalesQty"
         Me.colSalesQty.Width = 90
         '
         'colRawSalesQty
         '
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        Me.colRawSalesQty.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        Me.colRawSalesQty.DefaultCellStyle = DataGridViewCellStyle8
         Me.colRawSalesQty.HeaderText = "RawData Qty"
         Me.colRawSalesQty.Name = "colRawSalesQty"
         '
         'colSaleAmount
         '
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        Me.colSaleAmount.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        Me.colSaleAmount.DefaultCellStyle = DataGridViewCellStyle9
         Me.colSaleAmount.HeaderText = "Sales Amount"
         Me.colSaleAmount.Name = "colSaleAmount"
         '
@@ -424,7 +425,7 @@ Partial Class UCRawDataAnalyzer
         Me.lnkBatch.LinkColor = System.Drawing.Color.Orange
         Me.lnkBatch.Location = New System.Drawing.Point(18, 117)
         Me.lnkBatch.Name = "lnkBatch"
-        Me.lnkBatch.Size = New System.Drawing.Size(59, 13)
+        Me.lnkBatch.Size = New System.Drawing.Size(60, 13)
         Me.lnkBatch.TabIndex = 55
         Me.lnkBatch.TabStop = True
         Me.lnkBatch.Text = "Batch No :"
@@ -538,7 +539,7 @@ Partial Class UCRawDataAnalyzer
         Me.tbtasks.Location = New System.Drawing.Point(4, 22)
         Me.tbtasks.Name = "tbtasks"
         Me.tbtasks.Padding = New System.Windows.Forms.Padding(3)
-        Me.tbtasks.Size = New System.Drawing.Size(1228, 742)
+        Me.tbtasks.Size = New System.Drawing.Size(1380, 742)
         Me.tbtasks.TabIndex = 2
         Me.tbtasks.Text = "Tasks"
         Me.tbtasks.UseVisualStyleBackColor = True
@@ -580,7 +581,7 @@ Partial Class UCRawDataAnalyzer
         Me.Panel3.Controls.Add(Me.Label14)
         Me.Panel3.Location = New System.Drawing.Point(12, 100)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(401, 305)
+        Me.Panel3.Size = New System.Drawing.Size(608, 305)
         Me.Panel3.TabIndex = 23
         '
         'chkUnmappedShipto
@@ -608,10 +609,10 @@ Partial Class UCRawDataAnalyzer
         Me.LinkLabel17.AutoSize = True
         Me.LinkLabel17.Location = New System.Drawing.Point(22, 165)
         Me.LinkLabel17.Name = "LinkLabel17"
-        Me.LinkLabel17.Size = New System.Drawing.Size(398, 13)
+        Me.LinkLabel17.Size = New System.Drawing.Size(193, 13)
         Me.LinkLabel17.TabIndex = 40
         Me.LinkLabel17.TabStop = True
-        Me.LinkLabel17.Text = "Customer Ship To(s) without Region or Province or Municipality or Zip Code "
+        Me.LinkLabel17.Text = "Customer Validation Product Group "
         '
         'ProgressBar4
         '
@@ -640,7 +641,7 @@ Partial Class UCRawDataAnalyzer
         Me.lnkAddressProblem.AutoSize = True
         Me.lnkAddressProblem.Location = New System.Drawing.Point(24, 272)
         Me.lnkAddressProblem.Name = "lnkAddressProblem"
-        Me.lnkAddressProblem.Size = New System.Drawing.Size(200, 13)
+        Me.lnkAddressProblem.Size = New System.Drawing.Size(199, 13)
         Me.lnkAddressProblem.TabIndex = 23
         Me.lnkAddressProblem.TabStop = True
         Me.lnkAddressProblem.Text = "Customers without Assigned Territory"
@@ -714,7 +715,7 @@ Partial Class UCRawDataAnalyzer
         Me.lnkUnmappedShipToCustomers.AutoSize = True
         Me.lnkUnmappedShipToCustomers.Location = New System.Drawing.Point(23, 238)
         Me.lnkUnmappedShipToCustomers.Name = "lnkUnmappedShipToCustomers"
-        Me.lnkUnmappedShipToCustomers.Size = New System.Drawing.Size(414, 13)
+        Me.lnkUnmappedShipToCustomers.Size = New System.Drawing.Size(413, 13)
         Me.lnkUnmappedShipToCustomers.TabIndex = 25
         Me.lnkUnmappedShipToCustomers.TabStop = True
         Me.lnkUnmappedShipToCustomers.Text = "Customer Ship To(s) with default Region or Province or Municipality or ZipCode"
@@ -735,7 +736,7 @@ Partial Class UCRawDataAnalyzer
         Me.lnkShipToNotInSystem.AutoSize = True
         Me.lnkShipToNotInSystem.Location = New System.Drawing.Point(24, 77)
         Me.lnkShipToNotInSystem.Name = "lnkShipToNotInSystem"
-        Me.lnkShipToNotInSystem.Size = New System.Drawing.Size(169, 13)
+        Me.lnkShipToNotInSystem.Size = New System.Drawing.Size(168, 13)
         Me.lnkShipToNotInSystem.TabIndex = 34
         Me.lnkShipToNotInSystem.TabStop = True
         Me.lnkShipToNotInSystem.Text = "Ship To Customer not in System"
@@ -820,10 +821,10 @@ Partial Class UCRawDataAnalyzer
         Me.lnkWithoutAgent.AutoSize = True
         Me.lnkWithoutAgent.Location = New System.Drawing.Point(23, 127)
         Me.lnkWithoutAgent.Name = "lnkWithoutAgent"
-        Me.lnkWithoutAgent.Size = New System.Drawing.Size(357, 13)
+        Me.lnkWithoutAgent.Size = New System.Drawing.Size(199, 13)
         Me.lnkWithoutAgent.TabIndex = 24
         Me.lnkWithoutAgent.TabStop = True
-        Me.lnkWithoutAgent.Text = "Customer(s) without Region or Province or Municipality or Zip Code "
+        Me.lnkWithoutAgent.Text = "Customer Validation Original Sharing"
         '
         'lnkCustomersNotInSystem
         '
@@ -894,7 +895,7 @@ Partial Class UCRawDataAnalyzer
         Me.Label14.AutoSize = True
         Me.Label14.Location = New System.Drawing.Point(6, 7)
         Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(553, 13)
+        Me.Label14.Size = New System.Drawing.Size(552, 13)
         Me.Label14.TabIndex = 12
         Me.Label14.Text = "This may take a few minutes depending on the number of options and number of reco" &
     "rds in the raw data."
@@ -950,7 +951,7 @@ Partial Class UCRawDataAnalyzer
         Me.tbListing.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.tbListing.Name = "tbListing"
         Me.tbListing.Padding = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.tbListing.Size = New System.Drawing.Size(1228, 742)
+        Me.tbListing.Size = New System.Drawing.Size(1380, 742)
         Me.tbListing.TabIndex = 1
         Me.tbListing.Text = "Analysis Results"
         Me.tbListing.UseVisualStyleBackColor = True
@@ -972,7 +973,7 @@ Partial Class UCRawDataAnalyzer
         Me.tbPages.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.tbPages.Name = "tbPages"
         Me.tbPages.SelectedIndex = 0
-        Me.tbPages.Size = New System.Drawing.Size(1536, 535)
+        Me.tbPages.Size = New System.Drawing.Size(1434, 535)
         Me.tbPages.TabIndex = 17
         '
         'TabPage1
@@ -985,7 +986,7 @@ Partial Class UCRawDataAnalyzer
         Me.TabPage1.Controls.Add(Me.LinkLabel29)
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
-        Me.TabPage1.Size = New System.Drawing.Size(1528, 509)
+        Me.TabPage1.Size = New System.Drawing.Size(1426, 509)
         Me.TabPage1.TabIndex = 9
         Me.TabPage1.Text = "Page 1"
         Me.TabPage1.UseVisualStyleBackColor = True
@@ -1039,11 +1040,11 @@ Partial Class UCRawDataAnalyzer
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dgCustomerNotintheSystem.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgCustomerNotintheSystem.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.colSelect, Me.colCustomerCode, Me.colCustomerName, Me.colCustomerClass, Me.colCustomerAddress, Me.colCustomerAddress2, Me.colShipTo, Me.colShipToName, Me.colRegion, Me.colProvince, Me.colArea, Me.colZipCode, Me.col1Shared})
+        Me.dgCustomerNotintheSystem.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.colSelect, Me.colCustomerCode, Me.colCustomerName, Me.colCustomerClass, Me.colCustomerAddress, Me.colCustomerAddress2, Me.colShipTo, Me.colShipToName, Me.CustomerGroup, Me.colRegion, Me.colProvince, Me.colArea, Me.colZipCode, Me.col1Shared})
         Me.dgCustomerNotintheSystem.Location = New System.Drawing.Point(3, 27)
         Me.dgCustomerNotintheSystem.Name = "dgCustomerNotintheSystem"
         Me.dgCustomerNotintheSystem.RowHeadersVisible = False
-        Me.dgCustomerNotintheSystem.Size = New System.Drawing.Size(1539, 459)
+        Me.dgCustomerNotintheSystem.Size = New System.Drawing.Size(1222, 459)
         Me.dgCustomerNotintheSystem.TabIndex = 21
         '
         'colSelect
@@ -1098,6 +1099,14 @@ Partial Class UCRawDataAnalyzer
         Me.colShipToName.HeaderText = "Ship To Name"
         Me.colShipToName.Name = "colShipToName"
         '
+        'CustomerGroup
+        '
+        Me.CustomerGroup.HeaderText = "Customer Group"
+        Me.CustomerGroup.Name = "CustomerGroup"
+        Me.CustomerGroup.ReadOnly = True
+        Me.CustomerGroup.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
+        Me.CustomerGroup.Width = 150
+        '
         'colRegion
         '
         Me.colRegion.HeaderText = "Region"
@@ -1144,7 +1153,7 @@ Partial Class UCRawDataAnalyzer
         Me.LinkLabel29.AutoSize = True
         Me.LinkLabel29.Location = New System.Drawing.Point(667, 10)
         Me.LinkLabel29.Name = "LinkLabel29"
-        Me.LinkLabel29.Size = New System.Drawing.Size(245, 13)
+        Me.LinkLabel29.Size = New System.Drawing.Size(244, 13)
         Me.LinkLabel29.TabIndex = 26
         Me.LinkLabel29.TabStop = True
         Me.LinkLabel29.Text = "Create Default Ship To For Selected Customers"
@@ -1159,7 +1168,7 @@ Partial Class UCRawDataAnalyzer
         Me.TabPage8.Controls.Add(Me.dgShipToNotInSystem)
         Me.TabPage8.Location = New System.Drawing.Point(4, 22)
         Me.TabPage8.Name = "TabPage8"
-        Me.TabPage8.Size = New System.Drawing.Size(1545, 509)
+        Me.TabPage8.Size = New System.Drawing.Size(1443, 509)
         Me.TabPage8.TabIndex = 6
         Me.TabPage8.Text = "Page 2"
         Me.TabPage8.UseVisualStyleBackColor = True
@@ -1212,11 +1221,11 @@ Partial Class UCRawDataAnalyzer
         Me.dgShipToNotInSystem.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dgShipToNotInSystem.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgShipToNotInSystem.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.col8Select, Me.col8CustomerCode, Me.col8CustomerName, Me.col8ShipToCode, Me.col8ShipToName, Me.col8ShipToCustomerAddress1, Me.col8ShipToAddress2, Me.col8CustomerGrp, Me.col8Region, Me.col8Province, Me.col8Municipality, Me.col8ZipCode})
+        Me.dgShipToNotInSystem.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.col8Select, Me.col8CustomerCode, Me.col8CustomerName, Me.col8ShipToCode, Me.col8ShipToName, Me.col8ShipToCustomerAddress1, Me.col8ShipToAddress2, Me.CustomerGroupShipTo, Me.col8Region, Me.col8Province, Me.col8Municipality, Me.col8ZipCode})
         Me.dgShipToNotInSystem.Location = New System.Drawing.Point(4, 27)
         Me.dgShipToNotInSystem.Name = "dgShipToNotInSystem"
         Me.dgShipToNotInSystem.RowHeadersVisible = False
-        Me.dgShipToNotInSystem.Size = New System.Drawing.Size(1903, 461)
+        Me.dgShipToNotInSystem.Size = New System.Drawing.Size(1197, 461)
         Me.dgShipToNotInSystem.TabIndex = 15
         '
         'col8Select
@@ -1267,11 +1276,10 @@ Partial Class UCRawDataAnalyzer
         Me.col8ShipToAddress2.ReadOnly = True
         Me.col8ShipToAddress2.Width = 150
         '
-        'col8CustomerGrp
+        'CustomerGroupShipTo
         '
-        Me.col8CustomerGrp.HeaderText = "Cust. Group"
-        Me.col8CustomerGrp.Name = "col8CustomerGrp"
-        Me.col8CustomerGrp.ReadOnly = True
+        Me.CustomerGroupShipTo.HeaderText = "Customer Group"
+        Me.CustomerGroupShipTo.Name = "CustomerGroupShipTo"
         '
         'col8Region
         '
@@ -1310,7 +1318,7 @@ Partial Class UCRawDataAnalyzer
         Me.TabPage9.Controls.Add(Me.dgCompanyItemsNotInSystem)
         Me.TabPage9.Location = New System.Drawing.Point(4, 22)
         Me.TabPage9.Name = "TabPage9"
-        Me.TabPage9.Size = New System.Drawing.Size(1545, 509)
+        Me.TabPage9.Size = New System.Drawing.Size(1443, 509)
         Me.TabPage9.TabIndex = 7
         Me.TabPage9.Text = "Page 4"
         Me.TabPage9.UseVisualStyleBackColor = True
@@ -1376,7 +1384,7 @@ Partial Class UCRawDataAnalyzer
         Me.dgCompanyItemsNotInSystem.Location = New System.Drawing.Point(5, 31)
         Me.dgCompanyItemsNotInSystem.Name = "dgCompanyItemsNotInSystem"
         Me.dgCompanyItemsNotInSystem.RowHeadersVisible = False
-        Me.dgCompanyItemsNotInSystem.Size = New System.Drawing.Size(1902, 456)
+        Me.dgCompanyItemsNotInSystem.Size = New System.Drawing.Size(1800, 456)
         Me.dgCompanyItemsNotInSystem.TabIndex = 17
         '
         'col9Select
@@ -1413,7 +1421,7 @@ Partial Class UCRawDataAnalyzer
         Me.TabPage5.Controls.Add(Me.dgCustomerWithStateAreaTerritory)
         Me.TabPage5.Location = New System.Drawing.Point(4, 22)
         Me.TabPage5.Name = "TabPage5"
-        Me.TabPage5.Size = New System.Drawing.Size(1545, 509)
+        Me.TabPage5.Size = New System.Drawing.Size(1443, 509)
         Me.TabPage5.TabIndex = 3
         Me.TabPage5.Text = "Page 5"
         Me.TabPage5.UseVisualStyleBackColor = True
@@ -1469,10 +1477,10 @@ Partial Class UCRawDataAnalyzer
         Me.dgCustomerWithStateAreaTerritory.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dgCustomerWithStateAreaTerritory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgCustomerWithStateAreaTerritory.Location = New System.Drawing.Point(3, 25)
+        Me.dgCustomerWithStateAreaTerritory.Location = New System.Drawing.Point(-11, 21)
         Me.dgCustomerWithStateAreaTerritory.Name = "dgCustomerWithStateAreaTerritory"
         Me.dgCustomerWithStateAreaTerritory.RowHeadersVisible = False
-        Me.dgCustomerWithStateAreaTerritory.Size = New System.Drawing.Size(1887, 432)
+        Me.dgCustomerWithStateAreaTerritory.Size = New System.Drawing.Size(1785, 432)
         Me.dgCustomerWithStateAreaTerritory.TabIndex = 2
         '
         'TabPage7
@@ -1486,7 +1494,7 @@ Partial Class UCRawDataAnalyzer
         Me.TabPage7.Controls.Add(Me.dgShipToCustomer)
         Me.TabPage7.Location = New System.Drawing.Point(4, 22)
         Me.TabPage7.Name = "TabPage7"
-        Me.TabPage7.Size = New System.Drawing.Size(1545, 509)
+        Me.TabPage7.Size = New System.Drawing.Size(1443, 509)
         Me.TabPage7.TabIndex = 5
         Me.TabPage7.Text = "Page 6"
         Me.TabPage7.UseVisualStyleBackColor = True
@@ -1545,7 +1553,7 @@ Partial Class UCRawDataAnalyzer
         Me.dgShipToCustomer.Location = New System.Drawing.Point(4, 30)
         Me.dgShipToCustomer.Name = "dgShipToCustomer"
         Me.dgShipToCustomer.RowHeadersVisible = False
-        Me.dgShipToCustomer.Size = New System.Drawing.Size(1903, 432)
+        Me.dgShipToCustomer.Size = New System.Drawing.Size(1801, 432)
         Me.dgShipToCustomer.TabIndex = 18
         '
         'TabPage6
@@ -1558,7 +1566,7 @@ Partial Class UCRawDataAnalyzer
         Me.TabPage6.Controls.Add(Me.dgUnmappedCustomers)
         Me.TabPage6.Location = New System.Drawing.Point(4, 22)
         Me.TabPage6.Name = "TabPage6"
-        Me.TabPage6.Size = New System.Drawing.Size(1545, 509)
+        Me.TabPage6.Size = New System.Drawing.Size(1443, 509)
         Me.TabPage6.TabIndex = 4
         Me.TabPage6.Text = "Page 7"
         Me.TabPage6.UseVisualStyleBackColor = True
@@ -1608,7 +1616,7 @@ Partial Class UCRawDataAnalyzer
         Me.dgUnmappedCustomers.Location = New System.Drawing.Point(4, 27)
         Me.dgUnmappedCustomers.Name = "dgUnmappedCustomers"
         Me.dgUnmappedCustomers.RowHeadersVisible = False
-        Me.dgUnmappedCustomers.Size = New System.Drawing.Size(1903, 432)
+        Me.dgUnmappedCustomers.Size = New System.Drawing.Size(1801, 432)
         Me.dgUnmappedCustomers.TabIndex = 3
         '
         'TabPage3
@@ -1621,7 +1629,7 @@ Partial Class UCRawDataAnalyzer
         Me.TabPage3.Controls.Add(Me.dgUnmappedShipToCustomers)
         Me.TabPage3.Location = New System.Drawing.Point(4, 22)
         Me.TabPage3.Name = "TabPage3"
-        Me.TabPage3.Size = New System.Drawing.Size(1545, 509)
+        Me.TabPage3.Size = New System.Drawing.Size(1443, 509)
         Me.TabPage3.TabIndex = 8
         Me.TabPage3.Text = "Page 8"
         Me.TabPage3.UseVisualStyleBackColor = True
@@ -1671,7 +1679,7 @@ Partial Class UCRawDataAnalyzer
         Me.dgUnmappedShipToCustomers.Location = New System.Drawing.Point(4, 32)
         Me.dgUnmappedShipToCustomers.Name = "dgUnmappedShipToCustomers"
         Me.dgUnmappedShipToCustomers.RowHeadersVisible = False
-        Me.dgUnmappedShipToCustomers.Size = New System.Drawing.Size(1903, 432)
+        Me.dgUnmappedShipToCustomers.Size = New System.Drawing.Size(1801, 432)
         Me.dgUnmappedShipToCustomers.TabIndex = 20
         '
         'TabPage2
@@ -1697,7 +1705,7 @@ Partial Class UCRawDataAnalyzer
         Me.TabPage2.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.TabPage2.Size = New System.Drawing.Size(1545, 509)
+        Me.TabPage2.Size = New System.Drawing.Size(1443, 509)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Page 3"
         Me.TabPage2.UseVisualStyleBackColor = True
@@ -1769,7 +1777,7 @@ Partial Class UCRawDataAnalyzer
         Me.dgCustomerWithoutTerritory.Location = New System.Drawing.Point(4, 62)
         Me.dgCustomerWithoutTerritory.Name = "dgCustomerWithoutTerritory"
         Me.dgCustomerWithoutTerritory.RowHeadersVisible = False
-        Me.dgCustomerWithoutTerritory.Size = New System.Drawing.Size(1903, 421)
+        Me.dgCustomerWithoutTerritory.Size = New System.Drawing.Size(1801, 421)
         Me.dgCustomerWithoutTerritory.TabIndex = 1
         '
         'TextBox6
@@ -1847,7 +1855,7 @@ Partial Class UCRawDataAnalyzer
         Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.btnSave, Me.ToolStripSeparator2, Me.btnClose, Me.ToolStripSeparator1, Me.lblChannel, Me.ToolStripSeparator3, Me.ToolStripButton1})
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 41)
         Me.ToolStrip1.Name = "ToolStrip1"
-        Me.ToolStrip1.Size = New System.Drawing.Size(1236, 25)
+        Me.ToolStrip1.Size = New System.Drawing.Size(1388, 25)
         Me.ToolStrip1.TabIndex = 41
         Me.ToolStrip1.Text = "ToolStrip1"
         '
@@ -2382,7 +2390,7 @@ Partial Class UCRawDataAnalyzer
         Me.Controls.Add(Me.ToolStrip1)
         Me.Controls.Add(Me.MainTab)
         Me.Name = "UCRawDataAnalyzer"
-        Me.Size = New System.Drawing.Size(1236, 768)
+        Me.Size = New System.Drawing.Size(1388, 833)
         Me.Controls.SetChildIndex(Me.MainTab, 0)
         Me.Controls.SetChildIndex(Me.BasePageHeader1, 0)
         Me.Controls.SetChildIndex(Me.ToolStrip1, 0)
@@ -2471,18 +2479,6 @@ Partial Class UCRawDataAnalyzer
     Friend WithEvents LinkLabel25 As System.Windows.Forms.LinkLabel
     Friend WithEvents Label19 As System.Windows.Forms.Label
     Friend WithEvents dgShipToNotInSystem As System.Windows.Forms.DataGridView
-    Friend WithEvents col8Select As System.Windows.Forms.DataGridViewCheckBoxColumn
-    Friend WithEvents col8CustomerCode As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents col8CustomerName As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents col8ShipToCode As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents col8ShipToName As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents col8ShipToCustomerAddress1 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents col8ShipToAddress2 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents col8CustomerGrp As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents col8Region As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents col8Province As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents col8Municipality As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents col8ZipCode As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents TabPage9 As System.Windows.Forms.TabPage
     Friend WithEvents Label24 As System.Windows.Forms.Label
     Friend WithEvents dgCompanyItemsNotInSystem As System.Windows.Forms.DataGridView
@@ -2505,19 +2501,6 @@ Partial Class UCRawDataAnalyzer
     Friend WithEvents LinkLabel2 As System.Windows.Forms.LinkLabel
     Friend WithEvents LinkLabel1 As System.Windows.Forms.LinkLabel
     Friend WithEvents dgCustomerNotintheSystem As System.Windows.Forms.DataGridView
-    Friend WithEvents colSelect As System.Windows.Forms.DataGridViewCheckBoxColumn
-    Friend WithEvents colCustomerCode As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents colCustomerName As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents colCustomerClass As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents colCustomerAddress As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents colCustomerAddress2 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents colShipTo As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents colShipToName As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents colRegion As System.Windows.Forms.DataGridViewLinkColumn
-    Friend WithEvents colProvince As System.Windows.Forms.DataGridViewLinkColumn
-    Friend WithEvents colArea As System.Windows.Forms.DataGridViewLinkColumn
-    Friend WithEvents colZipCode As System.Windows.Forms.DataGridViewLinkColumn
-    Friend WithEvents col1Shared As System.Windows.Forms.DataGridViewCheckBoxColumn
     Friend WithEvents LinkLabel29 As System.Windows.Forms.LinkLabel
     Friend WithEvents LinkLabel8 As System.Windows.Forms.LinkLabel
     Friend WithEvents txtBatchNo As System.Windows.Forms.TextBox
@@ -2654,5 +2637,30 @@ Partial Class UCRawDataAnalyzer
     Friend WithEvents col4Select As System.Windows.Forms.DataGridViewCheckBoxColumn
     Friend WithEvents ToolStripSeparator3 As System.Windows.Forms.ToolStripSeparator
     Friend WithEvents ToolStripButton1 As System.Windows.Forms.ToolStripButton
-
+    Friend WithEvents colSelect As DataGridViewCheckBoxColumn
+    Friend WithEvents colCustomerCode As DataGridViewTextBoxColumn
+    Friend WithEvents colCustomerName As DataGridViewTextBoxColumn
+    Friend WithEvents colCustomerClass As DataGridViewTextBoxColumn
+    Friend WithEvents colCustomerAddress As DataGridViewTextBoxColumn
+    Friend WithEvents colCustomerAddress2 As DataGridViewTextBoxColumn
+    Friend WithEvents colShipTo As DataGridViewTextBoxColumn
+    Friend WithEvents colShipToName As DataGridViewTextBoxColumn
+    Friend WithEvents CustomerGroup As DataGridViewLinkColumn
+    Friend WithEvents colRegion As DataGridViewLinkColumn
+    Friend WithEvents colProvince As DataGridViewLinkColumn
+    Friend WithEvents colArea As DataGridViewLinkColumn
+    Friend WithEvents colZipCode As DataGridViewLinkColumn
+    Friend WithEvents col1Shared As DataGridViewCheckBoxColumn
+    Friend WithEvents col8Select As DataGridViewCheckBoxColumn
+    Friend WithEvents col8CustomerCode As DataGridViewTextBoxColumn
+    Friend WithEvents col8CustomerName As DataGridViewTextBoxColumn
+    Friend WithEvents col8ShipToCode As DataGridViewTextBoxColumn
+    Friend WithEvents col8ShipToName As DataGridViewTextBoxColumn
+    Friend WithEvents col8ShipToCustomerAddress1 As DataGridViewTextBoxColumn
+    Friend WithEvents col8ShipToAddress2 As DataGridViewTextBoxColumn
+    Friend WithEvents CustomerGroupShipTo As DataGridViewLinkColumn
+    Friend WithEvents col8Region As DataGridViewTextBoxColumn
+    Friend WithEvents col8Province As DataGridViewTextBoxColumn
+    Friend WithEvents col8Municipality As DataGridViewTextBoxColumn
+    Friend WithEvents col8ZipCode As DataGridViewTextBoxColumn
 End Class

@@ -117,23 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="btnCancel.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29m
-        dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAH1SURBVEhLtZFLTlRBGIWrQaC7JYEBCTDCjhihAx1Q
-        EHwQ0uJEoAc8xszYB8wUFgDr0S0YYQHGDchDae3ynLKqqPr/i0zgJl/q/qfOOXUfxlp7rxSKd0mheJcU
-        ioHvptoq0lNu8ygBgUALWL+meoryyD4leKML2jfvGHYFuDcp0bOzGz1A9SkhBDuvVyJpgSeW29Z25pF9
-        2UBo7LxsKkKB51/5+pbyyL5sIDDt0fhnYVlBPZR31jaL9vZkXzYQmOIhv+eXFK58dSPTQjmzsk8JNHnc
-        Ie1nr/4LPd7rcrJPCcHocYdczSwWwj3viRnZp4TU7LG/pucL4Z7wqj4liID75j/rz2+EnjQj+5SQmF15
-        e2XNXk7MOC78KqE35GSfEtLyq7er9vxJI+KLMk3sqT4lxPLme3v+eCriC/hD3Y9P91KP7MsGEgrOavUI
-        Z6+HN7zRI/uub/yVFvwYm3DBb6a6j62uFGqpx2eyctcbb4wpgW7QB/pPTeUDg19N5QDzMBgBowkjX0zl
-        kJ4TU/mIeRD0A+bZU5IH8MnKYAjUwORnUz7COgvmwAuwABb9ynnukykfY22ASfAIMM+erqIDesEA4BPS
-        PA6egjqYAtMJnKlznz76mWOePeoAXuEz9QC+Kp+kCh4Cvr6EOvfpo/8BiJ8nO+B+sOYvL+ew9aktwUAA
-        AAAASUVORK5CYII=
-</value>
-  </data>
-  <metadata name="Office2010SilverTheme1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="OpenFileDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
 </root>

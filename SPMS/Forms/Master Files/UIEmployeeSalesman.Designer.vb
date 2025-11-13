@@ -22,28 +22,28 @@ Partial Class UIEmployeeSalesman
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim GridViewTextBoxColumn15 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn16 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn17 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn18 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn19 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn20 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn21 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn22 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim RadListDataItem3 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem4 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim GridViewTextBoxColumn23 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn24 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewDateTimeColumn5 As Telerik.WinControls.UI.GridViewDateTimeColumn = New Telerik.WinControls.UI.GridViewDateTimeColumn()
-        Dim GridViewDateTimeColumn6 As Telerik.WinControls.UI.GridViewDateTimeColumn = New Telerik.WinControls.UI.GridViewDateTimeColumn()
-        Dim GridViewTextBoxColumn25 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewCheckBoxColumn3 As Telerik.WinControls.UI.GridViewCheckBoxColumn = New Telerik.WinControls.UI.GridViewCheckBoxColumn()
-        Dim GridViewTextBoxColumn26 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn27 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewDateTimeColumn7 As Telerik.WinControls.UI.GridViewDateTimeColumn = New Telerik.WinControls.UI.GridViewDateTimeColumn()
-        Dim GridViewDateTimeColumn8 As Telerik.WinControls.UI.GridViewDateTimeColumn = New Telerik.WinControls.UI.GridViewDateTimeColumn()
-        Dim GridViewTextBoxColumn28 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewCheckBoxColumn4 As Telerik.WinControls.UI.GridViewCheckBoxColumn = New Telerik.WinControls.UI.GridViewCheckBoxColumn()
+        Dim GridViewTextBoxColumn1 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn2 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn3 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn4 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn5 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn6 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn7 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn8 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim RadListDataItem1 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem2 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim GridViewTextBoxColumn9 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn10 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewDateTimeColumn1 As Telerik.WinControls.UI.GridViewDateTimeColumn = New Telerik.WinControls.UI.GridViewDateTimeColumn()
+        Dim GridViewDateTimeColumn2 As Telerik.WinControls.UI.GridViewDateTimeColumn = New Telerik.WinControls.UI.GridViewDateTimeColumn()
+        Dim GridViewTextBoxColumn11 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewCheckBoxColumn1 As Telerik.WinControls.UI.GridViewCheckBoxColumn = New Telerik.WinControls.UI.GridViewCheckBoxColumn()
+        Dim GridViewTextBoxColumn12 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn13 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewDateTimeColumn3 As Telerik.WinControls.UI.GridViewDateTimeColumn = New Telerik.WinControls.UI.GridViewDateTimeColumn()
+        Dim GridViewDateTimeColumn4 As Telerik.WinControls.UI.GridViewDateTimeColumn = New Telerik.WinControls.UI.GridViewDateTimeColumn()
+        Dim GridViewTextBoxColumn14 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewCheckBoxColumn2 As Telerik.WinControls.UI.GridViewCheckBoxColumn = New Telerik.WinControls.UI.GridViewCheckBoxColumn()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.GrdTerritorylines = New Telerik.WinControls.UI.RadGridView()
         Me.RadMenu2 = New Telerik.WinControls.UI.RadMenu()
@@ -63,7 +63,7 @@ Partial Class UIEmployeeSalesman
         Me.btnClose = New Telerik.WinControls.UI.RadMenuButtonItem()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.Office2010SilverTheme1 = New Telerik.WinControls.Themes.Office2010SilverTheme()
+        Me.Office2010SilverTheme1 = New Telerik.WinControls.Themes.Office2010BlueTheme()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.chkIsActive = New System.Windows.Forms.CheckBox()
         Me.Findconfig = New System.Windows.Forms.LinkLabel()
@@ -169,20 +169,20 @@ Partial Class UIEmployeeSalesman
         '
         Me.GrdTerritorylines.MasterTemplate.AllowAddNewRow = False
         Me.GrdTerritorylines.MasterTemplate.AllowDeleteRow = False
-        GridViewTextBoxColumn15.EnableExpressionEditor = False
-        GridViewTextBoxColumn15.HeaderText = "Territory Code"
-        GridViewTextBoxColumn15.Name = "column1"
-        GridViewTextBoxColumn15.Width = 405
-        GridViewTextBoxColumn16.EnableExpressionEditor = False
-        GridViewTextBoxColumn16.HeaderText = "Territory Name"
-        GridViewTextBoxColumn16.IsVisible = False
-        GridViewTextBoxColumn16.Name = "column2"
-        GridViewTextBoxColumn16.Width = 557
-        GridViewTextBoxColumn17.EnableExpressionEditor = False
-        GridViewTextBoxColumn17.HeaderText = "Configtype Code"
-        GridViewTextBoxColumn17.Name = "column3"
-        GridViewTextBoxColumn17.Width = 391
-        Me.GrdTerritorylines.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewTextBoxColumn15, GridViewTextBoxColumn16, GridViewTextBoxColumn17})
+        GridViewTextBoxColumn1.EnableExpressionEditor = False
+        GridViewTextBoxColumn1.HeaderText = "Territory Code"
+        GridViewTextBoxColumn1.Name = "column1"
+        GridViewTextBoxColumn1.Width = 405
+        GridViewTextBoxColumn2.EnableExpressionEditor = False
+        GridViewTextBoxColumn2.HeaderText = "Territory Name"
+        GridViewTextBoxColumn2.IsVisible = False
+        GridViewTextBoxColumn2.Name = "column2"
+        GridViewTextBoxColumn2.Width = 557
+        GridViewTextBoxColumn3.EnableExpressionEditor = False
+        GridViewTextBoxColumn3.HeaderText = "Configtype Code"
+        GridViewTextBoxColumn3.Name = "column3"
+        GridViewTextBoxColumn3.Width = 391
+        Me.GrdTerritorylines.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewTextBoxColumn1, GridViewTextBoxColumn2, GridViewTextBoxColumn3})
         Me.GrdTerritorylines.MasterTemplate.EnableFiltering = True
         Me.GrdTerritorylines.MasterTemplate.EnableGrouping = False
         Me.GrdTerritorylines.Name = "GrdTerritorylines"
@@ -251,27 +251,27 @@ Partial Class UIEmployeeSalesman
         '
         Me.RadGridView1.MasterTemplate.AllowAddNewRow = False
         Me.RadGridView1.MasterTemplate.AllowDeleteRow = False
-        GridViewTextBoxColumn18.EnableExpressionEditor = False
-        GridViewTextBoxColumn18.HeaderText = "Territory Code"
-        GridViewTextBoxColumn18.Name = "column1"
-        GridViewTextBoxColumn18.Width = 114
-        GridViewTextBoxColumn19.EnableExpressionEditor = False
-        GridViewTextBoxColumn19.HeaderText = "Territory Name"
-        GridViewTextBoxColumn19.Name = "column2"
-        GridViewTextBoxColumn19.Width = 242
-        GridViewTextBoxColumn20.EnableExpressionEditor = False
-        GridViewTextBoxColumn20.HeaderText = "Year"
-        GridViewTextBoxColumn20.Name = "column3"
-        GridViewTextBoxColumn20.Width = 58
-        GridViewTextBoxColumn21.EnableExpressionEditor = False
-        GridViewTextBoxColumn21.HeaderText = "Month"
-        GridViewTextBoxColumn21.Name = "column4"
-        GridViewTextBoxColumn21.Width = 65
-        GridViewTextBoxColumn22.EnableExpressionEditor = False
-        GridViewTextBoxColumn22.HeaderText = "Configtype Code"
-        GridViewTextBoxColumn22.Name = "column5"
-        GridViewTextBoxColumn22.Width = 112
-        Me.RadGridView1.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewTextBoxColumn18, GridViewTextBoxColumn19, GridViewTextBoxColumn20, GridViewTextBoxColumn21, GridViewTextBoxColumn22})
+        GridViewTextBoxColumn4.EnableExpressionEditor = False
+        GridViewTextBoxColumn4.HeaderText = "Territory Code"
+        GridViewTextBoxColumn4.Name = "column1"
+        GridViewTextBoxColumn4.Width = 114
+        GridViewTextBoxColumn5.EnableExpressionEditor = False
+        GridViewTextBoxColumn5.HeaderText = "Territory Name"
+        GridViewTextBoxColumn5.Name = "column2"
+        GridViewTextBoxColumn5.Width = 242
+        GridViewTextBoxColumn6.EnableExpressionEditor = False
+        GridViewTextBoxColumn6.HeaderText = "Year"
+        GridViewTextBoxColumn6.Name = "column3"
+        GridViewTextBoxColumn6.Width = 58
+        GridViewTextBoxColumn7.EnableExpressionEditor = False
+        GridViewTextBoxColumn7.HeaderText = "Month"
+        GridViewTextBoxColumn7.Name = "column4"
+        GridViewTextBoxColumn7.Width = 65
+        GridViewTextBoxColumn8.EnableExpressionEditor = False
+        GridViewTextBoxColumn8.HeaderText = "Configtype Code"
+        GridViewTextBoxColumn8.Name = "column5"
+        GridViewTextBoxColumn8.Width = 112
+        Me.RadGridView1.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewTextBoxColumn4, GridViewTextBoxColumn5, GridViewTextBoxColumn6, GridViewTextBoxColumn7, GridViewTextBoxColumn8})
         Me.RadGridView1.MasterTemplate.EnableFiltering = True
         Me.RadGridView1.MasterTemplate.EnableGrouping = False
         Me.RadGridView1.Name = "RadGridView1"
@@ -336,7 +336,7 @@ Partial Class UIEmployeeSalesman
         '
         '
         Me.RadMenu1.RootElement.Padding = New System.Windows.Forms.Padding(2, 2, 0, 0)
-        Me.RadMenu1.Size = New System.Drawing.Size(1674, 33)
+        Me.RadMenu1.Size = New System.Drawing.Size(1674, 38)
         Me.RadMenu1.TabIndex = 172
         Me.RadMenu1.ThemeName = "Office2010Silver"
         '
@@ -472,9 +472,9 @@ Partial Class UIEmployeeSalesman
         Me.Label5.ForeColor = System.Drawing.Color.White
         Me.Label5.Location = New System.Drawing.Point(15, 5)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(168, 30)
+        Me.Label5.Size = New System.Drawing.Size(122, 30)
         Me.Label5.TabIndex = 1
-        Me.Label5.Text = "Employee Profile"
+        Me.Label5.Text = "Sales Agent"
         '
         'Panel3
         '
@@ -501,7 +501,7 @@ Partial Class UIEmployeeSalesman
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel3.Location = New System.Drawing.Point(0, 0)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(1672, 281)
+        Me.Panel3.Size = New System.Drawing.Size(1672, 294)
         Me.Panel3.TabIndex = 764
         '
         'chkIsActive
@@ -583,12 +583,12 @@ Partial Class UIEmployeeSalesman
         '
         Me.cmbGender.BackColor = System.Drawing.Color.WhiteSmoke
         Me.cmbGender.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        RadListDataItem3.Text = "Male"
-        RadListDataItem3.TextWrap = True
-        RadListDataItem4.Text = "Female"
-        RadListDataItem4.TextWrap = True
-        Me.cmbGender.Items.Add(RadListDataItem3)
-        Me.cmbGender.Items.Add(RadListDataItem4)
+        RadListDataItem1.Text = "Male"
+        RadListDataItem1.TextWrap = True
+        RadListDataItem2.Text = "Female"
+        RadListDataItem2.TextWrap = True
+        Me.cmbGender.Items.Add(RadListDataItem1)
+        Me.cmbGender.Items.Add(RadListDataItem2)
         Me.cmbGender.Location = New System.Drawing.Point(264, 126)
         Me.cmbGender.Name = "cmbGender"
         '
@@ -790,18 +790,18 @@ Partial Class UIEmployeeSalesman
         Me.Panel2.Controls.Add(Me.RadDock1)
         Me.Panel2.Controls.Add(Me.Panel3)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel2.Location = New System.Drawing.Point(0, 71)
+        Me.Panel2.Location = New System.Drawing.Point(0, 76)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1674, 778)
+        Me.Panel2.Size = New System.Drawing.Size(1674, 773)
         Me.Panel2.TabIndex = 173
         '
         'RadDock1
         '
         Me.RadDock1.ActiveWindow = Me.DocumentWindow3
         Me.RadDock1.Controls.Add(Me.DocumentContainer1)
-        Me.RadDock1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.RadDock1.Dock = System.Windows.Forms.DockStyle.Left
         Me.RadDock1.IsCleanUpTarget = True
-        Me.RadDock1.Location = New System.Drawing.Point(0, 281)
+        Me.RadDock1.Location = New System.Drawing.Point(0, 294)
         Me.RadDock1.MainDocumentContainer = Me.DocumentContainer1
         Me.RadDock1.Name = "RadDock1"
         Me.RadDock1.Padding = New System.Windows.Forms.Padding(4)
@@ -810,7 +810,7 @@ Partial Class UIEmployeeSalesman
         '
         Me.RadDock1.RootElement.MinSize = New System.Drawing.Size(25, 25)
         Me.RadDock1.RootElement.Padding = New System.Windows.Forms.Padding(4)
-        Me.RadDock1.Size = New System.Drawing.Size(1672, 495)
+        Me.RadDock1.Size = New System.Drawing.Size(1186, 477)
         Me.RadDock1.SplitterWidth = 3
         Me.RadDock1.TabIndex = 765
         Me.RadDock1.TabStop = False
@@ -828,7 +828,7 @@ Partial Class UIEmployeeSalesman
         Me.DocumentWindow3.Margin = New System.Windows.Forms.Padding(2)
         Me.DocumentWindow3.Name = "DocumentWindow3"
         Me.DocumentWindow3.PreviousDockState = Telerik.WinControls.UI.Docking.DockState.TabbedDocument
-        Me.DocumentWindow3.Size = New System.Drawing.Size(1652, 452)
+        Me.DocumentWindow3.Size = New System.Drawing.Size(1166, 434)
         Me.DocumentWindow3.Text = "PMR"
         '
         'GrdViewPMRReference
@@ -839,7 +839,7 @@ Partial Class UIEmployeeSalesman
         Me.GrdViewPMRReference.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!)
         Me.GrdViewPMRReference.ForeColor = System.Drawing.Color.Black
         Me.GrdViewPMRReference.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.GrdViewPMRReference.Location = New System.Drawing.Point(0, 247)
+        Me.GrdViewPMRReference.Location = New System.Drawing.Point(0, 252)
         Me.GrdViewPMRReference.Margin = New System.Windows.Forms.Padding(2)
         '
         'GrdViewPMRReference
@@ -847,44 +847,44 @@ Partial Class UIEmployeeSalesman
         Me.GrdViewPMRReference.MasterTemplate.AllowAddNewRow = False
         Me.GrdViewPMRReference.MasterTemplate.AllowDeleteRow = False
         Me.GrdViewPMRReference.MasterTemplate.AutoGenerateColumns = False
-        GridViewTextBoxColumn23.EnableExpressionEditor = False
-        GridViewTextBoxColumn23.HeaderText = "Territory Code"
-        GridViewTextBoxColumn23.Name = "column1"
-        GridViewTextBoxColumn23.ReadOnly = True
-        GridViewTextBoxColumn23.Width = 139
-        GridViewTextBoxColumn24.EnableExpressionEditor = False
-        GridViewTextBoxColumn24.HeaderText = "Employee Name"
-        GridViewTextBoxColumn24.Name = "column2"
-        GridViewTextBoxColumn24.ReadOnly = True
-        GridViewTextBoxColumn24.Width = 259
-        GridViewDateTimeColumn5.EnableExpressionEditor = False
-        GridViewDateTimeColumn5.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        GridViewDateTimeColumn5.HeaderText = "Effectivity Start Date"
-        GridViewDateTimeColumn5.Name = "column3"
-        GridViewDateTimeColumn5.ReadOnly = True
-        GridViewDateTimeColumn5.Width = 180
-        GridViewDateTimeColumn6.EnableExpressionEditor = False
-        GridViewDateTimeColumn6.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        GridViewDateTimeColumn6.HeaderText = "Effectivity End Date"
-        GridViewDateTimeColumn6.Name = "column4"
-        GridViewDateTimeColumn6.ReadOnly = True
-        GridViewDateTimeColumn6.Width = 180
-        GridViewTextBoxColumn25.EnableExpressionEditor = False
-        GridViewTextBoxColumn25.HeaderText = "Configtype Code"
-        GridViewTextBoxColumn25.Name = "column5"
-        GridViewTextBoxColumn25.ReadOnly = True
-        GridViewTextBoxColumn25.Width = 178
-        GridViewCheckBoxColumn3.EnableExpressionEditor = False
-        GridViewCheckBoxColumn3.HeaderText = "[0]"
-        GridViewCheckBoxColumn3.MinWidth = 20
-        GridViewCheckBoxColumn3.Name = "column6"
-        GridViewCheckBoxColumn3.ReadOnly = True
-        Me.GrdViewPMRReference.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewTextBoxColumn23, GridViewTextBoxColumn24, GridViewDateTimeColumn5, GridViewDateTimeColumn6, GridViewTextBoxColumn25, GridViewCheckBoxColumn3})
+        GridViewTextBoxColumn9.EnableExpressionEditor = False
+        GridViewTextBoxColumn9.HeaderText = "Territory Code"
+        GridViewTextBoxColumn9.Name = "column1"
+        GridViewTextBoxColumn9.ReadOnly = True
+        GridViewTextBoxColumn9.Width = 139
+        GridViewTextBoxColumn10.EnableExpressionEditor = False
+        GridViewTextBoxColumn10.HeaderText = "Employee Name"
+        GridViewTextBoxColumn10.Name = "column2"
+        GridViewTextBoxColumn10.ReadOnly = True
+        GridViewTextBoxColumn10.Width = 259
+        GridViewDateTimeColumn1.EnableExpressionEditor = False
+        GridViewDateTimeColumn1.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        GridViewDateTimeColumn1.HeaderText = "Effectivity Start Date"
+        GridViewDateTimeColumn1.Name = "column3"
+        GridViewDateTimeColumn1.ReadOnly = True
+        GridViewDateTimeColumn1.Width = 180
+        GridViewDateTimeColumn2.EnableExpressionEditor = False
+        GridViewDateTimeColumn2.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        GridViewDateTimeColumn2.HeaderText = "Effectivity End Date"
+        GridViewDateTimeColumn2.Name = "column4"
+        GridViewDateTimeColumn2.ReadOnly = True
+        GridViewDateTimeColumn2.Width = 180
+        GridViewTextBoxColumn11.EnableExpressionEditor = False
+        GridViewTextBoxColumn11.HeaderText = "Configtype Code"
+        GridViewTextBoxColumn11.Name = "column5"
+        GridViewTextBoxColumn11.ReadOnly = True
+        GridViewTextBoxColumn11.Width = 178
+        GridViewCheckBoxColumn1.EnableExpressionEditor = False
+        GridViewCheckBoxColumn1.HeaderText = "[0]"
+        GridViewCheckBoxColumn1.MinWidth = 20
+        GridViewCheckBoxColumn1.Name = "column6"
+        GridViewCheckBoxColumn1.ReadOnly = True
+        Me.GrdViewPMRReference.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewTextBoxColumn9, GridViewTextBoxColumn10, GridViewDateTimeColumn1, GridViewDateTimeColumn2, GridViewTextBoxColumn11, GridViewCheckBoxColumn1})
         Me.GrdViewPMRReference.MasterTemplate.EnableGrouping = False
         Me.GrdViewPMRReference.MasterTemplate.EnableSorting = False
         Me.GrdViewPMRReference.Name = "GrdViewPMRReference"
         Me.GrdViewPMRReference.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.GrdViewPMRReference.Size = New System.Drawing.Size(1652, 205)
+        Me.GrdViewPMRReference.Size = New System.Drawing.Size(1166, 182)
         Me.GrdViewPMRReference.TabIndex = 176
         Me.GrdViewPMRReference.Text = "RadGridView2"
         '
@@ -892,9 +892,9 @@ Partial Class UIEmployeeSalesman
         '
         Me.Panel5.Controls.Add(Me.RadLabel10)
         Me.Panel5.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel5.Location = New System.Drawing.Point(0, 221)
+        Me.Panel5.Location = New System.Drawing.Point(0, 226)
         Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(1652, 26)
+        Me.Panel5.Size = New System.Drawing.Size(1166, 26)
         Me.Panel5.TabIndex = 175
         '
         'RadLabel10
@@ -916,7 +916,7 @@ Partial Class UIEmployeeSalesman
         Me.GrdViewPMR.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!)
         Me.GrdViewPMR.ForeColor = System.Drawing.Color.Black
         Me.GrdViewPMR.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.GrdViewPMR.Location = New System.Drawing.Point(0, 33)
+        Me.GrdViewPMR.Location = New System.Drawing.Point(0, 38)
         Me.GrdViewPMR.Margin = New System.Windows.Forms.Padding(2)
         '
         'GrdViewPMR
@@ -924,40 +924,40 @@ Partial Class UIEmployeeSalesman
         Me.GrdViewPMR.MasterTemplate.AllowAddNewRow = False
         Me.GrdViewPMR.MasterTemplate.AllowDeleteRow = False
         Me.GrdViewPMR.MasterTemplate.AutoGenerateColumns = False
-        GridViewTextBoxColumn26.EnableExpressionEditor = False
-        GridViewTextBoxColumn26.HeaderText = "Territory Code"
-        GridViewTextBoxColumn26.Name = "column1"
-        GridViewTextBoxColumn26.ReadOnly = True
-        GridViewTextBoxColumn26.Width = 139
-        GridViewTextBoxColumn27.EnableExpressionEditor = False
-        GridViewTextBoxColumn27.HeaderText = "Employee Name"
-        GridViewTextBoxColumn27.Name = "column2"
-        GridViewTextBoxColumn27.ReadOnly = True
-        GridViewTextBoxColumn27.Width = 259
-        GridViewDateTimeColumn7.EnableExpressionEditor = False
-        GridViewDateTimeColumn7.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        GridViewDateTimeColumn7.HeaderText = "Effectivity Start Date"
-        GridViewDateTimeColumn7.Name = "column3"
-        GridViewDateTimeColumn7.Width = 180
-        GridViewDateTimeColumn8.EnableExpressionEditor = False
-        GridViewDateTimeColumn8.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        GridViewDateTimeColumn8.HeaderText = "Effectivity End Date"
-        GridViewDateTimeColumn8.Name = "column4"
-        GridViewDateTimeColumn8.Width = 180
-        GridViewTextBoxColumn28.EnableExpressionEditor = False
-        GridViewTextBoxColumn28.HeaderText = "Configtype Code"
-        GridViewTextBoxColumn28.Name = "column5"
-        GridViewTextBoxColumn28.Width = 178
-        GridViewCheckBoxColumn4.EnableExpressionEditor = False
-        GridViewCheckBoxColumn4.HeaderText = "[0]"
-        GridViewCheckBoxColumn4.MinWidth = 20
-        GridViewCheckBoxColumn4.Name = "column6"
-        Me.GrdViewPMR.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewTextBoxColumn26, GridViewTextBoxColumn27, GridViewDateTimeColumn7, GridViewDateTimeColumn8, GridViewTextBoxColumn28, GridViewCheckBoxColumn4})
+        GridViewTextBoxColumn12.EnableExpressionEditor = False
+        GridViewTextBoxColumn12.HeaderText = "Territory Code"
+        GridViewTextBoxColumn12.Name = "column1"
+        GridViewTextBoxColumn12.ReadOnly = True
+        GridViewTextBoxColumn12.Width = 139
+        GridViewTextBoxColumn13.EnableExpressionEditor = False
+        GridViewTextBoxColumn13.HeaderText = "Employee Name"
+        GridViewTextBoxColumn13.Name = "column2"
+        GridViewTextBoxColumn13.ReadOnly = True
+        GridViewTextBoxColumn13.Width = 259
+        GridViewDateTimeColumn3.EnableExpressionEditor = False
+        GridViewDateTimeColumn3.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        GridViewDateTimeColumn3.HeaderText = "Effectivity Start Date"
+        GridViewDateTimeColumn3.Name = "column3"
+        GridViewDateTimeColumn3.Width = 180
+        GridViewDateTimeColumn4.EnableExpressionEditor = False
+        GridViewDateTimeColumn4.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        GridViewDateTimeColumn4.HeaderText = "Effectivity End Date"
+        GridViewDateTimeColumn4.Name = "column4"
+        GridViewDateTimeColumn4.Width = 180
+        GridViewTextBoxColumn14.EnableExpressionEditor = False
+        GridViewTextBoxColumn14.HeaderText = "Configtype Code"
+        GridViewTextBoxColumn14.Name = "column5"
+        GridViewTextBoxColumn14.Width = 178
+        GridViewCheckBoxColumn2.EnableExpressionEditor = False
+        GridViewCheckBoxColumn2.HeaderText = "[0]"
+        GridViewCheckBoxColumn2.MinWidth = 20
+        GridViewCheckBoxColumn2.Name = "column6"
+        Me.GrdViewPMR.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewTextBoxColumn12, GridViewTextBoxColumn13, GridViewDateTimeColumn3, GridViewDateTimeColumn4, GridViewTextBoxColumn14, GridViewCheckBoxColumn2})
         Me.GrdViewPMR.MasterTemplate.EnableGrouping = False
         Me.GrdViewPMR.MasterTemplate.EnableSorting = False
         Me.GrdViewPMR.Name = "GrdViewPMR"
         Me.GrdViewPMR.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.GrdViewPMR.Size = New System.Drawing.Size(1652, 188)
+        Me.GrdViewPMR.Size = New System.Drawing.Size(1166, 188)
         Me.GrdViewPMR.TabIndex = 174
         Me.GrdViewPMR.Text = "RadGridView2"
         '
@@ -971,7 +971,7 @@ Partial Class UIEmployeeSalesman
         '
         '
         Me.RadMenu4.RootElement.Padding = New System.Windows.Forms.Padding(2, 2, 0, 0)
-        Me.RadMenu4.Size = New System.Drawing.Size(1652, 33)
+        Me.RadMenu4.Size = New System.Drawing.Size(1166, 38)
         Me.RadMenu4.TabIndex = 173
         Me.RadMenu4.ThemeName = "Office2010Silver"
         '
@@ -1032,7 +1032,7 @@ Partial Class UIEmployeeSalesman
         '
         Me.DocumentTabStrip2.RootElement.MinSize = New System.Drawing.Size(25, 25)
         Me.DocumentTabStrip2.SelectedIndex = 0
-        Me.DocumentTabStrip2.Size = New System.Drawing.Size(1664, 487)
+        Me.DocumentTabStrip2.Size = New System.Drawing.Size(1178, 469)
         Me.DocumentTabStrip2.TabIndex = 0
         Me.DocumentTabStrip2.TabStop = False
         Me.DocumentTabStrip2.ThemeName = "Office2010Silver"
@@ -1118,7 +1118,7 @@ Partial Class UIEmployeeSalesman
     Friend WithEvents RadMenuButtonItem1 As Telerik.WinControls.UI.RadMenuButtonItem
     Friend WithEvents RadMenuButtonItem2 As Telerik.WinControls.UI.RadMenuButtonItem
     Friend WithEvents RadGridView1 As Telerik.WinControls.UI.RadGridView
-    Friend WithEvents Office2010SilverTheme1 As Telerik.WinControls.Themes.Office2010SilverTheme
+    Friend WithEvents Office2010SilverTheme1 As Telerik.WinControls.Themes.Office2010BlueTheme
     Friend WithEvents Panel3 As Panel
     Friend WithEvents Findconfig As LinkLabel
     Friend WithEvents txtPosition As Telerik.WinControls.UI.RadTextBox

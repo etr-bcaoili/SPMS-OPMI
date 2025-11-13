@@ -3292,14 +3292,14 @@ Public Class frmRawDataUploader
 
                     Dim Number2 As Double = DistMargin * number1
 
-                    m_RawData.NetAmount = Number2
+                    m_RawData.NetAmount = Math.Round(Convert.ToDecimal(Number2), 2)
 
                     TotalNetAmount = TotalNetAmount + Number2
-                    m_RawData.GrossAmount = GrossAmount
+                    m_RawData.GrossAmount = Math.Round(Convert.ToDecimal(GrossAmount), 2)
                     GrossAmount += GrossAmount
                 Else
-                    m_RawData.NetAmount = NetAmount
-                    m_RawData.GrossAmount = GrossAmount
+                    m_RawData.NetAmount = Math.Round(Convert.ToDecimal(NetAmount), 2)
+                    m_RawData.GrossAmount = Math.Round(Convert.ToDecimal(GrossAmount), 2)
                     GrossAmount += GrossAmount
                 End If
 
@@ -3358,14 +3358,6 @@ Public Class frmRawDataUploader
                     NetAmount = CDec(dr("Sales Units TY")) * table.Rows(i)("DISTITEMPRICE")
                 Next
 
-                'Dim rsDistributors As New ADODB.Recordset
-                'If rsDistributors.State = 1 Then rsDistributors.Close()
-                'rsDistributors.Open("Select * from distributoritems where DISTITEMCD = '" & dr("SKU Code") & "' And DISTITEMCD <> '' And COMID = '" & cmbCompany.Text & "' And IsActive = 1", SPMSConn, ADODB.CursorTypeEnum.adOpenKeyset)
-                'If rsDistributors.RecordCount <> 0 Then
-                '    GrossAmount = rsDistributors.Fields(4).Value * CDec(dr("Sales Units TY"))
-                '    NetAmount = rsDistributors.Fields(4).Value * CDec(dr("Sales Units TY"))
-                'End If
-
                 _Distributor = Distributor.LoadByCode(m_RawData.CompanyCode)
                 If Distributor.VatCalculated(m_RawData.CompanyCode) Then
                     Dim MuncipalVat As Double = _Distributor.MunTax / 100 ' Convert 99.5% to decimal
@@ -3377,21 +3369,16 @@ Public Class frmRawDataUploader
 
                     Dim Number2 As Double = DistMargin * number1
 
-                    m_RawData.NetAmount = Number2
+                    m_RawData.NetAmount = Math.Round(Convert.ToDecimal(Number2), 2)
 
                     TotalNetAmount = TotalNetAmount + Number2
-                    m_RawData.GrossAmount = GrossAmount
+                    m_RawData.GrossAmount = Math.Round(Convert.ToDecimal(GrossAmount), 2)
                     GrossAmount += GrossAmount
                 Else
-                    m_RawData.NetAmount = NetAmount
-                    m_RawData.GrossAmount = GrossAmount
+                    m_RawData.NetAmount = Math.Round(Convert.ToDecimal(NetAmount), 2)
+                    m_RawData.GrossAmount = Math.Round(Convert.ToDecimal(GrossAmount), 2)
                     GrossAmount += GrossAmount
                 End If
-
-
-                'm_RawData.GrossAmount = GrossAmount
-                'm_RawData.NetAmount = NetAmount
-                'GrossAmount += GrossAmount
 
                 m_RawData.CutMO = cmbMonth.Text
                 m_RawData.CutYear = cmbYear.Text
@@ -3970,6 +3957,9 @@ Public Class frmRawDataUploader
                                     Dim Number2 As Double = DistMargin * number1
                                     m_RawData.NetAmount = Number2
                                     NETAmount = NETAmount + Number2
+                                    m_RawData.QuantitySold = Quantitys
+                                    m_RawData.GrossAmount = Quantitys * table.Rows(i)("DISTITEMPRICE")
+                                    GrossAmount = GrossAmount + Quantitys * table.Rows(i)("DISTITEMPRICE")
                                 Else
                                     m_RawData.NetAmount = Quantitys * table.Rows(i)("DISTITEMPRICE")
                                     m_RawData.GrossAmount = Quantitys * table.Rows(i)("DISTITEMPRICE")
@@ -3989,7 +3979,10 @@ Public Class frmRawDataUploader
                                     Dim Number2 As Double = DistMargin * number1
                                     m_RawData.NetAmount = Number2
                                     NETAmount = NETAmount + Number2
+                                    m_RawData.QuantitySold = Quantitys
+                                    m_RawData.GrossAmount = Quantitys * table.Rows(i)("DISTITEMPRICE")
                                 Else
+                                    m_RawData.QuantitySold = Quantitys
                                     m_RawData.NetAmount = Quantitys * table.Rows(i)("DISTITEMPRICE")
                                     m_RawData.GrossAmount = Quantitys * table.Rows(i)("DISTITEMPRICE")
                                     GrossAmount = GrossAmount + Quantitys * table.Rows(i)("DISTITEMPRICE")

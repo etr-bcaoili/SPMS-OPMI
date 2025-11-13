@@ -29,7 +29,7 @@ Public Class ExcelCustomerItemSharing
             "Extended Properties=""Excel 8.0;HDR=Yes;IMEX=1"""
         Dim XLSPath As String = _ExecelLocation
         Dim connectionString As String = String.Format(connectionStringTemplate, XLSPath)
-        Dim sqlSelect As String = "SELECT * FROM [Sharing per Channel$A9:N]  Where  [Company] like '" & CompanyCode & "';"
+        Dim sqlSelect As String = "SELECT * FROM [Customer Item Sharing$A9:O]  Where  [Channel Code] like '" & CompanyCode & "';"
         ' Load the Excel worksheet into a DataTable
         Dim workbook As DataSet = New DataSet()
         Dim excelAdapter As System.Data.Common.DataAdapter = New System.Data.OleDb.OleDbDataAdapter(sqlSelect, connectionString)

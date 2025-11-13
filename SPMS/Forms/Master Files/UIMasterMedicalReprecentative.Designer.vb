@@ -117,7 +117,7 @@ Partial Class UIMasterMedicalReprecentative
         '
         '
         Me.RadMenu1.RootElement.Padding = New System.Windows.Forms.Padding(2, 2, 0, 0)
-        Me.RadMenu1.Size = New System.Drawing.Size(1414, 33)
+        Me.RadMenu1.Size = New System.Drawing.Size(1414, 38)
         Me.RadMenu1.TabIndex = 174
         Me.RadMenu1.ThemeName = "Office2010Silver"
         '
@@ -698,9 +698,10 @@ Partial Class UIMasterMedicalReprecentative
         Me.Label1.ForeColor = System.Drawing.Color.White
         Me.Label1.Location = New System.Drawing.Point(10, 15)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(191, 30)
+        Me.Label1.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.Label1.Size = New System.Drawing.Size(234, 30)
         Me.Label1.TabIndex = 1
-        Me.Label1.Text = "Employee info TML"
+        Me.Label1.Text = "Sales Rep Configuration"
         '
         'UIMasterMedicalReprecentative
         '

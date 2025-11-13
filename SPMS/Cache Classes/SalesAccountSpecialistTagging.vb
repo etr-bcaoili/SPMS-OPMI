@@ -72,6 +72,37 @@ Public Class SalesAccountSpecialistTagging
     Public Shared Function GetCustomerListSql(ByVal ConfigtypeCode As String, ByVal Year As String, ByVal Month As String, ByVal DistributorList As String, ByVal DistrictManagerCode As String, ByVal TerritoryCode As String) As String
         Return "Select Distinct [Customer Code],[Customer Name],[ShipTo Code],[ShipTo Address1] +' '+[ShipTo Address2] [Address] From SC02File Where Configtypecode = '" & ConfigtypeCode & "' And Year = '" & Year & "' and Month Like '%" & Month & "%' And [Distributor Code] In (" & DistributorList & ") And [District Manager Code] In (" & DistrictManagerCode & ") And [Territory Manager Code] In (" & TerritoryCode & ")"
     End Function
+    Public Shared Function GetSalesAccountSpecialAreaNameSql(ByVal DistrictGroupCode As String, ByVal ConfigtypeCode As String) As String
+        Return "Select Distinct A.DistrictGroup,A.STDISTRCTNAME,B.STACOVNAME From STDISTRICT A INNER JOIN SalesMatrix B  On A.STDISTRCTCD = B.STDISTRCTCD Where A.DLTFLG = 0 AND A.STREGCD NOT IN ('INH','999')  AND A.DistrictGroup =  '" & DistrictGroupCode & "' AND B.Configtypecode = '" & ConfigtypeCode & "' Order by A.DistrictGroup"
+    End Function
+    Public Shared Function GetSalesAccountSpecialAreaNamebySASSql(ByVal SASCode As String) As String
+        Return "Select Distinct CheckIn,DistrictName,AreaName,TargetAmount,DistrictGroupCode From SalesAccountSpecialistAreaName Where SASCode = '" & SASCode & "'"
+    End Function
+    Public Shared Function GetSalesAccountSpecialCustomerSql(ByVal AreaName As String) As String
+        Return "Select Distinct A.STACOVNAME,B.[Customer Code],B.[Customer Name] From SalesMatrix A INNER JOIN 	SC02File B  ON A.STSLSMNCD = B.[Territory Code]  AND A.Configtypecode = B.Configtypecode Where A.Configtypecode = 'Y2025' and A.STREGCD NOT IN ('INH','999') AND STACOVNAME = '" & AreaName & "' AND B.[Distributor Code] In ('DIR','ODI') Order by B.[Customer Code]"
+    End Function
+    Public Shared Function GetChannelSql(ByVal ConfigtypeCode As String) As String
+        Return "Select Distinct B.[Distributor Code],B.[Distributor Name] From SalesMatrix A INNER JOIN SC02File B  ON A.STSLSMNCD = B.[Territory Code]  AND A.Configtypecode = B.Configtypecode Where A.Configtypecode = '" & ConfigtypeCode & "' and A.STREGCD NOT IN ('INH','999')  AND B.[Distributor Code] In ('DIR','ODI')"
+    End Function
+    Public Shared Function GetSalesAccountSpecialCustomerWithChannelSql(ByVal AreaName As String, ByVal ChannelCode As String, ByVal ConfigtypeCode As String) As String
+        Return "Select Distinct A.STACOVNAME,B.[Customer Code],B.[Customer Name],B.[Distributor Code] From SalesMatrix A INNER JOIN 	SC02File B  ON A.STSLSMNCD = B.[Territory Code]  AND A.Configtypecode = B.Configtypecode Where A.Configtypecode = '" & ConfigtypeCode & "' and A.STREGCD NOT IN ('INH','999') AND STACOVNAME = '" & AreaName & "' AND B.[Distributor Code] In (" & ChannelCode & ") Order by B.[Customer Code]"
+    End Function
+    Public Shared Function GetSalesAccountSpecialCustomerWithChannelbySASSql(ByVal SASCode As String) As String
+        Return "Select Distinct CheckIn,AreaName,CustomerCode,CustomerName,TargetAmount,ChannelCode,DistrictGroupCode,DistrictName FROM SalesAccountSpecialistChannelbyCustomer Where SASCode = '" & SASCode & "'"
+    End Function
+    Public Shared Function GetTargetAmountSalesAccountSpecialCustomerWithChannelbySql(ByVal SASCode As String) As String
+        Return "Select ROUND(SUM(TargetAmount),0) [TargetAmount] FROM SalesAccountSpecialistChannelbyCustomer Where SASCode = '" & SASCode & "'"
+    End Function
+    Public Shared Function GetSalesAccountSpecialistChannelSql(ByVal ConfigtypeCode As String) As String
+        Return "Select Distinct B.[Distributor Code],B.[Distributor Name] From SalesMatrix A INNER JOIN 	SC02File B  ON A.STSLSMNCD = B.[Territory Code]  AND A.Configtypecode = B.Configtypecode Where A.Configtypecode = '" & ConfigtypeCode & "' and A.STREGCD NOT IN ('INH','999') AND  B.[Distributor Code] In ('DIR','ODI')"
+    End Function
+    Public Shared Function GetSalesAccountSpecialistChannelbySASSql(ByVal SASCode As String) As String
+        Return "Select Distinct A.CheckIn,A.ChannelCode,B.DISTNAME from SalesAccountSpecialistChannelbyCustomer A Inner Join Distributor B ON A.ChannelCode = B.DISTCOMID Where A.SASCode = '" & SASCode & "'"
+    End Function
+
+    Public Shared Function GetTargetAmountSalesAccountSpecialistChannelSql(ByVal SASCode As String) As String
+        Return "Select ROUND(SUM(A.TargetAmount),0) TargetAmount from SalesAccountSpecialistChannelbyCustomer A Inner Join Distributor B ON A.ChannelCode = B.DISTCOMID Where A.SASCode = '" & SASCode & "'"
+    End Function
     Public Shared Function TruncateTableSalesAccountSpecialistTemp() As String
         ExecuteCommand("Truncate table SalesAccountSpecialistTemp")
     End Function

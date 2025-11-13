@@ -238,6 +238,23 @@ Public Class SalesMatrixs
             Throw
         End Try
     End Function
+
+    Public Function ExecuteInsetNotInConfigtypeTerritory() As Boolean
+        Dim Years As Integer = m_EffictivityStartDate.Year
+        Dim Monhts As Integer = m_EffictivityStartDate.Month
+        Connect()
+        Try
+            Dim cmd As New SqlCommand("uspProcessMatrixNotIN", SPMSConn2)
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.Parameters.AddWithValue("@ConfigtypeCode", m_ConfigTypeCode)
+            cmd.Parameters.AddWithValue("@Month", Monhts)
+            cmd.Parameters.AddWithValue("@Year", Years)
+            cmd.ExecuteNonQuery()
+            Return True
+        Catch ex As System.Exception
+            Throw
+        End Try
+    End Function
     Private Shared Function BaseFilter(ByVal table As System.Data.DataTable) As SalesMatrixCollection
         Dim col As New SalesMatrixCollection
         For j As Integer = 0 To table.Rows.Count - 1

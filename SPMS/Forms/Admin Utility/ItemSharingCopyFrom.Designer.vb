@@ -23,15 +23,17 @@ Partial Class ItemSharingCopyFrom
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.LinkLabel3 = New System.Windows.Forms.LinkLabel()
+        Me.txtConfigtypeName = New Telerik.WinControls.UI.RadTextBox()
+        Me.txtConfigtypeCode = New Telerik.WinControls.UI.RadTextBox()
+        Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
+        Me.txtChannelName = New Telerik.WinControls.UI.RadTextBox()
+        Me.txtChannelCode = New Telerik.WinControls.UI.RadTextBox()
         Me.RadLabel8 = New Telerik.WinControls.UI.RadLabel()
         Me.RadLabel7 = New Telerik.WinControls.UI.RadLabel()
-        Me.RadLabel6 = New Telerik.WinControls.UI.RadLabel()
         Me.RadMenu1 = New Telerik.WinControls.UI.RadMenu()
         Me.btnFinddata = New Telerik.WinControls.UI.RadMenuButtonItem()
         Me.btnClear = New Telerik.WinControls.UI.RadMenuButtonItem()
-        Me.RadLabel5 = New Telerik.WinControls.UI.RadLabel()
-        Me.txtItemName = New Telerik.WinControls.UI.RadTextBox()
-        Me.txtItemCode = New Telerik.WinControls.UI.RadTextBox()
         Me.RadLabel2 = New Telerik.WinControls.UI.RadLabel()
         Me.RadLabel4 = New Telerik.WinControls.UI.RadLabel()
         Me.DropMonthTo = New Telerik.WinControls.UI.RadDropDownList()
@@ -40,23 +42,21 @@ Partial Class ItemSharingCopyFrom
         Me.RadLabel1 = New Telerik.WinControls.UI.RadLabel()
         Me.DropMonthFrom = New Telerik.WinControls.UI.RadDropDownList()
         Me.DropYearFrom = New Telerik.WinControls.UI.RadDropDownList()
-        Me.txtConfgName = New Telerik.WinControls.UI.RadTextBox()
-        Me.txtConfigCode = New Telerik.WinControls.UI.RadTextBox()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.btnStartProcess = New Telerik.WinControls.UI.RadButton()
         Me.btnCanced = New Telerik.WinControls.UI.RadButton()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Office2010BlackTheme1 = New Telerik.WinControls.Themes.Office2010BlackTheme()
-        Me.Office2010SilverTheme1 = New Telerik.WinControls.Themes.Office2010SilverTheme()
+        Me.Office2010SilverTheme1 = New Telerik.WinControls.Themes.Office2010BlackTheme()
         Me.Panel1.SuspendLayout()
+        CType(Me.txtConfigtypeName, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtConfigtypeCode, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtChannelName, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtChannelCode, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadLabel8, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadLabel7, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RadLabel6, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadMenu1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RadLabel5, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txtItemName, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txtItemCode, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadLabel2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadLabel4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DropMonthTo, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -65,8 +65,6 @@ Partial Class ItemSharingCopyFrom
         CType(Me.RadLabel1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DropMonthFrom, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DropYearFrom, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txtConfgName, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txtConfigCode, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel3.SuspendLayout()
         CType(Me.btnStartProcess, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnCanced, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -77,13 +75,15 @@ Partial Class ItemSharingCopyFrom
         '
         Me.Panel1.BackColor = System.Drawing.Color.White
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel1.Controls.Add(Me.LinkLabel3)
+        Me.Panel1.Controls.Add(Me.txtConfigtypeName)
+        Me.Panel1.Controls.Add(Me.txtConfigtypeCode)
+        Me.Panel1.Controls.Add(Me.LinkLabel1)
+        Me.Panel1.Controls.Add(Me.txtChannelName)
+        Me.Panel1.Controls.Add(Me.txtChannelCode)
         Me.Panel1.Controls.Add(Me.RadLabel8)
         Me.Panel1.Controls.Add(Me.RadLabel7)
-        Me.Panel1.Controls.Add(Me.RadLabel6)
         Me.Panel1.Controls.Add(Me.RadMenu1)
-        Me.Panel1.Controls.Add(Me.RadLabel5)
-        Me.Panel1.Controls.Add(Me.txtItemName)
-        Me.Panel1.Controls.Add(Me.txtItemCode)
         Me.Panel1.Controls.Add(Me.RadLabel2)
         Me.Panel1.Controls.Add(Me.RadLabel4)
         Me.Panel1.Controls.Add(Me.DropMonthTo)
@@ -92,8 +92,6 @@ Partial Class ItemSharingCopyFrom
         Me.Panel1.Controls.Add(Me.RadLabel1)
         Me.Panel1.Controls.Add(Me.DropMonthFrom)
         Me.Panel1.Controls.Add(Me.DropYearFrom)
-        Me.Panel1.Controls.Add(Me.txtConfgName)
-        Me.Panel1.Controls.Add(Me.txtConfigCode)
         Me.Panel1.Controls.Add(Me.Panel3)
         Me.Panel1.Controls.Add(Me.Panel2)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
@@ -101,6 +99,84 @@ Partial Class ItemSharingCopyFrom
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(637, 342)
         Me.Panel1.TabIndex = 0
+        '
+        'LinkLabel3
+        '
+        Me.LinkLabel3.AutoSize = True
+        Me.LinkLabel3.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LinkLabel3.Location = New System.Drawing.Point(26, 117)
+        Me.LinkLabel3.Name = "LinkLabel3"
+        Me.LinkLabel3.Size = New System.Drawing.Size(67, 15)
+        Me.LinkLabel3.TabIndex = 881
+        Me.LinkLabel3.TabStop = True
+        Me.LinkLabel3.Text = "ConfigType"
+        '
+        'txtConfigtypeName
+        '
+        Me.txtConfigtypeName.AutoSize = False
+        Me.txtConfigtypeName.BackColor = System.Drawing.Color.White
+        Me.txtConfigtypeName.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtConfigtypeName.Location = New System.Drawing.Point(271, 111)
+        Me.txtConfigtypeName.Multiline = True
+        Me.txtConfigtypeName.Name = "txtConfigtypeName"
+        Me.txtConfigtypeName.ReadOnly = True
+        Me.txtConfigtypeName.Size = New System.Drawing.Size(351, 26)
+        Me.txtConfigtypeName.TabIndex = 880
+        Me.txtConfigtypeName.TabStop = False
+        Me.txtConfigtypeName.ThemeName = "Office2019Light"
+        '
+        'txtConfigtypeCode
+        '
+        Me.txtConfigtypeCode.AutoSize = False
+        Me.txtConfigtypeCode.BackColor = System.Drawing.Color.White
+        Me.txtConfigtypeCode.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtConfigtypeCode.Location = New System.Drawing.Point(119, 111)
+        Me.txtConfigtypeCode.Multiline = True
+        Me.txtConfigtypeCode.Name = "txtConfigtypeCode"
+        Me.txtConfigtypeCode.ReadOnly = True
+        Me.txtConfigtypeCode.Size = New System.Drawing.Size(150, 26)
+        Me.txtConfigtypeCode.TabIndex = 879
+        Me.txtConfigtypeCode.TabStop = False
+        Me.txtConfigtypeCode.ThemeName = "Office2019Light"
+        '
+        'LinkLabel1
+        '
+        Me.LinkLabel1.AutoSize = True
+        Me.LinkLabel1.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LinkLabel1.Location = New System.Drawing.Point(28, 147)
+        Me.LinkLabel1.Name = "LinkLabel1"
+        Me.LinkLabel1.Size = New System.Drawing.Size(50, 15)
+        Me.LinkLabel1.TabIndex = 878
+        Me.LinkLabel1.TabStop = True
+        Me.LinkLabel1.Text = "Channel"
+        '
+        'txtChannelName
+        '
+        Me.txtChannelName.AutoSize = False
+        Me.txtChannelName.BackColor = System.Drawing.Color.White
+        Me.txtChannelName.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtChannelName.Location = New System.Drawing.Point(271, 141)
+        Me.txtChannelName.Multiline = True
+        Me.txtChannelName.Name = "txtChannelName"
+        Me.txtChannelName.ReadOnly = True
+        Me.txtChannelName.Size = New System.Drawing.Size(351, 26)
+        Me.txtChannelName.TabIndex = 877
+        Me.txtChannelName.TabStop = False
+        Me.txtChannelName.ThemeName = "Office2019Light"
+        '
+        'txtChannelCode
+        '
+        Me.txtChannelCode.AutoSize = False
+        Me.txtChannelCode.BackColor = System.Drawing.Color.White
+        Me.txtChannelCode.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtChannelCode.Location = New System.Drawing.Point(119, 141)
+        Me.txtChannelCode.Multiline = True
+        Me.txtChannelCode.Name = "txtChannelCode"
+        Me.txtChannelCode.ReadOnly = True
+        Me.txtChannelCode.Size = New System.Drawing.Size(150, 26)
+        Me.txtChannelCode.TabIndex = 876
+        Me.txtChannelCode.TabStop = False
+        Me.txtChannelCode.ThemeName = "Office2019Light"
         '
         'RadLabel8
         '
@@ -123,17 +199,6 @@ Partial Class ItemSharingCopyFrom
         Me.RadLabel7.Size = New System.Drawing.Size(68, 19)
         Me.RadLabel7.TabIndex = 730
         Me.RadLabel7.Text = "Copy From"
-        '
-        'RadLabel6
-        '
-        Me.RadLabel6.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.RadLabel6.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RadLabel6.Location = New System.Drawing.Point(23, 114)
-        Me.RadLabel6.Name = "RadLabel6"
-        Me.RadLabel6.Size = New System.Drawing.Size(61, 19)
-        Me.RadLabel6.TabIndex = 729
-        Me.RadLabel6.Text = "Item info."
         '
         'RadMenu1
         '
@@ -180,46 +245,6 @@ Partial Class ItemSharingCopyFrom
         Me.btnClear.Text = "&Clear"
         Me.btnClear.UseCompatibleTextRendering = False
         Me.btnClear.Visibility = Telerik.WinControls.ElementVisibility.Visible
-        '
-        'RadLabel5
-        '
-        Me.RadLabel5.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.RadLabel5.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RadLabel5.Location = New System.Drawing.Point(23, 149)
-        Me.RadLabel5.Name = "RadLabel5"
-        Me.RadLabel5.Size = New System.Drawing.Size(84, 19)
-        Me.RadLabel5.TabIndex = 727
-        Me.RadLabel5.Text = "Configuration"
-        '
-        'txtItemName
-        '
-        Me.txtItemName.AutoSize = False
-        Me.txtItemName.BackColor = System.Drawing.Color.White
-        Me.txtItemName.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txtItemName.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold)
-        Me.txtItemName.Location = New System.Drawing.Point(265, 114)
-        Me.txtItemName.Multiline = True
-        Me.txtItemName.Name = "txtItemName"
-        Me.txtItemName.ReadOnly = True
-        Me.txtItemName.Size = New System.Drawing.Size(359, 25)
-        Me.txtItemName.TabIndex = 726
-        Me.txtItemName.TabStop = False
-        Me.txtItemName.ThemeName = "ControlDefault"
-        '
-        'txtItemCode
-        '
-        Me.txtItemCode.AutoSize = False
-        Me.txtItemCode.BackColor = System.Drawing.Color.White
-        Me.txtItemCode.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txtItemCode.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold)
-        Me.txtItemCode.Location = New System.Drawing.Point(116, 114)
-        Me.txtItemCode.Multiline = True
-        Me.txtItemCode.Name = "txtItemCode"
-        Me.txtItemCode.ReadOnly = True
-        Me.txtItemCode.Size = New System.Drawing.Size(143, 25)
-        Me.txtItemCode.TabIndex = 725
-        Me.txtItemCode.TabStop = False
         '
         'RadLabel2
         '
@@ -301,36 +326,6 @@ Partial Class ItemSharingCopyFrom
         Me.DropYearFrom.TabIndex = 716
         Me.DropYearFrom.ThemeName = "Office2010Blue"
         '
-        'txtConfgName
-        '
-        Me.txtConfgName.AutoSize = False
-        Me.txtConfgName.BackColor = System.Drawing.Color.White
-        Me.txtConfgName.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txtConfgName.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold)
-        Me.txtConfgName.Location = New System.Drawing.Point(265, 143)
-        Me.txtConfgName.Multiline = True
-        Me.txtConfgName.Name = "txtConfgName"
-        Me.txtConfgName.ReadOnly = True
-        Me.txtConfgName.Size = New System.Drawing.Size(359, 25)
-        Me.txtConfgName.TabIndex = 715
-        Me.txtConfgName.TabStop = False
-        Me.txtConfgName.ThemeName = "ControlDefault"
-        '
-        'txtConfigCode
-        '
-        Me.txtConfigCode.AutoSize = False
-        Me.txtConfigCode.BackColor = System.Drawing.Color.White
-        Me.txtConfigCode.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txtConfigCode.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold)
-        Me.txtConfigCode.Location = New System.Drawing.Point(116, 143)
-        Me.txtConfigCode.Multiline = True
-        Me.txtConfigCode.Name = "txtConfigCode"
-        Me.txtConfigCode.ReadOnly = True
-        Me.txtConfigCode.Size = New System.Drawing.Size(143, 25)
-        Me.txtConfigCode.TabIndex = 714
-        Me.txtConfigCode.TabStop = False
-        Me.txtConfigCode.ThemeName = "ControlDefault"
-        '
         'Panel3
         '
         Me.Panel3.BackColor = System.Drawing.Color.LightSteelBlue
@@ -345,7 +340,7 @@ Partial Class ItemSharingCopyFrom
         '
         'btnStartProcess
         '
-        Me.btnStartProcess.Location = New System.Drawing.Point(455, 2)
+        Me.btnStartProcess.Location = New System.Drawing.Point(459, 2)
         Me.btnStartProcess.Name = "btnStartProcess"
         Me.btnStartProcess.Size = New System.Drawing.Size(83, 32)
         Me.btnStartProcess.TabIndex = 3
@@ -354,11 +349,11 @@ Partial Class ItemSharingCopyFrom
         '
         'btnCanced
         '
-        Me.btnCanced.Location = New System.Drawing.Point(543, 2)
+        Me.btnCanced.Location = New System.Drawing.Point(547, 2)
         Me.btnCanced.Name = "btnCanced"
         Me.btnCanced.Size = New System.Drawing.Size(83, 32)
         Me.btnCanced.TabIndex = 2
-        Me.btnCanced.Text = "&Canced"
+        Me.btnCanced.Text = "&Cancel"
         Me.btnCanced.ThemeName = "Office2010Silver"
         '
         'Panel2
@@ -397,13 +392,13 @@ Partial Class ItemSharingCopyFrom
         Me.Text = "ItemSharingCopyFrom"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        CType(Me.txtConfigtypeName, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtConfigtypeCode, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtChannelName, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtChannelCode, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadLabel8, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadLabel7, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RadLabel6, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadMenu1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RadLabel5, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txtItemName, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txtItemCode, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadLabel2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadLabel4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DropMonthTo, System.ComponentModel.ISupportInitialize).EndInit()
@@ -412,8 +407,6 @@ Partial Class ItemSharingCopyFrom
         CType(Me.RadLabel1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DropMonthFrom, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DropYearFrom, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txtConfgName, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txtConfigCode, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel3.ResumeLayout(False)
         CType(Me.btnStartProcess, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnCanced, System.ComponentModel.ISupportInitialize).EndInit()
@@ -431,10 +424,6 @@ Partial Class ItemSharingCopyFrom
     Friend WithEvents RadLabel1 As Telerik.WinControls.UI.RadLabel
     Friend WithEvents DropMonthFrom As Telerik.WinControls.UI.RadDropDownList
     Friend WithEvents DropYearFrom As Telerik.WinControls.UI.RadDropDownList
-    Friend WithEvents txtConfgName As Telerik.WinControls.UI.RadTextBox
-    Friend WithEvents txtConfigCode As Telerik.WinControls.UI.RadTextBox
-    Friend WithEvents txtItemName As Telerik.WinControls.UI.RadTextBox
-    Friend WithEvents txtItemCode As Telerik.WinControls.UI.RadTextBox
     Friend WithEvents RadLabel2 As Telerik.WinControls.UI.RadLabel
     Friend WithEvents RadLabel4 As Telerik.WinControls.UI.RadLabel
     Friend WithEvents DropMonthTo As Telerik.WinControls.UI.RadDropDownList
@@ -442,12 +431,16 @@ Partial Class ItemSharingCopyFrom
     Friend WithEvents btnStartProcess As Telerik.WinControls.UI.RadButton
     Friend WithEvents btnCanced As Telerik.WinControls.UI.RadButton
     Friend WithEvents Office2010BlackTheme1 As Telerik.WinControls.Themes.Office2010BlackTheme
-    Friend WithEvents Office2010SilverTheme1 As Telerik.WinControls.Themes.Office2010SilverTheme
-    Friend WithEvents RadLabel5 As Telerik.WinControls.UI.RadLabel
-    Friend WithEvents RadLabel6 As Telerik.WinControls.UI.RadLabel
+    Friend WithEvents Office2010SilverTheme1 As Telerik.WinControls.Themes.Office2010BlackTheme
     Friend WithEvents RadMenu1 As Telerik.WinControls.UI.RadMenu
     Friend WithEvents btnFinddata As Telerik.WinControls.UI.RadMenuButtonItem
     Friend WithEvents btnClear As Telerik.WinControls.UI.RadMenuButtonItem
     Friend WithEvents RadLabel8 As Telerik.WinControls.UI.RadLabel
     Friend WithEvents RadLabel7 As Telerik.WinControls.UI.RadLabel
+    Friend WithEvents LinkLabel1 As LinkLabel
+    Friend WithEvents txtChannelName As Telerik.WinControls.UI.RadTextBox
+    Friend WithEvents txtChannelCode As Telerik.WinControls.UI.RadTextBox
+    Friend WithEvents LinkLabel3 As LinkLabel
+    Friend WithEvents txtConfigtypeName As Telerik.WinControls.UI.RadTextBox
+    Friend WithEvents txtConfigtypeCode As Telerik.WinControls.UI.RadTextBox
 End Class

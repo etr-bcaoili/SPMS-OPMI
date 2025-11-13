@@ -121,17 +121,17 @@ Public Class UIUploadingCustomerItemSharing
                 Else
                     m_Sharing.CustomerName = dr("Customer Name")
                 End If
-                If IsDBNull(dr("Ship to Code")) Then
-                    MsgBox("Customer Ship to Code is Required", MsgBoxStyle.Exclamation, "Please Entry")
+                If IsDBNull(dr("Shipto Code")) Then
+                    MsgBox("Customer Shipto Code is Required", MsgBoxStyle.Exclamation, "Please Entry")
                     Exit Sub
                 Else
-                    m_Sharing.ShiptoCode = dr("Ship to Code")
+                    m_Sharing.ShiptoCode = dr("Shipto Code")
                 End If
-                If IsDBNull(dr("Ship to Name")) Then
-                    MsgBox("Customer ship to Name  is Required", MsgBoxStyle.Exclamation, "Please Entry")
+                If IsDBNull(dr("Shipto Name")) Then
+                    MsgBox("Customer Shipto Name  is Required", MsgBoxStyle.Exclamation, "Please Entry")
                     Exit Sub
                 Else
-                    m_Sharing.CustomerName = dr("Ship to Name")
+                    m_Sharing.CustomerName = dr("Shipto Name")
                 End If
 
                 If IsDBNull(dr("Salesman Code")) Then
@@ -141,11 +141,11 @@ Public Class UIUploadingCustomerItemSharing
                     m_Sharing.SalesAgentCode = dr("Salesman Code")
                 End If
 
-                If IsDBNull(dr("ItemCode")) Then
+                If IsDBNull(dr("Item Code")) Then
                     MsgBox("Item Code is Required", MsgBoxStyle.Exclamation, "Please Entry")
                     Exit Sub
                 Else
-                    m_Sharing.ItemCode = dr("ItemCode")
+                    m_Sharing.ItemCode = dr("Item Code")
                 End If
 
                 If IsDBNull(dr("Per Share")) Then
@@ -154,11 +154,11 @@ Public Class UIUploadingCustomerItemSharing
                 Else
                     m_Sharing.Shareds = dr("Per Share")
                 End If
-                If IsDBNull(dr("OR/SH")) Then
-                    MsgBox("[ORIGINAL/SHARED] is Required", MsgBoxStyle.Exclamation, "Please Entry")
+                If IsDBNull(dr("OR-SH")) Then
+                    MsgBox("[ORIGINAL-SHARED] is Required", MsgBoxStyle.Exclamation, "Please Entry")
                     Exit Sub
                 Else
-                    m_Sharing.OR_SH = dr("OR/SH")
+                    m_Sharing.OR_SH = dr("OR-SH")
                 End If
 
                 m_Sharing.Save()
@@ -179,6 +179,7 @@ Public Class UIUploadingCustomerItemSharing
                 m_Sharing.Year = DropYear.Text
                 m_Sharing.Month = DropMonth.Text
 
+
                 If IsDBNull(dr("Customer Code")) Then
                     MsgBox("Customer Code is Required", MsgBoxStyle.Exclamation, "Please Entry")
                     Exit Sub
@@ -192,17 +193,17 @@ Public Class UIUploadingCustomerItemSharing
                 Else
                     m_Sharing.CustomerName = dr("Customer Name")
                 End If
-                If IsDBNull(dr("Ship to Code")) Then
-                    MsgBox("Customer Ship to Code is Required", MsgBoxStyle.Exclamation, "Please Entry")
+                If IsDBNull(dr("Shipto Code")) Then
+                    MsgBox("Customer Shipto Code is Required", MsgBoxStyle.Exclamation, "Please Entry")
                     Exit Sub
                 Else
-                    m_Sharing.ShiptoCode = dr("Ship to Code")
+                    m_Sharing.ShiptoCode = dr("Shipto Code")
                 End If
-                If IsDBNull(dr("Ship to Name")) Then
-                    MsgBox("Customer ship to Name  is Required", MsgBoxStyle.Exclamation, "Please Entry")
+                If IsDBNull(dr("Shipto Name")) Then
+                    MsgBox("Customer Shipto Name  is Required", MsgBoxStyle.Exclamation, "Please Entry")
                     Exit Sub
                 Else
-                    m_Sharing.CustomerName = dr("Ship to Name")
+                    m_Sharing.CustomerName = dr("Shipto Name")
                 End If
 
                 If IsDBNull(dr("Salesman Code")) Then
@@ -212,11 +213,11 @@ Public Class UIUploadingCustomerItemSharing
                     m_Sharing.SalesAgentCode = dr("Salesman Code")
                 End If
 
-                If IsDBNull(dr("ItemCode")) Then
+                If IsDBNull(dr("Item Code")) Then
                     MsgBox("Item Code is Required", MsgBoxStyle.Exclamation, "Please Entry")
                     Exit Sub
                 Else
-                    m_Sharing.ItemCode = dr("ItemCode")
+                    m_Sharing.ItemCode = dr("Item Code")
                 End If
 
                 If IsDBNull(dr("Per Share")) Then
@@ -225,11 +226,11 @@ Public Class UIUploadingCustomerItemSharing
                 Else
                     m_Sharing.Shareds = dr("Per Share")
                 End If
-                If IsDBNull(dr("OR/SH")) Then
-                    MsgBox("[ORIGINAL/SHARED] is Required", MsgBoxStyle.Exclamation, "Please Entry")
+                If IsDBNull(dr("OR-SH")) Then
+                    MsgBox("[ORIGINAL-SHARED] is Required", MsgBoxStyle.Exclamation, "Please Entry")
                     Exit Sub
                 Else
-                    m_Sharing.OR_SH = dr("OR/SH")
+                    m_Sharing.OR_SH = dr("OR-SH")
                 End If
 
                 m_Sharing.Save()

@@ -169,7 +169,7 @@ Public Class SalesAccountSpecialistCollection
     End Function
 
     Public Shared Function GetSalesAccountSpecialistICollection(ByVal SalesAccountSpecialistID As Integer)
-        Return "Select IsActive,DistrictManagerName,PMRCode,PMRName,DistrictManagerCode,EffectivityStartDate,EffectivityEndDate,ConfigtypeCode from [SalesAccountSpecialistCollection] Where SalesAccountSpecialistID = '" & SalesAccountSpecialistID & "' Order by DistrictManagerCode,PMRCode"
+        Return "Select IsActive,DistrictManagerName,PMRCode,PMRName,DistrictManagerCode from [SalesAccountSpecialistCollection] Where SalesAccountSpecialistID = '" & SalesAccountSpecialistID & "' Order by DistrictManagerCode,PMRCode"
     End Function
 
     Public Shared Function GetSalesAccountSpecialistDistributor(ByVal DistrictManagerCode As String, ByVal ConfigtypeCode As String)

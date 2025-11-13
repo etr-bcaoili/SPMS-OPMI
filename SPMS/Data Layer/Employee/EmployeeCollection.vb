@@ -8,7 +8,6 @@ Public Class EmployeeCollection
 
     Private m_ConfigtypeCode As String = String.Empty
 
-
     Private m_DateStartEffectivity As Date = "1/1/1900"
 
     Private m_DateEndEffectivity As Date = "1/1/1900"
@@ -82,7 +81,7 @@ Public Class EmployeeCollection
         Return "Select TerritoryCode,ConfigtypeCode,EffectivityStartDate,EffectivityEndDate From [EmployeeSalesmanCollection] Where EmployeeID = '" & EmployeeID & "'"
     End Function
     Public Shared Function GetEmployeeCollection2(ByVal EmployeeID As Integer)
-        Return "Select A.TerritoryCode,B.SLSMNNAME,A.EffectivityStartDate,A.EffectivityEndDate,A.ConfigtypeCode From [EmployeeSalesmanCollection] A Inner Join MEDICALREP B ON A.TerritoryCode = B.SLSMNCD Where  EmployeeID = '" & EmployeeID & "'"
+        Return "Select Distinct  A.TerritoryCode,B.STACOVNAME,A.EffectivityStartDate,A.EffectivityEndDate,A.ConfigtypeCode From [EmployeeSalesmanCollection] A Inner Join SalesMatrix B ON A.TerritoryCode = B.STSLSMNCD  Where  EmployeeID = '" & EmployeeID & "'"
     End Function
     Public Shared Function GetEmployeeCollectionPMR(ByVal PMRCode As String, ByVal EmployeeID As Integer)
         Return "Select A.TerritoryCode,B.LastName +' '+B.FirstName [EmployeeName],A.EffectivityStartDate,A.EffectivityEndDate,A.ConfigtypeCode From EmployeeSalesmanCollection A Inner Join EmployeeSalesman B ON A.EmployeeID = B.EmployeeID Where A.TerritoryCode = '" & PMRCode & "' And B.EmployeeID <> '" & EmployeeID & "' And B.Position = 'Professional Medical Representative' And B.IsDeleted = 0 "

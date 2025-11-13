@@ -3,7 +3,11 @@ Imports SPMSOPCI.ErrorMessagesModule
 Imports SPMSOPCI.InformationMessagesModule
 Imports System.Data.SqlClient
 Imports SPMSOPCI.Dialogs
-<System.ComponentModel.ToolboxItem(False)> _
+Imports Telerik.WinControls.UI
+Imports Aphrodite.Core
+Imports System.IO
+Imports Telerik.WinControls
+<System.ComponentModel.ToolboxItem(False)>
 Public Class UCRawDataAnalyzer
     Inherits Althea.Base.UI.BasePage
     Private m_RsCustomerNotInSystem As New ADODB.Recordset
@@ -86,7 +90,7 @@ Public Class UCRawDataAnalyzer
     Private Sub LoadYear()
         Dim rs As New ADODB.Recordset
         If rs.State = 1 Then rs.Close()
-        rs.Open("SELECT DISTINCT CAYR FROM CALENDAR  ", SPMSConn, ADODB.CursorTypeEnum.adOpenStatic, ADODB.LockTypeEnum.adLockReadOnly)
+        rs.Open("SELECT DISTINCT CAYR FROM CALENDAR ORDER BY CAYR", SPMSConn, ADODB.CursorTypeEnum.adOpenStatic, ADODB.LockTypeEnum.adLockReadOnly)
         cboCalendarYear.Items.Clear()
         For m As Integer = 0 To rs.RecordCount - 1
             cboCalendarYear.Items.Add(rs.Fields("CAYR").Value)
@@ -570,7 +574,7 @@ Public Class UCRawDataAnalyzer
                     row.Cells(col8CustomerName.Index).Value = m_RsShipToCustomerNotInSystem.Fields("CustomerName").Value
                     row.Cells(col8ShipToCode.Index).Value = m_RsShipToCustomerNotInSystem.Fields("CustomerDeliveryCode").Value
                     row.Cells(col8ShipToName.Index).Value = m_RsShipToCustomerNotInSystem.Fields("ShipToName").Value
-                    row.Cells(col8CustomerGrp.Index).Value = m_RsShipToCustomerNotInSystem.Fields("CustomerClass").Value
+                    row.Cells(CustomerGroupShipTo.Index).Value = m_RsShipToCustomerNotInSystem.Fields("CustomerGroupCode").Value
                     row.Cells(col8ShipToCustomerAddress1.Index).Value = m_RsShipToCustomerNotInSystem.Fields("ShipToAddress1").Value
                     row.Cells(col8ShipToAddress2.Index).Value = m_RsShipToCustomerNotInSystem.Fields("ShipToAddress2").Value
 
@@ -654,7 +658,7 @@ Public Class UCRawDataAnalyzer
                         row.Cells(colCustomerCode.Index).Value = m_RsCustomerNotInSystem.Fields("CustomerNumber").Value
                         row.Cells(colCustomerName.Index).Value = m_RsCustomerNotInSystem.Fields("CustomerName").Value
 
-                        row.Cells(colCustomerClass.Index).Value = m_RsCustomerNotInSystem.Fields("CustomerClass").Value
+                        row.Cells(CustomerGroup.Index).Value = m_RsCustomerNotInSystem.Fields("CustomerGroupCode").Value
                         row.Cells(colCustomerAddress.Index).Value = m_RsCustomerNotInSystem.Fields("CustomerAddress1").Value
                         row.Cells(colCustomerAddress2.Index).Value = m_RsCustomerNotInSystem.Fields("CustomerAddress2").Value
 
@@ -913,18 +917,101 @@ Public Class UCRawDataAnalyzer
             Return False
         End If
     End Function
-
+    Public Sub ShowWarning(ByVal message As String, ByVal title As String)
+        MessageBox.Show(message, title, MessageBoxButtons.OK, MessageBoxIcon.Warning)
+    End Sub
     Private Sub Rebuild()
         Try
             SPMSConn.CommandTimeout = 0
             SPMSConn.Execute("EXEC uspRebuild @ConfigtypeCode = '" & cboConfig.Text & "', @COMID = '" & cboCompany.Text & "' , @CUTMO = '" & cboMonth.Text & "' , @CUTYEAR = '" & cboCalendarYear.Text & "' ")
             SPMSConn.Execute("Exec uspInsertIntoSC02FIle @CUTMO = '" & cboMonth.Text & "', @CUTYEAR = '" & cboCalendarYear.Text & "', @CompanyCode = '" & cboCompany.Text & "', @ConfigtypeCode = '" & cboConfig.Text & "' ")
-            ShowInformation("Successfully Processed", "Rebuild")
+            SPMSConn.Execute("Exec uspUpdateCustomerGroup @ConfigtypeCode = '" & cboConfig.Text & "',@ChannelCode = '" & cboCompany.Text & "'")
+            SPMSConn.Execute("EXEC uspCustomerItemSharingSHR @Action = 'CustomerItemShared_SHR',@Month = '" & cboMonth.Text & "',@Year = '" & cboCalendarYear.Text & "',@ChannelCode = '" & cboCompany.Text & "',@ConfigtypeCode = '" & cboConfig.Text & "'")
+            SPMSConn.Execute("EXEC uspCustomerItemSharingSHR @Action = 'CustomerItemShared_ORG',@Month = '" & cboMonth.Text & "',@Year = '" & cboCalendarYear.Text & "',@ChannelCode = '" & cboCompany.Text & "',@ConfigtypeCode = '" & cboConfig.Text & "'")
+            SPMSConn.Execute("Exec uspEmployeeUpdate @RConfigtypeCode = '" & cboConfig.Text & "',@RCutmo = '" & cboMonth.Text & "',@RCutyear = '" & cboCalendarYear.Text & "'")
+            SPMSConn.Execute("Exec uspEmployeeDMUpdate @RConfigtypeCode = '" & cboConfig.Text & "',@RCutmo = '" & cboMonth.Text & "',@RCutyear = '" & cboCalendarYear.Text & "'")
+            SPMSConn.Execute("Exec ValidationViews @ChannelCode = '" & cboCompany.Text & "',@ConfigtypeCode = '" & cboConfig.Text & "',@Month = '" & cboMonth.Text & "',@Year = '" & cboCalendarYear.Text & "'")
+
+            If SPMSConn2.State = ConnectionState.Closed Then
+                SPMSConn2.Open()
+            End If
+            Dim cmd As New SqlCommand("SELECT * FROM [ValidationData]", SPMSConn2)
+            Dim reader As SqlDataReader = cmd.ExecuteReader()
+            If reader.HasRows Then
+                ShowWarning("Error have been found. Please check the result.", "Result Warning")
+                MainWindow.TabControl1.TabPages.Add(MainWindow.TabControl1.TabPages.Count)
+                Dim M_Validadations As New ValidationProcess
+                M_Validadations.ExternalChannelCode = cboCompany.Text
+                M_Validadations.ExternalConfigtypeCode = cboConfig.Text
+                M_Validadations.ExternalMonth = cboMonth.Text
+                M_Validadations.ExternalYear = cboCalendarYear.Text
+                M_Validadations.RebuildProcess = True
+                M_Validadations.Width = Me.Width
+                M_Validadations.Height = MainWindow.TabControl1.TabPages(MainWindow.TabControl1.TabPages.Count - 1).Height
+                MainWindow.TabControl1.TabPages(MainWindow.TabControl1.TabPages.Count - 1).Text = "Process Validation"
+                MainWindow.TabControl1.TabPages(MainWindow.TabControl1.TabPages.Count - 1).Controls.Add(M_Validadations)
+                MainWindow.TabControl1.SelectTab(MainWindow.TabControl1.TabPages.Count - 1)
+                Exit Sub
+            Else
+                ShowInformation("Successfully Processed", "Rebuild")
+            End If
+            reader.Close()
             Disconnect()
         Catch ex As Exception
             Throw New Exception(ex.Message)
             Disconnect()
         End Try
+    End Sub
+    Shared Sub svc_ServiceStatusChanged(sender As System.Object, e As ServiceStatusChangedEventArgs)
+        'Replace these lines if you want to handle all the events of the mailer
+        If (e.Exception IsNot Nothing) Then
+            Debug.Write(e.Status.ToString() + " " + e.Exception.ToString())
+            If (e.Status = ServiceStatus.ErrorAttachingFile) Then
+
+                'If you reached these lines, you have a file that is not existing in your attachment
+                If (Debugger.IsAttached) Then
+                    Debugger.Break()
+                Else
+                    Throw New Exception("File Not found")
+                End If
+            End If
+        Else
+            Debug.Write(e.Status.ToString())
+            'ShowInformation(e.Status.ToString, "Status")
+        End If
+    End Sub
+    Private Sub ProcessEmail()
+        'On Error Resume Next
+        If txtConfig.Text = "" And cboMonth.Text = "" And cboCalendarYear.Text = "" Then
+            MsgBox("Select the ConfigTypeCode", MsgBoxStyle.Exclamation)
+        Else
+            'initialize the config file
+            Dim configFile As String = Application.StartupPath + "\\config\\config.db"
+            Dim config As New LocalConfiguration(configFile)
+
+
+            Dim requestFile As String = Application.StartupPath + "\\test.xml"
+            Dim request As New MailServiceRequest()
+            Dim lst As New MailList()
+
+
+            lst.Subject = "Process Rawdata" & " " & DateAndTime.Now.ToShortDateString
+            lst.ContentBody = "This Is an automated mail. Please Do Not reply To this email address." + Environment.NewLine &
+                              "For inquiries, please contact: Support Team" + Environment.NewLine + Environment.NewLine &
+                              "Technical support services : Apps Helpdesk" + Environment.NewLine &
+                              "Telephone No.: " + Environment.NewLine &
+                              "Email: apps.helpdesk@etrphils.com" + Environment.NewLine + Environment.NewLine &
+                              "Thank you."
+
+
+            lst.EmailAddresses.Add("bcaoili@etrphils.com")
+            request.Groups.Add(lst)
+            request.CreateRequestFile(requestFile)
+            Dim svc As New MailService("3681F8F3-51AC-4E38-8590-9717D75EB72C", request)
+            AddHandler svc.ServiceStatusChanged, AddressOf svc_ServiceStatusChanged
+            svc.ProcessFromFile(requestFile)
+            lst.EmailAddresses.Remove("bcaoili@etrphils.com")
+        End If
     End Sub
     Private Sub LoadTotalSaleproduct()
         GviewTables.Rows.Clear()
@@ -1153,6 +1240,14 @@ Public Class UCRawDataAnalyzer
                     row.Cells(colShipTo.Index).Style.BackColor = row.DefaultCellStyle.BackColor
                     row.Cells(colShipTo.Index).ToolTipText = String.Empty
                 End If
+                If row.Cells(CustomerGroup.Index).Value = "" Then
+                    row.Cells(CustomerGroup.Index).Style.BackColor = Color.LightPink
+                    row.Cells(CustomerGroup.Index).ToolTipText = "Customer group Code is required"
+                    m_HasError = True
+                Else
+                    row.Cells(CustomerGroup.Index).Style.BackColor = row.DefaultCellStyle.BackColor
+                    row.Cells(CustomerGroup.Index).ToolTipText = String.Empty
+                End If
 
                 If row.Cells(colShipToName.Index).Value = "" Then
                     row.Cells(colShipToName.Index).Style.BackColor = Color.LightPink
@@ -1176,8 +1271,8 @@ Public Class UCRawDataAnalyzer
 
                 If Not CheckIfShipToCustomerCodeExist(row.Cells(col8ShipToCode.Index).Value, cboCompany.Text, row.Cells(col8CustomerCode.Index).Value) Then
 
-                    If row.Cells(colZipCode.Index).Value <> String.Empty Then
-                        If row.Cells(colRegion.Index).Value = String.Empty Or row.Cells(colProvince.Index).Value = String.Empty Or row.Cells(colArea.Index).Value = String.Empty Then
+                    If row.Cells(col8ZipCode.Index).Value <> String.Empty Then
+                        If row.Cells(col8Region.Index).Value = String.Empty Or row.Cells(col8Province.Index).Value = String.Empty Then
                             SaveShipToCustomerNotInSystemWithZipCdAutomation(row)
                         Else
                             SaveShipToCustomerNotInSystem(row)
@@ -1355,13 +1450,13 @@ Public Class UCRawDataAnalyzer
     Private Sub SaveCustomerNotIntheSystem(ByVal row As DataGridViewRow)
         Try
 
-            SPMSConn.Execute("EXEC uspCustomer @Action = 'ADD' , @Comid = '" & cboCompany.Text & "' , " & _
-                                        " @CustomerCD = '" & HandleSingleQuoteInSql(row.Cells(colCustomerCode.Index).Value) & "', @CustomerNAME = '" & HandleSingleQuoteInSql(row.Cells(colCustomerName.Index).Value) & "' , @DistribCD = '', " & _
-                                        " @CADD1 = '" & HandleSingleQuoteInSql(row.Cells(colCustomerAddress.Index).Value) & "', @CADD2 = '" & HandleSingleQuoteInSql(row.Cells(colCustomerAddress2.Index).Value) & "' , @CMCont = '' , @Cmphon = '', " & _
-                                        " @CDACD = '" & HandleSingleQuoteInSql(row.Cells(colShipTo.Index).Value) & "'  , @ZIPCD = '" & HandleSingleQuoteInSql(row.Cells(colZipCode.Index).Value) & "' , @REGCD = '" & HandleSingleQuoteInSql(row.Cells(colRegion.Index).Tag) & "' , " & _
-                                        " @DISTCD = '" & row.Cells(colProvince.Index).Tag & "' , @AREACD = '" & row.Cells(colArea.Index).Tag & "' , @TERRCD = '' , @CMGRP = '" & row.Cells(colCustomerClass.Index).Value & "' , @CMCLASS = ''  , " & _
-                                        " @AREACOVRG = " & IIf(row.Cells(col1Shared.Index).Value = True, "1", "0") & "  , @VAT =  1 , @OLDCUSTCODE = '' , " & _
-                                    " @ACCNTSHRD =  " & IIf(row.Cells(col1Shared.Index).Value = True, "1", "0") & " ")
+            SPMSConn.Execute("EXEC uspCustomer @Action = 'ADD' , @Comid = '" & cboCompany.Text & "' , " &
+                                        " @CustomerCD = '" & HandleSingleQuoteInSql(row.Cells(colCustomerCode.Index).Value) & "', @CustomerNAME = '" & HandleSingleQuoteInSql(row.Cells(colCustomerName.Index).Value) & "' , @DistribCD = '', " &
+                                        " @CADD1 = '" & HandleSingleQuoteInSql(row.Cells(colCustomerAddress.Index).Value) & "', @CADD2 = '" & HandleSingleQuoteInSql(row.Cells(colCustomerAddress2.Index).Value) & "' , @CMCont = '' , @Cmphon = '', " &
+                                        " @CDACD = '" & HandleSingleQuoteInSql(row.Cells(colShipTo.Index).Value) & "'  , @ZIPCD = '" & HandleSingleQuoteInSql(row.Cells(colZipCode.Index).Value) & "' , @REGCD = '" & HandleSingleQuoteInSql(row.Cells(colRegion.Index).Tag) & "' , " &
+                                        " @DISTCD = '" & row.Cells(colProvince.Index).Tag & "' , @AREACD = '" & row.Cells(colArea.Index).Tag & "' , @TERRCD = '' , @CMGRP = '" & HandleSingleQuoteInSql(row.Cells(CustomerGroup.Index).Tag) & "' , @CMCLASS = ''  , " &
+                                        " @AREACOVRG = " & IIf(row.Cells(col1Shared.Index).Value = True, "1", "0") & "  , @VAT =  1 , @OLDCUSTCODE = '' , " &
+                                        " @ACCNTSHRD =  " & IIf(row.Cells(col1Shared.Index).Value = True, "1", "0") & " ")
 
         Catch ex As Exception
             Throw New Exception(ex.Message)
@@ -1371,12 +1466,12 @@ Public Class UCRawDataAnalyzer
 
     Private Sub SaveDefaultCustomerShipTo(ByVal row As DataGridViewRow)
         Try
-            SPMSConn.Execute("EXEC uspCustomerShipTo @Action = 'ADD' ,  @COMID =  '" & cboCompany.Text & "' , " & _
-                                " @CustomerCD = '" & HandleSingleQuoteInSql(row.Cells(colCustomerCode.Index).Value) & "' ,  " & _
-                                " @CDACD = '" & HandleSingleQuoteInSql(row.Cells(colShipTo.Index).Value) & "' , @CDANAME = '" & HandleSingleQuoteInSql(row.Cells(colShipToName.Index).Value) & "' , " & _
-                                " @CDACADD1 = '" & HandleSingleQuoteInSql(row.Cells(colCustomerAddress.Index).Value) & "' , @CDACADD2 = '" & HandleSingleQuoteInSql(row.Cells(colCustomerAddress2.Index).Value) & "' , " & _
-                                " @ZIPCD = '" & HandleSingleQuoteInSql(row.Cells(colZipCode.Index).Value) & "' , @REGCD = '" & HandleSingleQuoteInSql(row.Cells(colRegion.Index).Tag) & "' , " & _
-                                " @DISTCD = '" & HandleSingleQuoteInSql(row.Cells(colProvince.Index).Tag) & "' , @AREACD = '" & HandleSingleQuoteInSql(row.Cells(colArea.Index).Tag) & "' , @TERRCD = '' , @CMGRP = '" & HandleSingleQuoteInSql(row.Cells(colCustomerClass.Index).Value) & "'  , @CMCLASS =  '' , " & _
+            SPMSConn.Execute("EXEC uspCustomerShipTo @Action = 'ADD' ,  @COMID =  '" & cboCompany.Text & "' , " &
+                                " @CustomerCD = '" & HandleSingleQuoteInSql(row.Cells(colCustomerCode.Index).Value) & "' ,  " &
+                                " @CDACD = '" & HandleSingleQuoteInSql(row.Cells(colShipTo.Index).Value) & "' , @CDANAME = '" & HandleSingleQuoteInSql(row.Cells(colShipToName.Index).Value) & "' , " &
+                                " @CDACADD1 = '" & HandleSingleQuoteInSql(row.Cells(colCustomerAddress.Index).Value) & "' , @CDACADD2 = '" & HandleSingleQuoteInSql(row.Cells(colCustomerAddress2.Index).Value) & "' , " &
+                                " @ZIPCD = '" & HandleSingleQuoteInSql(row.Cells(colZipCode.Index).Value) & "' , @REGCD = '" & HandleSingleQuoteInSql(row.Cells(colRegion.Index).Tag) & "' , " &
+                                " @DISTCD = '" & HandleSingleQuoteInSql(row.Cells(colProvince.Index).Tag) & "' , @AREACD = '" & HandleSingleQuoteInSql(row.Cells(colArea.Index).Tag) & "' , @TERRCD = '' , @CMGRP = '" & HandleSingleQuoteInSql(row.Cells(CustomerGroup.Index).Tag) & "'  , @CMCLASS =  '' , " &
                                 " @AREACOVRG = " & IIf(row.Cells(col1Shared.Index).Value = True, "1", "0") & " ")
 
         Catch ex As Exception
@@ -2047,6 +2142,14 @@ Public Class UCRawDataAnalyzer
                     row.Cells(colCustomerClass.Index).Value = tag.KeyColumn1
                 End If
 
+            ElseIf e.ColumnIndex = CustomerGroup.Index Then
+                tag = ShowSearchDialog("CUSTOMERGROUPCD; CUSTOMERGROUPCD; CUSTOMERGROUPNAME;", "Select CUSTOMERGROUPCD,CUSTOMERGROUPCD [Customer Group Code],CUSTOMERGROUPNAME [Customer Group Name] from CustomerGroup Where DLTFLG = 0")
+                If Not tag Is Nothing Then
+                    row.Cells(CustomerGroup.Index).Tag = tag.KeyColumn1
+                    row.Cells(CustomerGroup.Index).Value = tag.KeyColumn3
+                End If
+
+
             ElseIf e.ColumnIndex = colRegion.Index Then
 
                 tag = ShowSearchDialog("REGCD; REGCD; REGNAME;", "SELECT REGCD, REGCD as [Region Code], REGNAME as [Region Name] FROM Region WHERE DLTFLG = 0")
@@ -2108,6 +2211,14 @@ Public Class UCRawDataAnalyzer
                     rows.Cells(colRegion.Index).Value = tag.KeyColumn3
                 End If
                 'End If
+
+            ElseIf e.ColumnIndex = CustomerGroup.Index Then
+                tag = ShowSearchDialog("CUSTOMERGROUPCD; CUSTOMERGROUPCD; CUSTOMERGROUPNAME;", "Select CUSTOMERGROUPCD,CUSTOMERGROUPCD [Customer Group Code],CUSTOMERGROUPNAME [Customer Group Name] from CustomerGroup Where DLTFLG = 0")
+                If Not tag Is Nothing Then
+                    row.Cells(CustomerGroup.Index).Tag = tag.KeyColumn1
+                    row.Cells(CustomerGroup.Index).Value = tag.KeyColumn3
+                End If
+
             ElseIf e.ColumnIndex = colProvince.Index Then
                 'If rows.Cells(colProvince.Index).Tag = True Then
                 If rows.Cells(colRegion.Index).Value <> "Select Region" Then
@@ -2566,27 +2677,10 @@ Public Class UCRawDataAnalyzer
 
     End Sub
 
-    Private Sub tbEntry_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tbEntry.Click
-
-    End Sub
-
-    Private Sub dgBatch_CellContentClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs)
-
-    End Sub
-
-    Private Sub cboCalendarYear_SelectedValueChanged(ByVal sender As Object, ByVal e As System.EventArgs)
-
-    End Sub
-
     Private Sub lnkItemsNotInPricelist_LinkClicked(ByVal sender As System.Object, ByVal e As System.Windows.Forms.LinkLabelLinkClickedEventArgs) Handles lnkItemsNotInPricelist.LinkClicked
         MainTab.SelectedTab = tbListing
         tbPages.SelectedTab = TabPage9
     End Sub
-
-    Private Sub dgBatch_CellContentDoubleClick(ByVal sender As Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs)
-
-    End Sub
-
     Private Sub dgBatch_CellEnter(ByVal sender As Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs)
         'If e.RowIndex = -1 Then Exit Sub
         'If Not cboMonth.Items.Count > 0 Then
@@ -2845,7 +2939,7 @@ Public Class UCRawDataAnalyzer
 
             If m_WithError Then
                 ShowExclamation("Errors have been found. Check Analysis Results tab for references.", "Start")
-                'Rebuild()
+                Rebuild()
             Else
                 If CheckIfMonthAndYearIsLocked(cboMonth.Text, cboCalendarYear.Text, cboCompany.Text, cboConfig.Text) Then
                     ShowExclamation("This sales month was already locked and data cannot be overriden.", "Raw Data Analyzer")
@@ -2905,11 +2999,6 @@ Public Class UCRawDataAnalyzer
     Private Sub BasePageHeader1_Load(sender As Object, e As EventArgs) Handles BasePageHeader1.Load
 
     End Sub
-
-    Private Sub dgShipToNotInSystem_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgShipToNotInSystem.CellContentClick
-
-    End Sub
-
     Private Sub Label17_Click(sender As Object, e As EventArgs) Handles Label17.Click
 
     End Sub
@@ -2923,5 +3012,16 @@ Public Class UCRawDataAnalyzer
     End Sub
     Private Sub LockTransaction(ByVal ConfigtypeCode As String, ByVal DistributorCode As String, ByVal Year As String, ByVal Month As String)
         ExecuteCommand("Update Sc02 set LockProcess = 1 Where Configtypecode = '" & ConfigtypeCode & "',[Company code] = '" & DistributorCode & "',Year = '" & Year & "', Month = '" & Month & "'")
+    End Sub
+    Private Sub dgShipToNotInSystem_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgShipToNotInSystem.CellContentClick
+        If e.RowIndex = -1 Then Exit Sub
+        Dim rows As DataGridViewRow = dgShipToNotInSystem.Rows(e.RowIndex)
+        If e.ColumnIndex = CustomerGroupShipTo.Index Then
+            Tag = ShowSearchDialog("CUSTOMERGROUPCD; CUSTOMERGROUPCD; CUSTOMERGROUPNAME;", "SELECT CUSTOMERGROUPCD,CUSTOMERGROUPCD [Customer Group Code],CUSTOMERGROUPNAME [Customer Group Name] from CustomerGroup Where DLTFLG = 0")
+            If Not Tag Is Nothing Then
+                rows.Cells(CustomerGroupShipTo.Index).Tag = Tag.KeyColumn1
+                rows.Cells(CustomerGroupShipTo.Index).Value = Tag.KeyColumn3
+            End If
+        End If
     End Sub
 End Class

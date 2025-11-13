@@ -115,11 +115,17 @@ Public Class frmProductManagers
                 m_HasError = True
             End If
         End If
+
+        If txtConfigtypeCode.Text = "" Then
+            m_Err.SetError(txtPm_Name, "Product Manager Name  is required")
+            m_HasError = True
+        End If
         Return Not m_HasError
     End Function
     Private Function SaveData() As Boolean
         m_ProductManager.PriductID = RefineSQL(txtPM_ID.Text)
         m_ProductManager.ProductManager = RefineSQL(txtPm_Name.Text)
+        m_ProductManager.ConfigtypeCode = txtConfigtypeCode.Text
         m_ProductManager.EffectivityStartDate = dtStart.Text
         m_ProductManager.EffectivityEndDate = dtEnd.Text
         m_ProductManager.IsActive = True
@@ -274,5 +280,13 @@ Public Class frmProductManagers
 
     Private Sub dgItemList_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgItemList.CellContentClick
 
+    End Sub
+
+    Private Sub LinkLabel3_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel3.LinkClicked
+        Dim tag As SelectionTags = Dialogs.ShowSearchDialog(Configuration.GetConfigtypeSql, "Medical Configuration")
+        If Not tag Is Nothing Then
+            txtConfigtypeCode.Text = tag.KeyColumn11
+            txtConfigtypeName.Text = tag.KeyColumn33
+        End If
     End Sub
 End Class

@@ -30,7 +30,6 @@ Partial Class ucDistributorItemsPrice
         Dim GridViewTextBoxColumn6 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
         Dim GridViewTextBoxColumn7 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
         Dim GridViewTextBoxColumn8 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim TableViewDefinition1 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
@@ -188,7 +187,7 @@ Partial Class ucDistributorItemsPrice
         Me.lblErrorMessage.Name = "lblErrorMessage"
         Me.lblErrorMessage.Size = New System.Drawing.Size(576, 13)
         Me.lblErrorMessage.TabIndex = 116
-        Me.lblErrorMessage.Text = "Errors have been found in the detail. highlight each cell with pink highlight to " & _
+        Me.lblErrorMessage.Text = "Errors have been found in the detail. highlight each cell with pink highlight to " &
     "show the error message"
         Me.lblErrorMessage.Visible = False
         '
@@ -214,7 +213,7 @@ Partial Class ucDistributorItemsPrice
         Me.GrdViewItemPrice.ImeMode = System.Windows.Forms.ImeMode.NoControl
         Me.GrdViewItemPrice.Location = New System.Drawing.Point(0, 0)
         '
-        '
+        'GrdViewItemPrice
         '
         Me.GrdViewItemPrice.MasterTemplate.AllowAddNewRow = False
         Me.GrdViewItemPrice.MasterTemplate.AllowDeleteRow = False
@@ -255,7 +254,6 @@ Partial Class ucDistributorItemsPrice
         Me.GrdViewItemPrice.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewTextBoxColumn1, GridViewTextBoxColumn2, GridViewTextBoxColumn3, GridViewTextBoxColumn4, GridViewTextBoxColumn5, GridViewTextBoxColumn6, GridViewTextBoxColumn7, GridViewTextBoxColumn8})
         Me.GrdViewItemPrice.MasterTemplate.EnableFiltering = True
         Me.GrdViewItemPrice.MasterTemplate.EnableGrouping = False
-        Me.GrdViewItemPrice.MasterTemplate.ViewDefinition = TableViewDefinition1
         Me.GrdViewItemPrice.Name = "GrdViewItemPrice"
         Me.GrdViewItemPrice.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.GrdViewItemPrice.Size = New System.Drawing.Size(1411, 420)

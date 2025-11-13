@@ -2,6 +2,7 @@
 Imports SPMSOPCI.ErrorMessagesModule
 Imports SPMSOPCI.InformationMessagesModule
 Imports SPMSOPCI.Dialogs
+Imports Telerik.WinControls.UI
 Public Class UIItemCreate
     Private m_Err As New ErrorProvider
     Private m_Action As String = ""
@@ -15,11 +16,12 @@ Public Class UIItemCreate
     Private m_ItemCategory As New ItemCategory
     Private m_ProductManager As New ItemProductAssignment
     Private m_ProductItemGroup As New ProductItemGroup
+    Private m_ProductGroupEffectivity As New ProductGroupEffectivity
+    Dim table As New DataTable
     Private Sub EditMode(ByVal IsEditMode As Boolean)
 
         lnkMotherCode.Enabled = IsEditMode
         LinkItemDivision.Enabled = IsEditMode
-        LinkProductItemGroup.Enabled = IsEditMode
         LinkItemGroup.Enabled = IsEditMode
         LinkTherapeutic.Enabled = IsEditMode
         LinkProductCategory.Enabled = IsEditMode
@@ -63,11 +65,6 @@ Public Class UIItemCreate
         txtItemDivisionCode.ReadOnly = Not IsEditMode
         txtItemDivisionCode.BackColor = Color.White
 
-        txtproductItemGroupCode.ReadOnly = Not IsEditMode
-        txtproductItemGroupCode.BackColor = Color.White
-
-        txtProductItemGroupName.ReadOnly = Not IsEditMode
-        txtProductItemGroupName.BackColor = Color.White
 
 
         txtItemdivisionName.ReadOnly = Not IsEditMode
@@ -99,8 +96,6 @@ Public Class UIItemCreate
         txtmotherDescription.Text = String.Empty
         txtItemDivisionCode.Text = String.Empty
         txtItemdivisionName.Text = String.Empty
-        txtproductItemGroupCode.Text = String.Empty
-        txtProductItemGroupName.Text = String.Empty
         txtItemTherapeuticCode.Text = String.Empty
         txtItemClassName.Text = String.Empty
         txtItemGroupCode.Text = String.Empty
@@ -108,6 +103,7 @@ Public Class UIItemCreate
         txtProductCategoryCode.Text = String.Empty
 
         txtProductItemCategory.Text = String.Empty
+        GrdView.Rows.Clear()
 
     End Sub
     Private Sub EnableTextBox(ByVal IsEditMode As Boolean)
@@ -172,8 +168,8 @@ Public Class UIItemCreate
             m_HasError = True
         End If
 
-        If txtItemDivisionCode.Text = "" Then
-            m_Err.SetError(txtItemDivisionCode, "Item Division is required")
+        If GrdView.Rows.Count = 0 Then
+            m_Err.SetError(GrdView, "Item Division is required")
             m_HasError = True
         End If
 
@@ -221,11 +217,22 @@ Public Class UIItemCreate
         m_Items.Itemthr = txtMotherCode.Text
         m_Items.ItemMMDES = txtmotherDescription.Text
         m_Items.ItemDivisionCode = txtItemDivisionCode.Text
-        m_Items.ProductItemGroup = txtproductItemGroupCode.Text
         m_Items.ItemClassCode = txtItemTherapeuticCode.Text
         m_Items.ItemGroupCode = txtItemGroupCode.Text
         m_Items.ItemProductCategoryCode = txtProductCategoryCode.Text
-        'm_Items.ItemProductAssign = txtProductManagerCode.Text
+
+        For a As Integer = 0 To GrdView.Rows.Count - 1
+            Dim Growinfo As GridViewRowInfo = GrdView.Rows(a)
+            m_ProductGroupEffectivity = New ProductGroupEffectivity
+            m_ProductGroupEffectivity.ItemCode = txtItemCode.Text
+            m_ProductGroupEffectivity.Code = Growinfo.Cells(0).Value
+            m_ProductGroupEffectivity.EffectivityStartDate = Growinfo.Cells(2).Value
+            m_ProductGroupEffectivity.EffectivityEndDate = Growinfo.Cells(3).Value
+            m_ProductGroupEffectivity.ConfigtypeCode = Growinfo.Cells(4).Value
+            m_ProductGroupEffectivity.Delete()
+            m_ProductGroupEffectivity.Save()
+        Next
+
 
         If m_Items.Save Then
             SaveSuccess()
@@ -289,7 +296,22 @@ Public Class UIItemCreate
         If Not m_Items.ProductItemGroup = String.Empty Then
             LoadProductItemGroup(m_Items.ProductItemGroup)
         End If
+        If Not m_Items.Itemthr = String.Empty Then
+            LoadProductGroupList(m_Items.Itemthr)
+        End If
         EditMode(False)
+    End Sub
+    Private Sub LoadProductGroupList(ByVal ItemCode As String)
+        GrdView.Rows.Clear()
+        table = GetRecords(ProductGroupEffectivity.GetProductGroupSql(ItemCode))
+        For m As Integer = 0 To table.Rows.Count - 1
+            Dim rowinfos As GridViewRowInfo = GrdView.Rows.AddNew
+            rowinfos.Cells(0).Value = table.Rows(m)("Code")
+            rowinfos.Cells(1).Value = table.Rows(m)("PGDescription")
+            rowinfos.Cells(2).Value = table.Rows(m)("EffectivityStartDate")
+            rowinfos.Cells(3).Value = table.Rows(m)("EffectivityEndDate")
+            rowinfos.Cells(4).Value = table.Rows(m)("ConfigtypeCode")
+        Next
     End Sub
     Private Sub LoadItemMonther(ByVal RecordCode As String)
         m_Items = Items.LoadByMotherCode(RecordCode)
@@ -361,20 +383,60 @@ Public Class UIItemCreate
         EditMode(False)
         dtFromDate.Value = DateTime.Now
         dtTodate.Value = DateTime.Now
+        'LoadConfigtypeCode()
     End Sub
 
-    Private Sub LinkProductItemGroup_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkProductItemGroup.LinkClicked
+    Private Sub LoadConfigtypeCode()
+        ' Remove the existing auto-generated column first
+        GrdView.Columns.Remove("Configtype Code")
+
+        ' Create a new ComboBox column
+        Dim comboCol As New GridViewComboBoxColumn()
+        comboCol.Name = "ConfigtypeCode"
+        comboCol.HeaderText = "Configtype Code"
+
+
+        ' Bind it to your DataTable
+        Dim table As DataTable = GetRecords(Configuration.GetConfigtypeSql)
+        comboCol.DataSource = table
+        comboCol.DisplayMember = "ConfigtypeCode"   ' column from your table to show
+        comboCol.ValueMember = "ConfigtypeCode"     ' column from your table to save
+
+
+        ' Add it back to the grid
+        GrdView.Columns.Add(comboCol)
+        GrdView.Columns("ConfigtypeCode").BestFit()
+
+    End Sub
+
+    Private Sub LinkProductItemGroup_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs)
         Dim tag As SelectionTags = Dialogs.ShowSearchDialog(ProductItemGroup.GetProductItemGroupSql, "Search Item")
         If Not tag Is Nothing Then
             LoadProductItemGroup(tag.KeyColumn22)
         End If
     End Sub
     Private Sub LoadProductItemGroup(ByVal Code As String)
+        Dim year As Integer = DateTime.Now.Year
+        Dim firstDayOfYear As New DateTime(year, 1, 1)
+        Dim lastDayOfYear As New DateTime(year, 12, 31)
         m_ProductItemGroup = ProductItemGroup.LoadByCode(Code)
-        txtproductItemGroupCode.Text = m_ProductItemGroup.PGCode
-        txtProductItemGroupName.Text = m_ProductItemGroup.PGDescription
-    End Sub
 
+        ' Bind it to your DataTable
+        Dim table As DataTable = GetRecords(Configuration.GetConfigtypeSql)
+
+        Dim comboCol As GridViewComboBoxColumn = CType(GrdView.Columns(4), GridViewComboBoxColumn)
+        comboCol.DataSource = table
+        comboCol.DisplayMember = "ConfigtypeCode"
+        comboCol.ValueMember = "ConfigtypeCode"
+
+        ' Add row
+        Dim row As GridViewRowInfo = GrdView.Rows.AddNew()
+        row.Cells(0).Value = m_ProductItemGroup.PGCode
+        row.Cells(1).Value = m_ProductItemGroup.PGDescription
+        row.Cells(2).Value = firstDayOfYear
+        row.Cells(3).Value = lastDayOfYear
+        row.Cells(4).Value = table.Rows(0)("ConfigtypeCode")
+    End Sub
     Private Sub btnModificationSales_Click(sender As Object, e As EventArgs) Handles btnModificationSales.Click
         If txtItemCode.Text = "" Or txtMotherCode.Text = "" Then
             ShowExclamation("Select the Item want to Item modified.", "Item Modified Sales")
@@ -384,5 +446,19 @@ Public Class UIItemCreate
             ItemModifiedSales.ItemMotherCode = txtMotherCode.Text
             ItemModifiedSales.ShowDialog()
         End If
+    End Sub
+
+    Private Sub btnAdd_productGroup_Click(sender As Object, e As EventArgs) Handles btnAdd_productGroup.Click
+        Dim tag As SelectionTags = Dialogs.ShowSearchDialog(ProductItemGroup.GetProductItemGroupSql, "Search Item")
+        If Not tag Is Nothing Then
+            LoadProductItemGroup(tag.KeyColumn22)
+        End If
+    End Sub
+
+    Private Sub LoadColumnsComboBox()
+        For Each Column As GridViewDataColumn In Me.GrdView.Columns
+            Dim ComboItem As New RadListDataItem(Column.HeaderText)
+            ComboItem.Tag = Column
+        Next Column
     End Sub
 End Class

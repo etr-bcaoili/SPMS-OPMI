@@ -6,6 +6,7 @@ Public Class UIDistrictManager
     Private _Regions As New STRegion
     Private _SalesManager As New SalesManager
     Private _District As New STDistrict
+    Private _DistrictGroup As New DistrictGroup
     Private m_Err As New ErrorProvider
     Private m_HasError As Boolean = False
     Private Sub btnAdd_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnNew.Click, btnDelete.Click, btnEdit.Click, btnFinddata.Click, btnSave.Click, btnClear.Click, btnClose.Click
@@ -81,6 +82,12 @@ Public Class UIDistrictManager
         txtDistrictSalesManagerName.ReadOnly = Not IsEditMode
         txtDistrictSalesManagerName.BackColor = Color.White
 
+        txtDistrictGroupCode.ReadOnly = Not IsEditMode
+        txtDistrictGroupCode.BackColor = Color.White
+
+        txtDistrictGroupDescription.ReadOnly = Not IsEditMode
+        txtDistrictGroupDescription.BackColor = Color.White
+
     End Sub
     Private Sub Clear()
         txtDistrictSalesmanagerCode.Text = String.Empty
@@ -89,6 +96,8 @@ Public Class UIDistrictManager
         txtDistrictCode.Text = String.Empty
         txtRegionCode.Text = String.Empty
         txtRegionName.Text = String.Empty
+        txtDistrictGroupCode.Text = String.Empty
+        txtDistrictGroupDescription.Text = String.Empty
     End Sub
     Private Sub NewRecord()
         Clear()
@@ -100,6 +109,7 @@ Public Class UIDistrictManager
         _DistrictAssignment.DistrictCode = txtDistrictCode.Text
         _DistrictAssignment.DistrictName = txtDistrictName.Text
         _DistrictAssignment.DMDistrictCode = txtDistrictSalesmanagerCode.Text
+        _DistrictAssignment.DistrictGroup = txtDistrictGroupCode.Text
         If _DistrictAssignment.Save Then
             SaveSuccess()
             LoadDistrictAssign(_DistrictAssignment.DistrictCode)
@@ -130,14 +140,23 @@ Public Class UIDistrictManager
         End If
         If _DistrictAssignment.DMDistrictCode <> "" Then
             _SalesManager = SalesManager.LoadByCode(_DistrictAssignment.DMDistrictCode)
-            txtDistrictSalesmanagerCode.Text = _SalesManager.DistrictCode
-            txtDistrictSalesManagerName.Text = _SalesManager.DistrictName
+            If _SalesManager IsNot Nothing Then
+                txtDistrictSalesmanagerCode.Text = _SalesManager.DistrictCode
+                txtDistrictSalesManagerName.Text = _SalesManager.DistrictName
+            Else
+                txtDistrictSalesmanagerCode.Text = String.Empty
+                txtDistrictSalesManagerName.Text = String.Empty
+            End If
         Else
             txtDistrictSalesmanagerCode.Text = ""
             txtDistrictSalesManagerName.Text = ""
         End If
         dtEffectivityStartDate.Text = _DistrictAssignment.EffectivityStartDate
         dtEffectivityEndDate.Text = _DistrictAssignment.EffectivityEndDate
+        If _DistrictAssignment.DistrictGroup <> "" Then
+            ShowDistrictGroup(_DistrictAssignment.DistrictGroup)
+        End If
+
     End Sub
     Private Sub Delete()
         If ShowDeleteDialog() = DialogResult.Yes Then
@@ -196,5 +215,21 @@ Public Class UIDistrictManager
         Clear()
         dtEffectivityStartDate.Text = Date.Now
         dtEffectivityEndDate.Text = Date.Now
+    End Sub
+
+    Private Sub Panel2_Paint(sender As Object, e As PaintEventArgs) Handles Panel2.Paint
+
+    End Sub
+
+    Private Sub LinkLabel3_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel3.LinkClicked
+        Dim tag As SelectionTags = Dialogs.ShowSearchDialog(DistrictGroup.GetDistrictGroupql, "District Group")
+        If Not tag Is Nothing Then
+            ShowDistrictGroup(tag.KeyColumn22)
+        End If
+    End Sub
+    Private Sub ShowDistrictGroup(ByVal RecordCode As String)
+        _DistrictGroup = DistrictGroup.LoadByCode(RecordCode)
+        txtDistrictGroupCode.Text = _DistrictGroup.Code
+        txtDistrictGroupDescription.Text = _DistrictGroup.Description
     End Sub
 End Class

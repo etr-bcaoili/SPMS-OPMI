@@ -8,6 +8,8 @@ Public Class ProductManager
     Private _IsActive As Boolean = False
     Private _EffectivityStartDate As Date = "1/1/1990"
     Private _EffectivityEndDate As Date = "1/1/1990"
+    Private _ConfigtypeCode As String = String.Empty
+    Private m_Createby As String = String.Empty
 
     Public ReadOnly Property ID As Integer
         Get
@@ -28,6 +30,15 @@ Public Class ProductManager
         End Get
         Set(value As String)
             _ProductManager = value
+        End Set
+    End Property
+
+    Public Property ConfigtypeCode As String
+        Get
+            Return _ConfigtypeCode
+        End Get
+        Set(value As String)
+            _ConfigtypeCode = value
         End Set
     End Property
     Public Property IsActive As Boolean
@@ -54,17 +65,27 @@ Public Class ProductManager
             _EffectivityEndDate = value
         End Set
     End Property
+    Public Property Createby As String
+        Get
+            Return m_Createby
+        End Get
+        Set(value As String)
+            m_Createby = value
+        End Set
+    End Property
     Private Shared Function BaseFilter(ByVal Table As System.Data.DataTable) As ProductManagerCollection
         Dim col As New ProductManagerCollection
         For j As Integer = 0 To Table.Rows.Count - 1
             Dim _ProductManager As New ProductManager
             Dim row As DataRow = Table.Rows(j)
             _ProductManager._ID = row("ID")
-            _ProductManager._ProductID = row("PM_ID")
+            _ProductManager._ProductID = row("PM_Code")
             _ProductManager._ProductManager = row("PM_Name")
+            _ProductManager._ConfigtypeCode = row("ConfigtypeCode")
             _ProductManager._IsActive = row("ISACTIVE")
             _ProductManager._EffectivityStartDate = row("EFFECTIVITYSTARTDATE")
             _ProductManager._EffectivityEndDate = row("EFFECTIVITYENDDATE")
+            _ProductManager.m_Createby = row("Createdby")
 
             col.Add(_ProductManager)
         Next
@@ -77,11 +98,13 @@ Public Class ProductManager
             cmd.CommandType = CommandType.StoredProcedure
             cmd.Parameters.AddWithValue("@ACTION", "SAVE")
             cmd.Parameters.AddWithValue("@ID", _ID)
-            cmd.Parameters.AddWithValue("@PM_ID", _ProductID)
+            cmd.Parameters.AddWithValue("@PM_Code", _ProductID)
             cmd.Parameters.AddWithValue("@PM_Name", _ProductManager)
-            cmd.Parameters.AddWithValue("@ISACTIVE", True)
+            cmd.Parameters.AddWithValue("@ConfigtypeCode", _ConfigtypeCode)
+            cmd.Parameters.AddWithValue("@ISACTIVE", False)
             cmd.Parameters.AddWithValue("@EFFECTIVITYSTARTDATE", _EffectivityStartDate)
             cmd.Parameters.AddWithValue("@EFFECTIVITYENDDATE", _EffectivityEndDate)
+            cmd.Parameters.AddWithValue("@Createdby", m_Createby)
             _ID = cmd.ExecuteScalar
             SPMSOPCI.ConnectionModule.Disconnect()
             Return True
@@ -105,7 +128,7 @@ Public Class ProductManager
         End Try
     End Function
     Public Shared Function Filter(ByVal Condition As String) As ProductManagerCollection
-        Return BaseFilter(GetRecords("Select * From ProductManagers Where ISACTIVE = 1 AND " & IIf(Condition <> "", Condition, "")))
+        Return BaseFilter(GetRecords("Select * From ProductManagers Where ISACTIVE = 0 AND " & IIf(Condition <> "", Condition, "")))
     End Function
     Public Overloads Shared Function Load() As ProductManagerCollection
         Return Filter("")
@@ -114,13 +137,13 @@ Public Class ProductManager
         Return Filter("ID = " & ID)(0)
     End Function
     Public Overloads Shared Function LoadByCode(ByVal PM_ID As String) As ProductManager
-        Return Filter("PM_ID = '" & RefineSQL(PM_ID) & "'")(0)
+        Return Filter("PM_Code = '" & RefineSQL(PM_ID) & "'")(0)
     End Function
     Public Shared Function CheckOProductManagerAlreadyExist(ByVal PM_ID As String, ByVal ID As Integer) As Boolean
-        Return ExecuteCommand("SELECT 'A' FROM ProductManagers Where ISACTIVE = 1 AND PM_ID = '" & RefineSQL(PM_ID) & "' AND ID <> " & ID) = "A"
+        Return ExecuteCommand("SELECT 'A' FROM ProductManagers Where ISACTIVE = 0 AND PM_Code = '" & RefineSQL(PM_ID) & "' AND ID <> " & ID) = "A"
     End Function
     Public Shared Function GetProductManagerSql(Optional ByVal PM_ID As String = "") As String
-        Return "SELECT ID,PM_ID,PM_Name FROM ProductManagers Where ISACTIVE = 1"
+        Return "SELECT ID,PM_Code [Product Manager Code],PM_Name [Product Manager Name] FROM ProductManagers Where ISACTIVE = 0"
     End Function
 End Class
 Public Class ProductManagerCollection

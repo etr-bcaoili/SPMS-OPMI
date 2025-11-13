@@ -120,7 +120,7 @@ Public Class frmInHouseRawData
             End If
         End If
     End Sub
-  
+
     Private Sub loadINH()
         Dim a As Integer = 20
         Dim b As Integer = 18
@@ -209,10 +209,10 @@ Public Class frmInHouseRawData
                             Dim number As Double = dr("Quantity") * table.Rows(i)("DISTITEMPRICE")
                             Dim number1 As Double = MuncipalVat * number
                             Dim Number2 As Double = DistMargin * number1
-                            m_RawData.NetAmount = Number2
+                            m_RawData.NetAmount = Math.Round(Convert.ToDecimal(Number2), 2)
                             NetAmount = NetAmount + Number2
                         Else
-                            m_RawData.NetAmount = dr("Quantity") * table.Rows(i)("DISTITEMPRICE")
+                            m_RawData.NetAmount = Math.Round(Convert.ToDecimal(dr("Quantity") * table.Rows(i)("DISTITEMPRICE")), 2)
                         End If
                         GrossAmount = GrossAmount + dr("Quantity") * table.Rows(i)("DISTITEMPRICE")
                     Next
@@ -228,16 +228,16 @@ Public Class frmInHouseRawData
 
                         Dim Number2 As Double = DistMargin * number1
 
-                        m_RawData.NetAmount = Number2
-
+                        m_RawData.NetAmount = Math.Round(Convert.ToDecimal(Number2), 2)
                         NetAmount = NetAmount + Number2
                     Else
-                        m_RawData.NetAmount = dr("Net Value (Inclusive of Vat)")
-                        m_RawData.GrossAmount = dr("Net Value (Inclusive of Vat)")
+                        m_RawData.NetAmount = Math.Round(Convert.ToDecimal(dr("Net Value (Inclusive of Vat)")), 2)
+                        m_RawData.GrossAmount = Math.Round(Convert.ToDecimal(dr("Net Value (Inclusive of Vat)")), 2)
+
                         m_RawData.UnitPrice = 0
                     End If
 
-                    m_RawData.GrossAmount = dr("Net Value (Inclusive of Vat)")
+                    m_RawData.GrossAmount = Math.Round(Convert.ToDecimal(dr("Net Value (Inclusive of Vat)")), 2)
                     m_RawData.UnitPrice = 0
                     GrossAmount = GrossAmount + dr("Net Value (Inclusive of Vat)")
                 End If
@@ -247,7 +247,7 @@ Public Class frmInHouseRawData
                 m_RawData.LineDiscount = 0
                 m_RawData.SalesmanNumber = ""
                 m_RawData.SalesmanName = ""
-              
+
                 m_RawData.PaymentType = ""
                 If IsDBNull(dr("Lot Number")) Then
                     m_RawData.LotNumber = ""
@@ -359,7 +359,7 @@ Public Class frmInHouseRawData
                         Dim MuncipalVat As Double = _Distributor.MunTax / 100 ' Convert 99.5% to decimal
                         Dim DistMargin As Double = _Distributor.DistMargin / 100 ' Convert 91.5% to decimal
 
-                        Dim number As Double = dr("Net Value (Inclusive of Vat)")
+                        Dim number As Double = Math.Round(Convert.ToDecimal(dr("Net Value (Inclusive of Vat)")), 2)
 
                         Dim number1 As Double = MuncipalVat * number
 
@@ -369,12 +369,12 @@ Public Class frmInHouseRawData
 
                         NetAmount = NetAmount + Number2
                     Else
-                        m_RawData.NetAmount = dr("Net Value (Inclusive of Vat)")
-                        m_RawData.GrossAmount = dr("Net Value (Inclusive of Vat)")
+                        m_RawData.NetAmount = Math.Round(Convert.ToDecimal(dr("Net Value (Inclusive of Vat)")), 2)
+                        m_RawData.GrossAmount = Math.Round(Convert.ToDecimal(dr("Net Value (Inclusive of Vat)")), 2)
                         m_RawData.UnitPrice = 0
                     End If
 
-                    m_RawData.GrossAmount = dr("Net Value (Inclusive of Vat)")
+                    m_RawData.GrossAmount = Math.Round(Convert.ToDecimal(dr("Net Value (Inclusive of Vat)")), 2)
                     m_RawData.UnitPrice = 0
                     'm_RawData.NetAmount = dr("Net Value (Inclusive of Vat)")
                     GrossAmount = GrossAmount + dr("Net Value (Inclusive of Vat)")
@@ -409,7 +409,6 @@ Public Class frmInHouseRawData
         MessageBox.Show("File Successfully Uploaded!")
         Me.Close()
     End Sub
-
     Private Sub cmbYear_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmbYear.SelectedIndexChanged
         If cmbYear.SelectedIndex = -1 Then Exit Sub
         LoadMonth(cmbCompany.Text, cmbYear.Text)
@@ -423,7 +422,6 @@ Public Class frmInHouseRawData
         If cmbCompany.SelectedIndex = -1 Then Exit Sub
         LoadYear(cmbCompany.Text)
     End Sub
-
     Private Sub lblclose_LinkClicked(ByVal sender As System.Object, ByVal e As System.Windows.Forms.LinkLabelLinkClickedEventArgs) Handles lblclose.LinkClicked
         Me.Close()
     End Sub

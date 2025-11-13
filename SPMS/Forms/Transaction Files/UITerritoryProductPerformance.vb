@@ -116,28 +116,6 @@ Public Class UITerritoryProductPerformance
         GridView.Columns(38).Width = 120
         GridView.Columns(39).Width = 120
         GridView.Columns(40).Width = 120
-        GridView.Columns(41).Width = 120
-        GridView.Columns(42).Width = 120
-        GridView.Columns(43).Width = 120
-        GridView.Columns(44).Width = 120
-        GridView.Columns(45).Width = 120
-        GridView.Columns(46).Width = 120
-        GridView.Columns(47).Width = 120
-        GridView.Columns(48).Width = 120
-        GridView.Columns(49).Width = 120
-        GridView.Columns(50).Width = 120
-        GridView.Columns(51).Width = 120
-        GridView.Columns(52).Width = 120
-        GridView.Columns(53).Width = 120
-        GridView.Columns(54).Width = 120
-        GridView.Columns(55).Width = 120
-        GridView.Columns(56).Width = 120
-        GridView.Columns(57).Width = 120
-        GridView.Columns(58).Width = 120
-        GridView.Columns(59).Width = 120
-        GridView.Columns(60).Width = 120
-        GridView.Columns(61).Width = 120
-        GridView.Columns(62).Width = 120
     End Sub
 
     Private Sub btnClear_Click(sender As Object, e As EventArgs) Handles btnClear.Click

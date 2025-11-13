@@ -14,6 +14,8 @@ Public Class UIEmployeeSalesman
     Private table2 As New DataTable
     Private m_Err As New ErrorProvider
     Private m_HasError As Boolean = False
+    Private m_ConfigtypeCode As String = String.Empty
+
 
     Private Sub EditMode(ByVal IsEditMode As Boolean)
         btnSave.Enabled = IsEditMode
@@ -327,13 +329,14 @@ Public Class UIEmployeeSalesman
         Positions()
     End Sub
     Private Sub btnAddPMR_Click(sender As Object, e As EventArgs) Handles btnAddPMR.Click
-        Dim tag As SelectionTags = Dialogs.ShowSearchDialog(MedicalRepresentative.GetPMRSql, "Medical Representative")
+        Dim tag As SelectionTags = Dialogs.ShowSearchDialog(MedicalRepresentative.GetPMREmployeeSql, "Medical Representative")
         If Not tag Is Nothing Then
-            ShowDataPMR(tag.KeyColumn11)
+            m_ConfigtypeCode = tag.KeyColumn44
+            ShowDataPMR(tag.KeyColumn11, m_ConfigtypeCode)
         End If
     End Sub
-    Private Sub ShowDataPMR(ByVal PMRCode As String)
-        table = GetRecords(MedicalRepresentative.GetPMRCollectionSql(PMRCode))
+    Private Sub ShowDataPMR(ByVal PMRCode As String, ByVal ConfigtypeCode As String)
+        table = GetRecords(MedicalRepresentative.GetSalematrixSql(PMRCode, ConfigtypeCode))
         For i As Integer = 0 To table.Rows.Count - 1
             Dim rowinfoNew As GridViewRowInfo = GrdViewPMR.Rows.AddNew
             rowinfoNew.Cells(0).Value = table.Rows(i)("PMR Code")
@@ -394,6 +397,4 @@ Public Class UIEmployeeSalesman
             End If
         Next
     End Sub
-
-
 End Class

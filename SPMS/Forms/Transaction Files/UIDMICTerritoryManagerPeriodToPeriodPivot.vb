@@ -19,8 +19,8 @@ Public Class UIDMICTerritoryManagerPeriodToPeriodPivot
 
 
     Private Sub UIDMICTerritoryManagerPeriodToPeriodPivot_Load(sender As Object, e As EventArgs) Handles Me.Load
-        Me.GrdCompanyView.TableElement.RowHeight = 45
-        Me.GridView.TableElement.RowHeight = 45
+        Me.GrdCompanyView.TableElement.RowHeight = 40
+        Me.GridView.TableElement.RowHeight = 40
         LoadDistributor()
         LoadCalendarFromMonth()
         LoadCalendarToMonth()
@@ -85,15 +85,15 @@ Public Class UIDMICTerritoryManagerPeriodToPeriodPivot
                     _ExportSourceData.ToMonth = cmdToMonth.Text
                     _ExportSourceData.Year = cmdYear.Text
                     _ExportSourceData.CompanyCode = rowinfo.Cells(1).Value
-                    _ExportSourceData.DMItemCustomerTerritoryManagerComparativePeriodByPivot()
+                    _ExportSourceData.DMCustomerTerritoryComparativePeriodtoPeriodNetVATMTDM()
                 End If
             Next
             TransferSuccess()
-            LoadDMItemCustomerTerritoryManagerComparativePeriodByPivot(cmdFromMonth.Text, cmdToMonth.Text, txtConfigCode.Text)
+            LoadDMCustomerTerritoryComparativePeriodtoPeriodNetVATMTDM(cmdYear.Text, cmdFromMonth.Text, cmdToMonth.Text, txtConfigCode.Text)
         End If
     End Sub
-    Private Sub LoadDMItemCustomerTerritoryManagerComparativePeriodByPivot(ByVal StartMonth As String, ByVal ToMonth As String, ByVal ConfigtypeCode As String)
-        table = GetRecords(_ExportSourceData.DMItemCustomerTerritoryManagerComparativePeriodByPivot(StartMonth, ToMonth, ConfigtypeCode))
+    Private Sub LoadDMCustomerTerritoryComparativePeriodtoPeriodNetVATMTDM(ByVal Year As String, ByVal StartMonth As String, ByVal EndMonth As String, ByVal ConfigtypeCode As String)
+        table = GetRecords(_ExportSourceData.DMCustomerTerritoryComparativePeriodtoPeriodNetVATMTDM(Year, StartMonth, EndMonth, ConfigtypeCode))
         GridView.DataSource = table
         GridView.Columns(0).Width = 120
         GridView.Columns(1).Width = 120
@@ -117,9 +117,6 @@ Public Class UIDMICTerritoryManagerPeriodToPeriodPivot
         GridView.Columns(19).Width = 120
         GridView.Columns(20).Width = 120
         GridView.Columns(21).Width = 120
-        GridView.Columns(22).Width = 120
-        GridView.Columns(23).Width = 120
-        GridView.Columns(24).Width = 120
     End Sub
 
     Private Sub btnClear_Click(sender As Object, e As EventArgs) Handles btnClear.Click

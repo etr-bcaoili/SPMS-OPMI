@@ -35,7 +35,7 @@ Partial Class UISalesAccountSpecialistTargetSettings
         Me.RadLabel9 = New Telerik.WinControls.UI.RadLabel()
         Me.RadLabel10 = New Telerik.WinControls.UI.RadLabel()
         Me.Panel5 = New System.Windows.Forms.Panel()
-        Me.Office2010SilverTheme1 = New Telerik.WinControls.Themes.Office2010SilverTheme()
+        Me.Office2010SilverTheme1 = New Telerik.WinControls.Themes.Office2010BlueTheme()
         Me.RadDock1 = New Telerik.WinControls.UI.Docking.RadDock()
         Me.DocumentContainer1 = New Telerik.WinControls.UI.Docking.DocumentContainer()
         Me.DocumentWindow1 = New Telerik.WinControls.UI.Docking.DocumentWindow()
@@ -599,7 +599,7 @@ Partial Class UISalesAccountSpecialistTargetSettings
     Friend WithEvents dtFromDate As Telerik.WinControls.UI.RadDateTimePicker
     Friend WithEvents RadLabel9 As Telerik.WinControls.UI.RadLabel
     Friend WithEvents RadLabel10 As Telerik.WinControls.UI.RadLabel
-    Friend WithEvents Office2010SilverTheme1 As Telerik.WinControls.Themes.Office2010SilverTheme
+    Friend WithEvents Office2010SilverTheme1 As Telerik.WinControls.Themes.Office2010BlueTheme
     Friend WithEvents RadDock1 As Telerik.WinControls.UI.Docking.RadDock
     Friend WithEvents DocumentWindow1 As Telerik.WinControls.UI.Docking.DocumentWindow
     Friend WithEvents Panel6 As Panel

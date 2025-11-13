@@ -243,11 +243,27 @@ Public Class MedicalRepresentative
     Public Shared Function GetPMRSql() As String
         Return "Select Distinct SLSMNCD,SLSMNCD [PMR Code],SLSMNNAME [PMR Name],ConfigTypeCode From MEDICALREP Where  DLTFLG = 0 Order by SLSMNCD  "
     End Function
+    Public Shared Function GetPMREmployeeSql() As String
+        Return "Select Distinct STSLSMNCD,STSLSMNCD [PMR Code],STACOVNAME [Territory Name],ConfigTypeCode From Salesmatrix Where  DLTFLG = 0 Order by STSLSMNCD "
+    End Function
+    Public Shared Function GetDMEmployeeSql() As String
+        Return "Select Distinct STDISTRCTCD,STDISTRCTCD [District Code],ConfigTypeCode From Salesmatrix Where  DLTFLG = 0 Order by STDISTRCTCD"
+    End Function
+
     Public Shared Function GetPMRCollectionSql(ByVal PMRCode As String) As String
         Return "Select Distinct A.SLSMNCD,A.SLSMNCD [PMR Code],A.SLSMNNAME [PMR Name],A.ConfigTypeCode  From MEDICALREP A INNER JOIN SALESMATRIX B ON A.ConfigTypeCode = B.Configtypecode Where B.DLTFLG = 0 AND A.SLSMNCD = '" & PMRCode & "'"
     End Function
+    Public Shared Function GetSalematrixSql(ByVal PMRCode As String, ByVal ConfigtypeCode As String) As String
+        Return "Select Distinct STSLSMNCD,STSLSMNCD [PMR Code],STACOVNAME [Territory Name],ConfigTypeCode From Salesmatrix Where  DLTFLG = 0 AND  ConfigTypeCode = '" & ConfigtypeCode & "' And STSLSMNCD = '" & PMRCode & "' Order by STSLSMNCD"
+    End Function
+    Public Shared Function GetSalematrixDMSql(ByVal DMCode As String, ByVal ConfigtypeCode As String) As String
+        Return "Select Distinct STDISTRCTCD,ConfigtypeCode from SalesMatrix Where ConfigtypeCode = '" & ConfigtypeCode & "' AND STDISTRCTCD = '" & DMCode & "'"
+    End Function
     Public Shared Function CheckofPMRTaggingAlreadyExist(ByVal PMRCode As String, ByVal StartDate As Date, ByVal EndDate As Date, ByVal ConfigCode As String) As Boolean
         Return ExecuteCommand("Select 'A' from EmployeeSalesmanCollection Where TerritoryCode = '" & PMRCode & "' And EffectivityStartDate = '" & StartDate & "' And EffectivityEndDate = '" & EndDate & "' And ConfigtypeCode = '" & ConfigCode & "'") = "A"
+    End Function
+    Public Shared Function CheckofDMTaggingAlreadyExist(ByVal DMCode As String, ByVal StartDate As Date, ByVal EndDate As Date, ByVal ConfigCode As String) As Boolean
+        Return ExecuteCommand("Select 'A' from EmployeeDistrictCollection Where DistrictCode = '" & DMCode & "' And EffectivityStartDate = '" & StartDate & "' And EffectivityEndDate = '" & EndDate & "' And ConfigtypeCode = '" & ConfigCode & "'") = "A"
     End Function
 End Class
 Public Class MedicalRepresentativeCollection

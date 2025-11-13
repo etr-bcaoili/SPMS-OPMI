@@ -78,8 +78,8 @@ Partial Class UICustomerAndItemSharing
         Me.LinkLabel3 = New System.Windows.Forms.LinkLabel()
         Me.txtConfigtypeName = New Telerik.WinControls.UI.RadTextBox()
         Me.txtConfigtypeCode = New Telerik.WinControls.UI.RadTextBox()
-        Me.Office2010SilverTheme1 = New Telerik.WinControls.Themes.Office2010SilverTheme()
-        Me.Office2010SilverTheme2 = New Telerik.WinControls.Themes.Office2010SilverTheme()
+        Me.Office2010SilverTheme1 = New Telerik.WinControls.Themes.Office2010BlueTheme()
+        Me.Office2010SilverTheme2 = New Telerik.WinControls.Themes.Office2010BlueTheme()
         Me.Panel1.SuspendLayout()
         CType(Me.RadMenu1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
@@ -874,8 +874,8 @@ Partial Class UICustomerAndItemSharing
     Friend WithEvents btnClose As Telerik.WinControls.UI.RadMenuButtonItem
     Friend WithEvents Panel2 As Panel
     Friend WithEvents Panel3 As Panel
-    Friend WithEvents Office2010SilverTheme1 As Telerik.WinControls.Themes.Office2010SilverTheme
-    Friend WithEvents Office2010SilverTheme2 As Telerik.WinControls.Themes.Office2010SilverTheme
+    Friend WithEvents Office2010SilverTheme1 As Telerik.WinControls.Themes.Office2010BlueTheme
+    Friend WithEvents Office2010SilverTheme2 As Telerik.WinControls.Themes.Office2010BlueTheme
     Friend WithEvents txtInvalidMonth As Telerik.WinControls.UI.RadLabel
     Friend WithEvents txtInvalidYear As Telerik.WinControls.UI.RadLabel
     Friend WithEvents RadLabel2 As Telerik.WinControls.UI.RadLabel

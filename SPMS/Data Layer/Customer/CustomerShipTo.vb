@@ -88,6 +88,12 @@ Public Class CustomerShipTo
 
     Private m_CustomerofType As Integer = 0
 
+    Private m_MunTax As String = "0"
+
+    Private m_DistMargin As String = "0"
+
+    Private m_IsActiveVat As Boolean = False
+
     Public ReadOnly Property CUSTOMERSHIPTOID() As Integer
         Get
             Return m_CUSTOMERSHIPTOID
@@ -396,6 +402,30 @@ Public Class CustomerShipTo
             m_CustomerofType = value
         End Set
     End Property
+    Public Property MunTax As String
+        Get
+            Return m_MunTax
+        End Get
+        Set(value As String)
+            m_MunTax = value
+        End Set
+    End Property
+    Public Property DistMargin As String
+        Get
+            Return m_DistMargin
+        End Get
+        Set(value As String)
+            m_DistMargin = value
+        End Set
+    End Property
+    Public Property IsActiveVat As Boolean
+        Get
+            Return m_IsActiveVat
+        End Get
+        Set(value As Boolean)
+            m_IsActiveVat = value
+        End Set
+    End Property
     Public Function CustomerShiptoSave() As Boolean
         If SPMSOPCI.ConnectionModule.SPMSConn2.State = ConnectionState.Closed Or SPMSOPCI.ConnectionModule.SPMSConn2.State = ConnectionState.Broken Then SPMSOPCI.ConnectionModule.Connect()
         Try
@@ -431,6 +461,9 @@ Public Class CustomerShipTo
             cmd.Parameters.AddWithValue("@OAPEnrollement", m_OAPEnrollement)
             cmd.Parameters.AddWithValue("@OAPMemberShip", m_OAPMemberShip)
             cmd.Parameters.AddWithValue("@Remarks", m_Remarks)
+            cmd.Parameters.AddWithValue("@MunTax", m_MunTax)
+            cmd.Parameters.AddWithValue("@DistMargin", m_DistMargin)
+            cmd.Parameters.AddWithValue("@ISACTIVEVAT", m_IsActiveVat)
             m_CUSTOMERSHIPTOID = cmd.ExecuteScalar()
             SPMSOPCI.ConnectionModule.Disconnect()
             Return True
@@ -473,6 +506,9 @@ Public Class CustomerShipTo
             cmd.Parameters.AddWithValue("@OAPEnrollement", m_OAPEnrollement)
             cmd.Parameters.AddWithValue("@OAPMemberShip", m_OAPMemberShip)
             cmd.Parameters.AddWithValue("@Remarks", m_Remarks)
+            cmd.Parameters.AddWithValue("@MunTax", m_MunTax)
+            cmd.Parameters.AddWithValue("@DistMargin", m_DistMargin)
+            cmd.Parameters.AddWithValue("@ISACTIVEVAT", m_IsActiveVat)
             cmd.ExecuteNonQuery()
             SPMSOPCI.ConnectionModule.Disconnect()
             Return True
@@ -532,7 +568,9 @@ Public Class CustomerShipTo
             m_CustomerShipTo.m_OAPEnrollement = row("OAPEnrollement")
             m_CustomerShipTo.m_OAPMemberShip = row("OAPMemberShip")
             m_CustomerShipTo.m_Remarks = row("Remarks")
-
+            m_CustomerShipTo.m_MunTax = row("MunTax")
+            m_CustomerShipTo.m_DistMargin = row("DistMargin")
+            m_CustomerShipTo.IsActiveVat = row("IsActiveVat")
             col.Add(m_CustomerShipTo)
         Next
         Return col
@@ -591,6 +629,15 @@ Public Class CustomerShipTo
     End Function
     Public Shared Function CheckProponent(ByVal CompanyCode As String, ByVal Code As String, ByVal ShipTo As String) As Boolean
         Return ExecuteCommand("SELECT 'A' FROM CustomerShipTo   Where COMID = '" & CompanyCode & "' AND CUSTOMERCD ='" & Code & "' And CDACD = '" & ShipTo & "'") = "A"
+    End Function
+    Public Shared Function GetMDPrescriptionCustomer() As String
+        Return "Select A.CUSTOMERSHIPTOID,A.COMID [Channel Code],A.Customercd [Account Code],A.CDANAME [Account Name],A.CDACD [Shipto Code],B.CustomerGroupName [Customer Group] From CustomerShipTo A INNER JOIN CustomerGroup B ON A.CMGRP = B.CustomerGroupcd  Where A.CUSTOMERSHIPTODEL = 0 "
+    End Function
+    Public Shared Function GetMDPrescriptionCustomers(ByVal CustomerID As Integer) As String
+        Return "Select A.Customercd,A.CDANAME,A.CDACD,A.CDACADD1,A.CDACADD2,R.REGNAME,D.DISTRCTNAME,M.AREANAME,CG.CustomerGroupName,A.COMID From CustomerShipTo A LEFT JOIN Region R ON A.REGCD = R.REGCD LEFT JOIN District D ON A.DISTCD = D.DISTRCTCD AND D.REGCD = R.REGCD LEFT JOIN Area M ON A.REGCD = M.REGCD AND D.DISTRCTCD = A.DISTCD AND A.AREACD = M.AREACD LEFT JOIN CustomerGroup CG ON A.CMGRP = CG.CustomerGroupcd  Where A.CUSTOMERSHIPTODEL = 0 AND A.CUSTOMERSHIPTOID  = '" & CustomerID & "'"
+    End Function
+    Public Shared Function GetMDPrescriptionCustomersbyMDID(ByVal MDID As Integer) As String
+        Return "Select A.Customercd,A.CDANAME,A.CDACD,A.CDACADD1,A.CDACADD2,R.REGNAME,D.DISTRCTNAME,M.AREANAME,CG.CustomerGroupName,A.COMID From CustomerShipTo A LEFT JOIN Region R ON A.REGCD = R.REGCD LEFT JOIN District D ON A.DISTCD = D.DISTRCTCD AND D.REGCD = R.REGCD LEFT JOIN Area M ON A.REGCD = M.REGCD AND D.DISTRCTCD = A.DISTCD AND A.AREACD = M.AREACD LEFT JOIN CustomerGroup CG ON A.CMGRP = CG.CustomerGroupcd INNER JOIN [MDPrescritionAccount] MA ON A.CUSTOMERCD = MA.AccountCode AND A.CDACD = MA.ShiptoCode AND A.COMID = MA.ChannelCode Where A.CUSTOMERSHIPTODEL = 0 AND MA.MDID = '" & MDID & "'"
     End Function
 End Class
 

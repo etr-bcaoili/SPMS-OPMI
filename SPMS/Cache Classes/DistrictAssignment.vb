@@ -17,6 +17,8 @@ Public Class DistrictAssignment
 
     Private m_EffectivityEndDate As Date = "1/1/1990"
 
+    Private m_DistrictGroup As String = String.Empty
+
     Public ReadOnly Property DistrictID As Integer
         Get
             Return m_DistrictID
@@ -70,6 +72,14 @@ Public Class DistrictAssignment
             m_EffectivityEndDate = value
         End Set
     End Property
+    Public Property DistrictGroup As String
+        Get
+            Return m_DistrictGroup
+        End Get
+        Set(value As String)
+            m_DistrictGroup = value
+        End Set
+    End Property
     Private Shared Function BaseFilter(ByVal Table As System.Data.DataTable) As DistrictAssignmentCollection
         Dim col As New DistrictAssignmentCollection
         For j As Integer = 0 To Table.Rows.Count - 1
@@ -83,6 +93,7 @@ Public Class DistrictAssignment
             _DistrictAssignment.m_DMDistrictCode = row("STSLSMGRCD")
             _DistrictAssignment.EffectivityStartDate = row("EFFECTIVITYSTARTDATE")
             _DistrictAssignment.EffectivityEndDate = row("EFFECTIVITYENDDATE")
+            _DistrictAssignment.DistrictGroup = row("DistrictGroup")
             col.Add(_DistrictAssignment)
         Next
         Return col
@@ -101,6 +112,7 @@ Public Class DistrictAssignment
             cmd.Parameters.AddWithValue("@STSLSMGRCD", m_DMDistrictCode)
             cmd.Parameters.AddWithValue("@EFFECTIVITYSTARTDATE", m_EffectivityStartDate)
             cmd.Parameters.AddWithValue("@EFFECTIVITYENDDATE", m_EffectivityEndDate)
+            cmd.Parameters.AddWithValue("@DistrictGroup", m_DistrictGroup)
             m_DistrictID = cmd.ExecuteScalar
             SPMSOPCI.ConnectionModule.Disconnect()
             Return True
@@ -139,7 +151,16 @@ Public Class DistrictAssignment
         Return ExecuteCommand("Select 'A' From STDISTRICT Where DLTFLG = 0 And STDISTRCTCD = '" & RefineSQL(STDISTRCTCD) & "' And STDistrictID <> " & STDistrictID) = "A"
     End Function
     Public Shared Function GetDMDistrictSql(Optional ByVal ItemDivisionCode As String = "") As String
-        Return "Select STDISTRCTCD,STDISTRCTCD [District Code],STDISTRCTNAME [District Name], STSLSMGRCD [DM District] From STDISTRICT Where DLTFLG = 0"
+        Return "Select STDISTRCTCD,STDISTRCTCD [District Code],STDISTRCTNAME [District Name], STSLSMGRCD [DM District],[DistrictGroup] [District Group] From STDISTRICT Where DLTFLG = 0"
+    End Function
+    Public Shared Function GetDistrictAssignmentSql() As String
+        Return "Select Distinct DistrictGroup,STDISTRCTNAME from STDISTRICT Where DLTFLG = 0 AND STREGCD NOT IN ('INH','999')  Order by DistrictGroup"
+    End Function
+    Public Shared Function GetDistrictAssignmentbySASSql(ByVal SASCode As String) As String
+        Return "Select Distinct CheckIn,DistrictGroupCode,DistrictName,TargetAmount from SalesAccountSpecialistDistrict Where SASCode = '" & SASCode & "'"
+    End Function
+    Public Shared Function GetTargetDistrictAssignmentbySql(ByVal SASCode As String) As String
+        Return "Select SUM(TargetAmount) [TargetAmount] from SalesAccountSpecialistDistrict Where SASCode = '" & SASCode & "'"
     End Function
 End Class
 Public Class DistrictAssignmentCollection

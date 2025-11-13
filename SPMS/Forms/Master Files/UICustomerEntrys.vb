@@ -154,6 +154,14 @@ Public Class UICustomerEntrys
         txtCustomerGroupName.BackColor = Color.White
 
 
+        txtMunicipalTax.ReadOnly = Not IsEditMode
+        txtMunicipalTax.BackColor = Color.White
+
+        txtDistributorMargin.ReadOnly = Not IsEditMode
+        txtDistributorMargin.BackColor = Color.White
+
+
+
     End Sub
     Private Sub Clear()
         txtDistributorCode.Text = String.Empty
@@ -191,6 +199,9 @@ Public Class UICustomerEntrys
         ChckLoyaltyCustomer.Checked = False
         chckDataTransferStocks.Checked = False
         chckLoyaltyMD.Checked = False
+        txtMunicipalTax.Text = String.Empty
+        txtDistributorMargin.Text = String.Empty
+        CheckNetVat.Checked = False
     End Sub
     Private Sub lnkMotherCode_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles lnkMotherCode.LinkClicked
         Clear()
@@ -269,6 +280,7 @@ Public Class UICustomerEntrys
         ElseIf chckLoyaltyMD.Checked = True Then
             m_CustomerShipTo.CustomerofType = 3
         End If
+
 
 
         If m_CustomerShipTo.CustomerShiptoSave Then
@@ -372,6 +384,17 @@ Public Class UICustomerEntrys
         ElseIf chckLoyaltyMD.Checked = True Then
             m_CustomerShipTo.CustomerofType = 3
         End If
+
+        If CheckNetVat.Checked = True Then
+            m_CustomerShipTo.IsActiveVat = True
+            m_CustomerShipTo.MunTax = txtMunicipalTax.Text
+            m_CustomerShipTo.DistMargin = txtDistributorMargin.Text
+        Else
+            m_CustomerShipTo.IsActiveVat = False
+            m_CustomerShipTo.MunTax = 0
+            m_CustomerShipTo.DistMargin = 0
+        End If
+
         If m_CustomerShipTo.UpdateCustomerShipTo Then
             DispensingProponent.DeleteExistProponent(txtCustomerCode.Text, txtProponentCode.Text)
             m_Proponent.ProponentCustomerCode = txtCustomerCode.Text
@@ -439,6 +462,17 @@ Public Class UICustomerEntrys
             m_Customer.OAPMemberShip = False
         End If
         m_Customer.Remarks = txtRemarks.Text
+
+        If CheckNetVat.Checked = True Then
+            m_CustomerShipTo.IsActiveVat = True
+            m_CustomerShipTo.MunTax = txtMunicipalTax.Text
+            m_CustomerShipTo.DistMargin = txtDistributorMargin.Text
+        Else
+            m_CustomerShipTo.IsActiveVat = False
+            m_CustomerShipTo.MunTax = 0
+            m_CustomerShipTo.DistMargin = 0
+        End If
+
         If m_Customer.Save Then
             DispensingProponent.DeleteExistProponent(txtCustomerCode.Text, txtProponentCode.Text)
             m_Proponent.ProponentCustomerCode = txtCustomerCode.Text
@@ -463,15 +497,6 @@ Public Class UICustomerEntrys
         m_Err.Clear()
         m_HasError = False
 
-        'If txtCustomerCode.Text = "" Or txtDistributorCode.Text = "" Then
-        '    m_Err.SetError(txtCustomerCode, "Customer Code is Required!")
-        '    m_HasError = True
-        'Else
-        '    If CustomerShipTo.CheckCustomerAndCompanyIfExist1(txtCustomerCode.Text, txtCustomerShiptoCode.Text, txtDistributorCode.Text, IIf(txtCustomerCode.Tag Is Nothing, -1, txtCustomerCode.Tag)) Then
-        '        m_Err.SetError(txtCustomerCode, "Customer Code Already Exist")
-        '        m_HasError = True
-        '    End If
-        'End If
         If txtCustomerCode.Text = "" Or txtDistributorCode.Text = "" Then
             m_Err.SetError(txtCustomerCode, "Customer Code is Required!")
             m_HasError = True
@@ -691,6 +716,15 @@ Public Class UICustomerEntrys
             Check_OAPMemberShip.Checked = False
         End If
         txtRemarks.Text = m_CustomerShipTo.Remarks
+
+        If m_CustomerShipTo.IsActiveVat = True Then
+            txtMunicipalTax.Text = m_CustomerShipTo.MunTax
+            txtDistributorMargin.Text = m_CustomerShipTo.DistMargin
+        Else
+            txtMunicipalTax.Text = 0
+            txtDistributorMargin.Text = 0
+        End If
+
         EditMode(False)
     End Sub
     Private Sub LoadCustomerGroup(ByVal CustomerCode As String)

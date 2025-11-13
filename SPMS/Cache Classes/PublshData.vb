@@ -40,21 +40,19 @@ Public Class PublshData
         End Set
     End Property
     Public Function Save() As Boolean
-
-        If SPMSOPCI.ConnectionModule.SPMSConn2.State = ConnectionState.Closed Or SPMSOPCI.ConnectionModule.SPMSConn2.State = ConnectionState.Broken Then SPMSOPCI.ConnectionModule.Connect()
+        Connect()
         Try
-            Dim cmd As New SqlCommand("uspSyncDataFinalSales", SPMSOPCI.ConnectionModule.SPMSConn2)
+            Dim cmd As New SqlCommand("uspSyncDataFinalSales", SPMSConn2)
             cmd.CommandType = CommandType.StoredProcedure
             cmd.Parameters.AddWithValue("@Action", "DailyImportData")
             cmd.Parameters.AddWithValue("@ConfigtypeCode", _ConfigtypeCode)
             cmd.Parameters.AddWithValue("@Year", _Year)
             cmd.Parameters.AddWithValue("@Month", _Month)
-            'cmd.Parameters.AddWithValue("@ChannelCode", _ChannelCode)
             cmd.ExecuteNonQuery()
-            SPMSOPCI.ConnectionModule.Disconnect()
+            Disconnect()
             Return True
-        Catch ex As Exception
-            SPMSOPCI.ConnectionModule.Disconnect()
+        Catch ex As System.Exception
+            Disconnect()
             Throw
         End Try
     End Function

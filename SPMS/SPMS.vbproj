@@ -31,6 +31,8 @@
     <OldToolsVersion>3.5</OldToolsVersion>
     <TargetFrameworkProfile>
     </TargetFrameworkProfile>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -93,6 +95,18 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Debug\Alpha6.UI.Common.dll</HintPath>
     </Reference>
+    <Reference Include="Alpha9, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Project Encure\SPMS - Version Ecure - Copy\SPMS\bin\Debug\Alpha9.dll</HintPath>
+    </Reference>
+    <Reference Include="Althea.Base, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Project Encure\SPMS - Version Ecure - Copy\SPMS\bin\Debug\Althea.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Althea.Base.Resources, Version=1.0.3679.25863, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Project Encure\SPMS - Version Ecure - Copy\SPMS\bin\Debug\Althea.Base.Resources.dll</HintPath>
+    </Reference>
     <Reference Include="Althea.Base.UI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>bin\Release\Althea.Base.UI.dll</HintPath>
     </Reference>
@@ -100,9 +114,16 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Debug\Althea.Base.UI.DataControls.dll</HintPath>
     </Reference>
+    <Reference Include="Althea.Module.InfraReporting, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Project Encure\SPMS - Version Ecure - Copy\SPMS\bin\Debug\Althea.Module.InfraReporting.dll</HintPath>
+    </Reference>
     <Reference Include="Althea.Services.DirectoryServices, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Debug\Althea.Services.DirectoryServices.dll</HintPath>
+    </Reference>
+    <Reference Include="Aphrodite.Core">
+      <HintPath>..\..\..\Project Encure\SPMS - Version Ecure - Copy\SPMS\bin\Debug\Aphrodite.Core.dll</HintPath>
     </Reference>
     <Reference Include="DataLayer, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -159,8 +180,13 @@
       <HintPath>bin\Debug\Microsoft.ReportViewer.WinForms.DLL</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.SQLite, Version=1.0.119.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Project Encure\SPMS - Version Ecure - Copy\SPMS\bin\Debug\config\System.Data.SQLite.dll</HintPath>
+    </Reference>
     <Reference Include="System.Deployment" />
     <Reference Include="System.Design" />
     <Reference Include="System.Drawing" />
@@ -200,7 +226,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>C:\Program Files (x86)\Telerik\RadControls for WinForms Q1 2013\Bin\Telerik.WinControls.Themes.HighContrastBlack.dll</HintPath>
     </Reference>
-    <Reference Include="Telerik.WinControls.Themes.Office2007Silver, Version=2018.2.621.20, Culture=neutral, PublicKeyToken=5bb2a467cbec794e" />
     <Reference Include="Telerik.WinControls.Themes.Office2010Black, Version=2013.1.321.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>C:\Program Files (x86)\Telerik\RadControls for WinForms Q1 2013\Bin\Telerik.WinControls.Themes.Office2010Black.dll</HintPath>
@@ -276,8 +301,11 @@
     <Compile Include="BudgetForeCasting\BudgetForecast.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Cache Classes\AccountSpecialist.vb" />
     <Compile Include="Cache Classes\Area.vb" />
+    <Compile Include="Cache Classes\ChannelItemPrice.vb" />
     <Compile Include="Cache Classes\CivilStatus.vb" />
+    <Compile Include="Cache Classes\Company.vb" />
     <Compile Include="Cache Classes\Configuration.vb" />
     <Compile Include="Cache Classes\Coordinator.vb" />
     <Compile Include="Cache Classes\CreditTerms.vb" />
@@ -294,9 +322,12 @@
     <Compile Include="Cache Classes\DistributorChannleGroup.vb" />
     <Compile Include="Cache Classes\DistributorItemPrices.vb" />
     <Compile Include="Cache Classes\DistrictAssignment.vb" />
+    <Compile Include="Cache Classes\DistrictGroup.vb" />
     <Compile Include="Cache Classes\Districts.vb" />
     <Compile Include="Cache Classes\DocumentSheetSalesMatrix.vb" />
     <Compile Include="Cache Classes\ExcelCustomerItemSharing.vb" />
+    <Compile Include="Cache Classes\ExcelProductGroupSharing.vb" />
+    <Compile Include="Cache Classes\ExcelProductManagerItem.vb" />
     <Compile Include="Cache Classes\ExpenseTypeCache.vb" />
     <Compile Include="Cache Classes\ExportSourceData.vb" />
     <Compile Include="Cache Classes\InqueryValidationData.vb" />
@@ -306,6 +337,11 @@
     <Compile Include="Cache Classes\ItemGroup.vb" />
     <Compile Include="Cache Classes\ItemProductAssignment.vb" />
     <Compile Include="Cache Classes\ItemSharing.vb" />
+    <Compile Include="Cache Classes\MD Information\MDPrescription.vb" />
+    <Compile Include="Cache Classes\MD Information\MDPrescriptionAccount.vb" />
+    <Compile Include="Cache Classes\MD Information\MDPrescritionMappingCredite.vb" />
+    <Compile Include="Cache Classes\MD Information\MDPrescritionProduct.vb" />
+    <Compile Include="Cache Classes\MD Information\MDSpecialization.vb" />
     <Compile Include="Cache Classes\MedicalDoctor.vb" />
     <Compile Include="Cache Classes\MedicalDoctorHospitalVisitClinic.vb" />
     <Compile Include="Cache Classes\MedicalDoctorPersonel.vb" />
@@ -320,19 +356,25 @@
     <Compile Include="Cache Classes\Position.vb" />
     <Compile Include="Cache Classes\ProcessConfig.vb" />
     <Compile Include="Cache Classes\ProcessInportData.vb" />
+    <Compile Include="Cache Classes\ProductGroupSharingUploading.vb" />
     <Compile Include="Cache Classes\ProductItemGroup.vb" />
     <Compile Include="Cache Classes\ProductManager.vb" />
+    <Compile Include="Cache Classes\ProductManagerItem.vb" />
+    <Compile Include="Cache Classes\ProductManagerMapping.vb" />
     <Compile Include="Cache Classes\PublishReport.vb" />
     <Compile Include="Cache Classes\PublshData.vb" />
     <Compile Include="Cache Classes\Region.vb" />
+    <Compile Include="Cache Classes\SalesAccountSpecialistProcess.vb" />
     <Compile Include="Cache Classes\SalesAccountSpecialistTagging.vb" />
     <Compile Include="Cache Classes\SalesManager.vb" />
     <Compile Include="Cache Classes\SalesMatrixCache.vb" />
+    <Compile Include="Cache Classes\SASDistrictTaget.vb" />
     <Compile Include="Cache Classes\SingleCustomerMappingCache.vb" />
     <Compile Include="Cache Classes\STDistrict.vb" />
     <Compile Include="Cache Classes\STRegion.vb" />
     <Compile Include="Cache Classes\UMConversion.vb" />
     <Compile Include="Cache Classes\UnitOfMeasurement.vb" />
+    <Compile Include="Cache Classes\UserIdentity.vb" />
     <Compile Include="Cache Classes\ZipCode.vb" />
     <Compile Include="Data Layer\BillingOrder\BillingOrder.vb" />
     <Compile Include="Data Layer\BillingOrder\BillingOrderDetails.vb" />
@@ -343,6 +385,8 @@
     <Compile Include="Data Layer\Distributor\Distributor.vb" />
     <Compile Include="Data Layer\Distributor\DistributorItems.vb" />
     <Compile Include="Data Layer\Employee\EmployeeCollection.vb" />
+    <Compile Include="Data Layer\Employee\EmployeeDistrictCollection.vb" />
+    <Compile Include="Data Layer\Employee\EmployeeDistrictManager.vb" />
     <Compile Include="Data Layer\Employee\EmployeeSalesman.vb" />
     <Compile Include="Data Layer\ExcelUploading\CustomerExcelUploading.vb" />
     <Compile Include="Data Layer\ExcelUploading\ExcelInhouseUploading.vb" />
@@ -361,6 +405,7 @@
     <Compile Include="Data Layer\Item Cost\ItemCostingDetails.vb" />
     <Compile Include="Data Layer\Item\Item.vb" />
     <Compile Include="Data Layer\Item\ItemModifiedSales.vb" />
+    <Compile Include="Data Layer\Item\ProductGroupEffectivity.vb" />
     <Compile Include="Data Layer\Medical Rep\MedicalRep.vb" />
     <Compile Include="Data Layer\Medical Rep\Sales_Matrix.vb" />
     <Compile Include="Data Layer\Particulars\Particulars.vb" />
@@ -502,6 +547,18 @@
     <Compile Include="Forms\Admin Utility\UiItemSharing.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Forms\Admin Utility\UIProductGroupSharing.Designer.vb">
+      <DependentUpon>UIProductGroupSharing.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin Utility\UIProductGroupSharing.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin Utility\UIProductManagerTargetUploading.Designer.vb">
+      <DependentUpon>UIProductManagerTargetUploading.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin Utility\UIProductManagerTargetUploading.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\Admin Utility\UIPublishReport.Designer.vb">
       <DependentUpon>UIPublishReport.vb</DependentUpon>
     </Compile>
@@ -524,6 +581,12 @@
       <DependentUpon>UISalesMatrix.vb</DependentUpon>
     </Compile>
     <Compile Include="Forms\Admin Utility\UISalesMatrix.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin Utility\UISASDistrictTarget.Designer.vb">
+      <DependentUpon>UISASDistrictTarget.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin Utility\UISASDistrictTarget.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Admin Utility\UISharingUploading.Designer.vb">
@@ -646,6 +709,30 @@
     <Compile Include="Forms\Administration\UIAdministratorSalesMatrix.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Forms\Channel Item Price\UIAddChannelItemPrice.Designer.vb">
+      <DependentUpon>UIAddChannelItemPrice.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Channel Item Price\UIAddChannelItemPrice.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Channel Item Price\UIChannelItemPrice.Designer.vb">
+      <DependentUpon>UIChannelItemPrice.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Channel Item Price\UIChannelItemPrice.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Employee\UIEmployees.Designer.vb">
+      <DependentUpon>UIEmployees.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Employee\UIEmployees.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Employee\UIUserIndentity.Designer.vb">
+      <DependentUpon>UIUserIndentity.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Employee\UIUserIndentity.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Forms\Expense\ExpenseUploader.Designer.vb">
       <DependentUpon>ExpenseUploader.vb</DependentUpon>
     </Compile>
@@ -734,6 +821,12 @@
     <Compile Include="Forms\Master Files\MDInformation.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Forms\Master Files\Product Manager\UIProductManagerMapping.Designer.vb">
+      <DependentUpon>UIProductManagerMapping.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Master Files\Product Manager\UIProductManagerMapping.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Forms\Master Files\Rebates.vb" />
     <Compile Include="Forms\Master Files\RebatesCache.vb" />
     <Compile Include="Forms\Master Files\RebatesCompanyMonthYear.vb" />
@@ -750,10 +843,10 @@
     <Compile Include="Forms\Master Files\UIDistributors.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Forms\Master Files\UISalesAccountSpecialist.Designer.vb">
-      <DependentUpon>UISalesAccountSpecialist.vb</DependentUpon>
+    <Compile Include="Forms\Master Files\UIDistrictGroup.Designer.vb">
+      <DependentUpon>UIDistrictGroup.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Master Files\UISalesAccountSpecialist.vb">
+    <Compile Include="Forms\Master Files\UIDistrictGroup.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Forms\Master Files\ucDistributorItemsPrice.Designer.vb">
@@ -943,6 +1036,12 @@
     <Compile Include="Forms\Master Files\UIDistributor.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Forms\Master Files\UIEmployeeDistrictManager.Designer.vb">
+      <DependentUpon>UIEmployeeDistrictManager.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Master Files\UIEmployeeDistrictManager.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Forms\Master Files\UIEmployeeSalesman.Designer.vb">
       <DependentUpon>UIEmployeeSalesman.vb</DependentUpon>
     </Compile>
@@ -1003,16 +1102,16 @@
     <Compile Include="Forms\Master Files\UIProductItemGroup.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Forms\Master Files\Product Manager\UIProductManager.Designer.vb">
+      <DependentUpon>UIProductManager.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Master Files\Product Manager\UIProductManager.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Forms\Master Files\UISalesAccountSpecialistMatrix.Designer.vb">
       <DependentUpon>UISalesAccountSpecialistMatrix.vb</DependentUpon>
     </Compile>
     <Compile Include="Forms\Master Files\UISalesAccountSpecialistMatrix.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Master Files\UISalesAccountSpecialistProcess.Designer.vb">
-      <DependentUpon>UISalesAccountSpecialistProcess.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Master Files\UISalesAccountSpecialistProcess.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Master Files\UISalesAccountSpecialistTaggingPeriod.Designer.vb">
@@ -1051,6 +1150,18 @@
     <Compile Include="Forms\Master Files\UserControl1.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Forms\MD Information\UIMDPrescribing.Designer.vb">
+      <DependentUpon>UIMDPrescribing.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MD Information\UIMDPrescribing.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\MD Information\UISpecialization.Designer.vb">
+      <DependentUpon>UISpecialization.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MD Information\UISpecialization.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Forms\QueryForm\uCQueryForm.Designer.vb">
       <DependentUpon>uCQueryForm.vb</DependentUpon>
     </Compile>
@@ -1062,6 +1173,24 @@
     </Compile>
     <Compile Include="Forms\RawdataSelectDialog.vb">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Sales Account Specialist\UIAccountSpecialistEntry.Designer.vb">
+      <DependentUpon>UIAccountSpecialistEntry.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Sales Account Specialist\UIAccountSpecialistEntry.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Sales Account Specialist\UISalesAccountSpecialistMapped.Designer.vb">
+      <DependentUpon>UISalesAccountSpecialistMapped.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Sales Account Specialist\UISalesAccountSpecialistMapped.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Sales Account Specialist\UISalesAccountSpecialistMapping.Designer.vb">
+      <DependentUpon>UISalesAccountSpecialistMapping.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Sales Account Specialist\UISalesAccountSpecialistMapping.vb">
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Forms\Sales Report\UIActivityOverview.Designer.vb">
       <DependentUpon>UIActivityOverview.vb</DependentUpon>
@@ -1710,6 +1839,12 @@
     <Compile Include="Forms\UITest.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\Validation Process\ValidationProcess.Designer.vb">
+      <DependentUpon>ValidationProcess.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Validation Process\ValidationProcess.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="InfraReporting\Calendar.Designer.vb">
       <DependentUpon>Calendar.vb</DependentUpon>
     </Compile>
@@ -1896,6 +2031,12 @@
     <EmbeddedResource Include="Forms\Admin Utility\UiItemSharing.resx">
       <DependentUpon>UiItemSharing.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin Utility\UIProductGroupSharing.resx">
+      <DependentUpon>UIProductGroupSharing.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin Utility\UIProductManagerTargetUploading.resx">
+      <DependentUpon>UIProductManagerTargetUploading.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Admin Utility\UIPublishReport.resx">
       <DependentUpon>UIPublishReport.vb</DependentUpon>
     </EmbeddedResource>
@@ -1907,6 +2048,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Admin Utility\UISalesMatrix.resx">
       <DependentUpon>UISalesMatrix.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin Utility\UISASDistrictTarget.resx">
+      <DependentUpon>UISASDistrictTarget.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Admin Utility\UISharingUploading.resx">
       <DependentUpon>UISharingUploading.vb</DependentUpon>
@@ -1984,6 +2128,18 @@
     <EmbeddedResource Include="Forms\Administration\UIAdministratorSalesMatrix.resx">
       <DependentUpon>UIAdministratorSalesMatrix.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Channel Item Price\UIAddChannelItemPrice.resx">
+      <DependentUpon>UIAddChannelItemPrice.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Channel Item Price\UIChannelItemPrice.resx">
+      <DependentUpon>UIChannelItemPrice.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Employee\UIEmployees.resx">
+      <DependentUpon>UIEmployees.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Employee\UIUserIndentity.resx">
+      <DependentUpon>UIUserIndentity.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Expense\ExpenseUploader.resx">
       <DependentUpon>ExpenseUploader.vb</DependentUpon>
       <SubType>Designer</SubType>
@@ -2035,14 +2191,17 @@
     <EmbeddedResource Include="Forms\Master Files\MDInformation.resx">
       <DependentUpon>MDInformation.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Master Files\Product Manager\UIProductManagerMapping.resx">
+      <DependentUpon>UIProductManagerMapping.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Master Files\Sales Territorial Configuration\UISalesMatrixbyConfig.resx">
       <DependentUpon>UISalesMatrixbyConfig.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Master Files\UIDistributors.resx">
       <DependentUpon>UIDistributors.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Master Files\UISalesAccountSpecialist.resx">
-      <DependentUpon>UISalesAccountSpecialist.vb</DependentUpon>
+    <EmbeddedResource Include="Forms\Master Files\UIDistrictGroup.resx">
+      <DependentUpon>UIDistrictGroup.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Master Files\ucDistributorItemsPrice.resx">
       <DependentUpon>ucDistributorItemsPrice.vb</DependentUpon>
@@ -2148,6 +2307,9 @@
     <EmbeddedResource Include="Forms\Master Files\UIDistributor.resx">
       <DependentUpon>UIDistributor.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Master Files\UIEmployeeDistrictManager.resx">
+      <DependentUpon>UIEmployeeDistrictManager.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Master Files\UIEmployeeSalesman.resx">
       <DependentUpon>UIEmployeeSalesman.vb</DependentUpon>
     </EmbeddedResource>
@@ -2178,11 +2340,11 @@
     <EmbeddedResource Include="Forms\Master Files\UIProductItemGroup.resx">
       <DependentUpon>UIProductItemGroup.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Master Files\Product Manager\UIProductManager.resx">
+      <DependentUpon>UIProductManager.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Master Files\UISalesAccountSpecialistMatrix.resx">
       <DependentUpon>UISalesAccountSpecialistMatrix.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Master Files\UISalesAccountSpecialistProcess.resx">
-      <DependentUpon>UISalesAccountSpecialistProcess.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Master Files\UISalesAccountSpecialistTaggingPeriod.resx">
       <DependentUpon>UISalesAccountSpecialistTaggingPeriod.vb</DependentUpon>
@@ -2202,6 +2364,12 @@
     <EmbeddedResource Include="Forms\Master Files\UserControl1.resx">
       <DependentUpon>UserControl1.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MD Information\UIMDPrescribing.resx">
+      <DependentUpon>UIMDPrescribing.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MD Information\UISpecialization.resx">
+      <DependentUpon>UISpecialization.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\QueryForm\uCQueryForm.resx">
       <DependentUpon>uCQueryForm.vb</DependentUpon>
       <SubType>Designer</SubType>
@@ -2209,6 +2377,15 @@
     <EmbeddedResource Include="Forms\RawdataSelectDialog.resx">
       <DependentUpon>RawdataSelectDialog.vb</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Sales Account Specialist\UIAccountSpecialistEntry.resx">
+      <DependentUpon>UIAccountSpecialistEntry.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Sales Account Specialist\UISalesAccountSpecialistMapped.resx">
+      <DependentUpon>UISalesAccountSpecialistMapped.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Sales Account Specialist\UISalesAccountSpecialistMapping.resx">
+      <DependentUpon>UISalesAccountSpecialistMapping.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Sales Report\UIActivityOverview.resx">
       <DependentUpon>UIActivityOverview.vb</DependentUpon>
@@ -2621,6 +2798,9 @@
     <EmbeddedResource Include="Forms\UITest.resx">
       <DependentUpon>UITest.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Validation Process\ValidationProcess.resx">
+      <DependentUpon>ValidationProcess.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="InfraReporting\Calendar.resx">
       <DependentUpon>Calendar.vb</DependentUpon>
       <SubType>Designer</SubType>
@@ -2730,6 +2910,14 @@
     <None Include="Resources\share-access %281%29.png" />
     <None Include="Resources\copy.png" />
     <None Include="Resources\copy %281%29.png" />
+    <None Include="Resources\list.png" />
+    <None Include="Resources\refresh.png" />
+    <None Include="Resources\left-chevron.png" />
+    <None Include="Resources\right-chevron.png" />
+    <None Include="Resources\delete1.png" />
+    <None Include="Resources\box.png" />
+    <None Include="Resources\approved.png" />
+    <None Include="Resources\database-management.png" />
     <Content Include="sales.ico" />
     <None Include="Resources\1.bmp" />
     <None Include="Resources\11.bmp" />
@@ -3052,9 +3240,17 @@
     <Folder Include="Data Layer\Bases\" />
     <Folder Include="Forms\Master Files\Reports\torrent reports\" />
     <Folder Include="Forms\NewFolder1\" />
+    <Folder Include="Forms\NewFolder2\" />
     <Folder Include="Resources\Connections\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <Import Project="..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\build\net20\Stub.System.Data.SQLite.Core.NetFramework.targets" Condition="Exists('..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\build\net20\Stub.System.Data.SQLite.Core.NetFramework.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\build\net20\Stub.System.Data.SQLite.Core.NetFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\build\net20\Stub.System.Data.SQLite.Core.NetFramework.targets'))" />
+  </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

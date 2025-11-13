@@ -74,7 +74,7 @@ Partial Class UiItemSharing
         Me.btnUpdate = New Telerik.WinControls.UI.RadMenuButtonItem()
         Me.btnCleared = New Telerik.WinControls.UI.RadMenuButtonItem()
         Me.Office2010BlackTheme1 = New Telerik.WinControls.Themes.Office2010BlackTheme()
-        Me.Office2010SilverTheme1 = New Telerik.WinControls.Themes.Office2010SilverTheme()
+        Me.Office2010SilverTheme1 = New Telerik.WinControls.Themes.Office2010BlackTheme()
         Me.Panel1.SuspendLayout()
         CType(Me.RadMenu1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel3.SuspendLayout()
@@ -757,7 +757,7 @@ Partial Class UiItemSharing
     Friend WithEvents RadGroupBox1 As Telerik.WinControls.UI.RadGroupBox
     Friend WithEvents GrdViewProductGroup As Telerik.WinControls.UI.RadGridView
     Friend WithEvents btnUpdate As Telerik.WinControls.UI.RadMenuButtonItem
-    Friend WithEvents Office2010SilverTheme1 As Telerik.WinControls.Themes.Office2010SilverTheme
+    Friend WithEvents Office2010SilverTheme1 As Telerik.WinControls.Themes.Office2010BlackTheme
     Friend WithEvents lblErrormessage As Telerik.WinControls.UI.RadLabel
     Friend WithEvents RadMenuItem1 As Telerik.WinControls.UI.RadMenuItem
     Friend WithEvents btnProcess As Telerik.WinControls.UI.RadMenuButtonItem

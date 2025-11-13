@@ -19,6 +19,10 @@ Public Class CustomerItemSharingUploading
 	Private m_OR_SH As String = String.Empty
 	Private m_IsActive As Boolean = True
 	Private m_CRTBY As String = String.Empty
+	Private m_YearFrom As String = String.Empty
+	Private m_YearTo As String = String.Empty
+	Private m_MonthFrom As String = String.Empty
+	Private m_MonthTo As String = String.Empty
 	Public ReadOnly Property CustomerItemSharingID As Integer
 		Get
 			Return m_ID
@@ -152,6 +156,38 @@ Public Class CustomerItemSharingUploading
 			m_OR_SH = value
 		End Set
 	End Property
+	Public Property YearFrom As String
+		Get
+			Return m_YearFrom
+		End Get
+		Set(value As String)
+			m_YearFrom = value
+		End Set
+	End Property
+	Public Property YearTo As String
+		Get
+			Return m_YearTo
+		End Get
+		Set(value As String)
+			m_YearTo = value
+		End Set
+	End Property
+	Public Property MonthFrom As String
+		Get
+			Return m_MonthFrom
+		End Get
+		Set(value As String)
+			m_MonthFrom = value
+		End Set
+	End Property
+	Public Property MonthTo As String
+		Get
+			Return m_MonthTo
+		End Get
+		Set(value As String)
+			m_MonthTo = value
+		End Set
+	End Property
 	Private Shared Function BaseFilter(ByVal Table As System.Data.DataTable) As CustomerItemSharingUploadingCollection
 		Dim col As New CustomerItemSharingUploadingCollection
 		For j As Integer = 0 To Table.Rows.Count - 1
@@ -215,11 +251,36 @@ Public Class CustomerItemSharingUploading
 			Throw
 		End Try
 	End Function
+	Public Function CustomerItemSharingCopyFrom()
+		Try
+			SPMSOPCI.ConnectionModule.Connect()
+			Dim cmd As New SqlCommand("uspCustomerItemSharingCopyFrom", SPMSOPCI.ConnectionModule.SPMSConn2)
+			cmd.CommandType = CommandType.StoredProcedure
+			cmd.Parameters.AddWithValue("@Action", "CustomerItemSharingCopyFrom")
+			cmd.Parameters.AddWithValue("@ConfigtypeCode", m_ConfigtypeCode)
+			cmd.Parameters.AddWithValue("@ChannelCode", m_ChannelCode)
+			cmd.Parameters.AddWithValue("@YearFrom", m_YearFrom)
+			cmd.Parameters.AddWithValue("@MonthFrom", m_MonthFrom)
+			cmd.Parameters.AddWithValue("@YearTo", m_YearTo)
+			cmd.Parameters.AddWithValue("@MonthTo", m_MonthTo)
+			cmd.ExecuteNonQuery()
+			SPMSOPCI.ConnectionModule.Disconnect()
+			Return True
+		Catch ex As System.Exception
+			Throw
+		End Try
+	End Function
 	Public Shared Function CheckUploadingFileExist(ByVal Month As String, ByVal Year As String, ByVal ConfigCode As String, ByVal ChannelCode As String) As Boolean
 		Return ExecuteCommand("SELECT 'A' FROM CustomerItemSharingUploading Where Month = '" & Month & "' And Year = '" & Year & "' And ConfigtypeCode = '" & ConfigCode & "' And ChannelCode = '" & ChannelCode & "'") = "A"
 	End Function
 	Public Shared Function DeleteExistList(ByVal Month As String, ByVal Year As String, ByVal ConfigCode As String, ByVal ChannelCode As String) As Boolean
 		Return ExecuteCommand("DELETE FROM CustomerItemSharingUploading Where ChannelCode = '" & ChannelCode & "' AND Year = '" & Year & "' AND Month = '" & Month & "' AND ConfigtypeCode = '" & ConfigCode & "'")
+	End Function
+	Public Shared Function GetItemSharingListSql() As String
+		Return "Select Distinct ConfigtypeCode,ChannelCode,Year,Month,ConfigtypeCode From CustomerItemSharingUploading Order by Year,Month,ChannelCode"
+	End Function
+	Public Shared Function GetCustomerItemSharingListSql(ByVal ChannelCode As String, ByVal Year As String, ByVal Month As String, ByVal ConfigtypeCode As String) As String
+		Return "Select Distinct ChannelCode,Year,Month,ConfigtypeCode From CustomerItemSharingUploading Where ChannelCode = '" & ChannelCode & "' And Year = '" & Year & "' And Month = '" & Month & "' And ConfigtypeCode = '" & ConfigtypeCode & "'"
 	End Function
 End Class
 Public Class CustomerItemSharingUploadingCollection

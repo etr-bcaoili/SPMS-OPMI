@@ -8,8 +8,6 @@ Public Class UIProductItemGroup
     Private m_Err As New ErrorProvider
     Private m_HasError As Boolean = False
     Private m_EnableEdit As Boolean = False
-
-
     Private Sub EditMode(ByVal IsEditMode As Boolean)
         btnSave.Enabled = IsEditMode
         btnEdit.Enabled = Not IsEditMode

@@ -107,7 +107,7 @@ Public Class ProductItemGroup
         Return ExecuteCommand("SELECT 'A' FROM ProductItemGroup WHERE DLTFLG = 0 AND  PGCode = '" & RefineSQL(PGCode) & "'") = "A"
     End Function
     Public Shared Function GetProductItemGroupSql(Optional ByVal CustomerGroup As String = "") As String
-        Return "SELECT ID,PGCode [Product Item Code],PGDescription [Product Item Group Description] FROM ProductItemGroup Where DLTFLG = 0 AND  "
+        Return "SELECT ID,PGCode [Product Item Code],PGDescription [Product Item Group Description] FROM ProductItemGroup Where DLTFLG = 0 "
     End Function
     Public Shared Function GetProductGroupList()
         Return "Select PGCode,PGDescription from ProductItemGroup Where PGCode NOT IN ('99','NPP')"

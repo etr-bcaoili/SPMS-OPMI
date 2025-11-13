@@ -206,8 +206,15 @@ Public Class SalesManager
         Return Filter("")
     End Function
     Public Shared Function LoadByCode(ByVal STSLSMGRCD As String) As SalesManager
-        Return Filter("STSLSMGRCD = '" & RefineSQL(STSLSMGRCD) & "'")(0)
+        Dim managers As SalesManagerCollection = Filter("STSLSMGRCD = '" & RefineSQL(STSLSMGRCD) & "'")
+        If managers IsNot Nothing AndAlso managers.Count > 0 Then
+            Return managers(0)
+        Else
+            ' Handle the case where no matching SalesManager is found
+            Return Nothing
+        End If
     End Function
+
     Public Shared Function LoadID(ByVal STSLSMGRID As String) As SalesManager
         Return Filter("STSLSMGRID = '" & RefineSQL(STSLSMGRID) & "'")(0)
     End Function

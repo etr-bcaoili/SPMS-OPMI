@@ -1,7 +1,16 @@
 ﻿Imports System.IO
 Imports SPMSOPCI.ConnectionModule
 Public Class MainWindow
+    Private m_UserName As String = String.Empty
 
+    Public Property MainUserName As String
+        Get
+            Return m_UserName
+        End Get
+        Set(value As String)
+            m_UserName = value
+        End Set
+    End Property
     Private Sub MainWindow_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
 
         If ConnectionExists() = True Then
@@ -30,8 +39,9 @@ Public Class MainWindow
             tmpUserLogin.ShowDialog()
 
             If tmpUserLogin.Username <> "" Then
-                LockModules(tmpUserLogin.Username)
 
+                LockModules(tmpUserLogin.Username)
+                m_UserName = tmpUserLogin.Username
                 If GetPcIPAddress() = MyIP Then
                     If AutoBackUpExist() = False Then
                         BackupDatabase(GetbackupLocationPath)
@@ -68,58 +78,13 @@ Public Class MainWindow
         End If
 
         Me.Opacity = 100%
-        '  ShowInformation(HasReferenceRecords(TABLENAME, VALUETOFIND), "")
-        'Me.ReportViewer1.RefreshReport()
 
-        'If ConnectionExists() = True Then
-        '    Dim MyIP As String = ""
-        '    MyIP = GetSplittedText(GetSqlconnectionPath(), 0, ";")
-        '    MyIP = GetSplittedText(MyIP, 1, "=")
-        '    OpenDb()
-        '    If GetPcIPAddress() = MyIP Then
-        '        If AutoBackUpExist() = False Then
-        '            BackupDatabase(GetbackupLocationPath)
-        '            CreateBackUpDatabaseRecord(GetbackupLocationPath)
-        '        End If
-        '    End If
-        'Else
-        '    'TabControl1.TabPages.Add(TabControl1.TabPages.Count)
-        '    'Dim mine As New ucDatabaseConnection
-        '    'mine.Width = Me.Width
-        '    'mine.Height = TabControl1.TabPages(TabControl1.TabPages.Count - 1).Height - 30
-        '    'TabControl1.TabPages(TabControl1.TabPages.Count - 1).Text = mine.Name
-        '    'TabControl1.TabPages(TabControl1.TabPages.Count - 1).Controls.Add(mine)
-        '    'TabControl1.TabPages(TabControl1.TabPages.Count - 1).Text = "Database Connection"
-        '    'TabControl1.SelectTab(TabControl1.TabPages.Count - 1)
-
-
-
-        'End If
-
-
-        '  ShowInformation(HasReferenceRecords(TABLENAME, VALUETOFIND), "")
     End Sub
-
-
     Private Sub OpenDb()
         If OpenConnection() <> True Then
             ConnectionFailed()
         End If
     End Sub
-
-    Private Sub mnusalesFlashClick(ByVal sender As System.Object, ByVal e As System.EventArgs)
-        'If sender Is mnuSalesSummary Then
-        '    TabControl1.TabPages.Add(TabControl1.TabPages.Count)
-        '    Dim mine As New ucSalesFlash
-        '    mine.Width = Me.Width
-        '    mine.Height = TabControl1.TabPages(TabControl1.TabPages.Count - 1).Height - 30
-        '    TabControl1.TabPages(TabControl1.TabPages.Count - 1).Text = mine.Name
-        '    TabControl1.TabPages(TabControl1.TabPages.Count - 1).Controls.Add(mine)
-        '    TabControl1.TabPages(TabControl1.TabPages.Count - 1).Text = "Sales Flash"
-        '    TabControl1.SelectTab(TabControl1.TabPages.Count - 1)
-        'End If
-    End Sub
-
     Private Sub mnuTransactionClick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mnuRawDataUploader.Click, mnuDataAnalyzer.Click
         If sender Is mnuRawDataUploader Then
         ElseIf sender Is mnuDataAnalyzer Then
@@ -285,7 +250,7 @@ Public Class MainWindow
             mine.Height = TabControl1.TabPages(TabControl1.TabPages.Count - 1).Height - 30
             TabControl1.TabPages(TabControl1.TabPages.Count - 1).Text = mine.Name
             TabControl1.TabPages(TabControl1.TabPages.Count - 1).Controls.Add(mine)
-            TabControl1.TabPages(TabControl1.TabPages.Count - 1).Text = "Employee Info"
+            TabControl1.TabPages(TabControl1.TabPages.Count - 1).Text = "Employee Sales Info"
             TabControl1.SelectTab(TabControl1.TabPages.Count - 1)
         ElseIf sender Is mnuSalesmanager Then
             TabControl1.TabPages.Add(TabControl1.TabPages.Count)
@@ -1755,8 +1720,6 @@ Public Class MainWindow
     End Sub
 
     Private Sub NewPositionToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles NewPositionToolStripMenuItem.Click
-        'Dim PositionForm As New frmProductManager
-        'PositionForm.ShowDialog()
         TabControl1.TabPages.Add(TabControl1.TabPages.Count)
         Dim mine As New UIPosition
         mine.Width = Me.Width
@@ -1860,7 +1823,8 @@ Public Class MainWindow
 
     Private Sub ProductManagerCreateToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ProductManagerCreateToolStripMenuItem.Click
         TabControl1.TabPages.Add(TabControl1.TabPages.Count)
-        Dim mine As New frmProductManagers
+        ' Dim mine As New frmProductManagers
+        Dim mine As New UIProductManager
         mine.Width = Me.Width
         mine.Height = TabControl1.TabPages(TabControl1.TabPages.Count - 1).Height - 30
         TabControl1.TabPages(TabControl1.TabPages.Count - 1).Text = mine.Name
@@ -1871,7 +1835,8 @@ Public Class MainWindow
 
     Private Sub ProductManagerMappingToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ProductManagerMappingToolStripMenuItem.Click
         TabControl1.TabPages.Add(TabControl1.TabPages.Count)
-        Dim mine As New UProductManagerMapping
+        Dim mine As New UIProductManagerMapping
+        ' Dim mine As New UProductManagerMapping
         mine.Width = Me.Width
         mine.Height = TabControl1.TabPages(TabControl1.TabPages.Count - 1).Height - 30
         TabControl1.TabPages(TabControl1.TabPages.Count - 1).Text = mine.Name
@@ -2083,10 +2048,6 @@ Public Class MainWindow
         TabControl1.SelectTab(TabControl1.TabPages.Count - 1)
     End Sub
 
-    Private Sub TabPage1_Click(sender As Object, e As EventArgs) Handles TabPage1.Click
-
-    End Sub
-
     Private Sub SalesByChannelDataToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SalesByChannelDataToolStripMenuItem.Click
         TabControl1.TabPages.Add(TabControl1.TabPages.Count)
         ''Dim UIMedicalDoctor As New UIMedicalDoctor
@@ -2115,7 +2076,7 @@ Public Class MainWindow
         Dim MenuUIDMICTerritoryManagerPeriodToPeriodPivot As New UIDMICTerritoryManagerPeriodToPeriodPivot
         MenuUIDMICTerritoryManagerPeriodToPeriodPivot.Width = Me.Width
         MenuUIDMICTerritoryManagerPeriodToPeriodPivot.Height = TabControl1.TabPages(TabControl1.TabPages.Count - 1).Height
-        TabControl1.TabPages(TabControl1.TabPages.Count - 1).Text = "District Manager Item Customer Territory Manager Comparative Period to Period"
+        TabControl1.TabPages(TabControl1.TabPages.Count - 1).Text = "District Manager Customer Territory Manager Comparative Period to Period (Net of VAT, MT, DM)"
         TabControl1.TabPages(TabControl1.TabPages.Count - 1).Controls.Add(MenuUIDMICTerritoryManagerPeriodToPeriodPivot)
         TabControl1.SelectTab(TabControl1.TabPages.Count - 1)
     End Sub
@@ -2133,29 +2094,9 @@ Public Class MainWindow
     End Sub
 
     Private Sub EmployeeToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EmployeeToolStripMenuItem.Click
-        TabControl1.TabPages.Add(TabControl1.TabPages.Count)
-        Dim MenuUIEmployeeSalesman As New UIEmployeeSalesman
-        MenuUIEmployeeSalesman.Width = Me.Width
-        MenuUIEmployeeSalesman.Height = TabControl1.TabPages(TabControl1.TabPages.Count - 1).Height
-        TabControl1.TabPages(TabControl1.TabPages.Count - 1).Text = "Employee Sales Man"
-        TabControl1.TabPages(TabControl1.TabPages.Count - 1).Controls.Add(MenuUIEmployeeSalesman)
-        TabControl1.SelectTab(TabControl1.TabPages.Count - 1)
+
     End Sub
 
-    Private Sub SalesAccountSpecialistToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SalesAccountSpecialistToolStripMenuItem.Click
-        TabControl1.TabPages.Add(TabControl1.TabPages.Count)
-        Dim MenuUISalesAccountSpecialist As New UISalesAccountSpecialist
-        MenuUISalesAccountSpecialist.Width = Me.Width
-        MenuUISalesAccountSpecialist.Height = TabControl1.TabPages(TabControl1.TabPages.Count - 1).Height
-        TabControl1.TabPages(TabControl1.TabPages.Count - 1).Text = "Sales Account Specialist"
-        TabControl1.TabPages(TabControl1.TabPages.Count - 1).Controls.Add(MenuUISalesAccountSpecialist)
-        TabControl1.SelectTab(TabControl1.TabPages.Count - 1)
-    End Sub
-
-    Private Sub SalesAccountSpecialistApplyToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SalesAccountSpecialistApplyToolStripMenuItem.Click
-        Dim a As New UISalesAccountSpecialistProcess
-        a.ShowDialog()
-    End Sub
 
     Private Sub ToolStripMenuItem20_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem20.Click
         TabControl1.TabPages.Add(TabControl1.TabPages.Count)
@@ -2214,5 +2155,124 @@ Public Class MainWindow
     Private Sub CustomerItemSharingToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CustomerItemSharingToolStripMenuItem.Click
         Dim a As New UIUploadingCustomerItemSharing
         a.ShowDialog()
+    End Sub
+
+    Private Sub ToolStripMenuItem25_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem25.Click
+        TabControl1.TabPages.Add(TabControl1.TabPages.Count)
+        Dim MenuUISalesAccountSpecialist As New ValidationProcess
+        MenuUISalesAccountSpecialist.Width = Me.Width
+        MenuUISalesAccountSpecialist.Height = TabControl1.TabPages(TabControl1.TabPages.Count - 1).Height
+        TabControl1.TabPages(TabControl1.TabPages.Count - 1).Text = "Validation Process"
+        TabControl1.TabPages(TabControl1.TabPages.Count - 1).Controls.Add(MenuUISalesAccountSpecialist)
+        TabControl1.SelectTab(TabControl1.TabPages.Count - 1)
+    End Sub
+
+    Private Sub SalesAccountSpecialistNewToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SalesAccountSpecialistNewToolStripMenuItem.Click
+        TabControl1.TabPages.Add(TabControl1.TabPages.Count)
+        Dim MenuUISalesAccountSpecialist As New UIAccountSpecialistEntry
+        MenuUISalesAccountSpecialist.Width = Me.Width
+        MenuUISalesAccountSpecialist.Height = TabControl1.TabPages(TabControl1.TabPages.Count - 1).Height
+        TabControl1.TabPages(TabControl1.TabPages.Count - 1).Text = "Sales Accounts Specialist"
+        TabControl1.TabPages(TabControl1.TabPages.Count - 1).Controls.Add(MenuUISalesAccountSpecialist)
+        TabControl1.SelectTab(TabControl1.TabPages.Count - 1)
+    End Sub
+
+    Private Sub SalesAccoountSpecialistMappingToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SalesAccoountSpecialistMappingToolStripMenuItem.Click
+        TabControl1.TabPages.Add(TabControl1.TabPages.Count)
+        Dim MenuUISalesAccountSpecialist As New UISalesAccountSpecialistMapped
+        MenuUISalesAccountSpecialist.Width = Me.Width
+        MenuUISalesAccountSpecialist.Height = TabControl1.TabPages(TabControl1.TabPages.Count - 1).Height
+        TabControl1.TabPages(TabControl1.TabPages.Count - 1).Text = "Sales Accounts Specialist Mapping"
+        TabControl1.TabPages(TabControl1.TabPages.Count - 1).Controls.Add(MenuUISalesAccountSpecialist)
+        TabControl1.SelectTab(TabControl1.TabPages.Count - 1)
+    End Sub
+
+    Private Sub ToolStripMenuItem26_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem26.Click
+        TabControl1.TabPages.Add(TabControl1.TabPages.Count)
+        Dim MenuUIDistrictGroup As New UIDistrictGroup
+        MenuUIDistrictGroup.Width = Me.Width
+        MenuUIDistrictGroup.Height = TabControl1.TabPages(TabControl1.TabPages.Count - 1).Height
+        TabControl1.TabPages(TabControl1.TabPages.Count - 1).Text = "District Group"
+        TabControl1.TabPages(TabControl1.TabPages.Count - 1).Controls.Add(MenuUIDistrictGroup)
+        TabControl1.SelectTab(TabControl1.TabPages.Count - 1)
+    End Sub
+
+    Private Sub ProductGroupSharingToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ProductGroupSharingToolStripMenuItem.Click
+        Dim a As New UIProductGroupSharing
+        a.ShowDialog()
+    End Sub
+
+    Private Sub SalesAccountSpecialistToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SalesAccountSpecialistToolStripMenuItem.Click
+
+    End Sub
+
+    Private Sub MerToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MerToolStripMenuItem.Click
+        Dim a As New UIProductManagerTargetUploading
+        a.ShowDialog()
+    End Sub
+
+    Private Sub ToolStripMenuItem27_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem27.Click
+        TabControl1.TabPages.Add(TabControl1.TabPages.Count)
+        Dim MenuUIChannelItemPrice As New UIChannelItemPrice
+        MenuUIChannelItemPrice.Width = Me.Width
+        MenuUIChannelItemPrice.Height = TabControl1.TabPages(TabControl1.TabPages.Count - 1).Height
+        TabControl1.TabPages(TabControl1.TabPages.Count - 1).Text = "Channel Item Price"
+        TabControl1.TabPages(TabControl1.TabPages.Count - 1).Controls.Add(MenuUIChannelItemPrice)
+        TabControl1.SelectTab(TabControl1.TabPages.Count - 1)
+    End Sub
+
+    Private Sub TargetDataToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TargetDataToolStripMenuItem.Click
+        Dim a As New UISASDistrictTarget
+        a.ShowDialog()
+    End Sub
+
+    Private Sub AgentToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AgentToolStripMenuItem.Click
+        TabControl1.TabPages.Add(TabControl1.TabPages.Count)
+        Dim MenuUIEmployeeSalesman As New UIEmployeeSalesman
+        MenuUIEmployeeSalesman.Width = Me.Width
+        MenuUIEmployeeSalesman.Height = TabControl1.TabPages(TabControl1.TabPages.Count - 1).Height
+        TabControl1.TabPages(TabControl1.TabPages.Count - 1).Text = "Professional Medical Representative"
+        TabControl1.TabPages(TabControl1.TabPages.Count - 1).Controls.Add(MenuUIEmployeeSalesman)
+        TabControl1.SelectTab(TabControl1.TabPages.Count - 1)
+    End Sub
+
+    Private Sub DistrictManagerToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles DistrictManagerToolStripMenuItem1.Click
+        TabControl1.TabPages.Add(TabControl1.TabPages.Count)
+        Dim MenuUIEmployeeSalesman As New UIEmployeeDistrictManager
+        MenuUIEmployeeSalesman.Width = Me.Width
+        MenuUIEmployeeSalesman.Height = TabControl1.TabPages(TabControl1.TabPages.Count - 1).Height
+        TabControl1.TabPages(TabControl1.TabPages.Count - 1).Text = "District Manager"
+        TabControl1.TabPages(TabControl1.TabPages.Count - 1).Controls.Add(MenuUIEmployeeSalesman)
+        TabControl1.SelectTab(TabControl1.TabPages.Count - 1)
+    End Sub
+
+    Private Sub UserIndentityToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles UserIndentityToolStripMenuItem.Click
+        TabControl1.TabPages.Add(TabControl1.TabPages.Count)
+        Dim MenuUIUserIndentity As New UIUserIndentity
+        MenuUIUserIndentity.Width = Me.Width
+        MenuUIUserIndentity.Height = TabControl1.TabPages(TabControl1.TabPages.Count - 1).Height
+        TabControl1.TabPages(TabControl1.TabPages.Count - 1).Text = "User Indentity"
+        TabControl1.TabPages(TabControl1.TabPages.Count - 1).Controls.Add(MenuUIUserIndentity)
+        TabControl1.SelectTab(TabControl1.TabPages.Count - 1)
+    End Sub
+
+    Private Sub ToolStripMenuItem11_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem11.Click
+        TabControl1.TabPages.Add(TabControl1.TabPages.Count)
+        Dim MenuMDPrescribing As New UIMDPrescribing
+        MenuMDPrescribing.Width = Me.Width
+        MenuMDPrescribing.Height = TabControl1.TabPages(TabControl1.TabPages.Count - 1).Height
+        TabControl1.TabPages(TabControl1.TabPages.Count - 1).Text = "MD Prescription"
+        TabControl1.TabPages(TabControl1.TabPages.Count - 1).Controls.Add(MenuMDPrescribing)
+        TabControl1.SelectTab(TabControl1.TabPages.Count - 1)
+    End Sub
+
+    Private Sub ToolStripMenuItem28_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem28.Click
+        TabControl1.TabPages.Add(TabControl1.TabPages.Count)
+        Dim MenuSpecialization As New UISpecialization
+        MenuSpecialization.Width = Me.Width
+        MenuSpecialization.Height = TabControl1.TabPages(TabControl1.TabPages.Count - 1).Height
+        TabControl1.TabPages(TabControl1.TabPages.Count - 1).Text = "Specialization"
+        TabControl1.TabPages(TabControl1.TabPages.Count - 1).Controls.Add(MenuSpecialization)
+        TabControl1.SelectTab(TabControl1.TabPages.Count - 1)
     End Sub
 End Class

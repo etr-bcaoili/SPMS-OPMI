@@ -93,17 +93,24 @@ Partial Class MainWindow
         Me.NoneSalesActivityOverviewToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GenerationActivityOverviewToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem23 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem25 = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuMasterDataMaintenance = New System.Windows.Forms.ToolStripMenuItem()
         Me.EmployeeMaintenanceToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuMedicalRep = New System.Windows.Forms.ToolStripMenuItem()
         Me.NewPositionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripSeparator12 = New System.Windows.Forms.ToolStripSeparator()
+        Me.EmployeeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AgentToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.DistrictManagerToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.mnuMedicalRep = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SalesAccountSpecialistToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SalesAccountSpecialistNewToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SalesAccoountSpecialistMappingToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.DoctorOfMedicineToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.DoctorMedicalPersonToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
         Me.MedicalDoctorSalesPersonToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MedicalDoctorValidationRawDataToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.EmployeeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.SalesAccountSpecialistToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.UserIndentityToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnumainTerritory = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuRegion = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuDistrict = New System.Windows.Forms.ToolStripMenuItem()
@@ -123,8 +130,10 @@ Partial Class MainWindow
         Me.ToolStripSeparator5 = New System.Windows.Forms.ToolStripSeparator()
         Me.mnuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ChannelsItemToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem27 = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuMainTerritorialConfiguration = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuSalesmanager = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem26 = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuSalesRegion = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuSalesDistrict = New System.Windows.Forms.ToolStripMenuItem()
@@ -144,6 +153,7 @@ Partial Class MainWindow
         Me.ToolStripSeparator6 = New System.Windows.Forms.ToolStripSeparator()
         Me.mnuCustomer = New System.Windows.Forms.ToolStripMenuItem()
         Me.MedicalDoctorToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem28 = New System.Windows.Forms.ToolStripMenuItem()
         Me.MedicalDoctorCreationToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator4 = New System.Windows.Forms.ToolStripSeparator()
         Me.DispensingMedicalPractitionerClinicToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -192,6 +202,9 @@ Partial Class MainWindow
         Me.SalesMatrixToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AreacoverageToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CustomerItemSharingToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ProductGroupSharingToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MerToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TargetDataToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuScriptUploader = New System.Windows.Forms.ToolStripMenuItem()
         Me.NewCustomerToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.UnMapCustomerToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -351,21 +364,21 @@ Partial Class MainWindow
         'SalesByChannelDataToolStripMenuItem
         '
         Me.SalesByChannelDataToolStripMenuItem.Name = "SalesByChannelDataToolStripMenuItem"
-        Me.SalesByChannelDataToolStripMenuItem.Size = New System.Drawing.Size(604, 22)
+        Me.SalesByChannelDataToolStripMenuItem.Size = New System.Drawing.Size(665, 22)
         Me.SalesByChannelDataToolStripMenuItem.Text = "Sales By Channel Data Pivot"
         '
         'SalesByTerritoryDataToolStripMenuItem
         '
         Me.SalesByTerritoryDataToolStripMenuItem.Name = "SalesByTerritoryDataToolStripMenuItem"
-        Me.SalesByTerritoryDataToolStripMenuItem.Size = New System.Drawing.Size(604, 22)
-        Me.SalesByTerritoryDataToolStripMenuItem.Text = "Sales By Territory Data Pivot"
+        Me.SalesByTerritoryDataToolStripMenuItem.Size = New System.Drawing.Size(665, 22)
+        Me.SalesByTerritoryDataToolStripMenuItem.Text = "Territory Product Performance Pivot"
         '
         'ToolStripMenuItem18
         '
         Me.ToolStripMenuItem18.Name = "ToolStripMenuItem18"
-        Me.ToolStripMenuItem18.Size = New System.Drawing.Size(604, 22)
-        Me.ToolStripMenuItem18.Text = "District Manager Item Customer Territory Manager Comparative Period to Period Piv" &
-    "ot"
+        Me.ToolStripMenuItem18.Size = New System.Drawing.Size(665, 22)
+        Me.ToolStripMenuItem18.Text = "District Manager Customer Territory Manager Comparative Period to Period (Net of " &
+    "VAT, MT, DM)"
         '
         'ToolStripMenuItem19
         '
@@ -412,7 +425,7 @@ Partial Class MainWindow
         '
         'mnuSalesAnalysis
         '
-        Me.mnuSalesAnalysis.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SalesTransactionToolStripMenuItem, Me.SalesPerformanceToolStripMenuItem, Me.SalesSummaryToolStripMenuItem, Me.ProfitAndLossToolStripMenuItem, Me.TorrentUtilitToolStripMenuItem, Me.ToolStripMenuItem8, Me.ReportViewerToolStripMenuItem, Me.BudgetForecastingToolStripMenuItem1, Me.SalesPerChannelReportsToolStripMenuItem, Me.ToolStripMenuItem9, Me.NoneSalesActivityOverviewToolStripMenuItem, Me.ToolStripMenuItem23})
+        Me.mnuSalesAnalysis.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SalesTransactionToolStripMenuItem, Me.SalesPerformanceToolStripMenuItem, Me.SalesSummaryToolStripMenuItem, Me.ProfitAndLossToolStripMenuItem, Me.TorrentUtilitToolStripMenuItem, Me.ToolStripMenuItem8, Me.ReportViewerToolStripMenuItem, Me.BudgetForecastingToolStripMenuItem1, Me.SalesPerChannelReportsToolStripMenuItem, Me.ToolStripMenuItem9, Me.NoneSalesActivityOverviewToolStripMenuItem, Me.ToolStripMenuItem23, Me.ToolStripMenuItem25})
         Me.mnuSalesAnalysis.Name = "mnuSalesAnalysis"
         Me.mnuSalesAnalysis.Size = New System.Drawing.Size(148, 21)
         Me.mnuSalesAnalysis.Text = "&Sales Analysis Report"
@@ -692,6 +705,12 @@ Partial Class MainWindow
         Me.ToolStripMenuItem23.Size = New System.Drawing.Size(234, 22)
         Me.ToolStripMenuItem23.Text = "Publish Report SPMS II"
         '
+        'ToolStripMenuItem25
+        '
+        Me.ToolStripMenuItem25.Name = "ToolStripMenuItem25"
+        Me.ToolStripMenuItem25.Size = New System.Drawing.Size(234, 22)
+        Me.ToolStripMenuItem25.Text = "Validation Process"
+        '
         'mnuMasterDataMaintenance
         '
         Me.mnuMasterDataMaintenance.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EmployeeMaintenanceToolStripMenuItem, Me.mnumainTerritory, Me.mnumainItem, Me.mnuMainTerritorialConfiguration, Me.mnuMainCustomer, Me.RebatesToolStripMenuItem, Me.ExpenseManagementToolStripMenuItem, Me.ProductManagerToolStripMenuItem, Me.DistributorToolStripMenuItem})
@@ -701,29 +720,72 @@ Partial Class MainWindow
         '
         'EmployeeMaintenanceToolStripMenuItem
         '
-        Me.EmployeeMaintenanceToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuMedicalRep, Me.NewPositionToolStripMenuItem, Me.DoctorOfMedicineToolStripMenuItem, Me.EmployeeToolStripMenuItem, Me.SalesAccountSpecialistToolStripMenuItem})
+        Me.EmployeeMaintenanceToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NewPositionToolStripMenuItem, Me.ToolStripSeparator12, Me.EmployeeToolStripMenuItem, Me.mnuMedicalRep, Me.SalesAccountSpecialistToolStripMenuItem, Me.DoctorOfMedicineToolStripMenuItem, Me.UserIndentityToolStripMenuItem})
         Me.EmployeeMaintenanceToolStripMenuItem.Name = "EmployeeMaintenanceToolStripMenuItem"
         Me.EmployeeMaintenanceToolStripMenuItem.Size = New System.Drawing.Size(254, 22)
-        Me.EmployeeMaintenanceToolStripMenuItem.Text = "Sales Man Maintenance"
-        '
-        'mnuMedicalRep
-        '
-        Me.mnuMedicalRep.Name = "mnuMedicalRep"
-        Me.mnuMedicalRep.Size = New System.Drawing.Size(219, 22)
-        Me.mnuMedicalRep.Text = "Sales Man"
+        Me.EmployeeMaintenanceToolStripMenuItem.Text = "Sales Rep Management"
         '
         'NewPositionToolStripMenuItem
         '
         Me.NewPositionToolStripMenuItem.Name = "NewPositionToolStripMenuItem"
-        Me.NewPositionToolStripMenuItem.Size = New System.Drawing.Size(219, 22)
+        Me.NewPositionToolStripMenuItem.Size = New System.Drawing.Size(220, 22)
         Me.NewPositionToolStripMenuItem.Text = "Position"
+        '
+        'ToolStripSeparator12
+        '
+        Me.ToolStripSeparator12.Name = "ToolStripSeparator12"
+        Me.ToolStripSeparator12.Size = New System.Drawing.Size(217, 6)
+        '
+        'EmployeeToolStripMenuItem
+        '
+        Me.EmployeeToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AgentToolStripMenuItem, Me.DistrictManagerToolStripMenuItem1})
+        Me.EmployeeToolStripMenuItem.Name = "EmployeeToolStripMenuItem"
+        Me.EmployeeToolStripMenuItem.Size = New System.Drawing.Size(220, 22)
+        Me.EmployeeToolStripMenuItem.Text = "Employee Sales Info"
+        '
+        'AgentToolStripMenuItem
+        '
+        Me.AgentToolStripMenuItem.Name = "AgentToolStripMenuItem"
+        Me.AgentToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.AgentToolStripMenuItem.Text = "Sales Agent"
+        '
+        'DistrictManagerToolStripMenuItem1
+        '
+        Me.DistrictManagerToolStripMenuItem1.Name = "DistrictManagerToolStripMenuItem1"
+        Me.DistrictManagerToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
+        Me.DistrictManagerToolStripMenuItem1.Text = "District Manager "
+        '
+        'mnuMedicalRep
+        '
+        Me.mnuMedicalRep.Name = "mnuMedicalRep"
+        Me.mnuMedicalRep.Size = New System.Drawing.Size(220, 22)
+        Me.mnuMedicalRep.Text = "Sales Rep Configuration"
+        '
+        'SalesAccountSpecialistToolStripMenuItem
+        '
+        Me.SalesAccountSpecialistToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SalesAccountSpecialistNewToolStripMenuItem, Me.SalesAccoountSpecialistMappingToolStripMenuItem})
+        Me.SalesAccountSpecialistToolStripMenuItem.Name = "SalesAccountSpecialistToolStripMenuItem"
+        Me.SalesAccountSpecialistToolStripMenuItem.Size = New System.Drawing.Size(220, 22)
+        Me.SalesAccountSpecialistToolStripMenuItem.Text = "Sales Account Specialist"
+        '
+        'SalesAccountSpecialistNewToolStripMenuItem
+        '
+        Me.SalesAccountSpecialistNewToolStripMenuItem.Name = "SalesAccountSpecialistNewToolStripMenuItem"
+        Me.SalesAccountSpecialistNewToolStripMenuItem.Size = New System.Drawing.Size(285, 22)
+        Me.SalesAccountSpecialistNewToolStripMenuItem.Text = "Sales Account Specialist New"
+        '
+        'SalesAccoountSpecialistMappingToolStripMenuItem
+        '
+        Me.SalesAccoountSpecialistMappingToolStripMenuItem.Name = "SalesAccoountSpecialistMappingToolStripMenuItem"
+        Me.SalesAccoountSpecialistMappingToolStripMenuItem.Size = New System.Drawing.Size(285, 22)
+        Me.SalesAccoountSpecialistMappingToolStripMenuItem.Text = "Sales Accoount Specialist Mapping"
         '
         'DoctorOfMedicineToolStripMenuItem
         '
         Me.DoctorOfMedicineToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DoctorMedicalPersonToolStripMenuItem, Me.ToolStripSeparator3, Me.MedicalDoctorSalesPersonToolStripMenuItem, Me.MedicalDoctorValidationRawDataToolStripMenuItem})
         Me.DoctorOfMedicineToolStripMenuItem.Name = "DoctorOfMedicineToolStripMenuItem"
-        Me.DoctorOfMedicineToolStripMenuItem.Size = New System.Drawing.Size(219, 22)
-        Me.DoctorOfMedicineToolStripMenuItem.Text = "Doctor of Medical"
+        Me.DoctorOfMedicineToolStripMenuItem.Size = New System.Drawing.Size(220, 22)
+        Me.DoctorOfMedicineToolStripMenuItem.Text = "Medical Practitioner "
         Me.DoctorOfMedicineToolStripMenuItem.Visible = False
         '
         'DoctorMedicalPersonToolStripMenuItem
@@ -749,17 +811,11 @@ Partial Class MainWindow
         Me.MedicalDoctorValidationRawDataToolStripMenuItem.Size = New System.Drawing.Size(287, 22)
         Me.MedicalDoctorValidationRawDataToolStripMenuItem.Text = "Medical Doctor Validation RawData"
         '
-        'EmployeeToolStripMenuItem
+        'UserIndentityToolStripMenuItem
         '
-        Me.EmployeeToolStripMenuItem.Name = "EmployeeToolStripMenuItem"
-        Me.EmployeeToolStripMenuItem.Size = New System.Drawing.Size(219, 22)
-        Me.EmployeeToolStripMenuItem.Text = "Employee"
-        '
-        'SalesAccountSpecialistToolStripMenuItem
-        '
-        Me.SalesAccountSpecialistToolStripMenuItem.Name = "SalesAccountSpecialistToolStripMenuItem"
-        Me.SalesAccountSpecialistToolStripMenuItem.Size = New System.Drawing.Size(219, 22)
-        Me.SalesAccountSpecialistToolStripMenuItem.Text = "Sales Account Specialist"
+        Me.UserIndentityToolStripMenuItem.Name = "UserIndentityToolStripMenuItem"
+        Me.UserIndentityToolStripMenuItem.Size = New System.Drawing.Size(220, 22)
+        Me.UserIndentityToolStripMenuItem.Text = "User Indentity "
         '
         'mnumainTerritory
         '
@@ -794,7 +850,7 @@ Partial Class MainWindow
         '
         'mnumainItem
         '
-        Me.mnumainItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem16, Me.ToolStripMenuItem17, Me.ToolStripSeparator10, Me.mnuItemCategory, Me.mnuItemDivision, Me.mnuProductItemGroup, Me.mnuItemGroup, Me.mnuItemClass, Me.ItemMappingToolStripMenuItem, Me.mnItemManagerAssignment, Me.ToolStripSeparator5, Me.mnuItem, Me.ChannelsItemToolStripMenuItem})
+        Me.mnumainItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem16, Me.ToolStripMenuItem17, Me.ToolStripSeparator10, Me.mnuItemCategory, Me.mnuItemDivision, Me.mnuProductItemGroup, Me.mnuItemGroup, Me.mnuItemClass, Me.ItemMappingToolStripMenuItem, Me.mnItemManagerAssignment, Me.ToolStripSeparator5, Me.mnuItem, Me.ChannelsItemToolStripMenuItem, Me.ToolStripMenuItem27})
         Me.mnumainItem.Name = "mnumainItem"
         Me.mnumainItem.Size = New System.Drawing.Size(254, 22)
         Me.mnumainItem.Text = "Item"
@@ -877,9 +933,15 @@ Partial Class MainWindow
         Me.ChannelsItemToolStripMenuItem.Size = New System.Drawing.Size(239, 22)
         Me.ChannelsItemToolStripMenuItem.Text = "Channel Items Price List"
         '
+        'ToolStripMenuItem27
+        '
+        Me.ToolStripMenuItem27.Name = "ToolStripMenuItem27"
+        Me.ToolStripMenuItem27.Size = New System.Drawing.Size(239, 22)
+        Me.ToolStripMenuItem27.Text = "Channel Item Price"
+        '
         'mnuMainTerritorialConfiguration
         '
-        Me.mnuMainTerritorialConfiguration.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuSalesmanager, Me.mnuSalesRegion, Me.ToolStripMenuItem1, Me.mnuSalesDistrict, Me.mnuSalesTeam, Me.mnuAreaCoverage, Me.TerToolStripMenuItem, Me.ZIPCodeTerritoryAssignmentToolStripMenuItem, Me.ToolStripSeparator7, Me.ToolStripMenuItem12, Me.ToolStripMenuItem20})
+        Me.mnuMainTerritorialConfiguration.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuSalesmanager, Me.ToolStripMenuItem26, Me.mnuSalesRegion, Me.ToolStripMenuItem1, Me.mnuSalesDistrict, Me.mnuSalesTeam, Me.mnuAreaCoverage, Me.TerToolStripMenuItem, Me.ZIPCodeTerritoryAssignmentToolStripMenuItem, Me.ToolStripSeparator7, Me.ToolStripMenuItem12, Me.ToolStripMenuItem20})
         Me.mnuMainTerritorialConfiguration.Name = "mnuMainTerritorialConfiguration"
         Me.mnuMainTerritorialConfiguration.Size = New System.Drawing.Size(254, 22)
         Me.mnuMainTerritorialConfiguration.Text = "Sales Territorial Configuration"
@@ -889,6 +951,12 @@ Partial Class MainWindow
         Me.mnuSalesmanager.Name = "mnuSalesmanager"
         Me.mnuSalesmanager.Size = New System.Drawing.Size(294, 22)
         Me.mnuSalesmanager.Text = "District Sales Manager"
+        '
+        'ToolStripMenuItem26
+        '
+        Me.ToolStripMenuItem26.Name = "ToolStripMenuItem26"
+        Me.ToolStripMenuItem26.Size = New System.Drawing.Size(294, 22)
+        Me.ToolStripMenuItem26.Text = "District Group"
         '
         'mnuSalesRegion
         '
@@ -1002,18 +1070,22 @@ Partial Class MainWindow
         '
         'MedicalDoctorToolStripMenuItem
         '
-        Me.MedicalDoctorToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MedicalDoctorCreationToolStripMenuItem, Me.ToolStripSeparator4, Me.DispensingMedicalPractitionerClinicToolStripMenuItem, Me.ToolStripMenuItem11})
+        Me.MedicalDoctorToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem28, Me.MedicalDoctorCreationToolStripMenuItem, Me.ToolStripSeparator4, Me.DispensingMedicalPractitionerClinicToolStripMenuItem, Me.ToolStripMenuItem11})
         Me.MedicalDoctorToolStripMenuItem.Name = "MedicalDoctorToolStripMenuItem"
         Me.MedicalDoctorToolStripMenuItem.Size = New System.Drawing.Size(236, 22)
         Me.MedicalDoctorToolStripMenuItem.Text = "Medical Doctor "
-        Me.MedicalDoctorToolStripMenuItem.Visible = False
+        '
+        'ToolStripMenuItem28
+        '
+        Me.ToolStripMenuItem28.Name = "ToolStripMenuItem28"
+        Me.ToolStripMenuItem28.Size = New System.Drawing.Size(301, 22)
+        Me.ToolStripMenuItem28.Text = "MD Specialization"
         '
         'MedicalDoctorCreationToolStripMenuItem
         '
         Me.MedicalDoctorCreationToolStripMenuItem.Name = "MedicalDoctorCreationToolStripMenuItem"
         Me.MedicalDoctorCreationToolStripMenuItem.Size = New System.Drawing.Size(301, 22)
         Me.MedicalDoctorCreationToolStripMenuItem.Text = "Medical Doctor Creation"
-        Me.MedicalDoctorCreationToolStripMenuItem.Visible = False
         '
         'ToolStripSeparator4
         '
@@ -1106,18 +1178,18 @@ Partial Class MainWindow
         'DistributorChannelToolStripMenuItem
         '
         Me.DistributorChannelToolStripMenuItem.Name = "DistributorChannelToolStripMenuItem"
-        Me.DistributorChannelToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.DistributorChannelToolStripMenuItem.Size = New System.Drawing.Size(171, 22)
         Me.DistributorChannelToolStripMenuItem.Text = "Channel Entry"
         '
         'ToolStripSeparator8
         '
         Me.ToolStripSeparator8.Name = "ToolStripSeparator8"
-        Me.ToolStripSeparator8.Size = New System.Drawing.Size(237, 6)
+        Me.ToolStripSeparator8.Size = New System.Drawing.Size(168, 6)
         '
         'ToolStripMenuItem13
         '
         Me.ToolStripMenuItem13.Name = "ToolStripMenuItem13"
-        Me.ToolStripMenuItem13.Size = New System.Drawing.Size(180, 22)
+        Me.ToolStripMenuItem13.Size = New System.Drawing.Size(171, 22)
         Me.ToolStripMenuItem13.Text = "Channel Group "
         '
         'UtilitiesToolStripMenuItem
@@ -1207,7 +1279,7 @@ Partial Class MainWindow
         '
         'mnuUpload
         '
-        Me.mnuUpload.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.UploadCustomerMappingToolStripMenuItem, Me.UploadChannelItemsPricelistToolStripMenuItem, Me.SharingMappingToolStripMenuItem, Me.RawDataUploadToolStripMenuItem, Me.TargetSalesToolStripMenuItem, Me.IssuedTarget, Me.ItemCostToolStripMenuItem, Me.ExpenseToolStripMenuItem1, Me.SalesMatrixToolStripMenuItem, Me.AreacoverageToolStripMenuItem, Me.CustomerItemSharingToolStripMenuItem})
+        Me.mnuUpload.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.UploadCustomerMappingToolStripMenuItem, Me.UploadChannelItemsPricelistToolStripMenuItem, Me.SharingMappingToolStripMenuItem, Me.RawDataUploadToolStripMenuItem, Me.TargetSalesToolStripMenuItem, Me.IssuedTarget, Me.ItemCostToolStripMenuItem, Me.ExpenseToolStripMenuItem1, Me.SalesMatrixToolStripMenuItem, Me.AreacoverageToolStripMenuItem, Me.CustomerItemSharingToolStripMenuItem, Me.ProductGroupSharingToolStripMenuItem, Me.MerToolStripMenuItem, Me.TargetDataToolStripMenuItem})
         Me.mnuUpload.Name = "mnuUpload"
         Me.mnuUpload.Size = New System.Drawing.Size(299, 22)
         Me.mnuUpload.Text = "Upload"
@@ -1215,26 +1287,26 @@ Partial Class MainWindow
         'UploadCustomerMappingToolStripMenuItem
         '
         Me.UploadCustomerMappingToolStripMenuItem.Name = "UploadCustomerMappingToolStripMenuItem"
-        Me.UploadCustomerMappingToolStripMenuItem.Size = New System.Drawing.Size(217, 22)
+        Me.UploadCustomerMappingToolStripMenuItem.Size = New System.Drawing.Size(224, 22)
         Me.UploadCustomerMappingToolStripMenuItem.Text = "Customer Master"
         '
         'UploadChannelItemsPricelistToolStripMenuItem
         '
         Me.UploadChannelItemsPricelistToolStripMenuItem.Name = "UploadChannelItemsPricelistToolStripMenuItem"
-        Me.UploadChannelItemsPricelistToolStripMenuItem.Size = New System.Drawing.Size(217, 22)
+        Me.UploadChannelItemsPricelistToolStripMenuItem.Size = New System.Drawing.Size(224, 22)
         Me.UploadChannelItemsPricelistToolStripMenuItem.Text = "Channel Items Pricelist"
         '
         'SharingMappingToolStripMenuItem
         '
         Me.SharingMappingToolStripMenuItem.Name = "SharingMappingToolStripMenuItem"
-        Me.SharingMappingToolStripMenuItem.Size = New System.Drawing.Size(217, 22)
+        Me.SharingMappingToolStripMenuItem.Size = New System.Drawing.Size(224, 22)
         Me.SharingMappingToolStripMenuItem.Text = "Sharing"
         '
         'RawDataUploadToolStripMenuItem
         '
         Me.RawDataUploadToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.RawDataToolStripMenuItem, Me.ToolStripSeparator1, Me.InHouseRawDataToolStripMenuItem, Me.ToolStripSeparator2, Me.ToolStripMenuItem10})
         Me.RawDataUploadToolStripMenuItem.Name = "RawDataUploadToolStripMenuItem"
-        Me.RawDataUploadToolStripMenuItem.Size = New System.Drawing.Size(217, 22)
+        Me.RawDataUploadToolStripMenuItem.Size = New System.Drawing.Size(224, 22)
         Me.RawDataUploadToolStripMenuItem.Text = "Raw Data"
         '
         'RawDataToolStripMenuItem
@@ -1268,46 +1340,64 @@ Partial Class MainWindow
         'TargetSalesToolStripMenuItem
         '
         Me.TargetSalesToolStripMenuItem.Name = "TargetSalesToolStripMenuItem"
-        Me.TargetSalesToolStripMenuItem.Size = New System.Drawing.Size(217, 22)
+        Me.TargetSalesToolStripMenuItem.Size = New System.Drawing.Size(224, 22)
         Me.TargetSalesToolStripMenuItem.Text = "&Sales Target"
         '
         'IssuedTarget
         '
         Me.IssuedTarget.Name = "IssuedTarget"
-        Me.IssuedTarget.Size = New System.Drawing.Size(217, 22)
+        Me.IssuedTarget.Size = New System.Drawing.Size(224, 22)
         Me.IssuedTarget.Text = "Issued Target"
         '
         'ItemCostToolStripMenuItem
         '
         Me.ItemCostToolStripMenuItem.Name = "ItemCostToolStripMenuItem"
-        Me.ItemCostToolStripMenuItem.Size = New System.Drawing.Size(217, 22)
+        Me.ItemCostToolStripMenuItem.Size = New System.Drawing.Size(224, 22)
         Me.ItemCostToolStripMenuItem.Text = "Item Cost"
         Me.ItemCostToolStripMenuItem.Visible = False
         '
         'ExpenseToolStripMenuItem1
         '
         Me.ExpenseToolStripMenuItem1.Name = "ExpenseToolStripMenuItem1"
-        Me.ExpenseToolStripMenuItem1.Size = New System.Drawing.Size(217, 22)
+        Me.ExpenseToolStripMenuItem1.Size = New System.Drawing.Size(224, 22)
         Me.ExpenseToolStripMenuItem1.Text = "Expense"
         '
         'SalesMatrixToolStripMenuItem
         '
         Me.SalesMatrixToolStripMenuItem.Name = "SalesMatrixToolStripMenuItem"
-        Me.SalesMatrixToolStripMenuItem.Size = New System.Drawing.Size(217, 22)
+        Me.SalesMatrixToolStripMenuItem.Size = New System.Drawing.Size(224, 22)
         Me.SalesMatrixToolStripMenuItem.Text = "SalesMatrix"
         '
         'AreacoverageToolStripMenuItem
         '
         Me.AreacoverageToolStripMenuItem.Name = "AreacoverageToolStripMenuItem"
-        Me.AreacoverageToolStripMenuItem.Size = New System.Drawing.Size(217, 22)
+        Me.AreacoverageToolStripMenuItem.Size = New System.Drawing.Size(224, 22)
         Me.AreacoverageToolStripMenuItem.Text = "Areacoverage"
         Me.AreacoverageToolStripMenuItem.Visible = False
         '
         'CustomerItemSharingToolStripMenuItem
         '
         Me.CustomerItemSharingToolStripMenuItem.Name = "CustomerItemSharingToolStripMenuItem"
-        Me.CustomerItemSharingToolStripMenuItem.Size = New System.Drawing.Size(217, 22)
+        Me.CustomerItemSharingToolStripMenuItem.Size = New System.Drawing.Size(224, 22)
         Me.CustomerItemSharingToolStripMenuItem.Text = "Customer Item Sharing"
+        '
+        'ProductGroupSharingToolStripMenuItem
+        '
+        Me.ProductGroupSharingToolStripMenuItem.Name = "ProductGroupSharingToolStripMenuItem"
+        Me.ProductGroupSharingToolStripMenuItem.Size = New System.Drawing.Size(224, 22)
+        Me.ProductGroupSharingToolStripMenuItem.Text = "Product Group Sharing"
+        '
+        'MerToolStripMenuItem
+        '
+        Me.MerToolStripMenuItem.Name = "MerToolStripMenuItem"
+        Me.MerToolStripMenuItem.Size = New System.Drawing.Size(224, 22)
+        Me.MerToolStripMenuItem.Text = "Product Manager Target"
+        '
+        'TargetDataToolStripMenuItem
+        '
+        Me.TargetDataToolStripMenuItem.Name = "TargetDataToolStripMenuItem"
+        Me.TargetDataToolStripMenuItem.Size = New System.Drawing.Size(224, 22)
+        Me.TargetDataToolStripMenuItem.Text = "SAS District Target"
         '
         'mnuScriptUploader
         '
@@ -1841,4 +1931,17 @@ Partial Class MainWindow
     Friend WithEvents ToolStripMenuItem23 As ToolStripMenuItem
     Friend WithEvents ToolStripMenuItem24 As ToolStripMenuItem
     Friend WithEvents CustomerItemSharingToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ToolStripSeparator12 As ToolStripSeparator
+    Friend WithEvents ToolStripMenuItem25 As ToolStripMenuItem
+    Friend WithEvents SalesAccountSpecialistNewToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents SalesAccoountSpecialistMappingToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItem26 As ToolStripMenuItem
+    Friend WithEvents ProductGroupSharingToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents MerToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItem27 As ToolStripMenuItem
+    Friend WithEvents TargetDataToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents AgentToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents DistrictManagerToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents UserIndentityToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItem28 As ToolStripMenuItem
 End Class

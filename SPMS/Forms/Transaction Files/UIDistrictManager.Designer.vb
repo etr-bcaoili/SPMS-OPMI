@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class UIDistrictManager
     Inherits System.Windows.Forms.UserControl
 
     'UserControl overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,11 +20,14 @@ Partial Class UIDistrictManager
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.txtDistrictGroupDescription = New Telerik.WinControls.UI.RadTextBox()
+        Me.txtDistrictGroupCode = New Telerik.WinControls.UI.RadTextBox()
+        Me.LinkLabel3 = New System.Windows.Forms.LinkLabel()
         Me.RadMenu1 = New Telerik.WinControls.UI.RadMenu()
         Me.btnNew = New Telerik.WinControls.UI.RadMenuButtonItem()
         Me.btnEdit = New Telerik.WinControls.UI.RadMenuButtonItem()
@@ -49,6 +52,8 @@ Partial Class UIDistrictManager
         Me.txtDistrictCode = New Telerik.WinControls.UI.RadTextBox()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
+        CType(Me.txtDistrictGroupDescription, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtDistrictGroupCode, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadMenu1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dtEffectivityEndDate, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadLabel8, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -89,6 +94,9 @@ Partial Class UIDistrictManager
         'Panel2
         '
         Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel2.Controls.Add(Me.txtDistrictGroupDescription)
+        Me.Panel2.Controls.Add(Me.txtDistrictGroupCode)
+        Me.Panel2.Controls.Add(Me.LinkLabel3)
         Me.Panel2.Controls.Add(Me.RadMenu1)
         Me.Panel2.Controls.Add(Me.dtEffectivityEndDate)
         Me.Panel2.Controls.Add(Me.RadLabel8)
@@ -110,71 +118,172 @@ Partial Class UIDistrictManager
         Me.Panel2.Size = New System.Drawing.Size(1482, 782)
         Me.Panel2.TabIndex = 39
         '
+        'txtDistrictGroupDescription
+        '
+        Me.txtDistrictGroupDescription.AutoSize = False
+        Me.txtDistrictGroupDescription.BackColor = System.Drawing.Color.White
+        Me.txtDistrictGroupDescription.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtDistrictGroupDescription.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.txtDistrictGroupDescription.Location = New System.Drawing.Point(358, 178)
+        Me.txtDistrictGroupDescription.Multiline = True
+        Me.txtDistrictGroupDescription.Name = "txtDistrictGroupDescription"
+        Me.txtDistrictGroupDescription.ReadOnly = True
+        Me.txtDistrictGroupDescription.Size = New System.Drawing.Size(309, 26)
+        Me.txtDistrictGroupDescription.TabIndex = 415
+        Me.txtDistrictGroupDescription.TabStop = False
+        Me.txtDistrictGroupDescription.ThemeName = "Office2019Light"
+        '
+        'txtDistrictGroupCode
+        '
+        Me.txtDistrictGroupCode.AutoSize = False
+        Me.txtDistrictGroupCode.BackColor = System.Drawing.Color.White
+        Me.txtDistrictGroupCode.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtDistrictGroupCode.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.txtDistrictGroupCode.Location = New System.Drawing.Point(212, 178)
+        Me.txtDistrictGroupCode.Multiline = True
+        Me.txtDistrictGroupCode.Name = "txtDistrictGroupCode"
+        Me.txtDistrictGroupCode.ReadOnly = True
+        Me.txtDistrictGroupCode.Size = New System.Drawing.Size(143, 26)
+        Me.txtDistrictGroupCode.TabIndex = 414
+        Me.txtDistrictGroupCode.TabStop = False
+        Me.txtDistrictGroupCode.ThemeName = "Office2019Light"
+        '
+        'LinkLabel3
+        '
+        Me.LinkLabel3.AutoSize = True
+        Me.LinkLabel3.Font = New System.Drawing.Font("Corbel", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LinkLabel3.Location = New System.Drawing.Point(46, 182)
+        Me.LinkLabel3.Name = "LinkLabel3"
+        Me.LinkLabel3.Size = New System.Drawing.Size(91, 17)
+        Me.LinkLabel3.TabIndex = 413
+        Me.LinkLabel3.TabStop = True
+        Me.LinkLabel3.Text = "District Group"
+        '
         'RadMenu1
         '
         Me.RadMenu1.Items.AddRange(New Telerik.WinControls.RadItem() {Me.btnNew, Me.btnEdit, Me.btnSave, Me.btnDelete, Me.btnFinddata, Me.btnClear, Me.btnClose})
         Me.RadMenu1.Location = New System.Drawing.Point(0, 0)
         Me.RadMenu1.Name = "RadMenu1"
         Me.RadMenu1.Padding = New System.Windows.Forms.Padding(2, 2, 0, 0)
+        '
+        '
+        '
+        Me.RadMenu1.RootElement.Padding = New System.Windows.Forms.Padding(2, 2, 0, 0)
         Me.RadMenu1.Size = New System.Drawing.Size(1480, 33)
         Me.RadMenu1.TabIndex = 412
         Me.RadMenu1.ThemeName = "Office2010Silver"
         '
         'btnNew
         '
+        Me.btnNew.AccessibleDescription = "&New"
+        Me.btnNew.AccessibleName = "&New"
+        '
+        '
+        '
+        Me.btnNew.ButtonElement.AccessibleDescription = "&New"
+        Me.btnNew.ButtonElement.AccessibleName = "&New"
         Me.btnNew.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnNew.Image = Global.SPMSOPCI.My.Resources.Resources.if_Plus_1891033
         Me.btnNew.Name = "btnNew"
         Me.btnNew.Text = "&New"
         Me.btnNew.UseCompatibleTextRendering = False
+        Me.btnNew.Visibility = Telerik.WinControls.ElementVisibility.Visible
         '
         'btnEdit
         '
+        Me.btnEdit.AccessibleDescription = "&Edit"
+        Me.btnEdit.AccessibleName = "&Edit"
+        '
+        '
+        '
+        Me.btnEdit.ButtonElement.AccessibleDescription = "&Edit"
+        Me.btnEdit.ButtonElement.AccessibleName = "&Edit"
         Me.btnEdit.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnEdit.Image = Global.SPMSOPCI.My.Resources.Resources.if_edit_173002
         Me.btnEdit.Name = "btnEdit"
         Me.btnEdit.Text = "&Edit"
         Me.btnEdit.UseCompatibleTextRendering = False
+        Me.btnEdit.Visibility = Telerik.WinControls.ElementVisibility.Visible
         '
         'btnSave
         '
+        Me.btnSave.AccessibleDescription = "&Save"
+        Me.btnSave.AccessibleName = "&Save"
+        '
+        '
+        '
+        Me.btnSave.ButtonElement.AccessibleDescription = "&Save"
+        Me.btnSave.ButtonElement.AccessibleName = "&Save"
         Me.btnSave.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSave.Image = Global.SPMSOPCI.My.Resources.Resources.if_save_173091
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Text = "&Save"
         Me.btnSave.UseCompatibleTextRendering = False
+        Me.btnSave.Visibility = Telerik.WinControls.ElementVisibility.Visible
         '
         'btnDelete
         '
+        Me.btnDelete.AccessibleDescription = "&Delete"
+        Me.btnDelete.AccessibleName = "&Delete"
+        '
+        '
+        '
+        Me.btnDelete.ButtonElement.AccessibleDescription = "&Delete"
+        Me.btnDelete.ButtonElement.AccessibleName = "&Delete"
         Me.btnDelete.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnDelete.Image = Global.SPMSOPCI.My.Resources.Resources.rubbish
         Me.btnDelete.Name = "btnDelete"
         Me.btnDelete.Text = "&Delete"
         Me.btnDelete.UseCompatibleTextRendering = False
+        Me.btnDelete.Visibility = Telerik.WinControls.ElementVisibility.Visible
         '
         'btnFinddata
         '
+        Me.btnFinddata.AccessibleDescription = "&Find"
+        Me.btnFinddata.AccessibleName = "&Find"
+        '
+        '
+        '
+        Me.btnFinddata.ButtonElement.AccessibleDescription = "&Find"
+        Me.btnFinddata.ButtonElement.AccessibleName = "&Find"
         Me.btnFinddata.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnFinddata.Image = Global.SPMSOPCI.My.Resources.Resources.iconfinder_binocular__spyglass__view__search_2538706
         Me.btnFinddata.Name = "btnFinddata"
         Me.btnFinddata.Text = "&Find"
         Me.btnFinddata.UseCompatibleTextRendering = False
+        Me.btnFinddata.Visibility = Telerik.WinControls.ElementVisibility.Visible
         '
         'btnClear
         '
+        Me.btnClear.AccessibleDescription = "&Clear"
+        Me.btnClear.AccessibleName = "&Clear"
+        '
+        '
+        '
+        Me.btnClear.ButtonElement.AccessibleDescription = "&Clear"
+        Me.btnClear.ButtonElement.AccessibleName = "&Clear"
         Me.btnClear.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnClear.Image = Global.SPMSOPCI.My.Resources.Resources.if_ko_red_539481
         Me.btnClear.Name = "btnClear"
         Me.btnClear.Text = "&Clear"
         Me.btnClear.UseCompatibleTextRendering = False
+        Me.btnClear.Visibility = Telerik.WinControls.ElementVisibility.Visible
         '
         'btnClose
         '
+        Me.btnClose.AccessibleDescription = "Close"
+        Me.btnClose.AccessibleName = "Close"
+        '
+        '
+        '
+        Me.btnClose.ButtonElement.AccessibleDescription = "Close"
+        Me.btnClose.ButtonElement.AccessibleName = "Close"
         Me.btnClose.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnClose.Image = Global.SPMSOPCI.My.Resources.Resources.icons8_close_window_24
         Me.btnClose.Name = "btnClose"
         Me.btnClose.Text = "Close"
         Me.btnClose.UseCompatibleTextRendering = False
+        Me.btnClose.Visibility = Telerik.WinControls.ElementVisibility.Visible
         '
         'dtEffectivityEndDate
         '
@@ -183,9 +292,9 @@ Partial Class UIDistrictManager
         Me.dtEffectivityEndDate.CalendarSize = New System.Drawing.Size(290, 320)
         Me.dtEffectivityEndDate.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.dtEffectivityEndDate.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtEffectivityEndDate.Location = New System.Drawing.Point(482, 261)
+        Me.dtEffectivityEndDate.Location = New System.Drawing.Point(514, 303)
         Me.dtEffectivityEndDate.Name = "dtEffectivityEndDate"
-        Me.dtEffectivityEndDate.Size = New System.Drawing.Size(153, 23)
+        Me.dtEffectivityEndDate.Size = New System.Drawing.Size(153, 21)
         Me.dtEffectivityEndDate.TabIndex = 411
         Me.dtEffectivityEndDate.TabStop = False
         Me.dtEffectivityEndDate.Text = "7/9/2018"
@@ -195,7 +304,7 @@ Partial Class UIDistrictManager
         'RadLabel8
         '
         Me.RadLabel8.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RadLabel8.Location = New System.Drawing.Point(352, 264)
+        Me.RadLabel8.Location = New System.Drawing.Point(384, 306)
         Me.RadLabel8.Name = "RadLabel8"
         Me.RadLabel8.Size = New System.Drawing.Size(129, 19)
         Me.RadLabel8.TabIndex = 410
@@ -208,9 +317,9 @@ Partial Class UIDistrictManager
         Me.dtEffectivityStartDate.CalendarSize = New System.Drawing.Size(290, 320)
         Me.dtEffectivityStartDate.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.dtEffectivityStartDate.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtEffectivityStartDate.Location = New System.Drawing.Point(482, 234)
+        Me.dtEffectivityStartDate.Location = New System.Drawing.Point(514, 276)
         Me.dtEffectivityStartDate.Name = "dtEffectivityStartDate"
-        Me.dtEffectivityStartDate.Size = New System.Drawing.Size(153, 23)
+        Me.dtEffectivityStartDate.Size = New System.Drawing.Size(153, 21)
         Me.dtEffectivityStartDate.TabIndex = 409
         Me.dtEffectivityStartDate.TabStop = False
         Me.dtEffectivityStartDate.Text = "7/9/2018"
@@ -220,7 +329,7 @@ Partial Class UIDistrictManager
         'RadLabel7
         '
         Me.RadLabel7.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RadLabel7.Location = New System.Drawing.Point(352, 237)
+        Me.RadLabel7.Location = New System.Drawing.Point(384, 279)
         Me.RadLabel7.Name = "RadLabel7"
         Me.RadLabel7.Size = New System.Drawing.Size(128, 19)
         Me.RadLabel7.TabIndex = 408
@@ -232,12 +341,13 @@ Partial Class UIDistrictManager
         Me.txtDistrictSalesManagerName.BackColor = System.Drawing.Color.White
         Me.txtDistrictSalesManagerName.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtDistrictSalesManagerName.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold)
-        Me.txtDistrictSalesManagerName.Location = New System.Drawing.Point(327, 151)
+        Me.txtDistrictSalesManagerName.Location = New System.Drawing.Point(358, 149)
         Me.txtDistrictSalesManagerName.Multiline = True
         Me.txtDistrictSalesManagerName.Name = "txtDistrictSalesManagerName"
         Me.txtDistrictSalesManagerName.ReadOnly = True
-        Me.txtDistrictSalesManagerName.Size = New System.Drawing.Size(309, 25)
+        Me.txtDistrictSalesManagerName.Size = New System.Drawing.Size(309, 26)
         Me.txtDistrictSalesManagerName.TabIndex = 407
+        Me.txtDistrictSalesManagerName.TabStop = False
         Me.txtDistrictSalesManagerName.ThemeName = "Office2019Light"
         '
         'txtDistrictSalesmanagerCode
@@ -246,21 +356,22 @@ Partial Class UIDistrictManager
         Me.txtDistrictSalesmanagerCode.BackColor = System.Drawing.Color.White
         Me.txtDistrictSalesmanagerCode.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtDistrictSalesmanagerCode.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold)
-        Me.txtDistrictSalesmanagerCode.Location = New System.Drawing.Point(181, 151)
+        Me.txtDistrictSalesmanagerCode.Location = New System.Drawing.Point(212, 149)
         Me.txtDistrictSalesmanagerCode.Multiline = True
         Me.txtDistrictSalesmanagerCode.Name = "txtDistrictSalesmanagerCode"
         Me.txtDistrictSalesmanagerCode.ReadOnly = True
-        Me.txtDistrictSalesmanagerCode.Size = New System.Drawing.Size(143, 25)
+        Me.txtDistrictSalesmanagerCode.Size = New System.Drawing.Size(143, 26)
         Me.txtDistrictSalesmanagerCode.TabIndex = 406
+        Me.txtDistrictSalesmanagerCode.TabStop = False
         Me.txtDistrictSalesmanagerCode.ThemeName = "Office2019Light"
         '
         'LinkLabel2
         '
         Me.LinkLabel2.AutoSize = True
-        Me.LinkLabel2.Font = New System.Drawing.Font("Corbel", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LinkLabel2.Location = New System.Drawing.Point(46, 157)
+        Me.LinkLabel2.Font = New System.Drawing.Font("Corbel", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LinkLabel2.Location = New System.Drawing.Point(46, 154)
         Me.LinkLabel2.Name = "LinkLabel2"
-        Me.LinkLabel2.Size = New System.Drawing.Size(124, 14)
+        Me.LinkLabel2.Size = New System.Drawing.Size(146, 17)
         Me.LinkLabel2.TabIndex = 405
         Me.LinkLabel2.TabStop = True
         Me.LinkLabel2.Text = "District Sales Manager "
@@ -268,10 +379,10 @@ Partial Class UIDistrictManager
         'LinkLabel1
         '
         Me.LinkLabel1.AutoSize = True
-        Me.LinkLabel1.Font = New System.Drawing.Font("Corbel", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LinkLabel1.Location = New System.Drawing.Point(46, 99)
+        Me.LinkLabel1.Font = New System.Drawing.Font("Corbel", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LinkLabel1.Location = New System.Drawing.Point(46, 91)
         Me.LinkLabel1.Name = "LinkLabel1"
-        Me.LinkLabel1.Size = New System.Drawing.Size(70, 14)
+        Me.LinkLabel1.Size = New System.Drawing.Size(81, 17)
         Me.LinkLabel1.TabIndex = 402
         Me.LinkLabel1.TabStop = True
         Me.LinkLabel1.Text = "District Area"
@@ -282,12 +393,13 @@ Partial Class UIDistrictManager
         Me.txtRegionName.BackColor = System.Drawing.Color.White
         Me.txtRegionName.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtRegionName.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold)
-        Me.txtRegionName.Location = New System.Drawing.Point(327, 124)
+        Me.txtRegionName.Location = New System.Drawing.Point(358, 119)
         Me.txtRegionName.Multiline = True
         Me.txtRegionName.Name = "txtRegionName"
         Me.txtRegionName.ReadOnly = True
-        Me.txtRegionName.Size = New System.Drawing.Size(309, 25)
+        Me.txtRegionName.Size = New System.Drawing.Size(309, 26)
         Me.txtRegionName.TabIndex = 404
+        Me.txtRegionName.TabStop = False
         Me.txtRegionName.ThemeName = "Office2019Light"
         '
         'txtRegionCode
@@ -296,21 +408,22 @@ Partial Class UIDistrictManager
         Me.txtRegionCode.BackColor = System.Drawing.Color.White
         Me.txtRegionCode.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtRegionCode.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold)
-        Me.txtRegionCode.Location = New System.Drawing.Point(181, 124)
+        Me.txtRegionCode.Location = New System.Drawing.Point(212, 119)
         Me.txtRegionCode.Multiline = True
         Me.txtRegionCode.Name = "txtRegionCode"
         Me.txtRegionCode.ReadOnly = True
-        Me.txtRegionCode.Size = New System.Drawing.Size(143, 25)
+        Me.txtRegionCode.Size = New System.Drawing.Size(143, 26)
         Me.txtRegionCode.TabIndex = 403
+        Me.txtRegionCode.TabStop = False
         Me.txtRegionCode.ThemeName = "Office2019Light"
         '
         'Findconfig
         '
         Me.Findconfig.AutoSize = True
-        Me.Findconfig.Font = New System.Drawing.Font("Corbel", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Findconfig.Location = New System.Drawing.Point(46, 129)
+        Me.Findconfig.Font = New System.Drawing.Font("Corbel", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Findconfig.Location = New System.Drawing.Point(46, 123)
         Me.Findconfig.Name = "Findconfig"
-        Me.Findconfig.Size = New System.Drawing.Size(70, 14)
+        Me.Findconfig.Size = New System.Drawing.Size(81, 17)
         Me.Findconfig.TabIndex = 401
         Me.Findconfig.TabStop = True
         Me.Findconfig.Text = "Region Area"
@@ -321,12 +434,13 @@ Partial Class UIDistrictManager
         Me.txtDistrictName.BackColor = System.Drawing.Color.White
         Me.txtDistrictName.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtDistrictName.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold)
-        Me.txtDistrictName.Location = New System.Drawing.Point(327, 97)
+        Me.txtDistrictName.Location = New System.Drawing.Point(358, 90)
         Me.txtDistrictName.Multiline = True
         Me.txtDistrictName.Name = "txtDistrictName"
         Me.txtDistrictName.ReadOnly = True
-        Me.txtDistrictName.Size = New System.Drawing.Size(309, 25)
+        Me.txtDistrictName.Size = New System.Drawing.Size(309, 26)
         Me.txtDistrictName.TabIndex = 399
+        Me.txtDistrictName.TabStop = False
         Me.txtDistrictName.ThemeName = "Office2019Light"
         '
         'chkIsActive
@@ -336,7 +450,7 @@ Partial Class UIDistrictManager
         Me.chkIsActive.Checked = True
         Me.chkIsActive.CheckState = System.Windows.Forms.CheckState.Checked
         Me.chkIsActive.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.chkIsActive.Location = New System.Drawing.Point(575, 68)
+        Me.chkIsActive.Location = New System.Drawing.Point(606, 61)
         Me.chkIsActive.Name = "chkIsActive"
         Me.chkIsActive.Size = New System.Drawing.Size(59, 19)
         Me.chkIsActive.TabIndex = 400
@@ -349,12 +463,13 @@ Partial Class UIDistrictManager
         Me.txtDistrictCode.BackColor = System.Drawing.Color.White
         Me.txtDistrictCode.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtDistrictCode.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtDistrictCode.Location = New System.Drawing.Point(181, 97)
+        Me.txtDistrictCode.Location = New System.Drawing.Point(212, 90)
         Me.txtDistrictCode.Multiline = True
         Me.txtDistrictCode.Name = "txtDistrictCode"
         Me.txtDistrictCode.ReadOnly = True
-        Me.txtDistrictCode.Size = New System.Drawing.Size(143, 25)
+        Me.txtDistrictCode.Size = New System.Drawing.Size(143, 26)
         Me.txtDistrictCode.TabIndex = 398
+        Me.txtDistrictCode.TabStop = False
         Me.txtDistrictCode.ThemeName = "Office2019Light"
         '
         'UIDistrictManager
@@ -370,6 +485,8 @@ Partial Class UIDistrictManager
         Me.Panel1.PerformLayout()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
+        CType(Me.txtDistrictGroupDescription, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtDistrictGroupCode, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadMenu1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dtEffectivityEndDate, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadLabel8, System.ComponentModel.ISupportInitialize).EndInit()
@@ -409,5 +526,7 @@ Partial Class UIDistrictManager
     Friend WithEvents btnFinddata As Telerik.WinControls.UI.RadMenuButtonItem
     Friend WithEvents btnClear As Telerik.WinControls.UI.RadMenuButtonItem
     Friend WithEvents btnClose As Telerik.WinControls.UI.RadMenuButtonItem
-
+    Friend WithEvents txtDistrictGroupDescription As Telerik.WinControls.UI.RadTextBox
+    Friend WithEvents txtDistrictGroupCode As Telerik.WinControls.UI.RadTextBox
+    Friend WithEvents LinkLabel3 As LinkLabel
 End Class

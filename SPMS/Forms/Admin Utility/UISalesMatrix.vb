@@ -138,7 +138,7 @@ Public Class UISalesMatrix
                     m_SalesMatrix.SalesmanCode = dr("Salesman Code")
                 End If
                 If IsDBNull(dr("Salesman Name")) Then
-                    m_SalesMatrix.SalesmanName = dr("DEFAULT TM REP.")
+                    m_SalesMatrix.SalesmanName = dr("Salesman Name")
                 Else
                     m_SalesMatrix.SalesmanName = dr("Salesman Name")
                 End If
@@ -202,7 +202,7 @@ Public Class UISalesMatrix
                     m_SalesMatrix.SalesmanCode = dr("Salesman Code")
                 End If
                 If IsDBNull(dr("Salesman Name")) Then
-                    m_SalesMatrix.SalesmanName = dr("DEFAULT TM REP.")
+                    m_SalesMatrix.SalesmanName = "DEFAULT TM REP."
                 Else
                     m_SalesMatrix.SalesmanName = dr("Salesman Name")
                 End If

@@ -345,7 +345,6 @@ Public Class CustomerItemSharing
 			cmd.Parameters.AddWithValue("@MonthFrom", m_MonthFrom)
 			cmd.Parameters.AddWithValue("@YearTo", m_YearTo)
 			cmd.Parameters.AddWithValue("@MonthTo", m_MonthTo)
-			cmd.Parameters.AddWithValue("@TRSCODE", m_TRSCODE)
 			cmd.ExecuteNonQuery()
 			SPMSOPCI.ConnectionModule.Disconnect()
 			Return True
@@ -377,15 +376,8 @@ Public Class CustomerItemSharing
 	Public Shared Function GetResetRecordSql(ByVal TRSCODE As String) As String
 		ExecuteCommand("Delete From CustomerItemSharing where TRSCODE = '" & TRSCODE & "'")
 	End Function
-	Public Shared Function GetResetCopyFromSql(ByVal ConfigtypeCode As String, ByVal ItemCode As String, ByVal Year As String, ByVal Month As String) As String
-		ExecuteCommand("Delete  from CustomerItemSharing Where ConfigtypeCode = '" & ConfigtypeCode & "' And Year = '" & Year & "' And Month = '" & Month & "' And ItemCode  = '" & ItemCode & "'")
-	End Function
-
-	Public Shared Function GetItemSharingListSql() As String
-		Return "Select Distinct A.ConfigtypeCode,A.ConfigtypeCode [CONFIGTYPE CODE],A.Year [YEAR],A.Month [MONTH],A.ItemCode [ITEM CODE],B.IMDBRN [ITEM BRAND] from CustomerItemSharing A Inner Join Item B On A.ItemCode = B.ITEMCD  Order by A.YEAR,A.MONTH"
-	End Function
-	Public Shared Function GetItemSharingListbyOneSQl(ByVal ConfigtypeCode As String, ByVal ItemCode As String, ByVal Year As String, ByVal Month As String) As String
-		Return "Select Distinct A.ConfigtypeCode ,C.ConfigTypeName,A.Year,A.Month,A.ITEMCODE,B.IMDBRN From CustomerItemSharing A Inner Join Item B On A.ItemCode = B.ITEMCD Inner Join ConfigurationType C  ON A.ConfigtypeCode = C.ConfigTypeCode Where A.ConfigtypeCode = '" & ConfigtypeCode & "' And A.ITEMCODE = '" & ItemCode & "' And A.YEAR = '" & Year & "' And A.Month = '" & Month & "'  Order by A.YEAR,A.MONTH"
+	Public Shared Function GetResetCopyFromSql(ByVal ConfigtypeCode As String, ByVal ChannelCode As String, ByVal Year As String, ByVal Month As String) As String
+		ExecuteCommand("Delete  from CustomerItemSharingUploading Where ConfigtypeCode = '" & ConfigtypeCode & "' And Year = '" & Year & "' And Month = '" & Month & "' And ChannelCode  = '" & ChannelCode & "'")
 	End Function
 	Public Shared Function CheckofCopyFromExist(ByVal Month As String, ByVal Year As String, ByVal ConfigCode As String, ByVal ItemCode As String) As Boolean
 		Return ExecuteCommand("SELECT 'A' FROM CustomerItemSharing Where Month = '" & Month & "' And Year = '" & Year & "' And ConfigtypeCode = '" & ConfigCode & "'  And ITEMCODE = " & ItemCode) = "A"

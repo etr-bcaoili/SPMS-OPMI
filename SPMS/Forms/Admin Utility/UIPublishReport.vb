@@ -121,18 +121,18 @@ Public Class UIPublishReport
         ElseIf DropMonth.Text = String.Empty Then
             MsgBox("Select the Month set from", MsgBoxStyle.Exclamation)
         Else
-            For m As Integer = 0 To GrdChannel.Rows.Count - 1
-                Dim rowinfos As GridViewRowInfo = GrdChannel.Rows(m)
-                If rowinfos.Cells(0).Value = True Then
-                    m_PublishData.ConfigtypeCode = txtConfigCode.Text
-                    m_PublishData.Year = DropYear.Text
-                    m_PublishData.Month = DropMonth.Text
-                    'm_PublishData.ChannelCode = rowinfos.Cells(1).Value
-                    'txtListChannel.Text = "Channel Code" & "" & rowinfos.Cells(1).Value
-                    m_PublishData.Save()
-                    txtListChannel.Text = String.Empty
-                End If
-            Next
+            'For m As Integer = 0 To GrdChannel.Rows.Count - 1
+            '    Dim rowinfos As GridViewRowInfo = GrdChannel.Rows(m)
+            '    If rowinfos.Cells(0).Value = True Then
+            m_PublishData.ConfigtypeCode = txtConfigCode.Text
+            m_PublishData.Year = DropYear.Text
+            m_PublishData.Month = DropMonth.Text
+            'm_PublishData.ChannelCode = rowinfos.Cells(1).Value
+            'txtListChannel.Text = "Channel Code" & "" & rowinfos.Cells(1).Value
+            m_PublishData.Save()
+            txtListChannel.Text = String.Empty
+            '    End If
+            'Next
             GeneratedFileExcel(txtConfigCode.Text, DropYear.Text, DropMonth.Text)
             ProcessInportData.Main()
         End If
@@ -158,7 +158,10 @@ Public Class UIPublishReport
             SyncDataSalesManagerCSV(ConfigtypeCode, Year, Month)
             SyncDataItemsCSV(ConfigtypeCode, Year, Month)
             SyncDataTargetCSV(ConfigtypeCode, Year, Month)
+            SyncDataTargetConfigurationCSV(ConfigtypeCode, Year)
             SyncDataCustomerCSV(ConfigtypeCode, Year, Month)
+            SyncDataEmployeeCSV(ConfigtypeCode)
+
             ZipDirectory(m_BasePath, zipFilePath)
             Timer1.Enabled = True
         Catch ex As Exception
@@ -219,7 +222,6 @@ Public Class UIPublishReport
                 ' Write the header row with column names
                 Dim columnHeaders = String.Join(",", Table.Columns.Cast(Of DataColumn)().Select(Function(col) col.ColumnName).ToArray())
                 writer.WriteLine(columnHeaders)
-
                 ' Write each row in the DataTable
                 For Each row As DataRow In Table.Rows
                     ' Use quotes around each field to handle commas or special characters within values
@@ -234,9 +236,32 @@ Public Class UIPublishReport
     End Function
     Private Function SyncDataTargetCSV(ByVal ConfigtypeCode As String, ByVal Year As String, ByVal Month As String)
         Try
-            Table = PublishReport.GetSyncDataTarget(ConfigtypeCode, Year, Month)
+            Table = PublishReport.GetSyncDataTarget(ConfigtypeCode, Year)
 
             Dim csvFilePath As String = m_BasePath & "\SyncDataTarget.csv"
+            ' Create a StreamWriter to write to the file
+            Using writer As New StreamWriter(csvFilePath)
+                ' Write the header row with column names
+                Dim columnHeaders = String.Join(",", Table.Columns.Cast(Of DataColumn)().Select(Function(col) col.ColumnName).ToArray())
+                writer.WriteLine(columnHeaders)
+
+                ' Write each row in the DataTable
+                For Each row As DataRow In Table.Rows
+                    ' Use quotes around each field to handle commas or special characters within values
+                    Dim rowValues = String.Join(",", row.ItemArray.Select(Function(value) """" & value.ToString().Replace("""", """""") & """").ToArray())
+                    writer.WriteLine(rowValues)
+                Next
+            End Using
+
+        Catch ex As Exception
+            MessageBox.Show("An error occurred: " & ex.Message)
+        End Try
+    End Function
+    Private Function SyncDataTargetConfigurationCSV(ByVal ConfigtypeCode As String, ByVal Year As String)
+        Try
+            Table = PublishReport.GetSyncDataTargetConfiguration(ConfigtypeCode, Year)
+
+            Dim csvFilePath As String = m_BasePath & "\SyncDataTargetConfiguration.csv"
             ' Create a StreamWriter to write to the file
             Using writer As New StreamWriter(csvFilePath)
                 ' Write the header row with column names
@@ -266,7 +291,30 @@ Public Class UIPublishReport
                 Dim columnHeaders = String.Join(",", Table.Columns.Cast(Of DataColumn)().Select(Function(col) col.ColumnName).ToArray())
                 writer.WriteLine(columnHeaders)
 
-                ' Write each row in the DataTable
+                '' Write each row in the DataTable
+                For Each row As DataRow In Table.Rows
+                    ' Use quotes around each field to handle commas or special characters within values
+                    Dim rowValues = String.Join(",", row.ItemArray.Select(Function(value) """" & value.ToString().Replace("""", """""") & """").ToArray())
+                    writer.WriteLine(rowValues)
+                Next
+            End Using
+
+        Catch ex As Exception
+            MessageBox.Show("An error occurred: " & ex.Message)
+        End Try
+    End Function
+    Private Function SyncDataEmployeeCSV(ByVal ConfigtypeCode As String)
+        Try
+            Table = PublishReport.GetSyncDataEmployee(ConfigtypeCode)
+
+            Dim csvFilePath As String = m_BasePath & "\SyncDataEmployees.csv"
+            ' Create a StreamWriter to write to the file
+            Using writer As New StreamWriter(csvFilePath)
+                ' Write the header row with column names
+                Dim columnHeaders = String.Join(",", Table.Columns.Cast(Of DataColumn)().Select(Function(col) col.ColumnName).ToArray())
+                writer.WriteLine(columnHeaders)
+
+                '' Write each row in the DataTable
                 For Each row As DataRow In Table.Rows
                     ' Use quotes around each field to handle commas or special characters within values
                     Dim rowValues = String.Join(",", row.ItemArray.Select(Function(value) """" & value.ToString().Replace("""", """""") & """").ToArray())
@@ -326,7 +374,7 @@ Public Class UIPublishReport
     End Function
     Private Function SyncDataDistrictsCSV(ByVal ConfigtypeCode As String, ByVal Year As String, ByVal Month As String)
         Try
-            Table = PublishReport.GetSyncDataDistricts(ConfigtypeCode, Year, Month)
+            Table = PublishReport.GetSyncDataDistricts(ConfigtypeCode, Year)
 
             Dim csvFilePath As String = m_BasePath & "\SyncDataDistricts.csv"
             ' Create a StreamWriter to write to the file
@@ -373,7 +421,7 @@ Public Class UIPublishReport
     End Function
     Private Function SyncDataTerritoriesCSV(ByVal ConfigtypeCode As String, ByVal Year As String, ByVal Month As String)
         Try
-            Table = PublishReport.GetSyncDataTerritories(ConfigtypeCode, Year, Month)
+            Table = PublishReport.GetSyncDataTerritories(ConfigtypeCode, Year)
 
             Dim csvFilePath As String = m_BasePath & "\SyncDataTerritories.csv"
             ' Create a StreamWriter to write to the file
@@ -404,8 +452,11 @@ Public Class UIPublishReport
             ' Create a StreamWriter to write to the file
             Using writer As New StreamWriter(csvFilePath)
                 ' Write the header row with column names
+
+
                 Dim columnHeaders = String.Join(",", Table.Columns.Cast(Of DataColumn)().Select(Function(col) col.ColumnName).ToArray())
                 writer.WriteLine(columnHeaders)
+
 
                 ' Write each row in the DataTable
                 For Each row As DataRow In Table.Rows
@@ -418,7 +469,6 @@ Public Class UIPublishReport
             MessageBox.Show("An error occurred: " & ex.Message)
         End Try
     End Function
-
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         If ProgressBar1.Value <= ProgressBar1.Maximum - 1 Then
             ProgressBar1.Value += 1
@@ -428,4 +478,5 @@ Public Class UIPublishReport
             End If
         End If
     End Sub
+
 End Class

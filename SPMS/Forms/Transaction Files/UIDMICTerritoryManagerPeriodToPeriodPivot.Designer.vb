@@ -76,9 +76,8 @@ Partial Class UIDMICTerritoryManagerPeriodToPeriodPivot
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(2052, 58)
+        Me.Panel1.Size = New System.Drawing.Size(1539, 47)
         Me.Panel1.TabIndex = 35
         '
         'Label5
@@ -87,22 +86,21 @@ Partial Class UIDMICTerritoryManagerPeriodToPeriodPivot
         Me.Label5.BackColor = System.Drawing.Color.Transparent
         Me.Label5.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.White
-        Me.Label5.Location = New System.Drawing.Point(29, 20)
-        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label5.Location = New System.Drawing.Point(22, 16)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(714, 28)
+        Me.Label5.Size = New System.Drawing.Size(680, 21)
         Me.Label5.TabIndex = 1
-        Me.Label5.Text = "District Manager Item Customer Territory Manager Comparative Period to Period"
+        Me.Label5.Text = "District Manager Customer Territory Manager Comparative Period to Period (Net of " &
+    "VAT, MT, DM)"
         '
         'Panel2
         '
         Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel2.Controls.Add(Me.Panel3)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel2.Location = New System.Drawing.Point(0, 58)
-        Me.Panel2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel2.Location = New System.Drawing.Point(0, 47)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(2052, 182)
+        Me.Panel2.Size = New System.Drawing.Size(1539, 148)
         Me.Panel2.TabIndex = 36
         '
         'Panel3
@@ -112,9 +110,8 @@ Partial Class UIDMICTerritoryManagerPeriodToPeriodPivot
         Me.Panel3.Controls.Add(Me.RadMenu1)
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel3.Location = New System.Drawing.Point(0, 0)
-        Me.Panel3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(807, 180)
+        Me.Panel3.Size = New System.Drawing.Size(606, 146)
         Me.Panel3.TabIndex = 0
         '
         'Panel4
@@ -130,38 +127,34 @@ Partial Class UIDMICTerritoryManagerPeriodToPeriodPivot
         Me.Panel4.Controls.Add(Me.Findconfig)
         Me.Panel4.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel4.Location = New System.Drawing.Point(0, 38)
-        Me.Panel4.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(805, 140)
+        Me.Panel4.Size = New System.Drawing.Size(604, 106)
         Me.Panel4.TabIndex = 175
         '
         'RadLabel4
         '
         Me.RadLabel4.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RadLabel4.Location = New System.Drawing.Point(37, 91)
-        Me.RadLabel4.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.RadLabel4.Location = New System.Drawing.Point(28, 74)
         Me.RadLabel4.Name = "RadLabel4"
-        Me.RadLabel4.Size = New System.Drawing.Size(95, 24)
+        Me.RadLabel4.Size = New System.Drawing.Size(77, 19)
         Me.RadLabel4.TabIndex = 776
         Me.RadLabel4.Text = "From Month"
         '
         'cmdToMonth
         '
         Me.cmdToMonth.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmdToMonth.Location = New System.Drawing.Point(605, 91)
-        Me.cmdToMonth.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.cmdToMonth.Location = New System.Drawing.Point(454, 74)
         Me.cmdToMonth.Name = "cmdToMonth"
-        Me.cmdToMonth.Size = New System.Drawing.Size(183, 27)
+        Me.cmdToMonth.Size = New System.Drawing.Size(137, 23)
         Me.cmdToMonth.TabIndex = 775
         Me.cmdToMonth.ThemeName = "Office2010Silver"
         '
         'RadLabel1
         '
         Me.RadLabel1.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RadLabel1.Location = New System.Drawing.Point(500, 92)
-        Me.RadLabel1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.RadLabel1.Location = New System.Drawing.Point(375, 75)
         Me.RadLabel1.Name = "RadLabel1"
-        Me.RadLabel1.Size = New System.Drawing.Size(85, 24)
+        Me.RadLabel1.Size = New System.Drawing.Size(68, 19)
         Me.RadLabel1.TabIndex = 774
         Me.RadLabel1.Text = "To Month :"
         '
@@ -171,12 +164,11 @@ Partial Class UIDMICTerritoryManagerPeriodToPeriodPivot
         Me.txtConfigCode.BackColor = System.Drawing.Color.White
         Me.txtConfigCode.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtConfigCode.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold)
-        Me.txtConfigCode.Location = New System.Drawing.Point(181, 22)
-        Me.txtConfigCode.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtConfigCode.Location = New System.Drawing.Point(136, 18)
         Me.txtConfigCode.Multiline = True
         Me.txtConfigCode.Name = "txtConfigCode"
         Me.txtConfigCode.ReadOnly = True
-        Me.txtConfigCode.Size = New System.Drawing.Size(191, 31)
+        Me.txtConfigCode.Size = New System.Drawing.Size(143, 25)
         Me.txtConfigCode.TabIndex = 395
         Me.txtConfigCode.TabStop = False
         Me.txtConfigCode.ThemeName = "Office2019Light"
@@ -184,10 +176,9 @@ Partial Class UIDMICTerritoryManagerPeriodToPeriodPivot
         'RadLabel2
         '
         Me.RadLabel2.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RadLabel2.Location = New System.Drawing.Point(37, 58)
-        Me.RadLabel2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.RadLabel2.Location = New System.Drawing.Point(28, 47)
         Me.RadLabel2.Name = "RadLabel2"
-        Me.RadLabel2.Size = New System.Drawing.Size(38, 24)
+        Me.RadLabel2.Size = New System.Drawing.Size(31, 19)
         Me.RadLabel2.TabIndex = 770
         Me.RadLabel2.Text = "Year"
         '
@@ -197,12 +188,11 @@ Partial Class UIDMICTerritoryManagerPeriodToPeriodPivot
         Me.txtConfgName.BackColor = System.Drawing.Color.White
         Me.txtConfgName.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtConfgName.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold)
-        Me.txtConfgName.Location = New System.Drawing.Point(376, 22)
-        Me.txtConfgName.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtConfgName.Location = New System.Drawing.Point(282, 18)
         Me.txtConfgName.Multiline = True
         Me.txtConfgName.Name = "txtConfgName"
         Me.txtConfgName.ReadOnly = True
-        Me.txtConfgName.Size = New System.Drawing.Size(412, 31)
+        Me.txtConfgName.Size = New System.Drawing.Size(309, 25)
         Me.txtConfgName.TabIndex = 396
         Me.txtConfgName.TabStop = False
         Me.txtConfgName.ThemeName = "Office2019Light"
@@ -210,20 +200,18 @@ Partial Class UIDMICTerritoryManagerPeriodToPeriodPivot
         'cmdYear
         '
         Me.cmdYear.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmdYear.Location = New System.Drawing.Point(181, 57)
-        Me.cmdYear.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.cmdYear.Location = New System.Drawing.Point(136, 46)
         Me.cmdYear.Name = "cmdYear"
-        Me.cmdYear.Size = New System.Drawing.Size(191, 27)
+        Me.cmdYear.Size = New System.Drawing.Size(143, 23)
         Me.cmdYear.TabIndex = 773
         Me.cmdYear.ThemeName = "Office2010Silver"
         '
         'cmdFromMonth
         '
         Me.cmdFromMonth.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmdFromMonth.Location = New System.Drawing.Point(181, 89)
-        Me.cmdFromMonth.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.cmdFromMonth.Location = New System.Drawing.Point(136, 72)
         Me.cmdFromMonth.Name = "cmdFromMonth"
-        Me.cmdFromMonth.Size = New System.Drawing.Size(191, 27)
+        Me.cmdFromMonth.Size = New System.Drawing.Size(143, 23)
         Me.cmdFromMonth.TabIndex = 772
         Me.cmdFromMonth.ThemeName = "Office2010Silver"
         '
@@ -231,10 +219,9 @@ Partial Class UIDMICTerritoryManagerPeriodToPeriodPivot
         '
         Me.Findconfig.AutoSize = True
         Me.Findconfig.Font = New System.Drawing.Font("Corbel", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Findconfig.Location = New System.Drawing.Point(37, 30)
-        Me.Findconfig.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Findconfig.Location = New System.Drawing.Point(28, 24)
         Me.Findconfig.Name = "Findconfig"
-        Me.Findconfig.Size = New System.Drawing.Size(100, 18)
+        Me.Findconfig.Size = New System.Drawing.Size(83, 14)
         Me.Findconfig.TabIndex = 394
         Me.Findconfig.TabStop = True
         Me.Findconfig.Text = "Configuration "
@@ -243,14 +230,13 @@ Partial Class UIDMICTerritoryManagerPeriodToPeriodPivot
         '
         Me.RadMenu1.Items.AddRange(New Telerik.WinControls.RadItem() {Me.btnTransfered, Me.btnClear, Me.btnClose})
         Me.RadMenu1.Location = New System.Drawing.Point(0, 0)
-        Me.RadMenu1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.RadMenu1.Name = "RadMenu1"
-        Me.RadMenu1.Padding = New System.Windows.Forms.Padding(3, 2, 0, 0)
+        Me.RadMenu1.Padding = New System.Windows.Forms.Padding(2, 2, 0, 0)
         '
         '
         '
-        Me.RadMenu1.RootElement.Padding = New System.Windows.Forms.Padding(3, 2, 0, 0)
-        Me.RadMenu1.Size = New System.Drawing.Size(805, 38)
+        Me.RadMenu1.RootElement.Padding = New System.Windows.Forms.Padding(2, 2, 0, 0)
+        Me.RadMenu1.Size = New System.Drawing.Size(604, 38)
         Me.RadMenu1.TabIndex = 174
         Me.RadMenu1.ThemeName = "Office2010Silver"
         '
@@ -306,10 +292,9 @@ Partial Class UIDMICTerritoryManagerPeriodToPeriodPivot
         '
         Me.Panel5.Controls.Add(Me.GrdCompanyView)
         Me.Panel5.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel5.Location = New System.Drawing.Point(0, 240)
-        Me.Panel5.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel5.Location = New System.Drawing.Point(0, 195)
         Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(577, 795)
+        Me.Panel5.Size = New System.Drawing.Size(433, 646)
         Me.Panel5.TabIndex = 37
         '
         'GrdCompanyView
@@ -321,7 +306,6 @@ Partial Class UIDMICTerritoryManagerPeriodToPeriodPivot
         Me.GrdCompanyView.ForeColor = System.Drawing.Color.Black
         Me.GrdCompanyView.ImeMode = System.Windows.Forms.ImeMode.NoControl
         Me.GrdCompanyView.Location = New System.Drawing.Point(0, 0)
-        Me.GrdCompanyView.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         '
         'GrdCompanyView
         '
@@ -347,7 +331,7 @@ Partial Class UIDMICTerritoryManagerPeriodToPeriodPivot
         Me.GrdCompanyView.MasterTemplate.EnableGrouping = False
         Me.GrdCompanyView.Name = "GrdCompanyView"
         Me.GrdCompanyView.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.GrdCompanyView.Size = New System.Drawing.Size(577, 795)
+        Me.GrdCompanyView.Size = New System.Drawing.Size(433, 646)
         Me.GrdCompanyView.TabIndex = 55
         Me.GrdCompanyView.ThemeName = "Office2010Silver"
         '
@@ -356,10 +340,9 @@ Partial Class UIDMICTerritoryManagerPeriodToPeriodPivot
         Me.Panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel6.Controls.Add(Me.GridView)
         Me.Panel6.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel6.Location = New System.Drawing.Point(577, 240)
-        Me.Panel6.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel6.Location = New System.Drawing.Point(433, 195)
         Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(1475, 795)
+        Me.Panel6.Size = New System.Drawing.Size(1106, 646)
         Me.Panel6.TabIndex = 38
         '
         'GridView
@@ -371,7 +354,6 @@ Partial Class UIDMICTerritoryManagerPeriodToPeriodPivot
         Me.GridView.ForeColor = System.Drawing.Color.Black
         Me.GridView.ImeMode = System.Windows.Forms.ImeMode.NoControl
         Me.GridView.Location = New System.Drawing.Point(0, 0)
-        Me.GridView.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         '
         'GridView
         '
@@ -383,22 +365,21 @@ Partial Class UIDMICTerritoryManagerPeriodToPeriodPivot
         Me.GridView.MasterTemplate.EnableGrouping = False
         Me.GridView.Name = "GridView"
         Me.GridView.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.GridView.Size = New System.Drawing.Size(1473, 793)
+        Me.GridView.Size = New System.Drawing.Size(1104, 644)
         Me.GridView.TabIndex = 56
         Me.GridView.ThemeName = "Office2010Silver"
         '
         'UIDMICTerritoryManagerPeriodToPeriodPivot
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.Controls.Add(Me.Panel6)
         Me.Controls.Add(Me.Panel5)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Name = "UIDMICTerritoryManagerPeriodToPeriodPivot"
-        Me.Size = New System.Drawing.Size(2052, 1035)
+        Me.Size = New System.Drawing.Size(1539, 841)
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.Panel2.ResumeLayout(False)

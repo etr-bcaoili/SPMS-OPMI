@@ -62,22 +62,6 @@ Partial Class UICustomerEntrys
         Me.lnkMotherCode = New System.Windows.Forms.LinkLabel()
         Me.txtDistributorCode = New Telerik.WinControls.UI.RadTextBox()
         Me.RadDock1 = New Telerik.WinControls.UI.Docking.RadDock()
-        Me.DocumentWindow3 = New Telerik.WinControls.UI.Docking.DocumentWindow()
-        Me.Panel6 = New System.Windows.Forms.Panel()
-        Me.txtZipDescription = New Telerik.WinControls.UI.RadTextBox()
-        Me.LinkLabel10 = New System.Windows.Forms.LinkLabel()
-        Me.txtZipCode = New Telerik.WinControls.UI.RadTextBox()
-        Me.txtMunicipalDescription = New Telerik.WinControls.UI.RadTextBox()
-        Me.LinkLabel9 = New System.Windows.Forms.LinkLabel()
-        Me.txtMunicipalCode = New Telerik.WinControls.UI.RadTextBox()
-        Me.txtProvinceName = New Telerik.WinControls.UI.RadTextBox()
-        Me.LinkLabel8 = New System.Windows.Forms.LinkLabel()
-        Me.txtProvinceCode = New Telerik.WinControls.UI.RadTextBox()
-        Me.txtRegionName = New Telerik.WinControls.UI.RadTextBox()
-        Me.LinkLabel7 = New System.Windows.Forms.LinkLabel()
-        Me.txtRegionCode = New Telerik.WinControls.UI.RadTextBox()
-        Me.DocumentContainer2 = New Telerik.WinControls.UI.Docking.DocumentContainer()
-        Me.DocumentTabStrip1 = New Telerik.WinControls.UI.Docking.DocumentTabStrip()
         Me.DocumentWindow1 = New Telerik.WinControls.UI.Docking.DocumentWindow()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.txtCoordinatorName = New Telerik.WinControls.UI.RadTextBox()
@@ -89,6 +73,8 @@ Partial Class UICustomerEntrys
         Me.txtCustomerGroupName = New Telerik.WinControls.UI.RadTextBox()
         Me.LinkLabel2 = New System.Windows.Forms.LinkLabel()
         Me.txtCustomerGroupCode = New Telerik.WinControls.UI.RadTextBox()
+        Me.DocumentContainer2 = New Telerik.WinControls.UI.Docking.DocumentContainer()
+        Me.DocumentTabStrip1 = New Telerik.WinControls.UI.Docking.DocumentTabStrip()
         Me.DocumentWindow2 = New Telerik.WinControls.UI.Docking.DocumentWindow()
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.Check_OAPMemberShip = New Telerik.WinControls.UI.RadCheckBox()
@@ -105,6 +91,29 @@ Partial Class UICustomerEntrys
         Me.txtPioneerCode = New Telerik.WinControls.UI.RadTextBox()
         Me.LinkLabel5 = New System.Windows.Forms.LinkLabel()
         Me.txtProponentCode = New Telerik.WinControls.UI.RadTextBox()
+        Me.DocumentWindow3 = New Telerik.WinControls.UI.Docking.DocumentWindow()
+        Me.Panel6 = New System.Windows.Forms.Panel()
+        Me.txtZipDescription = New Telerik.WinControls.UI.RadTextBox()
+        Me.LinkLabel10 = New System.Windows.Forms.LinkLabel()
+        Me.txtZipCode = New Telerik.WinControls.UI.RadTextBox()
+        Me.txtMunicipalDescription = New Telerik.WinControls.UI.RadTextBox()
+        Me.LinkLabel9 = New System.Windows.Forms.LinkLabel()
+        Me.txtMunicipalCode = New Telerik.WinControls.UI.RadTextBox()
+        Me.txtProvinceName = New Telerik.WinControls.UI.RadTextBox()
+        Me.LinkLabel8 = New System.Windows.Forms.LinkLabel()
+        Me.txtProvinceCode = New Telerik.WinControls.UI.RadTextBox()
+        Me.txtRegionName = New Telerik.WinControls.UI.RadTextBox()
+        Me.LinkLabel7 = New System.Windows.Forms.LinkLabel()
+        Me.txtRegionCode = New Telerik.WinControls.UI.RadTextBox()
+        Me.DocumentWindow4 = New Telerik.WinControls.UI.Docking.DocumentWindow()
+        Me.CheckNetVat = New System.Windows.Forms.CheckBox()
+        Me.RadGroupBox1 = New Telerik.WinControls.UI.RadGroupBox()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.txtDistributorMargin = New Telerik.WinControls.UI.RadTextBox()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.txtMunicipalTax = New Telerik.WinControls.UI.RadTextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         CType(Me.RadMenu1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
@@ -135,20 +144,6 @@ Partial Class UICustomerEntrys
         CType(Me.txtDistributorCode, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadDock1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.RadDock1.SuspendLayout()
-        Me.DocumentWindow3.SuspendLayout()
-        Me.Panel6.SuspendLayout()
-        CType(Me.txtZipDescription, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txtZipCode, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txtMunicipalDescription, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txtMunicipalCode, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txtProvinceName, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txtProvinceCode, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txtRegionName, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txtRegionCode, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DocumentContainer2, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.DocumentContainer2.SuspendLayout()
-        CType(Me.DocumentTabStrip1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.DocumentTabStrip1.SuspendLayout()
         Me.DocumentWindow1.SuspendLayout()
         Me.Panel4.SuspendLayout()
         CType(Me.txtCoordinatorName, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -157,6 +152,10 @@ Partial Class UICustomerEntrys
         CType(Me.txtCustomerClassCode, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtCustomerGroupName, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtCustomerGroupCode, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DocumentContainer2, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.DocumentContainer2.SuspendLayout()
+        CType(Me.DocumentTabStrip1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.DocumentTabStrip1.SuspendLayout()
         Me.DocumentWindow2.SuspendLayout()
         Me.Panel5.SuspendLayout()
         CType(Me.Check_OAPMemberShip, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -171,6 +170,21 @@ Partial Class UICustomerEntrys
         CType(Me.txtproponetName, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtPioneerCode, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtProponentCode, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.DocumentWindow3.SuspendLayout()
+        Me.Panel6.SuspendLayout()
+        CType(Me.txtZipDescription, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtZipCode, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtMunicipalDescription, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtMunicipalCode, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtProvinceName, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtProvinceCode, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtRegionName, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtRegionCode, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.DocumentWindow4.SuspendLayout()
+        CType(Me.RadGroupBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.RadGroupBox1.SuspendLayout()
+        CType(Me.txtDistributorMargin, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtMunicipalTax, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
@@ -219,7 +233,7 @@ Partial Class UICustomerEntrys
         '
         '
         Me.RadMenu1.RootElement.Padding = New System.Windows.Forms.Padding(2, 2, 0, 0)
-        Me.RadMenu1.Size = New System.Drawing.Size(1335, 33)
+        Me.RadMenu1.Size = New System.Drawing.Size(1335, 38)
         Me.RadMenu1.TabIndex = 173
         Me.RadMenu1.ThemeName = "Office2010Silver"
         '
@@ -337,7 +351,7 @@ Partial Class UICustomerEntrys
         '
         'Panel2
         '
-        Me.Panel2.BackColor = System.Drawing.Color.White
+        Me.Panel2.BackColor = System.Drawing.Color.AliceBlue
         Me.Panel2.Controls.Add(Me.chckLoyaltyMD)
         Me.Panel2.Controls.Add(Me.chckDataTransferStocks)
         Me.Panel2.Controls.Add(Me.ChckLoyaltyCustomer)
@@ -366,7 +380,7 @@ Partial Class UICustomerEntrys
         Me.Panel2.Controls.Add(Me.lnkMotherCode)
         Me.Panel2.Controls.Add(Me.txtDistributorCode)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel2.Location = New System.Drawing.Point(0, 92)
+        Me.Panel2.Location = New System.Drawing.Point(0, 97)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(1335, 311)
         Me.Panel2.TabIndex = 174
@@ -717,7 +731,7 @@ Partial Class UICustomerEntrys
         Me.RadDock1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.RadDock1.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RadDock1.IsCleanUpTarget = True
-        Me.RadDock1.Location = New System.Drawing.Point(0, 403)
+        Me.RadDock1.Location = New System.Drawing.Point(0, 408)
         Me.RadDock1.MainDocumentContainer = Me.DocumentContainer2
         Me.RadDock1.Name = "RadDock1"
         '
@@ -725,241 +739,22 @@ Partial Class UICustomerEntrys
         '
         Me.RadDock1.RootElement.MinSize = New System.Drawing.Size(25, 25)
         Me.RadDock1.RootElement.Padding = New System.Windows.Forms.Padding(5)
-        Me.RadDock1.Size = New System.Drawing.Size(1335, 406)
+        Me.RadDock1.Size = New System.Drawing.Size(1335, 401)
         Me.RadDock1.SplitterWidth = 8
         Me.RadDock1.TabIndex = 175
         Me.RadDock1.TabStop = False
         Me.RadDock1.ThemeName = "Crystal"
         '
-        'DocumentWindow3
-        '
-        Me.DocumentWindow3.Controls.Add(Me.Panel6)
-        Me.DocumentWindow3.DocumentButtons = Telerik.WinControls.UI.Docking.DocumentStripButtons.None
-        Me.DocumentWindow3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DocumentWindow3.Location = New System.Drawing.Point(6, 29)
-        Me.DocumentWindow3.Name = "DocumentWindow3"
-        Me.DocumentWindow3.PreviousDockState = Telerik.WinControls.UI.Docking.DockState.TabbedDocument
-        Me.DocumentWindow3.Size = New System.Drawing.Size(1313, 361)
-        Me.DocumentWindow3.Text = "Geographilcal Map"
-        '
-        'Panel6
-        '
-        Me.Panel6.BackColor = System.Drawing.Color.White
-        Me.Panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel6.Controls.Add(Me.txtZipDescription)
-        Me.Panel6.Controls.Add(Me.LinkLabel10)
-        Me.Panel6.Controls.Add(Me.txtZipCode)
-        Me.Panel6.Controls.Add(Me.txtMunicipalDescription)
-        Me.Panel6.Controls.Add(Me.LinkLabel9)
-        Me.Panel6.Controls.Add(Me.txtMunicipalCode)
-        Me.Panel6.Controls.Add(Me.txtProvinceName)
-        Me.Panel6.Controls.Add(Me.LinkLabel8)
-        Me.Panel6.Controls.Add(Me.txtProvinceCode)
-        Me.Panel6.Controls.Add(Me.txtRegionName)
-        Me.Panel6.Controls.Add(Me.LinkLabel7)
-        Me.Panel6.Controls.Add(Me.txtRegionCode)
-        Me.Panel6.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel6.Location = New System.Drawing.Point(0, 0)
-        Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(1313, 361)
-        Me.Panel6.TabIndex = 0
-        '
-        'txtZipDescription
-        '
-        Me.txtZipDescription.AutoSize = False
-        Me.txtZipDescription.BackColor = System.Drawing.Color.White
-        Me.txtZipDescription.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtZipDescription.Location = New System.Drawing.Point(273, 106)
-        Me.txtZipDescription.Multiline = True
-        Me.txtZipDescription.Name = "txtZipDescription"
-        Me.txtZipDescription.ReadOnly = True
-        Me.txtZipDescription.Size = New System.Drawing.Size(312, 24)
-        Me.txtZipDescription.TabIndex = 740
-        Me.txtZipDescription.TabStop = False
-        Me.txtZipDescription.ThemeName = "Office2019Light"
-        '
-        'LinkLabel10
-        '
-        Me.LinkLabel10.AutoSize = True
-        Me.LinkLabel10.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LinkLabel10.Location = New System.Drawing.Point(23, 110)
-        Me.LinkLabel10.Name = "LinkLabel10"
-        Me.LinkLabel10.Size = New System.Drawing.Size(54, 15)
-        Me.LinkLabel10.TabIndex = 739
-        Me.LinkLabel10.TabStop = True
-        Me.LinkLabel10.Text = "ZipCode "
-        '
-        'txtZipCode
-        '
-        Me.txtZipCode.AutoSize = False
-        Me.txtZipCode.BackColor = System.Drawing.Color.White
-        Me.txtZipCode.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtZipCode.Location = New System.Drawing.Point(140, 105)
-        Me.txtZipCode.Multiline = True
-        Me.txtZipCode.Name = "txtZipCode"
-        Me.txtZipCode.ReadOnly = True
-        Me.txtZipCode.Size = New System.Drawing.Size(130, 24)
-        Me.txtZipCode.TabIndex = 738
-        Me.txtZipCode.TabStop = False
-        Me.txtZipCode.ThemeName = "Office2019Light"
-        '
-        'txtMunicipalDescription
-        '
-        Me.txtMunicipalDescription.AutoSize = False
-        Me.txtMunicipalDescription.BackColor = System.Drawing.Color.White
-        Me.txtMunicipalDescription.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtMunicipalDescription.Location = New System.Drawing.Point(273, 80)
-        Me.txtMunicipalDescription.Multiline = True
-        Me.txtMunicipalDescription.Name = "txtMunicipalDescription"
-        Me.txtMunicipalDescription.ReadOnly = True
-        Me.txtMunicipalDescription.Size = New System.Drawing.Size(312, 24)
-        Me.txtMunicipalDescription.TabIndex = 737
-        Me.txtMunicipalDescription.TabStop = False
-        Me.txtMunicipalDescription.ThemeName = "Office2019Light"
-        '
-        'LinkLabel9
-        '
-        Me.LinkLabel9.AutoSize = True
-        Me.LinkLabel9.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LinkLabel9.Location = New System.Drawing.Point(23, 84)
-        Me.LinkLabel9.Name = "LinkLabel9"
-        Me.LinkLabel9.Size = New System.Drawing.Size(107, 15)
-        Me.LinkLabel9.TabIndex = 736
-        Me.LinkLabel9.TabStop = True
-        Me.LinkLabel9.Text = "Municipality / Loct"
-        '
-        'txtMunicipalCode
-        '
-        Me.txtMunicipalCode.AutoSize = False
-        Me.txtMunicipalCode.BackColor = System.Drawing.Color.White
-        Me.txtMunicipalCode.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtMunicipalCode.Location = New System.Drawing.Point(140, 79)
-        Me.txtMunicipalCode.Multiline = True
-        Me.txtMunicipalCode.Name = "txtMunicipalCode"
-        Me.txtMunicipalCode.ReadOnly = True
-        Me.txtMunicipalCode.Size = New System.Drawing.Size(130, 24)
-        Me.txtMunicipalCode.TabIndex = 735
-        Me.txtMunicipalCode.TabStop = False
-        Me.txtMunicipalCode.ThemeName = "Office2019Light"
-        '
-        'txtProvinceName
-        '
-        Me.txtProvinceName.AutoSize = False
-        Me.txtProvinceName.BackColor = System.Drawing.Color.White
-        Me.txtProvinceName.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtProvinceName.Location = New System.Drawing.Point(273, 53)
-        Me.txtProvinceName.Multiline = True
-        Me.txtProvinceName.Name = "txtProvinceName"
-        Me.txtProvinceName.ReadOnly = True
-        Me.txtProvinceName.Size = New System.Drawing.Size(312, 24)
-        Me.txtProvinceName.TabIndex = 734
-        Me.txtProvinceName.TabStop = False
-        Me.txtProvinceName.ThemeName = "Office2019Light"
-        '
-        'LinkLabel8
-        '
-        Me.LinkLabel8.AutoSize = True
-        Me.LinkLabel8.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LinkLabel8.Location = New System.Drawing.Point(23, 56)
-        Me.LinkLabel8.Name = "LinkLabel8"
-        Me.LinkLabel8.Size = New System.Drawing.Size(81, 15)
-        Me.LinkLabel8.TabIndex = 733
-        Me.LinkLabel8.TabStop = True
-        Me.LinkLabel8.Text = "Province/ City"
-        '
-        'txtProvinceCode
-        '
-        Me.txtProvinceCode.AutoSize = False
-        Me.txtProvinceCode.BackColor = System.Drawing.Color.White
-        Me.txtProvinceCode.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtProvinceCode.Location = New System.Drawing.Point(140, 53)
-        Me.txtProvinceCode.Multiline = True
-        Me.txtProvinceCode.Name = "txtProvinceCode"
-        Me.txtProvinceCode.ReadOnly = True
-        Me.txtProvinceCode.Size = New System.Drawing.Size(130, 24)
-        Me.txtProvinceCode.TabIndex = 732
-        Me.txtProvinceCode.TabStop = False
-        Me.txtProvinceCode.ThemeName = "Office2019Light"
-        '
-        'txtRegionName
-        '
-        Me.txtRegionName.AutoSize = False
-        Me.txtRegionName.BackColor = System.Drawing.Color.White
-        Me.txtRegionName.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtRegionName.Location = New System.Drawing.Point(273, 27)
-        Me.txtRegionName.Multiline = True
-        Me.txtRegionName.Name = "txtRegionName"
-        Me.txtRegionName.ReadOnly = True
-        Me.txtRegionName.Size = New System.Drawing.Size(312, 24)
-        Me.txtRegionName.TabIndex = 731
-        Me.txtRegionName.TabStop = False
-        Me.txtRegionName.ThemeName = "Office2019Light"
-        '
-        'LinkLabel7
-        '
-        Me.LinkLabel7.AutoSize = True
-        Me.LinkLabel7.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LinkLabel7.Location = New System.Drawing.Point(23, 29)
-        Me.LinkLabel7.Name = "LinkLabel7"
-        Me.LinkLabel7.Size = New System.Drawing.Size(44, 15)
-        Me.LinkLabel7.TabIndex = 730
-        Me.LinkLabel7.TabStop = True
-        Me.LinkLabel7.Text = "Region"
-        '
-        'txtRegionCode
-        '
-        Me.txtRegionCode.AutoSize = False
-        Me.txtRegionCode.BackColor = System.Drawing.Color.White
-        Me.txtRegionCode.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtRegionCode.Location = New System.Drawing.Point(140, 27)
-        Me.txtRegionCode.Multiline = True
-        Me.txtRegionCode.Name = "txtRegionCode"
-        Me.txtRegionCode.ReadOnly = True
-        Me.txtRegionCode.Size = New System.Drawing.Size(130, 24)
-        Me.txtRegionCode.TabIndex = 729
-        Me.txtRegionCode.TabStop = False
-        Me.txtRegionCode.ThemeName = "Office2019Light"
-        '
-        'DocumentContainer2
-        '
-        Me.DocumentContainer2.Controls.Add(Me.DocumentTabStrip1)
-        Me.DocumentContainer2.Name = "DocumentContainer2"
-        '
-        '
-        '
-        Me.DocumentContainer2.RootElement.MinSize = New System.Drawing.Size(25, 25)
-        Me.DocumentContainer2.RootElement.Padding = New System.Windows.Forms.Padding(5)
-        Me.DocumentContainer2.SizeInfo.SizeMode = Telerik.WinControls.UI.Docking.SplitPanelSizeMode.Fill
-        Me.DocumentContainer2.SplitterWidth = 8
-        Me.DocumentContainer2.ThemeName = "Crystal"
-        '
-        'DocumentTabStrip1
-        '
-        Me.DocumentTabStrip1.CanUpdateChildIndex = True
-        Me.DocumentTabStrip1.Controls.Add(Me.DocumentWindow1)
-        Me.DocumentTabStrip1.Controls.Add(Me.DocumentWindow2)
-        Me.DocumentTabStrip1.Controls.Add(Me.DocumentWindow3)
-        Me.DocumentTabStrip1.Location = New System.Drawing.Point(0, 0)
-        Me.DocumentTabStrip1.Name = "DocumentTabStrip1"
-        '
-        '
-        '
-        Me.DocumentTabStrip1.RootElement.MinSize = New System.Drawing.Size(25, 25)
-        Me.DocumentTabStrip1.SelectedIndex = 2
-        Me.DocumentTabStrip1.Size = New System.Drawing.Size(1325, 396)
-        Me.DocumentTabStrip1.TabIndex = 0
-        Me.DocumentTabStrip1.TabStop = False
-        Me.DocumentTabStrip1.ThemeName = "Crystal"
-        '
         'DocumentWindow1
         '
+        Me.DocumentWindow1.BackColor = System.Drawing.Color.AliceBlue
         Me.DocumentWindow1.Controls.Add(Me.Panel4)
         Me.DocumentWindow1.DocumentButtons = Telerik.WinControls.UI.Docking.DocumentStripButtons.None
         Me.DocumentWindow1.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DocumentWindow1.Location = New System.Drawing.Point(6, 29)
         Me.DocumentWindow1.Name = "DocumentWindow1"
         Me.DocumentWindow1.PreviousDockState = Telerik.WinControls.UI.Docking.DockState.TabbedDocument
-        Me.DocumentWindow1.Size = New System.Drawing.Size(1313, 361)
+        Me.DocumentWindow1.Size = New System.Drawing.Size(1313, 356)
         Me.DocumentWindow1.Text = "Customer Details"
         '
         'Panel4
@@ -978,7 +773,7 @@ Partial Class UICustomerEntrys
         Me.Panel4.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel4.Location = New System.Drawing.Point(0, 0)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(1313, 361)
+        Me.Panel4.Size = New System.Drawing.Size(1313, 356)
         Me.Panel4.TabIndex = 0
         '
         'txtCoordinatorName
@@ -1098,6 +893,38 @@ Partial Class UICustomerEntrys
         Me.txtCustomerGroupCode.TabStop = False
         Me.txtCustomerGroupCode.ThemeName = "Office2019Light"
         '
+        'DocumentContainer2
+        '
+        Me.DocumentContainer2.Controls.Add(Me.DocumentTabStrip1)
+        Me.DocumentContainer2.Name = "DocumentContainer2"
+        '
+        '
+        '
+        Me.DocumentContainer2.RootElement.MinSize = New System.Drawing.Size(25, 25)
+        Me.DocumentContainer2.RootElement.Padding = New System.Windows.Forms.Padding(5)
+        Me.DocumentContainer2.SizeInfo.SizeMode = Telerik.WinControls.UI.Docking.SplitPanelSizeMode.Fill
+        Me.DocumentContainer2.SplitterWidth = 8
+        Me.DocumentContainer2.ThemeName = "Crystal"
+        '
+        'DocumentTabStrip1
+        '
+        Me.DocumentTabStrip1.CanUpdateChildIndex = True
+        Me.DocumentTabStrip1.Controls.Add(Me.DocumentWindow1)
+        Me.DocumentTabStrip1.Controls.Add(Me.DocumentWindow2)
+        Me.DocumentTabStrip1.Controls.Add(Me.DocumentWindow3)
+        Me.DocumentTabStrip1.Controls.Add(Me.DocumentWindow4)
+        Me.DocumentTabStrip1.Location = New System.Drawing.Point(0, 0)
+        Me.DocumentTabStrip1.Name = "DocumentTabStrip1"
+        '
+        '
+        '
+        Me.DocumentTabStrip1.RootElement.MinSize = New System.Drawing.Size(25, 25)
+        Me.DocumentTabStrip1.SelectedIndex = 2
+        Me.DocumentTabStrip1.Size = New System.Drawing.Size(1325, 391)
+        Me.DocumentTabStrip1.TabIndex = 0
+        Me.DocumentTabStrip1.TabStop = False
+        Me.DocumentTabStrip1.ThemeName = "Crystal"
+        '
         'DocumentWindow2
         '
         Me.DocumentWindow2.Controls.Add(Me.Panel5)
@@ -1106,7 +933,7 @@ Partial Class UICustomerEntrys
         Me.DocumentWindow2.Location = New System.Drawing.Point(6, 29)
         Me.DocumentWindow2.Name = "DocumentWindow2"
         Me.DocumentWindow2.PreviousDockState = Telerik.WinControls.UI.Docking.DockState.TabbedDocument
-        Me.DocumentWindow2.Size = New System.Drawing.Size(1313, 361)
+        Me.DocumentWindow2.Size = New System.Drawing.Size(1313, 356)
         Me.DocumentWindow2.Text = "Customer Dispensing"
         '
         'Panel5
@@ -1130,7 +957,7 @@ Partial Class UICustomerEntrys
         Me.Panel5.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel5.Location = New System.Drawing.Point(0, 0)
         Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(1313, 361)
+        Me.Panel5.Size = New System.Drawing.Size(1313, 356)
         Me.Panel5.TabIndex = 0
         '
         'Check_OAPMemberShip
@@ -1314,6 +1141,311 @@ Partial Class UICustomerEntrys
         Me.txtProponentCode.TabStop = False
         Me.txtProponentCode.ThemeName = "Office2019Light"
         '
+        'DocumentWindow3
+        '
+        Me.DocumentWindow3.Controls.Add(Me.Panel6)
+        Me.DocumentWindow3.DocumentButtons = Telerik.WinControls.UI.Docking.DocumentStripButtons.None
+        Me.DocumentWindow3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DocumentWindow3.Location = New System.Drawing.Point(6, 29)
+        Me.DocumentWindow3.Name = "DocumentWindow3"
+        Me.DocumentWindow3.PreviousDockState = Telerik.WinControls.UI.Docking.DockState.TabbedDocument
+        Me.DocumentWindow3.Size = New System.Drawing.Size(1313, 356)
+        Me.DocumentWindow3.Text = "Geographilcal Map"
+        '
+        'Panel6
+        '
+        Me.Panel6.BackColor = System.Drawing.Color.White
+        Me.Panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel6.Controls.Add(Me.txtZipDescription)
+        Me.Panel6.Controls.Add(Me.LinkLabel10)
+        Me.Panel6.Controls.Add(Me.txtZipCode)
+        Me.Panel6.Controls.Add(Me.txtMunicipalDescription)
+        Me.Panel6.Controls.Add(Me.LinkLabel9)
+        Me.Panel6.Controls.Add(Me.txtMunicipalCode)
+        Me.Panel6.Controls.Add(Me.txtProvinceName)
+        Me.Panel6.Controls.Add(Me.LinkLabel8)
+        Me.Panel6.Controls.Add(Me.txtProvinceCode)
+        Me.Panel6.Controls.Add(Me.txtRegionName)
+        Me.Panel6.Controls.Add(Me.LinkLabel7)
+        Me.Panel6.Controls.Add(Me.txtRegionCode)
+        Me.Panel6.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel6.Location = New System.Drawing.Point(0, 0)
+        Me.Panel6.Name = "Panel6"
+        Me.Panel6.Size = New System.Drawing.Size(1313, 356)
+        Me.Panel6.TabIndex = 0
+        '
+        'txtZipDescription
+        '
+        Me.txtZipDescription.AutoSize = False
+        Me.txtZipDescription.BackColor = System.Drawing.Color.White
+        Me.txtZipDescription.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtZipDescription.Location = New System.Drawing.Point(273, 106)
+        Me.txtZipDescription.Multiline = True
+        Me.txtZipDescription.Name = "txtZipDescription"
+        Me.txtZipDescription.ReadOnly = True
+        Me.txtZipDescription.Size = New System.Drawing.Size(312, 24)
+        Me.txtZipDescription.TabIndex = 740
+        Me.txtZipDescription.TabStop = False
+        Me.txtZipDescription.ThemeName = "Office2019Light"
+        '
+        'LinkLabel10
+        '
+        Me.LinkLabel10.AutoSize = True
+        Me.LinkLabel10.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LinkLabel10.Location = New System.Drawing.Point(23, 110)
+        Me.LinkLabel10.Name = "LinkLabel10"
+        Me.LinkLabel10.Size = New System.Drawing.Size(54, 15)
+        Me.LinkLabel10.TabIndex = 739
+        Me.LinkLabel10.TabStop = True
+        Me.LinkLabel10.Text = "ZipCode "
+        '
+        'txtZipCode
+        '
+        Me.txtZipCode.AutoSize = False
+        Me.txtZipCode.BackColor = System.Drawing.Color.White
+        Me.txtZipCode.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtZipCode.Location = New System.Drawing.Point(140, 105)
+        Me.txtZipCode.Multiline = True
+        Me.txtZipCode.Name = "txtZipCode"
+        Me.txtZipCode.ReadOnly = True
+        Me.txtZipCode.Size = New System.Drawing.Size(130, 24)
+        Me.txtZipCode.TabIndex = 738
+        Me.txtZipCode.TabStop = False
+        Me.txtZipCode.ThemeName = "Office2019Light"
+        '
+        'txtMunicipalDescription
+        '
+        Me.txtMunicipalDescription.AutoSize = False
+        Me.txtMunicipalDescription.BackColor = System.Drawing.Color.White
+        Me.txtMunicipalDescription.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtMunicipalDescription.Location = New System.Drawing.Point(273, 80)
+        Me.txtMunicipalDescription.Multiline = True
+        Me.txtMunicipalDescription.Name = "txtMunicipalDescription"
+        Me.txtMunicipalDescription.ReadOnly = True
+        Me.txtMunicipalDescription.Size = New System.Drawing.Size(312, 24)
+        Me.txtMunicipalDescription.TabIndex = 737
+        Me.txtMunicipalDescription.TabStop = False
+        Me.txtMunicipalDescription.ThemeName = "Office2019Light"
+        '
+        'LinkLabel9
+        '
+        Me.LinkLabel9.AutoSize = True
+        Me.LinkLabel9.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LinkLabel9.Location = New System.Drawing.Point(23, 84)
+        Me.LinkLabel9.Name = "LinkLabel9"
+        Me.LinkLabel9.Size = New System.Drawing.Size(107, 15)
+        Me.LinkLabel9.TabIndex = 736
+        Me.LinkLabel9.TabStop = True
+        Me.LinkLabel9.Text = "Municipality / Loct"
+        '
+        'txtMunicipalCode
+        '
+        Me.txtMunicipalCode.AutoSize = False
+        Me.txtMunicipalCode.BackColor = System.Drawing.Color.White
+        Me.txtMunicipalCode.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtMunicipalCode.Location = New System.Drawing.Point(140, 79)
+        Me.txtMunicipalCode.Multiline = True
+        Me.txtMunicipalCode.Name = "txtMunicipalCode"
+        Me.txtMunicipalCode.ReadOnly = True
+        Me.txtMunicipalCode.Size = New System.Drawing.Size(130, 24)
+        Me.txtMunicipalCode.TabIndex = 735
+        Me.txtMunicipalCode.TabStop = False
+        Me.txtMunicipalCode.ThemeName = "Office2019Light"
+        '
+        'txtProvinceName
+        '
+        Me.txtProvinceName.AutoSize = False
+        Me.txtProvinceName.BackColor = System.Drawing.Color.White
+        Me.txtProvinceName.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtProvinceName.Location = New System.Drawing.Point(273, 53)
+        Me.txtProvinceName.Multiline = True
+        Me.txtProvinceName.Name = "txtProvinceName"
+        Me.txtProvinceName.ReadOnly = True
+        Me.txtProvinceName.Size = New System.Drawing.Size(312, 24)
+        Me.txtProvinceName.TabIndex = 734
+        Me.txtProvinceName.TabStop = False
+        Me.txtProvinceName.ThemeName = "Office2019Light"
+        '
+        'LinkLabel8
+        '
+        Me.LinkLabel8.AutoSize = True
+        Me.LinkLabel8.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LinkLabel8.Location = New System.Drawing.Point(23, 56)
+        Me.LinkLabel8.Name = "LinkLabel8"
+        Me.LinkLabel8.Size = New System.Drawing.Size(81, 15)
+        Me.LinkLabel8.TabIndex = 733
+        Me.LinkLabel8.TabStop = True
+        Me.LinkLabel8.Text = "Province/ City"
+        '
+        'txtProvinceCode
+        '
+        Me.txtProvinceCode.AutoSize = False
+        Me.txtProvinceCode.BackColor = System.Drawing.Color.White
+        Me.txtProvinceCode.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtProvinceCode.Location = New System.Drawing.Point(140, 53)
+        Me.txtProvinceCode.Multiline = True
+        Me.txtProvinceCode.Name = "txtProvinceCode"
+        Me.txtProvinceCode.ReadOnly = True
+        Me.txtProvinceCode.Size = New System.Drawing.Size(130, 24)
+        Me.txtProvinceCode.TabIndex = 732
+        Me.txtProvinceCode.TabStop = False
+        Me.txtProvinceCode.ThemeName = "Office2019Light"
+        '
+        'txtRegionName
+        '
+        Me.txtRegionName.AutoSize = False
+        Me.txtRegionName.BackColor = System.Drawing.Color.White
+        Me.txtRegionName.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtRegionName.Location = New System.Drawing.Point(273, 27)
+        Me.txtRegionName.Multiline = True
+        Me.txtRegionName.Name = "txtRegionName"
+        Me.txtRegionName.ReadOnly = True
+        Me.txtRegionName.Size = New System.Drawing.Size(312, 24)
+        Me.txtRegionName.TabIndex = 731
+        Me.txtRegionName.TabStop = False
+        Me.txtRegionName.ThemeName = "Office2019Light"
+        '
+        'LinkLabel7
+        '
+        Me.LinkLabel7.AutoSize = True
+        Me.LinkLabel7.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LinkLabel7.Location = New System.Drawing.Point(23, 29)
+        Me.LinkLabel7.Name = "LinkLabel7"
+        Me.LinkLabel7.Size = New System.Drawing.Size(44, 15)
+        Me.LinkLabel7.TabIndex = 730
+        Me.LinkLabel7.TabStop = True
+        Me.LinkLabel7.Text = "Region"
+        '
+        'txtRegionCode
+        '
+        Me.txtRegionCode.AutoSize = False
+        Me.txtRegionCode.BackColor = System.Drawing.Color.White
+        Me.txtRegionCode.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtRegionCode.Location = New System.Drawing.Point(140, 27)
+        Me.txtRegionCode.Multiline = True
+        Me.txtRegionCode.Name = "txtRegionCode"
+        Me.txtRegionCode.ReadOnly = True
+        Me.txtRegionCode.Size = New System.Drawing.Size(130, 24)
+        Me.txtRegionCode.TabIndex = 729
+        Me.txtRegionCode.TabStop = False
+        Me.txtRegionCode.ThemeName = "Office2019Light"
+        '
+        'DocumentWindow4
+        '
+        Me.DocumentWindow4.BackColor = System.Drawing.Color.AliceBlue
+        Me.DocumentWindow4.Controls.Add(Me.CheckNetVat)
+        Me.DocumentWindow4.Controls.Add(Me.RadGroupBox1)
+        Me.DocumentWindow4.Location = New System.Drawing.Point(6, 29)
+        Me.DocumentWindow4.Name = "DocumentWindow4"
+        Me.DocumentWindow4.PreviousDockState = Telerik.WinControls.UI.Docking.DockState.TabbedDocument
+        Me.DocumentWindow4.Size = New System.Drawing.Size(1313, 356)
+        Me.DocumentWindow4.Text = "Municipal Distributor Levy"
+        '
+        'CheckNetVat
+        '
+        Me.CheckNetVat.AutoSize = True
+        Me.CheckNetVat.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!)
+        Me.CheckNetVat.Location = New System.Drawing.Point(496, 41)
+        Me.CheckNetVat.Name = "CheckNetVat"
+        Me.CheckNetVat.Size = New System.Drawing.Size(79, 19)
+        Me.CheckNetVat.TabIndex = 790
+        Me.CheckNetVat.Text = "Active Vat"
+        Me.CheckNetVat.UseVisualStyleBackColor = True
+        '
+        'RadGroupBox1
+        '
+        Me.RadGroupBox1.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping
+        Me.RadGroupBox1.Controls.Add(Me.Label7)
+        Me.RadGroupBox1.Controls.Add(Me.txtDistributorMargin)
+        Me.RadGroupBox1.Controls.Add(Me.Label8)
+        Me.RadGroupBox1.Controls.Add(Me.Label6)
+        Me.RadGroupBox1.Controls.Add(Me.txtMunicipalTax)
+        Me.RadGroupBox1.Controls.Add(Me.Label2)
+        Me.RadGroupBox1.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.RadGroupBox1.HeaderText = "Municipal Distributor Levy"
+        Me.RadGroupBox1.Location = New System.Drawing.Point(21, 57)
+        Me.RadGroupBox1.Name = "RadGroupBox1"
+        '
+        '
+        '
+        Me.RadGroupBox1.RootElement.Padding = New System.Windows.Forms.Padding(2, 18, 2, 2)
+        Me.RadGroupBox1.Size = New System.Drawing.Size(554, 114)
+        Me.RadGroupBox1.TabIndex = 791
+        Me.RadGroupBox1.Text = "Municipal Distributor Levy"
+        Me.RadGroupBox1.ThemeName = "Office2010Silver"
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Location = New System.Drawing.Point(358, 69)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(79, 15)
+        Me.Label7.TabIndex = 786
+        Me.Label7.Text = "Percentage %"
+        '
+        'txtDistributorMargin
+        '
+        Me.txtDistributorMargin.AutoSize = False
+        Me.txtDistributorMargin.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.txtDistributorMargin.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtDistributorMargin.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!)
+        Me.txtDistributorMargin.Location = New System.Drawing.Point(159, 64)
+        Me.txtDistributorMargin.Multiline = True
+        Me.txtDistributorMargin.Name = "txtDistributorMargin"
+        Me.txtDistributorMargin.NullText = "0.00"
+        Me.txtDistributorMargin.ReadOnly = True
+        Me.txtDistributorMargin.Size = New System.Drawing.Size(195, 26)
+        Me.txtDistributorMargin.TabIndex = 785
+        Me.txtDistributorMargin.TabStop = False
+        Me.txtDistributorMargin.ThemeName = "Office2019Light"
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.Location = New System.Drawing.Point(11, 73)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(105, 15)
+        Me.Label8.TabIndex = 784
+        Me.Label8.Text = "Distributor Margin"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(358, 40)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(79, 15)
+        Me.Label6.TabIndex = 783
+        Me.Label6.Text = "Percentage %"
+        '
+        'txtMunicipalTax
+        '
+        Me.txtMunicipalTax.AutoSize = False
+        Me.txtMunicipalTax.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.txtMunicipalTax.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtMunicipalTax.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!)
+        Me.txtMunicipalTax.Location = New System.Drawing.Point(159, 35)
+        Me.txtMunicipalTax.Multiline = True
+        Me.txtMunicipalTax.Name = "txtMunicipalTax"
+        Me.txtMunicipalTax.NullText = "0.00"
+        Me.txtMunicipalTax.ReadOnly = True
+        Me.txtMunicipalTax.Size = New System.Drawing.Size(195, 26)
+        Me.txtMunicipalTax.TabIndex = 782
+        Me.txtMunicipalTax.TabStop = False
+        Me.txtMunicipalTax.ThemeName = "Office2019Light"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(11, 44)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(98, 15)
+        Me.Label2.TabIndex = 781
+        Me.Label2.Text = "Municipal Tax of "
+        '
         'UICustomerEntrys
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1357,21 +1489,6 @@ Partial Class UICustomerEntrys
         CType(Me.txtDistributorCode, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadDock1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.RadDock1.ResumeLayout(False)
-        Me.DocumentWindow3.ResumeLayout(False)
-        Me.Panel6.ResumeLayout(False)
-        Me.Panel6.PerformLayout()
-        CType(Me.txtZipDescription, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txtZipCode, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txtMunicipalDescription, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txtMunicipalCode, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txtProvinceName, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txtProvinceCode, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txtRegionName, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txtRegionCode, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DocumentContainer2, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.DocumentContainer2.ResumeLayout(False)
-        CType(Me.DocumentTabStrip1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.DocumentTabStrip1.ResumeLayout(False)
         Me.DocumentWindow1.ResumeLayout(False)
         Me.Panel4.ResumeLayout(False)
         Me.Panel4.PerformLayout()
@@ -1381,6 +1498,10 @@ Partial Class UICustomerEntrys
         CType(Me.txtCustomerClassCode, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtCustomerGroupName, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtCustomerGroupCode, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DocumentContainer2, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.DocumentContainer2.ResumeLayout(False)
+        CType(Me.DocumentTabStrip1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.DocumentTabStrip1.ResumeLayout(False)
         Me.DocumentWindow2.ResumeLayout(False)
         Me.Panel5.ResumeLayout(False)
         Me.Panel5.PerformLayout()
@@ -1396,6 +1517,24 @@ Partial Class UICustomerEntrys
         CType(Me.txtproponetName, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtPioneerCode, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtProponentCode, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.DocumentWindow3.ResumeLayout(False)
+        Me.Panel6.ResumeLayout(False)
+        Me.Panel6.PerformLayout()
+        CType(Me.txtZipDescription, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtZipCode, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtMunicipalDescription, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtMunicipalCode, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtProvinceName, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtProvinceCode, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtRegionName, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtRegionCode, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.DocumentWindow4.ResumeLayout(False)
+        Me.DocumentWindow4.PerformLayout()
+        CType(Me.RadGroupBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.RadGroupBox1.ResumeLayout(False)
+        Me.RadGroupBox1.PerformLayout()
+        CType(Me.txtDistributorMargin, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtMunicipalTax, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout
 
@@ -1485,5 +1624,13 @@ End Sub
     Friend WithEvents Check_OAPMemberShip As Telerik.WinControls.UI.RadCheckBox
     Friend WithEvents check_OAPEnrollment As Telerik.WinControls.UI.RadCheckBox
     Friend WithEvents Office2010SilverTheme1 As Telerik.WinControls.Themes.Office2010BlueTheme
-
+    Friend WithEvents DocumentWindow4 As Telerik.WinControls.UI.Docking.DocumentWindow
+    Friend WithEvents CheckNetVat As CheckBox
+    Friend WithEvents RadGroupBox1 As Telerik.WinControls.UI.RadGroupBox
+    Friend WithEvents Label7 As Label
+    Friend WithEvents txtDistributorMargin As Telerik.WinControls.UI.RadTextBox
+    Friend WithEvents Label8 As Label
+    Friend WithEvents Label6 As Label
+    Friend WithEvents txtMunicipalTax As Telerik.WinControls.UI.RadTextBox
+    Friend WithEvents Label2 As Label
 End Class

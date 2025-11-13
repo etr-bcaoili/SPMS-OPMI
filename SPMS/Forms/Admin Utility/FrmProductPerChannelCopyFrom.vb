@@ -40,7 +40,7 @@ Public Class FrmProductPerChannelCopyFrom
     Private Sub btnNew_Click(sender As Object, e As EventArgs) Handles btnNew.Click
         If txtChannelCode.Text <> "" And txtChannelName.Text <> "" Then
             If CheckofDistributorExist(txtChannelCode.Text, dtStartFrom.Text, dtEndFrom.Text) <> True Then
-                ChannelItemPrice()
+                'ChannelItemPrice()
             Else
                     GenerateCopyFrom(txtChannelCode.Text, dtStartFrom.Text, dtEndFrom.Text, dtToStart.Text, dtToEnd.Text)
                     CompyFromPriceSuccess()

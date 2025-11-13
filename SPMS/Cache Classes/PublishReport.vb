@@ -39,7 +39,7 @@ Public Class PublishReport
             Throw
         End Try
     End Function
-    Public Shared Function GetSyncDataTerritories(ByVal ConfigtypeCode As String, ByVal Year As String, ByVal Month As String) As DataTable
+    Public Shared Function GetSyncDataTerritories(ByVal ConfigtypeCode As String, ByVal Year As String) As DataTable
         Try
             Connect()
             Dim cmd As New SqlCommand("SyncDataTerritories", SPMSConn2)
@@ -47,7 +47,6 @@ Public Class PublishReport
             cmd.CommandTimeout = 0
             cmd.Parameters.AddWithValue("@ConfigtypeCode", ConfigtypeCode)
             cmd.Parameters.AddWithValue("@Year", Year)
-            cmd.Parameters.AddWithValue("@Month", Month)
             Dim da As New SqlDataAdapter(cmd)
             Dim dt = New DataTable
             da.Fill(dt)
@@ -57,7 +56,7 @@ Public Class PublishReport
             Throw
         End Try
     End Function
-    Public Shared Function GetSyncDataDistricts(ByVal ConfigtypeCode As String, ByVal Year As String, ByVal Month As String) As DataTable
+    Public Shared Function GetSyncDataDistricts(ByVal ConfigtypeCode As String, ByVal Year As String) As DataTable
         Try
             Connect()
             Dim cmd As New SqlCommand("SyncDataDistricts", SPMSConn2)
@@ -65,7 +64,6 @@ Public Class PublishReport
             cmd.CommandTimeout = 0
             cmd.Parameters.AddWithValue("@ConfigtypeCode", ConfigtypeCode)
             cmd.Parameters.AddWithValue("@Year", Year)
-            cmd.Parameters.AddWithValue("@Month", Month)
             Dim da As New SqlDataAdapter(cmd)
             Dim dt = New DataTable
             da.Fill(dt)
@@ -129,7 +127,7 @@ Public Class PublishReport
             Throw
         End Try
     End Function
-    Public Shared Function GetSyncDataTarget(ByVal ConfigtypeCode As String, ByVal Year As String, ByVal Month As String) As DataTable
+    Public Shared Function GetSyncDataTarget(ByVal ConfigtypeCode As String, ByVal Year As String) As DataTable
         Try
             Connect()
             Dim cmd As New SqlCommand("SyncDataTarget", SPMSConn2)
@@ -137,7 +135,23 @@ Public Class PublishReport
             cmd.CommandTimeout = 0
             cmd.Parameters.AddWithValue("@ConfigtypeCode", ConfigtypeCode)
             cmd.Parameters.AddWithValue("@Year", Year)
-            cmd.Parameters.AddWithValue("@Month", Month)
+            Dim da As New SqlDataAdapter(cmd)
+            Dim dt = New DataTable
+            da.Fill(dt)
+            Return dt
+        Catch ex As System.Exception
+            Disconnect()
+            Throw
+        End Try
+    End Function
+    Public Shared Function GetSyncDataTargetConfiguration(ByVal ConfigtypeCode As String, ByVal Year As String) As DataTable
+        Try
+            Connect()
+            Dim cmd As New SqlCommand("SyncTargetConfiguration", SPMSConn2)
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.CommandTimeout = 0
+            cmd.Parameters.AddWithValue("@ConfigtypeCode", ConfigtypeCode)
+            cmd.Parameters.AddWithValue("@Year", Year)
             Dim da As New SqlDataAdapter(cmd)
             Dim dt = New DataTable
             da.Fill(dt)
@@ -156,6 +170,22 @@ Public Class PublishReport
             cmd.Parameters.AddWithValue("@ConfigtypeCode", ConfigtypeCode)
             cmd.Parameters.AddWithValue("@Year", Year)
             cmd.Parameters.AddWithValue("@Month", Month)
+            Dim da As New SqlDataAdapter(cmd)
+            Dim dt = New DataTable
+            da.Fill(dt)
+            Return dt
+        Catch ex As System.Exception
+            Disconnect()
+            Throw
+        End Try
+    End Function
+    Public Shared Function GetSyncDataEmployee(ByVal ConfigtypeCode As String) As DataTable
+        Try
+            Connect()
+            Dim cmd As New SqlCommand("SyncDataEmployee", SPMSConn2)
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.CommandTimeout = 0
+            cmd.Parameters.AddWithValue("@ConfigtypeCode", ConfigtypeCode)
             Dim da As New SqlDataAdapter(cmd)
             Dim dt = New DataTable
             da.Fill(dt)

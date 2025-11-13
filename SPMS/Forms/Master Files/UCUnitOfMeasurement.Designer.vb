@@ -76,74 +76,133 @@ Partial Class UCUnitOfMeasurement
         Me.RadMenu1.Location = New System.Drawing.Point(0, 58)
         Me.RadMenu1.Name = "RadMenu1"
         Me.RadMenu1.Padding = New System.Windows.Forms.Padding(2, 2, 0, 0)
-        Me.RadMenu1.Size = New System.Drawing.Size(1516, 33)
+        '
+        '
+        '
+        Me.RadMenu1.RootElement.Padding = New System.Windows.Forms.Padding(2, 2, 0, 0)
+        Me.RadMenu1.Size = New System.Drawing.Size(1516, 38)
         Me.RadMenu1.TabIndex = 172
         Me.RadMenu1.ThemeName = "Office2010Silver"
         '
         'btnNew
         '
+        Me.btnNew.AccessibleDescription = "&New"
+        Me.btnNew.AccessibleName = "&New"
+        '
+        '
+        '
+        Me.btnNew.ButtonElement.AccessibleDescription = "&New"
+        Me.btnNew.ButtonElement.AccessibleName = "&New"
         Me.btnNew.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnNew.Image = Global.SPMSOPCI.My.Resources.Resources.if_Plus_1891033
         Me.btnNew.Name = "btnNew"
         Me.btnNew.Text = "&New"
         Me.btnNew.UseCompatibleTextRendering = False
+        Me.btnNew.Visibility = Telerik.WinControls.ElementVisibility.Visible
         '
         'btnEdit
         '
+        Me.btnEdit.AccessibleDescription = "&Edit"
+        Me.btnEdit.AccessibleName = "&Edit"
+        '
+        '
+        '
+        Me.btnEdit.ButtonElement.AccessibleDescription = "&Edit"
+        Me.btnEdit.ButtonElement.AccessibleName = "&Edit"
         Me.btnEdit.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnEdit.Image = Global.SPMSOPCI.My.Resources.Resources.if_edit_173002
         Me.btnEdit.Name = "btnEdit"
         Me.btnEdit.Text = "&Edit"
         Me.btnEdit.UseCompatibleTextRendering = False
+        Me.btnEdit.Visibility = Telerik.WinControls.ElementVisibility.Visible
         '
         'btnSave
         '
+        Me.btnSave.AccessibleDescription = "&Save"
+        Me.btnSave.AccessibleName = "&Save"
+        '
+        '
+        '
+        Me.btnSave.ButtonElement.AccessibleDescription = "&Save"
+        Me.btnSave.ButtonElement.AccessibleName = "&Save"
         Me.btnSave.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSave.Image = Global.SPMSOPCI.My.Resources.Resources.if_save_173091
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Text = "&Save"
         Me.btnSave.UseCompatibleTextRendering = False
+        Me.btnSave.Visibility = Telerik.WinControls.ElementVisibility.Visible
         '
         'btnDelete
         '
+        Me.btnDelete.AccessibleDescription = "&Delete"
+        Me.btnDelete.AccessibleName = "&Delete"
+        '
+        '
+        '
+        Me.btnDelete.ButtonElement.AccessibleDescription = "&Delete"
+        Me.btnDelete.ButtonElement.AccessibleName = "&Delete"
         Me.btnDelete.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnDelete.Image = Global.SPMSOPCI.My.Resources.Resources.rubbish
         Me.btnDelete.Name = "btnDelete"
         Me.btnDelete.Text = "&Delete"
         Me.btnDelete.UseCompatibleTextRendering = False
+        Me.btnDelete.Visibility = Telerik.WinControls.ElementVisibility.Visible
         '
         'btnFinddata
         '
+        Me.btnFinddata.AccessibleDescription = "&Find"
+        Me.btnFinddata.AccessibleName = "&Find"
+        '
+        '
+        '
+        Me.btnFinddata.ButtonElement.AccessibleDescription = "&Find"
+        Me.btnFinddata.ButtonElement.AccessibleName = "&Find"
         Me.btnFinddata.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnFinddata.Image = Global.SPMSOPCI.My.Resources.Resources.iconfinder_binocular__spyglass__view__search_2538706
         Me.btnFinddata.Name = "btnFinddata"
         Me.btnFinddata.Text = "&Find"
         Me.btnFinddata.UseCompatibleTextRendering = False
+        Me.btnFinddata.Visibility = Telerik.WinControls.ElementVisibility.Visible
         '
         'btnClear
         '
+        Me.btnClear.AccessibleDescription = "&Clear"
+        Me.btnClear.AccessibleName = "&Clear"
+        '
+        '
+        '
+        Me.btnClear.ButtonElement.AccessibleDescription = "&Clear"
+        Me.btnClear.ButtonElement.AccessibleName = "&Clear"
         Me.btnClear.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnClear.Image = Global.SPMSOPCI.My.Resources.Resources.if_ko_red_539481
         Me.btnClear.Name = "btnClear"
         Me.btnClear.Text = "&Clear"
         Me.btnClear.UseCompatibleTextRendering = False
+        Me.btnClear.Visibility = Telerik.WinControls.ElementVisibility.Visible
         '
         'btnClose
         '
+        Me.btnClose.AccessibleDescription = "Close"
+        Me.btnClose.AccessibleName = "Close"
+        '
+        '
+        '
+        Me.btnClose.ButtonElement.AccessibleDescription = "Close"
+        Me.btnClose.ButtonElement.AccessibleName = "Close"
         Me.btnClose.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnClose.Image = Global.SPMSOPCI.My.Resources.Resources.icons8_close_window_24
         Me.btnClose.Name = "btnClose"
         Me.btnClose.Text = "Close"
         Me.btnClose.UseCompatibleTextRendering = False
+        Me.btnClose.Visibility = Telerik.WinControls.ElementVisibility.Visible
         '
         'chkIsActive
         '
         Me.chkIsActive.CheckAlignment = System.Drawing.ContentAlignment.TopRight
-        Me.chkIsActive.Checked = System.Windows.Forms.CheckState.Checked
         Me.chkIsActive.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.chkIsActive.Location = New System.Drawing.Point(485, 126)
         Me.chkIsActive.Name = "chkIsActive"
-        Me.chkIsActive.Size = New System.Drawing.Size(68, 17)
+        Me.chkIsActive.Size = New System.Drawing.Size(67, 19)
         Me.chkIsActive.TabIndex = 755
         Me.chkIsActive.Text = "Is Active"
         Me.chkIsActive.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter
@@ -183,6 +242,7 @@ Partial Class UCUnitOfMeasurement
         Me.txtDescription.ReadOnly = True
         Me.txtDescription.Size = New System.Drawing.Size(423, 25)
         Me.txtDescription.TabIndex = 752
+        Me.txtDescription.TabStop = False
         Me.txtDescription.ThemeName = "Office2019Light"
         '
         'txtCode
@@ -196,13 +256,14 @@ Partial Class UCUnitOfMeasurement
         Me.txtCode.ReadOnly = True
         Me.txtCode.Size = New System.Drawing.Size(165, 25)
         Me.txtCode.TabIndex = 751
+        Me.txtCode.TabStop = False
         Me.txtCode.ThemeName = "Office2019Light"
         '
         'UCUnitOfMeasurement
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.White
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(246, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.Controls.Add(Me.chkIsActive)
         Me.Controls.Add(Me.RadLabel1)
         Me.Controls.Add(Me.RadLabel3)

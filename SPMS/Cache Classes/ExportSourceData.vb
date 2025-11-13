@@ -1,5 +1,4 @@
-﻿Imports SPMSOPCI.ConnectionModule
-Imports System.Data.SqlClient
+﻿Imports System.Data.SqlClient
 Public Class ExportSourceData
 
     Private _FromMonth As String = String.Empty
@@ -117,6 +116,24 @@ Public Class ExportSourceData
             Throw
         End Try
     End Function
+    Public Function DMCustomerTerritoryComparativePeriodtoPeriodNetVATMTDM() As Boolean
+        Try
+            SPMSOPCI.ConnectionModule.Connect()
+            Dim cmd As New SqlCommand("RptDMCustomerTerritoryComparativePeriodtoPeriodNetVATMTDM", SPMSOPCI.ConnectionModule.SPMSConn2)
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.CommandTimeout = 0
+            cmd.Parameters.AddWithValue("@ConfigtypeCode", _ConfigtypeCode)
+            cmd.Parameters.AddWithValue("@Year", _Year)
+            cmd.Parameters.AddWithValue("@StartMonth", _FromMonth)
+            cmd.Parameters.AddWithValue("@EndMonth", _ToMonth)
+            cmd.Parameters.AddWithValue("@CompanyCode", _Companycode)
+            cmd.ExecuteNonQuery()
+            SPMSOPCI.ConnectionModule.Disconnect()
+            Return True
+        Catch ex As Exception
+            Throw
+        End Try
+    End Function
 
 
     Public Function TrasnferDelete() As Boolean
@@ -142,6 +159,9 @@ Public Class ExportSourceData
     End Function
     Public Function DMItemCustomerTerritoryManagerComparativePeriodByPivot(ByVal StartMonth As String, ByVal EndMonth As String, ByVal ConfigtypeCode As String) As String
         Return "Select * from [DMItemCustomerTerritoryManagerComparativePeriodByPivot] Where [Credit Month No] between '" & StartMonth & "' And '" & EndMonth & "' And [ConfigtypeCode] = '" & ConfigtypeCode & "' Order by [Credit Month No]"
+    End Function
+    Public Function DMCustomerTerritoryComparativePeriodtoPeriodNetVATMTDM(ByVal Year As String, ByVal StartMonth As String, ByVal ToMonth As String, ByVal ConfigtypeCode As String) As String
+        Return "SELECT * FROM [DMCustomerTerritoryComparativePeriodtoPeriodNetVATMTDM] WHERE Year = '" & Year & "' AND Month Between '" & StartMonth & "' AND '" & ToMonth & "' AND [Configtype Code] = '" & ConfigtypeCode & "'"
     End Function
     Public Function GetMonthReport(ByVal ConfigtypeCode As String, ByVal ToYear As String, ByVal FromMonth As String, ByVal ToMonth As String) As String
         Return "Select Distinct Month from SC02File Where Month between '" & FromMonth & "' and '" & ToMonth & "' And Year = '" & ToYear & "' and Configtypecode = '" & ConfigtypeCode & "'"

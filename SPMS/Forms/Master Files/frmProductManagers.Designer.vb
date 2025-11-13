@@ -54,6 +54,9 @@ Partial Class frmProductManagers
         Me.colPM_Name = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.colStartDate = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.colEndDate = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.LinkLabel3 = New System.Windows.Forms.LinkLabel()
+        Me.txtConfigtypeName = New Telerik.WinControls.UI.RadTextBox()
+        Me.txtConfigtypeCode = New Telerik.WinControls.UI.RadTextBox()
         Me.Panel1.SuspendLayout()
         Me.ToolStrip1.SuspendLayout()
         Me.MainTab.SuspendLayout()
@@ -61,6 +64,8 @@ Partial Class frmProductManagers
         Me.GroupBox1.SuspendLayout()
         Me.tbListing.SuspendLayout()
         CType(Me.dgItemList, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtConfigtypeName, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtConfigtypeCode, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
@@ -182,6 +187,9 @@ Partial Class frmProductManagers
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.LinkLabel3)
+        Me.GroupBox1.Controls.Add(Me.txtConfigtypeName)
+        Me.GroupBox1.Controls.Add(Me.txtConfigtypeCode)
         Me.GroupBox1.Controls.Add(Me.dtEnd)
         Me.GroupBox1.Controls.Add(Me.dtStart)
         Me.GroupBox1.Controls.Add(Me.Label2)
@@ -193,7 +201,7 @@ Partial Class frmProductManagers
         Me.GroupBox1.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.Location = New System.Drawing.Point(12, 7)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(414, 195)
+        Me.GroupBox1.Size = New System.Drawing.Size(671, 158)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         '
@@ -201,18 +209,18 @@ Partial Class frmProductManagers
         '
         Me.dtEnd.CalendarFont = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.dtEnd.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtEnd.Location = New System.Drawing.Point(280, 130)
+        Me.dtEnd.Location = New System.Drawing.Point(154, 122)
         Me.dtEnd.Name = "dtEnd"
-        Me.dtEnd.Size = New System.Drawing.Size(121, 22)
+        Me.dtEnd.Size = New System.Drawing.Size(150, 22)
         Me.dtEnd.TabIndex = 78
         '
         'dtStart
         '
         Me.dtStart.CalendarFont = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.dtStart.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtStart.Location = New System.Drawing.Point(280, 104)
+        Me.dtStart.Location = New System.Drawing.Point(154, 96)
         Me.dtStart.Name = "dtStart"
-        Me.dtStart.Size = New System.Drawing.Size(121, 22)
+        Me.dtStart.Size = New System.Drawing.Size(150, 22)
         Me.dtStart.TabIndex = 77
         '
         'Label2
@@ -220,7 +228,7 @@ Partial Class frmProductManagers
         Me.Label2.AutoSize = True
         Me.Label2.BackColor = System.Drawing.Color.Transparent
         Me.Label2.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(161, 132)
+        Me.Label2.Location = New System.Drawing.Point(7, 124)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(115, 15)
         Me.Label2.TabIndex = 76
@@ -231,7 +239,7 @@ Partial Class frmProductManagers
         Me.Label11.AutoSize = True
         Me.Label11.BackColor = System.Drawing.Color.Transparent
         Me.Label11.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.Location = New System.Drawing.Point(156, 107)
+        Me.Label11.Location = New System.Drawing.Point(7, 99)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(119, 15)
         Me.Label11.TabIndex = 75
@@ -245,14 +253,14 @@ Partial Class frmProductManagers
         Me.txtPm_Name.Location = New System.Drawing.Point(155, 40)
         Me.txtPm_Name.Name = "txtPm_Name"
         Me.txtPm_Name.ReadOnly = True
-        Me.txtPm_Name.Size = New System.Drawing.Size(243, 22)
+        Me.txtPm_Name.Size = New System.Drawing.Size(502, 22)
         Me.txtPm_Name.TabIndex = 44
         '
         'Label14
         '
         Me.Label14.AutoSize = True
         Me.Label14.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label14.Location = New System.Drawing.Point(13, 42)
+        Me.Label14.Location = New System.Drawing.Point(7, 42)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(140, 15)
         Me.Label14.TabIndex = 43
@@ -266,14 +274,14 @@ Partial Class frmProductManagers
         Me.txtPM_ID.Location = New System.Drawing.Point(155, 16)
         Me.txtPM_ID.Name = "txtPM_ID"
         Me.txtPM_ID.ReadOnly = True
-        Me.txtPM_ID.Size = New System.Drawing.Size(243, 22)
+        Me.txtPM_ID.Size = New System.Drawing.Size(502, 22)
         Me.txtPM_ID.TabIndex = 37
         '
         'lblItemCode
         '
         Me.lblItemCode.AutoSize = True
         Me.lblItemCode.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblItemCode.Location = New System.Drawing.Point(33, 20)
+        Me.lblItemCode.Location = New System.Drawing.Point(7, 20)
         Me.lblItemCode.Name = "lblItemCode"
         Me.lblItemCode.Size = New System.Drawing.Size(119, 15)
         Me.lblItemCode.TabIndex = 38
@@ -390,6 +398,45 @@ Partial Class frmProductManagers
         Me.colEndDate.Visible = False
         Me.colEndDate.Width = 150
         '
+        'LinkLabel3
+        '
+        Me.LinkLabel3.AutoSize = True
+        Me.LinkLabel3.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LinkLabel3.Location = New System.Drawing.Point(7, 73)
+        Me.LinkLabel3.Name = "LinkLabel3"
+        Me.LinkLabel3.Size = New System.Drawing.Size(67, 15)
+        Me.LinkLabel3.TabIndex = 869
+        Me.LinkLabel3.TabStop = True
+        Me.LinkLabel3.Text = "ConfigType"
+        '
+        'txtConfigtypeName
+        '
+        Me.txtConfigtypeName.AutoSize = False
+        Me.txtConfigtypeName.BackColor = System.Drawing.Color.White
+        Me.txtConfigtypeName.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtConfigtypeName.Location = New System.Drawing.Point(306, 66)
+        Me.txtConfigtypeName.Multiline = True
+        Me.txtConfigtypeName.Name = "txtConfigtypeName"
+        Me.txtConfigtypeName.ReadOnly = True
+        Me.txtConfigtypeName.Size = New System.Drawing.Size(351, 26)
+        Me.txtConfigtypeName.TabIndex = 868
+        Me.txtConfigtypeName.TabStop = False
+        Me.txtConfigtypeName.ThemeName = "Office2019Light"
+        '
+        'txtConfigtypeCode
+        '
+        Me.txtConfigtypeCode.AutoSize = False
+        Me.txtConfigtypeCode.BackColor = System.Drawing.Color.White
+        Me.txtConfigtypeCode.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtConfigtypeCode.Location = New System.Drawing.Point(154, 66)
+        Me.txtConfigtypeCode.Multiline = True
+        Me.txtConfigtypeCode.Name = "txtConfigtypeCode"
+        Me.txtConfigtypeCode.ReadOnly = True
+        Me.txtConfigtypeCode.Size = New System.Drawing.Size(150, 26)
+        Me.txtConfigtypeCode.TabIndex = 867
+        Me.txtConfigtypeCode.TabStop = False
+        Me.txtConfigtypeCode.ThemeName = "Office2019Light"
+        '
         'frmProductManagers
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -411,6 +458,8 @@ Partial Class frmProductManagers
         Me.tbListing.ResumeLayout(False)
         Me.tbListing.PerformLayout()
         CType(Me.dgItemList, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtConfigtypeName, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtConfigtypeCode, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -447,5 +496,7 @@ Partial Class frmProductManagers
     Friend WithEvents colPM_Name As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents colStartDate As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents colEndDate As System.Windows.Forms.DataGridViewTextBoxColumn
-
+    Friend WithEvents LinkLabel3 As LinkLabel
+    Friend WithEvents txtConfigtypeName As Telerik.WinControls.UI.RadTextBox
+    Friend WithEvents txtConfigtypeCode As Telerik.WinControls.UI.RadTextBox
 End Class

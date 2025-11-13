@@ -40,7 +40,7 @@ Partial Class UISalesAccountSpecialistMatrix
         Me.Panel7 = New System.Windows.Forms.Panel()
         Me.RadPageViewPage5 = New Telerik.WinControls.UI.RadPageViewPage()
         Me.Panel8 = New System.Windows.Forms.Panel()
-        Me.Office2010SilverTheme1 = New Telerik.WinControls.Themes.Office2010SilverTheme()
+        Me.Office2010SilverTheme1 = New Telerik.WinControls.Themes.Office2010BlueTheme()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.RadButton3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -261,7 +261,7 @@ Partial Class UISalesAccountSpecialistMatrix
     Friend WithEvents Panel3 As Panel
     Private WithEvents radPageView1 As Telerik.WinControls.UI.RadPageView
     Friend WithEvents RadButton1 As Telerik.WinControls.UI.RadButton
-    Friend WithEvents Office2010SilverTheme1 As Telerik.WinControls.Themes.Office2010SilverTheme
+    Friend WithEvents Office2010SilverTheme1 As Telerik.WinControls.Themes.Office2010BlueTheme
     Friend WithEvents RadButton2 As Telerik.WinControls.UI.RadButton
     Friend WithEvents RadButton3 As Telerik.WinControls.UI.RadButton
     Friend WithEvents RadPageViewPage1 As Telerik.WinControls.UI.RadPageViewPage

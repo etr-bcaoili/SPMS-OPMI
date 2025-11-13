@@ -104,7 +104,7 @@ Public Class UISalesManager
         End If
         If _SalesDistrictManager.Save Then
             SaveSuccess()
-            ShowData(txtDistrictCode.Tag)
+            ShowData(_SalesDistrictManager.DistrictID)
         Else
             UnSuccesSave()
         End If
@@ -157,18 +157,6 @@ Public Class UISalesManager
         txtEmailAddress.Text = _SalesDistrictManager.EmailAddress
         EditMode(False)
     End Sub
-    Private Sub ShowData2(ByVal RecordCode As String)
-        _SalesDistrictManager = SalesManager.LoadByCode(RecordCode)
-        txtDistrictCode.Tag = _SalesDistrictManager.DistrictID
-        txtDistrictCode.Text = _SalesDistrictManager.DistrictCode
-        txtDistrictSalesManager.Text = _SalesDistrictManager.DistrictName
-        dtEffectivityStartDate.Text = _SalesDistrictManager.EffectivityStartDate
-        dtEffectivityEndDate.Text = _SalesDistrictManager.EffectivityEndDate
-        txtConfigCode.Text = _SalesDistrictManager.ConfigtypeCode
-        txtEmailAddress.Text = _SalesDistrictManager.EmailAddress
-        EditMode(False)
-    End Sub
-
     Private Sub Findconfig_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles Findconfig.LinkClicked
         Dim tag As SelectionTags = Dialogs.ShowSearchDialog(Configuration.GetConfigtypeSql, "Medical Configuration")
         If Not tag Is Nothing Then

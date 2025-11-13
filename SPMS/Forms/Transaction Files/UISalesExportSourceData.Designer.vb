@@ -94,10 +94,9 @@ Partial Class UISalesExportSourceData
         Me.Panel2.Controls.Add(Me.Panel4)
         Me.Panel2.Controls.Add(Me.Panel3)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel2.Location = New System.Drawing.Point(0, 101)
-        Me.Panel2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel2.Location = New System.Drawing.Point(0, 89)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(2003, 918)
+        Me.Panel2.Size = New System.Drawing.Size(1502, 739)
         Me.Panel2.TabIndex = 174
         '
         'Panel5
@@ -105,10 +104,9 @@ Partial Class UISalesExportSourceData
         Me.Panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel5.Controls.Add(Me.GridView)
         Me.Panel5.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel5.Location = New System.Drawing.Point(0, 142)
-        Me.Panel5.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel5.Location = New System.Drawing.Point(0, 115)
         Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(1448, 774)
+        Me.Panel5.Size = New System.Drawing.Size(1085, 622)
         Me.Panel5.TabIndex = 2
         '
         'GridView
@@ -120,7 +118,6 @@ Partial Class UISalesExportSourceData
         Me.GridView.ForeColor = System.Drawing.Color.Black
         Me.GridView.ImeMode = System.Windows.Forms.ImeMode.NoControl
         Me.GridView.Location = New System.Drawing.Point(0, 0)
-        Me.GridView.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         '
         'GridView
         '
@@ -213,7 +210,7 @@ Partial Class UISalesExportSourceData
         Me.GridView.MasterTemplate.EnableGrouping = False
         Me.GridView.Name = "GridView"
         Me.GridView.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.GridView.Size = New System.Drawing.Size(1446, 772)
+        Me.GridView.Size = New System.Drawing.Size(1083, 620)
         Me.GridView.TabIndex = 54
         Me.GridView.ThemeName = "Office2010Silver"
         '
@@ -230,68 +227,61 @@ Partial Class UISalesExportSourceData
         Me.Panel4.Controls.Add(Me.txtConfigtypeCode)
         Me.Panel4.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel4.Location = New System.Drawing.Point(0, 0)
-        Me.Panel4.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(1448, 142)
+        Me.Panel4.Size = New System.Drawing.Size(1085, 115)
         Me.Panel4.TabIndex = 1
         '
         'cmdToMonth
         '
         Me.cmdToMonth.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmdToMonth.Location = New System.Drawing.Point(600, 62)
-        Me.cmdToMonth.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.cmdToMonth.Location = New System.Drawing.Point(450, 50)
         Me.cmdToMonth.Name = "cmdToMonth"
-        Me.cmdToMonth.Size = New System.Drawing.Size(183, 27)
+        Me.cmdToMonth.Size = New System.Drawing.Size(137, 23)
         Me.cmdToMonth.TabIndex = 770
         Me.cmdToMonth.ThemeName = "Office2010Silver"
         '
         'cmdYear
         '
         Me.cmdYear.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmdYear.Location = New System.Drawing.Point(157, 91)
-        Me.cmdYear.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.cmdYear.Location = New System.Drawing.Point(118, 74)
         Me.cmdYear.Name = "cmdYear"
-        Me.cmdYear.Size = New System.Drawing.Size(183, 27)
+        Me.cmdYear.Size = New System.Drawing.Size(137, 23)
         Me.cmdYear.TabIndex = 769
         Me.cmdYear.ThemeName = "Office2010Silver"
         '
         'RadLabel1
         '
         Me.RadLabel1.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RadLabel1.Location = New System.Drawing.Point(501, 63)
-        Me.RadLabel1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.RadLabel1.Location = New System.Drawing.Point(376, 51)
         Me.RadLabel1.Name = "RadLabel1"
-        Me.RadLabel1.Size = New System.Drawing.Size(85, 24)
+        Me.RadLabel1.Size = New System.Drawing.Size(68, 19)
         Me.RadLabel1.TabIndex = 768
         Me.RadLabel1.Text = "To Month :"
         '
         'cmdFromMonth
         '
         Me.cmdFromMonth.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmdFromMonth.Location = New System.Drawing.Point(157, 59)
-        Me.cmdFromMonth.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.cmdFromMonth.Location = New System.Drawing.Point(118, 48)
         Me.cmdFromMonth.Name = "cmdFromMonth"
-        Me.cmdFromMonth.Size = New System.Drawing.Size(183, 27)
+        Me.cmdFromMonth.Size = New System.Drawing.Size(137, 23)
         Me.cmdFromMonth.TabIndex = 767
         Me.cmdFromMonth.ThemeName = "Office2010Silver"
         '
         'RadLabel4
         '
         Me.RadLabel4.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RadLabel4.Location = New System.Drawing.Point(25, 62)
-        Me.RadLabel4.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.RadLabel4.Location = New System.Drawing.Point(19, 50)
         Me.RadLabel4.Name = "RadLabel4"
-        Me.RadLabel4.Size = New System.Drawing.Size(95, 24)
+        Me.RadLabel4.Size = New System.Drawing.Size(77, 19)
         Me.RadLabel4.TabIndex = 766
         Me.RadLabel4.Text = "From Month"
         '
         'RadLabel2
         '
         Me.RadLabel2.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RadLabel2.Location = New System.Drawing.Point(25, 94)
-        Me.RadLabel2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.RadLabel2.Location = New System.Drawing.Point(19, 76)
         Me.RadLabel2.Name = "RadLabel2"
-        Me.RadLabel2.Size = New System.Drawing.Size(38, 24)
+        Me.RadLabel2.Size = New System.Drawing.Size(31, 19)
         Me.RadLabel2.TabIndex = 764
         Me.RadLabel2.Text = "Year"
         '
@@ -299,10 +289,9 @@ Partial Class UISalesExportSourceData
         '
         Me.lnkDistributorCode.AutoSize = True
         Me.lnkDistributorCode.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lnkDistributorCode.Location = New System.Drawing.Point(25, 31)
-        Me.lnkDistributorCode.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lnkDistributorCode.Location = New System.Drawing.Point(19, 25)
         Me.lnkDistributorCode.Name = "lnkDistributorCode"
-        Me.lnkDistributorCode.Size = New System.Drawing.Size(88, 20)
+        Me.lnkDistributorCode.Size = New System.Drawing.Size(68, 15)
         Me.lnkDistributorCode.TabIndex = 763
         Me.lnkDistributorCode.TabStop = True
         Me.lnkDistributorCode.Text = "Configtype "
@@ -312,12 +301,11 @@ Partial Class UISalesExportSourceData
         Me.txtConfigtypeName.AutoSize = False
         Me.txtConfigtypeName.BackColor = System.Drawing.Color.WhiteSmoke
         Me.txtConfigtypeName.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtConfigtypeName.Location = New System.Drawing.Point(344, 23)
-        Me.txtConfigtypeName.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtConfigtypeName.Location = New System.Drawing.Point(258, 19)
         Me.txtConfigtypeName.Multiline = True
         Me.txtConfigtypeName.Name = "txtConfigtypeName"
         Me.txtConfigtypeName.ReadOnly = True
-        Me.txtConfigtypeName.Size = New System.Drawing.Size(439, 32)
+        Me.txtConfigtypeName.Size = New System.Drawing.Size(329, 26)
         Me.txtConfigtypeName.TabIndex = 762
         Me.txtConfigtypeName.TabStop = False
         Me.txtConfigtypeName.ThemeName = "Office2019Light"
@@ -327,12 +315,11 @@ Partial Class UISalesExportSourceData
         Me.txtConfigtypeCode.AutoSize = False
         Me.txtConfigtypeCode.BackColor = System.Drawing.Color.WhiteSmoke
         Me.txtConfigtypeCode.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtConfigtypeCode.Location = New System.Drawing.Point(157, 23)
-        Me.txtConfigtypeCode.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtConfigtypeCode.Location = New System.Drawing.Point(118, 19)
         Me.txtConfigtypeCode.Multiline = True
         Me.txtConfigtypeCode.Name = "txtConfigtypeCode"
         Me.txtConfigtypeCode.ReadOnly = True
-        Me.txtConfigtypeCode.Size = New System.Drawing.Size(183, 32)
+        Me.txtConfigtypeCode.Size = New System.Drawing.Size(137, 26)
         Me.txtConfigtypeCode.TabIndex = 761
         Me.txtConfigtypeCode.TabStop = False
         Me.txtConfigtypeCode.ThemeName = "Office2019Light"
@@ -342,10 +329,9 @@ Partial Class UISalesExportSourceData
         Me.Panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel3.Controls.Add(Me.GrdCompanyView)
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel3.Location = New System.Drawing.Point(1448, 0)
-        Me.Panel3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel3.Location = New System.Drawing.Point(1085, 0)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(553, 916)
+        Me.Panel3.Size = New System.Drawing.Size(415, 737)
         Me.Panel3.TabIndex = 0
         '
         'GrdCompanyView
@@ -357,7 +343,6 @@ Partial Class UISalesExportSourceData
         Me.GrdCompanyView.ForeColor = System.Drawing.Color.Black
         Me.GrdCompanyView.ImeMode = System.Windows.Forms.ImeMode.NoControl
         Me.GrdCompanyView.Location = New System.Drawing.Point(0, 0)
-        Me.GrdCompanyView.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         '
         'GrdCompanyView
         '
@@ -383,22 +368,21 @@ Partial Class UISalesExportSourceData
         Me.GrdCompanyView.MasterTemplate.EnableGrouping = False
         Me.GrdCompanyView.Name = "GrdCompanyView"
         Me.GrdCompanyView.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.GrdCompanyView.Size = New System.Drawing.Size(551, 914)
+        Me.GrdCompanyView.Size = New System.Drawing.Size(413, 735)
         Me.GrdCompanyView.TabIndex = 54
         Me.GrdCompanyView.ThemeName = "Office2010Silver"
         '
         'RadMenu1
         '
         Me.RadMenu1.Items.AddRange(New Telerik.WinControls.RadItem() {Me.btnTransfered, Me.btnDelete, Me.btnFinddata, Me.btnClear, Me.btnClose})
-        Me.RadMenu1.Location = New System.Drawing.Point(0, 63)
-        Me.RadMenu1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.RadMenu1.Location = New System.Drawing.Point(0, 51)
         Me.RadMenu1.Name = "RadMenu1"
-        Me.RadMenu1.Padding = New System.Windows.Forms.Padding(3, 2, 0, 0)
+        Me.RadMenu1.Padding = New System.Windows.Forms.Padding(2, 2, 0, 0)
         '
         '
         '
-        Me.RadMenu1.RootElement.Padding = New System.Windows.Forms.Padding(3, 2, 0, 0)
-        Me.RadMenu1.Size = New System.Drawing.Size(2003, 38)
+        Me.RadMenu1.RootElement.Padding = New System.Windows.Forms.Padding(2, 2, 0, 0)
+        Me.RadMenu1.Size = New System.Drawing.Size(1502, 38)
         Me.RadMenu1.TabIndex = 173
         Me.RadMenu1.ThemeName = "Office2010Silver"
         '
@@ -490,9 +474,8 @@ Partial Class UISalesExportSourceData
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(2003, 63)
+        Me.Panel1.Size = New System.Drawing.Size(1502, 51)
         Me.Panel1.TabIndex = 34
         '
         'Label5
@@ -501,24 +484,22 @@ Partial Class UISalesExportSourceData
         Me.Label5.BackColor = System.Drawing.Color.Transparent
         Me.Label5.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.White
-        Me.Label5.Location = New System.Drawing.Point(29, 20)
-        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label5.Location = New System.Drawing.Point(22, 16)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(229, 28)
+        Me.Label5.Size = New System.Drawing.Size(182, 21)
         Me.Label5.TabIndex = 1
         Me.Label5.Text = "Sales Export Source Data"
         '
         'UISalesExportSourceData
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.RadMenu1)
         Me.Controls.Add(Me.Panel1)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Name = "UISalesExportSourceData"
-        Me.Size = New System.Drawing.Size(2003, 1019)
+        Me.Size = New System.Drawing.Size(1502, 828)
         Me.Panel2.ResumeLayout(False)
         Me.Panel5.ResumeLayout(False)
         CType(Me.GridView.MasterTemplate, System.ComponentModel.ISupportInitialize).EndInit()

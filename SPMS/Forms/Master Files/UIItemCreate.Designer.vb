@@ -22,15 +22,22 @@ Partial Class UIItemCreate
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim GridViewTextBoxColumn1 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn2 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewDateTimeColumn1 As Telerik.WinControls.UI.GridViewDateTimeColumn = New Telerik.WinControls.UI.GridViewDateTimeColumn()
+        Dim GridViewDateTimeColumn2 As Telerik.WinControls.UI.GridViewDateTimeColumn = New Telerik.WinControls.UI.GridViewDateTimeColumn()
+        Dim GridViewComboBoxColumn1 As Telerik.WinControls.UI.GridViewComboBoxColumn = New Telerik.WinControls.UI.GridViewComboBoxColumn()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.RadGroupBox1 = New Telerik.WinControls.UI.RadGroupBox()
+        Me.GrdView = New Telerik.WinControls.UI.RadGridView()
+        Me.RadMenu2 = New Telerik.WinControls.UI.RadMenu()
+        Me.btnAdd_productGroup = New Telerik.WinControls.UI.RadMenuButtonItem()
+        Me.btnRemove_productgroup = New Telerik.WinControls.UI.RadMenuButtonItem()
         Me.chkIsActive = New Telerik.WinControls.UI.RadCheckBox()
         Me.dtTodate = New Telerik.WinControls.UI.RadDateTimePicker()
         Me.dtFromDate = New Telerik.WinControls.UI.RadDateTimePicker()
         Me.RadLabel9 = New Telerik.WinControls.UI.RadLabel()
         Me.RadLabel10 = New Telerik.WinControls.UI.RadLabel()
-        Me.LinkProductItemGroup = New System.Windows.Forms.LinkLabel()
-        Me.txtProductItemGroupName = New Telerik.WinControls.UI.RadTextBox()
-        Me.txtproductItemGroupCode = New Telerik.WinControls.UI.RadTextBox()
         Me.LinkProductCategory = New System.Windows.Forms.LinkLabel()
         Me.txtProductItemCategory = New Telerik.WinControls.UI.RadTextBox()
         Me.txtProductCategoryCode = New Telerik.WinControls.UI.RadTextBox()
@@ -62,7 +69,7 @@ Partial Class UIItemCreate
         Me.RadLabel3 = New Telerik.WinControls.UI.RadLabel()
         Me.txtItemDescription = New Telerik.WinControls.UI.RadTextBox()
         Me.txtItemCode = New Telerik.WinControls.UI.RadTextBox()
-        Me.Office2019LightTheme1 = New Telerik.WinControls.Themes.Office2010BlueTheme
+        Me.Office2019LightTheme1 = New Telerik.WinControls.Themes.Office2010BlueTheme()
         Me.RadMenu1 = New Telerik.WinControls.UI.RadMenu()
         Me.btnNew = New Telerik.WinControls.UI.RadMenuButtonItem()
         Me.btnEdit = New Telerik.WinControls.UI.RadMenuButtonItem()
@@ -76,13 +83,16 @@ Partial Class UIItemCreate
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel3.SuspendLayout()
+        CType(Me.RadGroupBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.RadGroupBox1.SuspendLayout()
+        CType(Me.GrdView, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GrdView.MasterTemplate, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadMenu2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.chkIsActive, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dtTodate, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dtFromDate, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadLabel9, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadLabel10, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txtProductItemGroupName, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txtproductItemGroupCode, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtProductItemCategory, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtProductCategoryCode, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtItemGroupName, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -115,15 +125,13 @@ Partial Class UIItemCreate
         '
         'Panel3
         '
-        Me.Panel3.BackColor = System.Drawing.Color.White
+        Me.Panel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(246, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Panel3.Controls.Add(Me.RadGroupBox1)
         Me.Panel3.Controls.Add(Me.chkIsActive)
         Me.Panel3.Controls.Add(Me.dtTodate)
         Me.Panel3.Controls.Add(Me.dtFromDate)
         Me.Panel3.Controls.Add(Me.RadLabel9)
         Me.Panel3.Controls.Add(Me.RadLabel10)
-        Me.Panel3.Controls.Add(Me.LinkProductItemGroup)
-        Me.Panel3.Controls.Add(Me.txtProductItemGroupName)
-        Me.Panel3.Controls.Add(Me.txtproductItemGroupCode)
         Me.Panel3.Controls.Add(Me.LinkProductCategory)
         Me.Panel3.Controls.Add(Me.txtProductItemCategory)
         Me.Panel3.Controls.Add(Me.txtProductCategoryCode)
@@ -156,19 +164,132 @@ Partial Class UIItemCreate
         Me.Panel3.Controls.Add(Me.txtItemDescription)
         Me.Panel3.Controls.Add(Me.txtItemCode)
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel3.Location = New System.Drawing.Point(0, 92)
+        Me.Panel3.Location = New System.Drawing.Point(0, 97)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(1625, 746)
+        Me.Panel3.Size = New System.Drawing.Size(1625, 741)
         Me.Panel3.TabIndex = 172
+        '
+        'RadGroupBox1
+        '
+        Me.RadGroupBox1.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping
+        Me.RadGroupBox1.Controls.Add(Me.GrdView)
+        Me.RadGroupBox1.Controls.Add(Me.RadMenu2)
+        Me.RadGroupBox1.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RadGroupBox1.HeaderText = "Product Item Group"
+        Me.RadGroupBox1.Location = New System.Drawing.Point(41, 326)
+        Me.RadGroupBox1.Name = "RadGroupBox1"
+        '
+        '
+        '
+        Me.RadGroupBox1.RootElement.Padding = New System.Windows.Forms.Padding(2, 18, 2, 2)
+        Me.RadGroupBox1.Size = New System.Drawing.Size(626, 238)
+        Me.RadGroupBox1.TabIndex = 751
+        Me.RadGroupBox1.Text = "Product Item Group"
+        '
+        'GrdView
+        '
+        Me.GrdView.BackColor = System.Drawing.SystemColors.Control
+        Me.GrdView.Cursor = System.Windows.Forms.Cursors.Default
+        Me.GrdView.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.GrdView.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!)
+        Me.GrdView.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.GrdView.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.GrdView.Location = New System.Drawing.Point(2, 56)
+        '
+        'GrdView
+        '
+        Me.GrdView.MasterTemplate.AllowAddNewRow = False
+        Me.GrdView.MasterTemplate.AllowDeleteRow = False
+        Me.GrdView.MasterTemplate.AllowRowResize = False
+        Me.GrdView.MasterTemplate.AutoGenerateColumns = False
+        GridViewTextBoxColumn1.EnableExpressionEditor = False
+        GridViewTextBoxColumn1.HeaderText = "Code"
+        GridViewTextBoxColumn1.Name = "column1"
+        GridViewTextBoxColumn1.ReadOnly = True
+        GridViewTextBoxColumn1.Width = 83
+        GridViewTextBoxColumn2.EnableExpressionEditor = False
+        GridViewTextBoxColumn2.HeaderText = "Description Name"
+        GridViewTextBoxColumn2.Name = "column2"
+        GridViewTextBoxColumn2.ReadOnly = True
+        GridViewTextBoxColumn2.Width = 162
+        GridViewDateTimeColumn1.EnableExpressionEditor = False
+        GridViewDateTimeColumn1.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        GridViewDateTimeColumn1.FormatString = "{0:yyyy-MM-dd}"
+        GridViewDateTimeColumn1.HeaderText = "Start Effectivity Date"
+        GridViewDateTimeColumn1.Name = "column3"
+        GridViewDateTimeColumn1.Width = 126
+        GridViewDateTimeColumn2.EnableExpressionEditor = False
+        GridViewDateTimeColumn2.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        GridViewDateTimeColumn2.FormatString = "{0:yyyy-MM-dd}"
+        GridViewDateTimeColumn2.HeaderText = "Start Effectivity Date"
+        GridViewDateTimeColumn2.Name = "column4"
+        GridViewDateTimeColumn2.Width = 124
+        GridViewComboBoxColumn1.EnableExpressionEditor = False
+        GridViewComboBoxColumn1.HeaderText = "Configtype Code"
+        GridViewComboBoxColumn1.Name = "column5"
+        GridViewComboBoxColumn1.Width = 101
+        Me.GrdView.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewTextBoxColumn1, GridViewTextBoxColumn2, GridViewDateTimeColumn1, GridViewDateTimeColumn2, GridViewComboBoxColumn1})
+        Me.GrdView.MasterTemplate.EnableFiltering = True
+        Me.GrdView.MasterTemplate.EnableGrouping = False
+        Me.GrdView.Name = "GrdView"
+        Me.GrdView.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.GrdView.Size = New System.Drawing.Size(622, 180)
+        Me.GrdView.TabIndex = 173
+        Me.GrdView.ThemeName = "ControlDefault"
+        '
+        'RadMenu2
+        '
+        Me.RadMenu2.Items.AddRange(New Telerik.WinControls.RadItem() {Me.btnAdd_productGroup, Me.btnRemove_productgroup})
+        Me.RadMenu2.Location = New System.Drawing.Point(2, 18)
+        Me.RadMenu2.Name = "RadMenu2"
+        Me.RadMenu2.Padding = New System.Windows.Forms.Padding(2, 2, 0, 0)
+        '
+        '
+        '
+        Me.RadMenu2.RootElement.Padding = New System.Windows.Forms.Padding(2, 2, 0, 0)
+        Me.RadMenu2.Size = New System.Drawing.Size(622, 38)
+        Me.RadMenu2.TabIndex = 172
+        Me.RadMenu2.ThemeName = "ControlDefault"
+        '
+        'btnAdd_productGroup
+        '
+        Me.btnAdd_productGroup.AccessibleDescription = "&New"
+        Me.btnAdd_productGroup.AccessibleName = "&New"
+        '
+        '
+        '
+        Me.btnAdd_productGroup.ButtonElement.AccessibleDescription = "&New"
+        Me.btnAdd_productGroup.ButtonElement.AccessibleName = "&New"
+        Me.btnAdd_productGroup.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAdd_productGroup.Image = Global.SPMSOPCI.My.Resources.Resources.if_Plus_1891033
+        Me.btnAdd_productGroup.Name = "btnAdd_productGroup"
+        Me.btnAdd_productGroup.Text = "&Add"
+        Me.btnAdd_productGroup.UseCompatibleTextRendering = False
+        Me.btnAdd_productGroup.Visibility = Telerik.WinControls.ElementVisibility.Visible
+        '
+        'btnRemove_productgroup
+        '
+        Me.btnRemove_productgroup.AccessibleDescription = "&Clear"
+        Me.btnRemove_productgroup.AccessibleName = "&Clear"
+        '
+        '
+        '
+        Me.btnRemove_productgroup.ButtonElement.AccessibleDescription = "&Clear"
+        Me.btnRemove_productgroup.ButtonElement.AccessibleName = "&Clear"
+        Me.btnRemove_productgroup.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnRemove_productgroup.Image = Global.SPMSOPCI.My.Resources.Resources.if_ko_red_539481
+        Me.btnRemove_productgroup.Name = "btnRemove_productgroup"
+        Me.btnRemove_productgroup.Text = "&Remove"
+        Me.btnRemove_productgroup.UseCompatibleTextRendering = False
+        Me.btnRemove_productgroup.Visibility = Telerik.WinControls.ElementVisibility.Visible
         '
         'chkIsActive
         '
         Me.chkIsActive.CheckAlignment = System.Drawing.ContentAlignment.TopRight
-        Me.chkIsActive.Checked = System.Windows.Forms.CheckState.Checked
         Me.chkIsActive.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.chkIsActive.Location = New System.Drawing.Point(389, 38)
+        Me.chkIsActive.Location = New System.Drawing.Point(449, 30)
         Me.chkIsActive.Name = "chkIsActive"
-        Me.chkIsActive.Size = New System.Drawing.Size(68, 17)
+        Me.chkIsActive.Size = New System.Drawing.Size(67, 19)
         Me.chkIsActive.TabIndex = 750
         Me.chkIsActive.Text = "Is Active"
         Me.chkIsActive.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter
@@ -181,7 +302,7 @@ Partial Class UIItemCreate
             Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.dtTodate.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.dtTodate.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtTodate.Location = New System.Drawing.Point(473, 527)
+        Me.dtTodate.Location = New System.Drawing.Point(529, 693)
         Me.dtTodate.Name = "dtTodate"
         Me.dtTodate.Size = New System.Drawing.Size(136, 23)
         Me.dtTodate.TabIndex = 742
@@ -196,7 +317,7 @@ Partial Class UIItemCreate
             Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.dtFromDate.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.dtFromDate.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtFromDate.Location = New System.Drawing.Point(473, 501)
+        Me.dtFromDate.Location = New System.Drawing.Point(529, 667)
         Me.dtFromDate.Name = "dtFromDate"
         Me.dtFromDate.Size = New System.Drawing.Size(136, 23)
         Me.dtFromDate.TabIndex = 741
@@ -210,7 +331,7 @@ Partial Class UIItemCreate
         Me.RadLabel9.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.RadLabel9.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RadLabel9.Location = New System.Drawing.Point(341, 530)
+        Me.RadLabel9.Location = New System.Drawing.Point(397, 696)
         Me.RadLabel9.Name = "RadLabel9"
         Me.RadLabel9.Size = New System.Drawing.Size(116, 19)
         Me.RadLabel9.TabIndex = 740
@@ -221,54 +342,17 @@ Partial Class UIItemCreate
         Me.RadLabel10.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.RadLabel10.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RadLabel10.Location = New System.Drawing.Point(341, 504)
+        Me.RadLabel10.Location = New System.Drawing.Point(397, 670)
         Me.RadLabel10.Name = "RadLabel10"
         Me.RadLabel10.Size = New System.Drawing.Size(125, 19)
         Me.RadLabel10.TabIndex = 739
         Me.RadLabel10.Text = "Effectivity Start Date "
         '
-        'LinkProductItemGroup
-        '
-        Me.LinkProductItemGroup.AutoSize = True
-        Me.LinkProductItemGroup.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LinkProductItemGroup.Location = New System.Drawing.Point(38, 329)
-        Me.LinkProductItemGroup.Name = "LinkProductItemGroup"
-        Me.LinkProductItemGroup.Size = New System.Drawing.Size(113, 15)
-        Me.LinkProductItemGroup.TabIndex = 738
-        Me.LinkProductItemGroup.TabStop = True
-        Me.LinkProductItemGroup.Text = "Product Item Group"
-        '
-        'txtProductItemGroupName
-        '
-        Me.txtProductItemGroupName.AutoSize = False
-        Me.txtProductItemGroupName.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.txtProductItemGroupName.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtProductItemGroupName.Location = New System.Drawing.Point(353, 323)
-        Me.txtProductItemGroupName.Multiline = True
-        Me.txtProductItemGroupName.Name = "txtProductItemGroupName"
-        Me.txtProductItemGroupName.ReadOnly = True
-        Me.txtProductItemGroupName.Size = New System.Drawing.Size(256, 25)
-        Me.txtProductItemGroupName.TabIndex = 14
-        Me.txtProductItemGroupName.ThemeName = "Office2019Light"
-        '
-        'txtproductItemGroupCode
-        '
-        Me.txtproductItemGroupCode.AutoSize = False
-        Me.txtproductItemGroupCode.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.txtproductItemGroupCode.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtproductItemGroupCode.Location = New System.Drawing.Point(186, 323)
-        Me.txtproductItemGroupCode.Multiline = True
-        Me.txtproductItemGroupCode.Name = "txtproductItemGroupCode"
-        Me.txtproductItemGroupCode.ReadOnly = True
-        Me.txtproductItemGroupCode.Size = New System.Drawing.Size(165, 25)
-        Me.txtproductItemGroupCode.TabIndex = 13
-        Me.txtproductItemGroupCode.ThemeName = "Office2019Light"
-        '
         'LinkProductCategory
         '
         Me.LinkProductCategory.AutoSize = True
         Me.LinkProductCategory.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LinkProductCategory.Location = New System.Drawing.Point(38, 427)
+        Me.LinkProductCategory.Location = New System.Drawing.Point(38, 633)
         Me.LinkProductCategory.Name = "LinkProductCategory"
         Me.LinkProductCategory.Size = New System.Drawing.Size(99, 15)
         Me.LinkProductCategory.TabIndex = 732
@@ -280,12 +364,13 @@ Partial Class UIItemCreate
         Me.txtProductItemCategory.AutoSize = False
         Me.txtProductItemCategory.BackColor = System.Drawing.Color.WhiteSmoke
         Me.txtProductItemCategory.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtProductItemCategory.Location = New System.Drawing.Point(353, 421)
+        Me.txtProductItemCategory.Location = New System.Drawing.Point(410, 627)
         Me.txtProductItemCategory.Multiline = True
         Me.txtProductItemCategory.Name = "txtProductItemCategory"
         Me.txtProductItemCategory.ReadOnly = True
-        Me.txtProductItemCategory.Size = New System.Drawing.Size(256, 25)
+        Me.txtProductItemCategory.Size = New System.Drawing.Size(255, 25)
         Me.txtProductItemCategory.TabIndex = 20
+        Me.txtProductItemCategory.TabStop = False
         Me.txtProductItemCategory.ThemeName = "Office2019Light"
         '
         'txtProductCategoryCode
@@ -293,19 +378,20 @@ Partial Class UIItemCreate
         Me.txtProductCategoryCode.AutoSize = False
         Me.txtProductCategoryCode.BackColor = System.Drawing.Color.WhiteSmoke
         Me.txtProductCategoryCode.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtProductCategoryCode.Location = New System.Drawing.Point(186, 421)
+        Me.txtProductCategoryCode.Location = New System.Drawing.Point(186, 627)
         Me.txtProductCategoryCode.Multiline = True
         Me.txtProductCategoryCode.Name = "txtProductCategoryCode"
         Me.txtProductCategoryCode.ReadOnly = True
-        Me.txtProductCategoryCode.Size = New System.Drawing.Size(165, 25)
+        Me.txtProductCategoryCode.Size = New System.Drawing.Size(222, 25)
         Me.txtProductCategoryCode.TabIndex = 19
+        Me.txtProductCategoryCode.TabStop = False
         Me.txtProductCategoryCode.ThemeName = "Office2019Light"
         '
         'LinkItemGroup
         '
         Me.LinkItemGroup.AutoSize = True
         Me.LinkItemGroup.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LinkItemGroup.Location = New System.Drawing.Point(38, 392)
+        Me.LinkItemGroup.Location = New System.Drawing.Point(38, 603)
         Me.LinkItemGroup.Name = "LinkItemGroup"
         Me.LinkItemGroup.Size = New System.Drawing.Size(98, 15)
         Me.LinkItemGroup.TabIndex = 729
@@ -317,12 +403,13 @@ Partial Class UIItemCreate
         Me.txtItemGroupName.AutoSize = False
         Me.txtItemGroupName.BackColor = System.Drawing.Color.WhiteSmoke
         Me.txtItemGroupName.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtItemGroupName.Location = New System.Drawing.Point(353, 387)
+        Me.txtItemGroupName.Location = New System.Drawing.Point(410, 598)
         Me.txtItemGroupName.Multiline = True
         Me.txtItemGroupName.Name = "txtItemGroupName"
         Me.txtItemGroupName.ReadOnly = True
-        Me.txtItemGroupName.Size = New System.Drawing.Size(256, 25)
+        Me.txtItemGroupName.Size = New System.Drawing.Size(255, 25)
         Me.txtItemGroupName.TabIndex = 18
+        Me.txtItemGroupName.TabStop = False
         Me.txtItemGroupName.ThemeName = "Office2019Light"
         '
         'txtItemGroupCode
@@ -330,19 +417,20 @@ Partial Class UIItemCreate
         Me.txtItemGroupCode.AutoSize = False
         Me.txtItemGroupCode.BackColor = System.Drawing.Color.WhiteSmoke
         Me.txtItemGroupCode.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtItemGroupCode.Location = New System.Drawing.Point(186, 387)
+        Me.txtItemGroupCode.Location = New System.Drawing.Point(186, 598)
         Me.txtItemGroupCode.Multiline = True
         Me.txtItemGroupCode.Name = "txtItemGroupCode"
         Me.txtItemGroupCode.ReadOnly = True
-        Me.txtItemGroupCode.Size = New System.Drawing.Size(165, 25)
+        Me.txtItemGroupCode.Size = New System.Drawing.Size(222, 25)
         Me.txtItemGroupCode.TabIndex = 17
+        Me.txtItemGroupCode.TabStop = False
         Me.txtItemGroupCode.ThemeName = "Office2019Light"
         '
         'LinkTherapeutic
         '
         Me.LinkTherapeutic.AutoSize = True
         Me.LinkTherapeutic.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LinkTherapeutic.Location = New System.Drawing.Point(38, 364)
+        Me.LinkTherapeutic.Location = New System.Drawing.Point(38, 575)
         Me.LinkTherapeutic.Name = "LinkTherapeutic"
         Me.LinkTherapeutic.Size = New System.Drawing.Size(127, 15)
         Me.LinkTherapeutic.TabIndex = 726
@@ -354,12 +442,13 @@ Partial Class UIItemCreate
         Me.txtItemClassName.AutoSize = False
         Me.txtItemClassName.BackColor = System.Drawing.Color.WhiteSmoke
         Me.txtItemClassName.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtItemClassName.Location = New System.Drawing.Point(353, 359)
+        Me.txtItemClassName.Location = New System.Drawing.Point(410, 570)
         Me.txtItemClassName.Multiline = True
         Me.txtItemClassName.Name = "txtItemClassName"
         Me.txtItemClassName.ReadOnly = True
-        Me.txtItemClassName.Size = New System.Drawing.Size(256, 25)
+        Me.txtItemClassName.Size = New System.Drawing.Size(255, 25)
         Me.txtItemClassName.TabIndex = 16
+        Me.txtItemClassName.TabStop = False
         Me.txtItemClassName.ThemeName = "Office2019Light"
         '
         'txtItemTherapeuticCode
@@ -367,17 +456,19 @@ Partial Class UIItemCreate
         Me.txtItemTherapeuticCode.AutoSize = False
         Me.txtItemTherapeuticCode.BackColor = System.Drawing.Color.WhiteSmoke
         Me.txtItemTherapeuticCode.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtItemTherapeuticCode.Location = New System.Drawing.Point(186, 359)
+        Me.txtItemTherapeuticCode.Location = New System.Drawing.Point(186, 570)
         Me.txtItemTherapeuticCode.Multiline = True
         Me.txtItemTherapeuticCode.Name = "txtItemTherapeuticCode"
         Me.txtItemTherapeuticCode.ReadOnly = True
-        Me.txtItemTherapeuticCode.Size = New System.Drawing.Size(165, 25)
+        Me.txtItemTherapeuticCode.Size = New System.Drawing.Size(222, 25)
         Me.txtItemTherapeuticCode.TabIndex = 15
+        Me.txtItemTherapeuticCode.TabStop = False
         Me.txtItemTherapeuticCode.ThemeName = "Office2019Light"
         '
         'LinkItemDivision
         '
         Me.LinkItemDivision.AutoSize = True
+        Me.LinkItemDivision.Enabled = False
         Me.LinkItemDivision.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LinkItemDivision.Location = New System.Drawing.Point(38, 303)
         Me.LinkItemDivision.Name = "LinkItemDivision"
@@ -385,32 +476,39 @@ Partial Class UIItemCreate
         Me.LinkItemDivision.TabIndex = 723
         Me.LinkItemDivision.TabStop = True
         Me.LinkItemDivision.Text = "Item Division Code"
+        Me.LinkItemDivision.Visible = False
         '
         'txtItemdivisionName
         '
         Me.txtItemdivisionName.AutoSize = False
         Me.txtItemdivisionName.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.txtItemdivisionName.Enabled = False
         Me.txtItemdivisionName.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtItemdivisionName.Location = New System.Drawing.Point(353, 295)
+        Me.txtItemdivisionName.Location = New System.Drawing.Point(410, 295)
         Me.txtItemdivisionName.Multiline = True
         Me.txtItemdivisionName.Name = "txtItemdivisionName"
         Me.txtItemdivisionName.ReadOnly = True
-        Me.txtItemdivisionName.Size = New System.Drawing.Size(256, 25)
+        Me.txtItemdivisionName.Size = New System.Drawing.Size(257, 25)
         Me.txtItemdivisionName.TabIndex = 12
+        Me.txtItemdivisionName.TabStop = False
         Me.txtItemdivisionName.ThemeName = "Office2019Light"
+        Me.txtItemdivisionName.Visible = False
         '
         'txtItemDivisionCode
         '
         Me.txtItemDivisionCode.AutoSize = False
         Me.txtItemDivisionCode.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.txtItemDivisionCode.Enabled = False
         Me.txtItemDivisionCode.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtItemDivisionCode.Location = New System.Drawing.Point(186, 295)
         Me.txtItemDivisionCode.Multiline = True
         Me.txtItemDivisionCode.Name = "txtItemDivisionCode"
         Me.txtItemDivisionCode.ReadOnly = True
-        Me.txtItemDivisionCode.Size = New System.Drawing.Size(165, 25)
+        Me.txtItemDivisionCode.Size = New System.Drawing.Size(222, 25)
         Me.txtItemDivisionCode.TabIndex = 11
+        Me.txtItemDivisionCode.TabStop = False
         Me.txtItemDivisionCode.ThemeName = "Office2019Light"
+        Me.txtItemDivisionCode.Visible = False
         '
         'lnkMotherCode
         '
@@ -428,12 +526,13 @@ Partial Class UIItemCreate
         Me.txtmotherDescription.AutoSize = False
         Me.txtmotherDescription.BackColor = System.Drawing.Color.WhiteSmoke
         Me.txtmotherDescription.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtmotherDescription.Location = New System.Drawing.Point(353, 267)
+        Me.txtmotherDescription.Location = New System.Drawing.Point(410, 267)
         Me.txtmotherDescription.Multiline = True
         Me.txtmotherDescription.Name = "txtmotherDescription"
         Me.txtmotherDescription.ReadOnly = True
-        Me.txtmotherDescription.Size = New System.Drawing.Size(256, 25)
+        Me.txtmotherDescription.Size = New System.Drawing.Size(257, 25)
         Me.txtmotherDescription.TabIndex = 10
+        Me.txtmotherDescription.TabStop = False
         Me.txtmotherDescription.ThemeName = "Office2019Light"
         '
         'txtMotherCode
@@ -445,8 +544,9 @@ Partial Class UIItemCreate
         Me.txtMotherCode.Multiline = True
         Me.txtMotherCode.Name = "txtMotherCode"
         Me.txtMotherCode.ReadOnly = True
-        Me.txtMotherCode.Size = New System.Drawing.Size(165, 25)
+        Me.txtMotherCode.Size = New System.Drawing.Size(222, 25)
         Me.txtMotherCode.TabIndex = 9
+        Me.txtMotherCode.TabStop = False
         Me.txtMotherCode.ThemeName = "Office2019Light"
         '
         'RadLabel8
@@ -469,8 +569,9 @@ Partial Class UIItemCreate
         Me.txtItemQuantity.Multiline = True
         Me.txtItemQuantity.Name = "txtItemQuantity"
         Me.txtItemQuantity.ReadOnly = True
-        Me.txtItemQuantity.Size = New System.Drawing.Size(165, 25)
+        Me.txtItemQuantity.Size = New System.Drawing.Size(222, 25)
         Me.txtItemQuantity.TabIndex = 8
+        Me.txtItemQuantity.TabStop = False
         Me.txtItemQuantity.ThemeName = "Office2019Light"
         '
         'RadLabel7
@@ -493,8 +594,9 @@ Partial Class UIItemCreate
         Me.txtunitment.Multiline = True
         Me.txtunitment.Name = "txtunitment"
         Me.txtunitment.ReadOnly = True
-        Me.txtunitment.Size = New System.Drawing.Size(165, 25)
+        Me.txtunitment.Size = New System.Drawing.Size(222, 25)
         Me.txtunitment.TabIndex = 7
+        Me.txtunitment.TabStop = False
         Me.txtunitment.ThemeName = "Office2019Light"
         '
         'RadLabel6
@@ -517,8 +619,9 @@ Partial Class UIItemCreate
         Me.txtItemStrength.Multiline = True
         Me.txtItemStrength.Name = "txtItemStrength"
         Me.txtItemStrength.ReadOnly = True
-        Me.txtItemStrength.Size = New System.Drawing.Size(165, 25)
+        Me.txtItemStrength.Size = New System.Drawing.Size(222, 25)
         Me.txtItemStrength.TabIndex = 6
+        Me.txtItemStrength.TabStop = False
         Me.txtItemStrength.ThemeName = "Office2019Light"
         '
         'RadLabel5
@@ -541,8 +644,9 @@ Partial Class UIItemCreate
         Me.txtItemForm.Multiline = True
         Me.txtItemForm.Name = "txtItemForm"
         Me.txtItemForm.ReadOnly = True
-        Me.txtItemForm.Size = New System.Drawing.Size(165, 25)
+        Me.txtItemForm.Size = New System.Drawing.Size(222, 25)
         Me.txtItemForm.TabIndex = 5
+        Me.txtItemForm.TabStop = False
         Me.txtItemForm.ThemeName = "Office2019Light"
         '
         'RadLabel4
@@ -565,8 +669,9 @@ Partial Class UIItemCreate
         Me.txtGenericName.Multiline = True
         Me.txtGenericName.Name = "txtGenericName"
         Me.txtGenericName.ReadOnly = True
-        Me.txtGenericName.Size = New System.Drawing.Size(423, 25)
+        Me.txtGenericName.Size = New System.Drawing.Size(481, 25)
         Me.txtGenericName.TabIndex = 4
+        Me.txtGenericName.TabStop = False
         Me.txtGenericName.ThemeName = "Office2019Light"
         '
         'RadLabel2
@@ -589,8 +694,9 @@ Partial Class UIItemCreate
         Me.txtBrandName.Multiline = True
         Me.txtBrandName.Name = "txtBrandName"
         Me.txtBrandName.ReadOnly = True
-        Me.txtBrandName.Size = New System.Drawing.Size(423, 25)
+        Me.txtBrandName.Size = New System.Drawing.Size(481, 25)
         Me.txtBrandName.TabIndex = 3
+        Me.txtBrandName.TabStop = False
         Me.txtBrandName.ThemeName = "Office2019Light"
         '
         'RadLabel1
@@ -624,8 +730,9 @@ Partial Class UIItemCreate
         Me.txtItemDescription.Multiline = True
         Me.txtItemDescription.Name = "txtItemDescription"
         Me.txtItemDescription.ReadOnly = True
-        Me.txtItemDescription.Size = New System.Drawing.Size(423, 24)
+        Me.txtItemDescription.Size = New System.Drawing.Size(481, 24)
         Me.txtItemDescription.TabIndex = 2
+        Me.txtItemDescription.TabStop = False
         Me.txtItemDescription.ThemeName = "Office2019Light"
         '
         'txtItemCode
@@ -637,8 +744,9 @@ Partial Class UIItemCreate
         Me.txtItemCode.Multiline = True
         Me.txtItemCode.Name = "txtItemCode"
         Me.txtItemCode.ReadOnly = True
-        Me.txtItemCode.Size = New System.Drawing.Size(165, 25)
+        Me.txtItemCode.Size = New System.Drawing.Size(222, 25)
         Me.txtItemCode.TabIndex = 1
+        Me.txtItemCode.TabStop = False
         Me.txtItemCode.ThemeName = "Office2019Light"
         '
         'RadMenu1
@@ -647,71 +755,139 @@ Partial Class UIItemCreate
         Me.RadMenu1.Location = New System.Drawing.Point(0, 59)
         Me.RadMenu1.Name = "RadMenu1"
         Me.RadMenu1.Padding = New System.Windows.Forms.Padding(2, 2, 0, 0)
-        Me.RadMenu1.Size = New System.Drawing.Size(1625, 33)
+        '
+        '
+        '
+        Me.RadMenu1.RootElement.Padding = New System.Windows.Forms.Padding(2, 2, 0, 0)
+        Me.RadMenu1.Size = New System.Drawing.Size(1625, 38)
         Me.RadMenu1.TabIndex = 171
         Me.RadMenu1.ThemeName = "Office2010Silver"
         '
         'btnNew
         '
+        Me.btnNew.AccessibleDescription = "&New"
+        Me.btnNew.AccessibleName = "&New"
+        '
+        '
+        '
+        Me.btnNew.ButtonElement.AccessibleDescription = "&New"
+        Me.btnNew.ButtonElement.AccessibleName = "&New"
         Me.btnNew.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnNew.Image = Global.SPMSOPCI.My.Resources.Resources.if_Plus_1891033
         Me.btnNew.Name = "btnNew"
         Me.btnNew.Text = "&New"
         Me.btnNew.UseCompatibleTextRendering = False
+        Me.btnNew.Visibility = Telerik.WinControls.ElementVisibility.Visible
         '
         'btnEdit
         '
+        Me.btnEdit.AccessibleDescription = "&Edit"
+        Me.btnEdit.AccessibleName = "&Edit"
+        '
+        '
+        '
+        Me.btnEdit.ButtonElement.AccessibleDescription = "&Edit"
+        Me.btnEdit.ButtonElement.AccessibleName = "&Edit"
         Me.btnEdit.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnEdit.Image = Global.SPMSOPCI.My.Resources.Resources.if_edit_173002
         Me.btnEdit.Name = "btnEdit"
         Me.btnEdit.Text = "&Edit"
         Me.btnEdit.UseCompatibleTextRendering = False
+        Me.btnEdit.Visibility = Telerik.WinControls.ElementVisibility.Visible
         '
         'btnSave
         '
+        Me.btnSave.AccessibleDescription = "&Save"
+        Me.btnSave.AccessibleName = "&Save"
+        '
+        '
+        '
+        Me.btnSave.ButtonElement.AccessibleDescription = "&Save"
+        Me.btnSave.ButtonElement.AccessibleName = "&Save"
         Me.btnSave.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSave.Image = Global.SPMSOPCI.My.Resources.Resources.if_save_173091
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Text = "&Save"
         Me.btnSave.UseCompatibleTextRendering = False
+        Me.btnSave.Visibility = Telerik.WinControls.ElementVisibility.Visible
         '
         'btnDelete
         '
+        Me.btnDelete.AccessibleDescription = "&Delete"
+        Me.btnDelete.AccessibleName = "&Delete"
+        '
+        '
+        '
+        Me.btnDelete.ButtonElement.AccessibleDescription = "&Delete"
+        Me.btnDelete.ButtonElement.AccessibleName = "&Delete"
         Me.btnDelete.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnDelete.Image = Global.SPMSOPCI.My.Resources.Resources.rubbish
         Me.btnDelete.Name = "btnDelete"
         Me.btnDelete.Text = "&Delete"
         Me.btnDelete.UseCompatibleTextRendering = False
+        Me.btnDelete.Visibility = Telerik.WinControls.ElementVisibility.Visible
         '
         'btnFinddata
         '
+        Me.btnFinddata.AccessibleDescription = "&Find"
+        Me.btnFinddata.AccessibleName = "&Find"
+        '
+        '
+        '
+        Me.btnFinddata.ButtonElement.AccessibleDescription = "&Find"
+        Me.btnFinddata.ButtonElement.AccessibleName = "&Find"
         Me.btnFinddata.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnFinddata.Image = Global.SPMSOPCI.My.Resources.Resources.iconfinder_binocular__spyglass__view__search_2538706
         Me.btnFinddata.Name = "btnFinddata"
         Me.btnFinddata.Text = "&Find"
         Me.btnFinddata.UseCompatibleTextRendering = False
+        Me.btnFinddata.Visibility = Telerik.WinControls.ElementVisibility.Visible
         '
         'btnModificationSales
         '
+        Me.btnModificationSales.AccessibleDescription = "Modified Sales"
+        Me.btnModificationSales.AccessibleName = "Modified Sales"
+        '
+        '
+        '
+        Me.btnModificationSales.ButtonElement.AccessibleDescription = "Modified Sales"
+        Me.btnModificationSales.ButtonElement.AccessibleName = "Modified Sales"
         Me.btnModificationSales.Image = Global.SPMSOPCI.My.Resources.Resources.change__1_
         Me.btnModificationSales.Name = "btnModificationSales"
         Me.btnModificationSales.Text = "Modified Sales"
+        Me.btnModificationSales.Visibility = Telerik.WinControls.ElementVisibility.Visible
         '
         'btnClear
         '
+        Me.btnClear.AccessibleDescription = "&Clear"
+        Me.btnClear.AccessibleName = "&Clear"
+        '
+        '
+        '
+        Me.btnClear.ButtonElement.AccessibleDescription = "&Clear"
+        Me.btnClear.ButtonElement.AccessibleName = "&Clear"
         Me.btnClear.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnClear.Image = Global.SPMSOPCI.My.Resources.Resources.if_ko_red_539481
         Me.btnClear.Name = "btnClear"
         Me.btnClear.Text = "&Clear"
         Me.btnClear.UseCompatibleTextRendering = False
+        Me.btnClear.Visibility = Telerik.WinControls.ElementVisibility.Visible
         '
         'btnClose
         '
+        Me.btnClose.AccessibleDescription = "Close"
+        Me.btnClose.AccessibleName = "Close"
+        '
+        '
+        '
+        Me.btnClose.ButtonElement.AccessibleDescription = "Close"
+        Me.btnClose.ButtonElement.AccessibleName = "Close"
         Me.btnClose.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnClose.Image = Global.SPMSOPCI.My.Resources.Resources.icons8_close_window_24
         Me.btnClose.Name = "btnClose"
         Me.btnClose.Text = "Close"
         Me.btnClose.UseCompatibleTextRendering = False
+        Me.btnClose.Visibility = Telerik.WinControls.ElementVisibility.Visible
         '
         'Panel1
         '
@@ -745,7 +921,7 @@ Partial Class UIItemCreate
         Me.Label1.ForeColor = System.Drawing.Color.White
         Me.Label1.Location = New System.Drawing.Point(-61, 52)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(199, 32)
+        Me.Label1.Size = New System.Drawing.Size(198, 32)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Product Manager"
         '
@@ -760,13 +936,17 @@ Partial Class UIItemCreate
         Me.Size = New System.Drawing.Size(1625, 838)
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
+        CType(Me.RadGroupBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.RadGroupBox1.ResumeLayout(False)
+        Me.RadGroupBox1.PerformLayout()
+        CType(Me.GrdView.MasterTemplate, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GrdView, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadMenu2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.chkIsActive, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dtTodate, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dtFromDate, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadLabel9, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadLabel10, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txtProductItemGroupName, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txtproductItemGroupCode, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtProductItemCategory, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtProductCategoryCode, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtItemGroupName, System.ComponentModel.ISupportInitialize).EndInit()
@@ -843,15 +1023,16 @@ Partial Class UIItemCreate
     Friend WithEvents LinkProductCategory As System.Windows.Forms.LinkLabel
     Friend WithEvents txtProductItemCategory As Telerik.WinControls.UI.RadTextBox
     Friend WithEvents txtProductCategoryCode As Telerik.WinControls.UI.RadTextBox
-    Friend WithEvents txtProductItemGroupName As Telerik.WinControls.UI.RadTextBox
-    Friend WithEvents txtproductItemGroupCode As Telerik.WinControls.UI.RadTextBox
     Friend WithEvents dtTodate As Telerik.WinControls.UI.RadDateTimePicker
     Friend WithEvents dtFromDate As Telerik.WinControls.UI.RadDateTimePicker
     Friend WithEvents RadLabel9 As Telerik.WinControls.UI.RadLabel
     Friend WithEvents RadLabel10 As Telerik.WinControls.UI.RadLabel
     Friend WithEvents Office2019LightTheme1 As Telerik.WinControls.Themes.Office2010BlueTheme
-    Friend WithEvents LinkProductItemGroup As System.Windows.Forms.LinkLabel
     Friend WithEvents chkIsActive As Telerik.WinControls.UI.RadCheckBox
     Friend WithEvents btnModificationSales As Telerik.WinControls.UI.RadMenuButtonItem
-
+    Friend WithEvents RadGroupBox1 As Telerik.WinControls.UI.RadGroupBox
+    Friend WithEvents RadMenu2 As Telerik.WinControls.UI.RadMenu
+    Friend WithEvents btnAdd_productGroup As Telerik.WinControls.UI.RadMenuButtonItem
+    Friend WithEvents btnRemove_productgroup As Telerik.WinControls.UI.RadMenuButtonItem
+    Friend WithEvents GrdView As Telerik.WinControls.UI.RadGridView
 End Class

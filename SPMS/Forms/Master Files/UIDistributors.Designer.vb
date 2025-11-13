@@ -102,7 +102,7 @@ Partial Class UIDistributors
         '
         '
         Me.RadMenu1.RootElement.Padding = New System.Windows.Forms.Padding(2, 2, 0, 0)
-        Me.RadMenu1.Size = New System.Drawing.Size(1445, 38)
+        Me.RadMenu1.Size = New System.Drawing.Size(1445, 33)
         Me.RadMenu1.TabIndex = 173
         Me.RadMenu1.ThemeName = "Office2010Silver"
         '
@@ -235,9 +235,9 @@ Partial Class UIDistributors
         Me.Panel2.Controls.Add(Me.Label2)
         Me.Panel2.Controls.Add(Me.Label4)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel2.Location = New System.Drawing.Point(0, 96)
+        Me.Panel2.Location = New System.Drawing.Point(0, 91)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1445, 762)
+        Me.Panel2.Size = New System.Drawing.Size(1445, 767)
         Me.Panel2.TabIndex = 174
         '
         'CheckNetVat

@@ -73,7 +73,7 @@ Partial Class UIUploadingCustomerItemSharing
         Me.Panel2.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Panel2.Location = New System.Drawing.Point(0, 0)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(666, 59)
+        Me.Panel2.Size = New System.Drawing.Size(651, 59)
         Me.Panel2.TabIndex = 56
         '
         'Label5
@@ -90,6 +90,7 @@ Partial Class UIUploadingCustomerItemSharing
         '
         'Panel1
         '
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(246, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel1.Controls.Add(Me.pbar)
         Me.Panel1.Controls.Add(Me.RadLabel1)
@@ -111,7 +112,7 @@ Partial Class UIUploadingCustomerItemSharing
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel1.Location = New System.Drawing.Point(0, 59)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(666, 283)
+        Me.Panel1.Size = New System.Drawing.Size(651, 274)
         Me.Panel1.TabIndex = 57
         '
         'pbar
@@ -293,14 +294,14 @@ Partial Class UIUploadingCustomerItemSharing
         Me.Panel3.Controls.Add(Me.btnStartProcess)
         Me.Panel3.Controls.Add(Me.btnCanced)
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel3.Location = New System.Drawing.Point(0, 239)
+        Me.Panel3.Location = New System.Drawing.Point(0, 230)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(664, 42)
+        Me.Panel3.Size = New System.Drawing.Size(649, 42)
         Me.Panel3.TabIndex = 57
         '
         'btnStartProcess
         '
-        Me.btnStartProcess.Location = New System.Drawing.Point(466, 4)
+        Me.btnStartProcess.Location = New System.Drawing.Point(466, 3)
         Me.btnStartProcess.Name = "btnStartProcess"
         Me.btnStartProcess.Size = New System.Drawing.Size(83, 32)
         Me.btnStartProcess.TabIndex = 3
@@ -309,11 +310,11 @@ Partial Class UIUploadingCustomerItemSharing
         '
         'btnCanced
         '
-        Me.btnCanced.Location = New System.Drawing.Point(554, 4)
+        Me.btnCanced.Location = New System.Drawing.Point(554, 3)
         Me.btnCanced.Name = "btnCanced"
         Me.btnCanced.Size = New System.Drawing.Size(83, 32)
         Me.btnCanced.TabIndex = 2
-        Me.btnCanced.Text = "&Canced"
+        Me.btnCanced.Text = "&Closed"
         Me.btnCanced.ThemeName = "Office2010Silver"
         '
         'OpenFileDialog1
@@ -325,7 +326,7 @@ Partial Class UIUploadingCustomerItemSharing
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(666, 342)
+        Me.ClientSize = New System.Drawing.Size(651, 333)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Panel2)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None

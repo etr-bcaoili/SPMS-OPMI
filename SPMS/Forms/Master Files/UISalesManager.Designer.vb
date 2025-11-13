@@ -97,10 +97,10 @@ Partial Class UISalesManager
         Me.RadPageView3.Controls.Add(Me.RadPageViewPage8)
         Me.RadPageView3.Dock = System.Windows.Forms.DockStyle.Fill
         Me.RadPageView3.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RadPageView3.Location = New System.Drawing.Point(0, 244)
+        Me.RadPageView3.Location = New System.Drawing.Point(0, 257)
         Me.RadPageView3.Name = "RadPageView3"
         Me.RadPageView3.SelectedPage = Me.RadPageViewPage8
-        Me.RadPageView3.Size = New System.Drawing.Size(1528, 497)
+        Me.RadPageView3.Size = New System.Drawing.Size(1528, 484)
         Me.RadPageView3.TabIndex = 402
         Me.RadPageView3.ThemeName = "Crystal"
         CType(Me.RadPageView3.GetChildAt(0), Telerik.WinControls.UI.RadPageViewStripElement).StripButtons = Telerik.WinControls.UI.StripViewButtons.None
@@ -111,7 +111,7 @@ Partial Class UISalesManager
         Me.RadPageViewPage8.Controls.Add(Me.RadMenu2)
         Me.RadPageViewPage8.Location = New System.Drawing.Point(10, 38)
         Me.RadPageViewPage8.Name = "RadPageViewPage8"
-        Me.RadPageViewPage8.Size = New System.Drawing.Size(1507, 448)
+        Me.RadPageViewPage8.Size = New System.Drawing.Size(1507, 435)
         Me.RadPageViewPage8.Text = "Period of Transaction"
         '
         'Panel4
@@ -121,7 +121,7 @@ Partial Class UISalesManager
         Me.Panel4.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel4.Location = New System.Drawing.Point(0, 34)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(1507, 414)
+        Me.Panel4.Size = New System.Drawing.Size(1507, 401)
         Me.Panel4.TabIndex = 176
         '
         'GrdViewPeriodOfTransaction
@@ -167,7 +167,7 @@ Partial Class UISalesManager
         Me.GrdViewPeriodOfTransaction.MasterTemplate.EnableGrouping = False
         Me.GrdViewPeriodOfTransaction.Name = "GrdViewPeriodOfTransaction"
         Me.GrdViewPeriodOfTransaction.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.GrdViewPeriodOfTransaction.Size = New System.Drawing.Size(1505, 412)
+        Me.GrdViewPeriodOfTransaction.Size = New System.Drawing.Size(1505, 399)
         Me.GrdViewPeriodOfTransaction.TabIndex = 9
         Me.GrdViewPeriodOfTransaction.ThemeName = "Office2010Silver"
         '
@@ -235,7 +235,7 @@ Partial Class UISalesManager
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel3.Location = New System.Drawing.Point(0, 0)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(1528, 244)
+        Me.Panel3.Size = New System.Drawing.Size(1528, 257)
         Me.Panel3.TabIndex = 401
         '
         'txtDistrictSalesManager

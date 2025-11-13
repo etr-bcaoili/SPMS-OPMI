@@ -393,23 +393,18 @@ Module GlobalFunctionsModule
         rs.Open("select * from projectsubmodules where dltflg = 0 " & Filter, SPMSConn, ADODB.CursorTypeEnum.adOpenStatic, ADODB.LockTypeEnum.adLockReadOnly)
         Return rs
     End Function
-
-
-
     Public Function RsUsers(Optional ByVal filter As String = "") As ADODB.Recordset
         Dim rs As New ADODB.Recordset
         If filter <> "" Then
             filter = " AND " & filter
         End If
-        rs.Open("SELECT * FROM USERACCESS WHERE DLTFLG =0 " & filter, SPMSConn, ADODB.CursorTypeEnum.adOpenStatic, ADODB.LockTypeEnum.adLockReadOnly)
+        rs.Open("SELECT * FROM USERACCESS WHERE DLTFLG = 0 " & filter, SPMSConn, ADODB.CursorTypeEnum.adOpenStatic, ADODB.LockTypeEnum.adLockReadOnly)
         Return rs
     End Function
-
     Public Sub SetAccountforUse(ByVal UserName As String)
         SPMSConn.Execute("UPDATE USERACCESS SET ISACTIVE = 1 WHERE DLTFLG = 0 AND USERNAME = '" & UserName & "' ")
         User = UserName
     End Sub
-
     Public Sub LogOutAccount(ByVal Username As String)
         SPMSConn.Execute("UPDATE USERACCESS SET ISACTIVE = 0 WHERE DLTFLG = 0 AND USERNAME = '" & Username & "' ")
     End Sub

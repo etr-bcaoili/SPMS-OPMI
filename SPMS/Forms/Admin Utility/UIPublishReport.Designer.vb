@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class UIPublishReport
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,14 +20,14 @@ Partial Class UIPublishReport
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim GridViewCheckBoxColumn1 As Telerik.WinControls.UI.GridViewCheckBoxColumn = New Telerik.WinControls.UI.GridViewCheckBoxColumn()
-        Dim GridViewTextBoxColumn1 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn2 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewCheckBoxColumn2 As Telerik.WinControls.UI.GridViewCheckBoxColumn = New Telerik.WinControls.UI.GridViewCheckBoxColumn()
-        Dim GridViewTextBoxColumn3 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewCheckBoxColumn15 As Telerik.WinControls.UI.GridViewCheckBoxColumn = New Telerik.WinControls.UI.GridViewCheckBoxColumn()
+        Dim GridViewTextBoxColumn22 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn23 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewCheckBoxColumn16 As Telerik.WinControls.UI.GridViewCheckBoxColumn = New Telerik.WinControls.UI.GridViewCheckBoxColumn()
+        Dim GridViewTextBoxColumn24 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.RadMenu1 = New Telerik.WinControls.UI.RadMenu()
@@ -59,9 +59,10 @@ Partial Class UIPublishReport
         Me.RadGridView1 = New Telerik.WinControls.UI.RadGridView()
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.RadLabel3 = New Telerik.WinControls.UI.RadLabel()
-        Me.Office2010SilverTheme1 = New Telerik.WinControls.Themes.Office2010SilverTheme()
-        Me.Office2010SilverTheme2 = New Telerik.WinControls.Themes.Office2010SilverTheme()
+        Me.Office2010SilverTheme1 = New Telerik.WinControls.Themes.Office2010BlackTheme()
+        Me.Office2010SilverTheme2 = New Telerik.WinControls.Themes.Office2010BlueTheme()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.Panel6 = New System.Windows.Forms.Panel()
         Me.Panel1.SuspendLayout()
         CType(Me.RadMenu1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
@@ -90,6 +91,7 @@ Partial Class UIPublishReport
         CType(Me.RadGridView1.MasterTemplate, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel5.SuspendLayout()
         CType(Me.RadLabel3, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel6.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
@@ -101,7 +103,7 @@ Partial Class UIPublishReport
         Me.Panel1.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(616, 38)
+        Me.Panel1.Size = New System.Drawing.Size(628, 38)
         Me.Panel1.TabIndex = 24
         '
         'Label5
@@ -120,7 +122,7 @@ Partial Class UIPublishReport
         '
         Me.RadMenu1.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.RadMenu1.Items.AddRange(New Telerik.WinControls.RadItem() {Me.btnBacks, Me.btnNexts})
-        Me.RadMenu1.Location = New System.Drawing.Point(0, 230)
+        Me.RadMenu1.Location = New System.Drawing.Point(0, 197)
         Me.RadMenu1.Margin = New System.Windows.Forms.Padding(5)
         Me.RadMenu1.Name = "RadMenu1"
         Me.RadMenu1.Padding = New System.Windows.Forms.Padding(4, 2, 0, 0)
@@ -128,7 +130,7 @@ Partial Class UIPublishReport
         '
         '
         Me.RadMenu1.RootElement.Padding = New System.Windows.Forms.Padding(4, 2, 0, 0)
-        Me.RadMenu1.Size = New System.Drawing.Size(616, 33)
+        Me.RadMenu1.Size = New System.Drawing.Size(628, 38)
         Me.RadMenu1.TabIndex = 871
         Me.RadMenu1.ThemeName = "Office2010Silver"
         '
@@ -167,11 +169,11 @@ Partial Class UIPublishReport
         'Panel2
         '
         Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel2.Controls.Add(Me.TabControl1)
+        Me.Panel2.Controls.Add(Me.Panel6)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel2.Location = New System.Drawing.Point(0, 38)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(616, 192)
+        Me.Panel2.Size = New System.Drawing.Size(628, 159)
         Me.Panel2.TabIndex = 872
         '
         'TabControl1
@@ -181,15 +183,15 @@ Partial Class UIPublishReport
         Me.TabControl1.Controls.Add(Me.TabPage2)
         Me.TabControl1.Controls.Add(Me.TabPage3)
         Me.TabControl1.Controls.Add(Me.TabPage4)
-        Me.TabControl1.Location = New System.Drawing.Point(1, 3)
+        Me.TabControl1.Location = New System.Drawing.Point(3, 1)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(610, 209)
+        Me.TabControl1.Size = New System.Drawing.Size(621, 172)
         Me.TabControl1.TabIndex = 0
         '
         'TabPage1
         '
-        Me.TabPage1.BackColor = System.Drawing.Color.White
+        Me.TabPage1.BackColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(246, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.TabPage1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TabPage1.Controls.Add(Me.txtInvalidMonth)
         Me.TabPage1.Controls.Add(Me.txtInvalidYear)
@@ -203,7 +205,7 @@ Partial Class UIPublishReport
         Me.TabPage1.Location = New System.Drawing.Point(4, 4)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(602, 183)
+        Me.TabPage1.Size = New System.Drawing.Size(613, 146)
         Me.TabPage1.TabIndex = 0
         '
         'txtInvalidMonth
@@ -302,7 +304,7 @@ Partial Class UIPublishReport
         Me.TabPage2.Location = New System.Drawing.Point(4, 4)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(590, 183)
+        Me.TabPage2.Size = New System.Drawing.Size(613, 183)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.UseVisualStyleBackColor = True
         '
@@ -313,7 +315,7 @@ Partial Class UIPublishReport
         Me.Panel4.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel4.Location = New System.Drawing.Point(3, 45)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(584, 135)
+        Me.Panel4.Size = New System.Drawing.Size(607, 135)
         Me.Panel4.TabIndex = 1
         '
         'GrdChannel
@@ -330,28 +332,28 @@ Partial Class UIPublishReport
         '
         Me.GrdChannel.MasterTemplate.AllowAddNewRow = False
         Me.GrdChannel.MasterTemplate.AllowDeleteRow = False
-        GridViewCheckBoxColumn1.EnableExpressionEditor = False
-        GridViewCheckBoxColumn1.HeaderText = "[0]"
-        GridViewCheckBoxColumn1.MinWidth = 20
-        GridViewCheckBoxColumn1.Name = "column1"
-        GridViewCheckBoxColumn1.Width = 52
-        GridViewTextBoxColumn1.EnableExpressionEditor = False
-        GridViewTextBoxColumn1.HeaderText = "Channel Code"
-        GridViewTextBoxColumn1.Name = "column2"
-        GridViewTextBoxColumn1.ReadOnly = True
-        GridViewTextBoxColumn1.Width = 115
-        GridViewTextBoxColumn2.EnableExpressionEditor = False
-        GridViewTextBoxColumn2.HeaderText = "Channel Name"
-        GridViewTextBoxColumn2.Name = "column3"
-        GridViewTextBoxColumn2.ReadOnly = True
-        GridViewTextBoxColumn2.Width = 281
-        Me.GrdChannel.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewCheckBoxColumn1, GridViewTextBoxColumn1, GridViewTextBoxColumn2})
+        GridViewCheckBoxColumn15.EnableExpressionEditor = False
+        GridViewCheckBoxColumn15.HeaderText = "[0]"
+        GridViewCheckBoxColumn15.MinWidth = 20
+        GridViewCheckBoxColumn15.Name = "column1"
+        GridViewCheckBoxColumn15.Width = 52
+        GridViewTextBoxColumn22.EnableExpressionEditor = False
+        GridViewTextBoxColumn22.HeaderText = "Channel Code"
+        GridViewTextBoxColumn22.Name = "column2"
+        GridViewTextBoxColumn22.ReadOnly = True
+        GridViewTextBoxColumn22.Width = 115
+        GridViewTextBoxColumn23.EnableExpressionEditor = False
+        GridViewTextBoxColumn23.HeaderText = "Channel Name"
+        GridViewTextBoxColumn23.Name = "column3"
+        GridViewTextBoxColumn23.ReadOnly = True
+        GridViewTextBoxColumn23.Width = 281
+        Me.GrdChannel.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewCheckBoxColumn15, GridViewTextBoxColumn22, GridViewTextBoxColumn23})
         Me.GrdChannel.MasterTemplate.EnableFiltering = True
         Me.GrdChannel.MasterTemplate.EnableGrouping = False
         Me.GrdChannel.MasterTemplate.ShowRowHeaderColumn = False
         Me.GrdChannel.Name = "GrdChannel"
         Me.GrdChannel.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.GrdChannel.Size = New System.Drawing.Size(582, 133)
+        Me.GrdChannel.Size = New System.Drawing.Size(605, 133)
         Me.GrdChannel.TabIndex = 10
         '
         'Panel3
@@ -361,7 +363,7 @@ Partial Class UIPublishReport
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel3.Location = New System.Drawing.Point(3, 3)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(584, 42)
+        Me.Panel3.Size = New System.Drawing.Size(607, 42)
         Me.Panel3.TabIndex = 0
         '
         'RadLabel1
@@ -384,7 +386,7 @@ Partial Class UIPublishReport
         Me.TabPage3.Location = New System.Drawing.Point(4, 4)
         Me.TabPage3.Name = "TabPage3"
         Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage3.Size = New System.Drawing.Size(590, 183)
+        Me.TabPage3.Size = New System.Drawing.Size(613, 183)
         Me.TabPage3.TabIndex = 2
         '
         'txtListChannel
@@ -429,7 +431,7 @@ Partial Class UIPublishReport
         Me.TabPage4.Controls.Add(Me.Panel5)
         Me.TabPage4.Location = New System.Drawing.Point(4, 4)
         Me.TabPage4.Name = "TabPage4"
-        Me.TabPage4.Size = New System.Drawing.Size(590, 183)
+        Me.TabPage4.Size = New System.Drawing.Size(613, 183)
         Me.TabPage4.TabIndex = 3
         Me.TabPage4.UseVisualStyleBackColor = True
         '
@@ -447,23 +449,23 @@ Partial Class UIPublishReport
         '
         Me.RadGridView1.MasterTemplate.AllowAddNewRow = False
         Me.RadGridView1.MasterTemplate.AllowDeleteRow = False
-        GridViewCheckBoxColumn2.EnableExpressionEditor = False
-        GridViewCheckBoxColumn2.HeaderText = "[0]"
-        GridViewCheckBoxColumn2.MinWidth = 20
-        GridViewCheckBoxColumn2.Name = "column1"
-        GridViewCheckBoxColumn2.Width = 52
-        GridViewTextBoxColumn3.EnableExpressionEditor = False
-        GridViewTextBoxColumn3.HeaderText = "Channel"
-        GridViewTextBoxColumn3.Name = "column2"
-        GridViewTextBoxColumn3.ReadOnly = True
-        GridViewTextBoxColumn3.Width = 429
-        Me.RadGridView1.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewCheckBoxColumn2, GridViewTextBoxColumn3})
+        GridViewCheckBoxColumn16.EnableExpressionEditor = False
+        GridViewCheckBoxColumn16.HeaderText = "[0]"
+        GridViewCheckBoxColumn16.MinWidth = 20
+        GridViewCheckBoxColumn16.Name = "column1"
+        GridViewCheckBoxColumn16.Width = 52
+        GridViewTextBoxColumn24.EnableExpressionEditor = False
+        GridViewTextBoxColumn24.HeaderText = "Channel"
+        GridViewTextBoxColumn24.Name = "column2"
+        GridViewTextBoxColumn24.ReadOnly = True
+        GridViewTextBoxColumn24.Width = 429
+        Me.RadGridView1.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewCheckBoxColumn16, GridViewTextBoxColumn24})
         Me.RadGridView1.MasterTemplate.EnableFiltering = True
         Me.RadGridView1.MasterTemplate.EnableGrouping = False
         Me.RadGridView1.MasterTemplate.ShowRowHeaderColumn = False
         Me.RadGridView1.Name = "RadGridView1"
         Me.RadGridView1.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.RadGridView1.Size = New System.Drawing.Size(588, 139)
+        Me.RadGridView1.Size = New System.Drawing.Size(611, 139)
         Me.RadGridView1.TabIndex = 11
         '
         'Panel5
@@ -473,7 +475,7 @@ Partial Class UIPublishReport
         Me.Panel5.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel5.Location = New System.Drawing.Point(0, 0)
         Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(588, 42)
+        Me.Panel5.Size = New System.Drawing.Size(611, 42)
         Me.Panel5.TabIndex = 1
         '
         'RadLabel3
@@ -488,12 +490,21 @@ Partial Class UIPublishReport
         'Timer1
         '
         '
+        'Panel6
+        '
+        Me.Panel6.Controls.Add(Me.TabControl1)
+        Me.Panel6.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Panel6.Location = New System.Drawing.Point(0, 0)
+        Me.Panel6.Name = "Panel6"
+        Me.Panel6.Size = New System.Drawing.Size(624, 157)
+        Me.Panel6.TabIndex = 1
+        '
         'UIPublishReport
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(616, 263)
+        Me.ClientSize = New System.Drawing.Size(628, 235)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.RadMenu1)
         Me.Controls.Add(Me.Panel1)
@@ -534,6 +545,7 @@ Partial Class UIPublishReport
         Me.Panel5.ResumeLayout(False)
         Me.Panel5.PerformLayout()
         CType(Me.RadLabel3, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel6.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -545,7 +557,7 @@ Partial Class UIPublishReport
     Friend WithEvents btnBacks As Telerik.WinControls.UI.RadMenuButtonItem
     Friend WithEvents btnNexts As Telerik.WinControls.UI.RadMenuButtonItem
     Friend WithEvents Panel2 As Panel
-    Friend WithEvents Office2010SilverTheme1 As Telerik.WinControls.Themes.Office2010SilverTheme
+    Friend WithEvents Office2010SilverTheme1 As Telerik.WinControls.Themes.Office2010BlackTheme
     Friend WithEvents TabControl1 As TabControl
     Friend WithEvents TabPage1 As TabPage
     Friend WithEvents TabPage2 As TabPage
@@ -569,8 +581,9 @@ Partial Class UIPublishReport
     Friend WithEvents RadGridView1 As Telerik.WinControls.UI.RadGridView
     Friend WithEvents txtInvalidMonth As Telerik.WinControls.UI.RadLabel
     Friend WithEvents txtInvalidYear As Telerik.WinControls.UI.RadLabel
-    Friend WithEvents Office2010SilverTheme2 As Telerik.WinControls.Themes.Office2010SilverTheme
+    Friend WithEvents Office2010SilverTheme2 As Telerik.WinControls.Themes.Office2010BlueTheme
     Friend WithEvents RadLabel4 As Telerik.WinControls.UI.RadLabel
     Friend WithEvents txtListChannel As Telerik.WinControls.UI.RadLabel
     Friend WithEvents Timer1 As Timer
+    Friend WithEvents Panel6 As Panel
 End Class

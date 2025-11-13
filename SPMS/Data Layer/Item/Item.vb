@@ -404,6 +404,9 @@ Public Class Items
     Public Shared Function GetNewPriceItemSetup() As String
         Return "SELECT itemthr,ITEMMDES,IMDBRN FROM Item WHERE ITEMDEL = 0 AND IsActive = 1"
     End Function
+    Public Shared Function GetItemlistWithProductGroup() As String
+        Return "SELECT Distinct A.itemthr [Item Code],A.ITEMMDES [Item Description Name],B.Code [Product Group] FROM Item A left Join ProductGroupEffectivity B On A.ITEMCD = B.ItemCode  WHERE ITEMDEL = 0 AND IsActive = 1 And B.Code <> ''"
+    End Function
     Public Shared Function GetItems(ByVal ItemCode As String) As String
         Return LoadByCode(ItemCode).ItemMMDES
     End Function

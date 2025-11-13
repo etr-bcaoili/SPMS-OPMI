@@ -97,6 +97,7 @@ ErrorHandler:
         End If
 
 
+
         rs.Open("SELECT * FROM USERACCESS WHERE DLTFLG = 0 " & Filter, SPMSConn, ADODB.CursorTypeEnum.adOpenStatic, ADODB.LockTypeEnum.adLockReadOnly)
         Return rs
 

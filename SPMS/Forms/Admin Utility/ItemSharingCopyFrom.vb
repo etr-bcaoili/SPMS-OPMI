@@ -2,20 +2,22 @@
 Imports SPMSOPCI.ConnectionModule
 Imports SPMSOPCI.Dialogs
 Imports Telerik.WinControls.UI
+Imports System.Runtime.Remoting.Channels
 Public Class ItemSharingCopyFrom
     Private _ItemSharing As New ItemSharing
     Private m_CustomerItemSharing As New CustomerItemSharing
+    Private m_CustomerItemSharingUploading As New CustomerItemSharingUploading
     Private _ConfigurationType As New Configuration
-
+    Private m_Channel As New Distributor
     Private m_Err As New ErrorProvider
     Private m_HasError As Boolean = False
     Dim table As New DataTable
     Private m_TRSCODE As String = String.Empty
     Private Sub Clear()
-        txtItemCode.Text = String.Empty
-        txtItemName.Text = String.Empty
-        txtConfigCode.Text = String.Empty
-        txtConfgName.Text = String.Empty
+        txtChannelCode.Text = String.Empty
+        txtChannelName.Text = String.Empty
+        txtConfigtypeCode.Text = String.Empty
+        txtConfigtypeName.Text = String.Empty
 
         DropYearFrom.Text = String.Empty
         DropYearTo.Text = String.Empty
@@ -25,19 +27,17 @@ Public Class ItemSharingCopyFrom
     End Sub
 
     Private Sub btnFinddata_Click(sender As Object, e As EventArgs) Handles btnFinddata.Click
-        Dim tag As SelectionTags = Dialogs.ShowSearchDialog(CustomerItemSharing.GetItemSharingListSql, "Item Sharing")
+        Dim tag As SelectionTags = Dialogs.ShowSearchDialog(CustomerItemSharingUploading.GetItemSharingListSql, "Item Sharing")
         If Not tag Is Nothing Then
             Clear()
-            ShowItemSharing(tag.KeyColumn22, tag.KeyColumn55, tag.KeyColumn33, tag.KeyColumn44)
+            ShowItemSharing(tag.KeyColumn22, tag.KeyColumn33, tag.KeyColumn44, tag.KeyColumn55)
         End If
     End Sub
-    Private Sub ShowItemSharing(ByVal ConfigtypeCode As String, ByVal ItemCode As String, ByVal Year As String, ByVal Month As String)
-        table = GetRecords(CustomerItemSharing.GetItemSharingListbyOneSQl(ConfigtypeCode, ItemCode, Year, Month))
+    Private Sub ShowItemSharing(ByVal ChannelCode As String, ByVal Year As String, ByVal Month As String, ByVal ConfigtypeCode As String)
+        table = GetRecords(CustomerItemSharingUploading.GetCustomerItemSharingListSql(ChannelCode, Year, Month, ConfigtypeCode))
         For i As Integer = 0 To table.Rows.Count - 1
-            txtConfigCode.Text = table.Rows(i)("ConfigtypeCode")
-            txtConfgName.Text = table.Rows(i)("ConfigTypeName")
-            txtItemCode.Text = table.Rows(i)("ITEMCODE")
-            txtItemName.Text = table.Rows(i)("IMDBRN")
+            LoadConfigtype(table.Rows(i)("ConfigtypeCode"))
+            LoadChannel(table.Rows(i)("ChannelCode"))
             DropYearFrom.Text = table.Rows(i)("Year")
             DropMonthFrom.Text = table.Rows(i)("Month")
             Exit Sub
@@ -46,7 +46,7 @@ Public Class ItemSharingCopyFrom
 
     Private Sub ItemSharingCopyFrom_Load(sender As Object, e As EventArgs) Handles Me.Load
         LoadYearFrom()
-        LoadYearTo
+        LoadYearTo()
     End Sub
 
     Private Sub LoadYearFrom()
@@ -96,28 +96,53 @@ Public Class ItemSharingCopyFrom
         If DropYearTo.SelectedIndex = -1 Then Exit Sub
         LoadMonthTo(DropYearTo.Text)
     End Sub
-    Private Sub NewTransaction()
-        m_TRSCODE = "TR-" & SystemSequences.GetMedicalDoctorSequence
-    End Sub
-
     Private Sub btnStartProcess_Click(sender As Object, e As EventArgs) Handles btnStartProcess.Click
-        If txtConfigCode.Text <> "" Or txtItemCode.Text <> "" Or DropYearTo.Text <> "" Or DropMonthTo.Text <> "" Then
-            CustomerItemSharing.GetResetCopyFromSql(txtConfigCode.Text, txtItemCode.Text, DropYearTo.Text, DropMonthTo.Text)
-            table = GetRecords(CustomerItemSharing.GetCustomerItemSharingSQL(txtConfigCode.Text, txtItemCode.Text, DropYearFrom.Text, DropMonthFrom.Text))
+        If txtConfigtypeCode.Text <> "" Or txtChannelCode.Text <> "" Or DropYearTo.Text <> "" Or DropMonthTo.Text <> "" Then
+            CustomerItemSharing.GetResetCopyFromSql(txtConfigtypeCode.Text, txtChannelCode.Text, DropYearTo.Text, DropMonthTo.Text)
             For i As Integer = 0 To table.Rows.Count - 1
-                m_CustomerItemSharing = New CustomerItemSharing
-                NewTransaction()
-                m_CustomerItemSharing.YearFrom = DropYearFrom.Text
-                m_CustomerItemSharing.MonthFrom = DropMonthFrom.Text
-                m_CustomerItemSharing.YearTo = DropYearTo.Text
-                m_CustomerItemSharing.MonthTo = DropMonthTo.Text
-                m_CustomerItemSharing.ItemCode = txtItemCode.Text
-                m_CustomerItemSharing.ConfigtypeCode = txtConfigCode.Text
-                m_CustomerItemSharing.TRSCODE = m_TRSCODE
-                m_CustomerItemSharing.CustomerItemSharingCopyFrom()
+                m_CustomerItemSharingUploading = New CustomerItemSharingUploading
+                m_CustomerItemSharingUploading.YearFrom = DropYearFrom.Text
+                m_CustomerItemSharingUploading.MonthFrom = DropMonthFrom.Text
+                m_CustomerItemSharingUploading.YearTo = DropYearTo.Text
+                m_CustomerItemSharingUploading.MonthTo = DropMonthTo.Text
+                m_CustomerItemSharingUploading.ChannelCode = txtChannelCode.Text
+                m_CustomerItemSharingUploading.ConfigtypeCode = txtConfigtypeCode.Text
+                m_CustomerItemSharingUploading.CustomerItemSharingCopyFrom()
             Next
             ShowCopyFromSuccessfulDialog()
-            Me.Close()
+            'Me.Close()
         End If
+    End Sub
+
+    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
+
+    End Sub
+
+    Private Sub LinkLabel3_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel3.LinkClicked
+        Dim tag As SelectionTags = Dialogs.ShowSearchDialog(Configuration.GetConfigtypeSql, "Medical Configuration")
+        If Not tag Is Nothing Then
+            LoadConfigtype(tag.KeyColumn11)
+        End If
+    End Sub
+
+    Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
+        If txtConfigtypeCode.Text <> "" Then
+            Dim tag As SelectionTags = Dialogs.ShowSearchDialog(Distributor.GetDistributorSql, "Search Item")
+            If Not tag Is Nothing Then
+                LoadChannel(tag.KeyColumn22)
+            End If
+        End If
+    End Sub
+    Private Sub LoadConfigtype(ByVal ConfigtypeCode As String)
+        _ConfigurationType = Configuration.LoadbyCode(ConfigtypeCode)
+        _ConfigurationType.ConfigTypeID = _ConfigurationType.ConfigTypeID
+        txtConfigtypeCode.Text = _ConfigurationType.ConfigTypeCode
+        txtConfigtypeName.Text = _ConfigurationType.ConfigTypeName
+    End Sub
+    Private Sub LoadChannel(ByVal ChannelCode As String)
+        m_Channel = Distributor.LoadByCode(ChannelCode)
+        m_Channel.DISTCOMID = m_Channel.DISTCOMID
+        txtChannelCode.Text = m_Channel.DISTCOMID
+        txtChannelName.Text = m_Channel.DISTNAME
     End Sub
 End Class

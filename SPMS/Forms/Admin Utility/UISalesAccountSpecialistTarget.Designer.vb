@@ -50,7 +50,7 @@ Partial Class UISalesAccountSpecialistTarget
         Me.RadGridView1 = New Telerik.WinControls.UI.RadGridView()
         Me.RadLabel1 = New Telerik.WinControls.UI.RadLabel()
         Me.RadTextBox1 = New Telerik.WinControls.UI.RadTextBox()
-        Me.Office2010SilverTheme1 = New Telerik.WinControls.Themes.Office2010SilverTheme()
+        Me.Office2010SilverTheme1 = New Telerik.WinControls.Themes.Office2010BlueTheme()
         Me.Panel2.SuspendLayout()
         CType(Me.RadDock1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.RadDock1.SuspendLayout()
@@ -535,5 +535,5 @@ Partial Class UISalesAccountSpecialistTarget
     Friend WithEvents RadGridView1 As Telerik.WinControls.UI.RadGridView
     Friend WithEvents RadLabel1 As Telerik.WinControls.UI.RadLabel
     Friend WithEvents RadTextBox1 As Telerik.WinControls.UI.RadTextBox
-    Friend WithEvents Office2010SilverTheme1 As Telerik.WinControls.Themes.Office2010SilverTheme
+    Friend WithEvents Office2010SilverTheme1 As Telerik.WinControls.Themes.Office2010BlueTheme
 End Class
